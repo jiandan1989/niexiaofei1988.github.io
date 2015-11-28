@@ -1,116 +1,202 @@
-
- <!DOCTYPE HTML>
-<html lang="zh-CN">
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   
-    <title>CSS | Crazy tired</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
-    
-    <meta name="author" content="聂小飞 同學">
-    
-    <meta name="description" content="css（层叠样式表），外文名（Cascading Style Sheets），是一种用来表现HTML（标准通用语言的一个应用）等文件样式的计算机语言。
-css目前最新版本为css3，是能够真正做到网页表现与内容分离的一种样式设计语言。以下只为学习日记：
-使用方法：1.外联式(linking)（也叫外">
-    
-    
-    
-    
-    <link rel="alternative" href="/atom.xml## RSS address." title="Crazy tired" type="application/atom+xml">
-    
-    
-    <link rel="icon" href="/img/favicon.ico">
-    
-    
-    <link rel="apple-touch-icon" href="/img/Tinny.jpg">
-    <link rel="apple-touch-icon-precomposed" href="/img/Tinny.jpg">
-    
+  <title>CSS | Crazy tired</title>
+  <meta name="author" content="聂小飞 同學">
+  
+  <meta name="description" content="Nothing to see">
+  
+  
+  <meta property="og:title" content="CSS"/>
+  <meta property="og:site_name" content="Crazy tired"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   
-    <link href="/css/font-awesome.min.css" rel="stylesheet">
-    
+    <meta property="og:image" content="undefined"/>
   
-  <link href="http://cdn.bootcss.com/highlight.js/8.2/styles/railscasts.min.css" rel="stylesheet">
-  <script src="http://cdn.bootcss.com/highlight.js/8.2/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-  
-
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
-    <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?d182ed77fc48758bf45a33835ee35745";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
-      <script type="text/javascript">
-  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
-
-  _st('install','.............Add your swiftype userID...............');
-</script>
+   <link rel="apple-touch-icon" href="/icon.png" />
+   <link rel="shortcut icon" href="/favicon.png" >
+   <link rel="alternate" href="http://xxx.xx/atom.xml" title="Crazy tired" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 </head>
 
-  <body>
-    <header>
-      <div>
-		
-			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="Crazy tired">Crazy tired</a></h1>
-				<h2 class="blog-motto">简单爱一次</h2>
-			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
-			</a></div>
-			<nav class="animated">
-				<ul>
-                    <ul>
-					 
-						<li><a href="/">首页</a></li>
-					
-						<li><a href="/archives">归档</a></li>
-					
-						<li><a href="/about">关于我</a></li>
-					
-					<li>
-					
-						<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
-						<label>Search</label>
-						<input type="text" id="st-search-inpu" maxlength="20" placeholder="Search" />
-						</form>
-					
-					</li>
-                <!--<li><div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div></li>-->
 
-				</ul>
-			</nav>	
-</div>
-    </header>
-    <div id="container" class="clearfix">
-      <div id="main" class="post" itemscope itemprop="blogPost">
-	<article itemprop="articleBody"> 
-		<header class="article-info clearfix">
-  <h1 itemprop="name">
+<body>
+  <div id="content" class="inner">
+    <aside id="sidebar" class="alignleft">
+      <div class="navigationBar">
+        <a href="/">Crazy tired</a>
+      </div>
+    	
+  <nav class="widget" id="menu">
+	<ul>
     
-      <a href="/2015/11/26/CSS/" title="CSS" itemprop="url">CSS</a>
-  </h1>
-  <p class="article-time">
-    <time datetime="2015-11-26T07:43:52.000Z" itemprop="datePublished">2015-11-26</time>
-  </p>
-</header>
-	<div class="article-content">
-		
-		
-		<div id="toc" class="toc-article">
-			<strong class="toc-title"></strong>
-		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用方法："><span class="toc-number">1.</span> <span class="toc-text">使用方法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#优先级："><span class="toc-number">2.</span> <span class="toc-text">优先级：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基础语法："><span class="toc-number">3.</span> <span class="toc-text">基础语法：</span></a></li></ol>
-		</div>
-		
-		<p>css（层叠样式表），外文名（Cascading Style Sheets），是一种用来表现HTML（标准通用语言的一个应用）等文件样式的计算机语言。</p>
+      <li class="cell"><a class="next" href="/">Home</a><li>
+    
+      <li class="cell"><a class="next" href="/archives/">Archives</a><li>
+    
+      <li class="cell"><a class="next" href="/about/">About</a><li>
+    
+      <li class="cell"><a class="next" href="/atom.xml">Subscribe</a><li>
+    
+    </ul>
+</nav>
+
+  
+
+  <div class="widget weibo">
+<iframe width="100%" height="100" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=110&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=0&isWeibo=0&isFans=0&uid=null&verifier=78e1ee4d&colors=ffffff,ffffff,999,000,ecfbfd&dpc=1"></iframe>
+</div>
+
+  
+
+  <div class="widget tag">
+<h3 class="title">友情链接</h3>
+<ul class="entry">
+	<li>
+		<a href="http://hanmingyang.github.io/">韩哥</a>
+	</li>
+	<li>
+		<a href="http://zhuqy.github.io/">祝倩莹</a>
+	</li>
+	<li>
+		<a href="http://zgmn.github.io/">胡月</a>
+	</li>
+	<li>
+		<a href="http://running11.github.io/">邝艳芝</a>
+	</li>
+	<li>
+		<a href="http://haomark.github.io/">郝云鹏</a>
+	</li>
+	<li>
+		<a href="http://jameblunt1973.github.io/">张记文</a>
+	</li>
+	<li>
+		<a href="http://bairuoqing666.github.io/">白若卿</a>
+	</li>
+	<li>
+		<a href="http://gcsHaya.github.io/">张俊琪</a>
+	</li>
+	<li>
+		<a href="http://zy8232003.github.io/">张跃</a>
+	</li>
+	<li>
+		<a href="http://weibo0909.github.io/">魏传波</a>
+	</li>
+	<li>
+		<a href="http://luqiqi1225.github.io">陆琦</a>
+	</li>
+	<li>
+		<a href="http://chumengxing1121.github.io/">褚梦星</a>
+	</li>
+	<li>
+		<a href="http://aoyi551083.github.io/">敖艺</a>
+	</li>
+	<li>
+		<a href="http://zoeyzhou.github.io">周叶</a>
+	</li>
+	<li>
+		<a href=" http://athenachu.github.io/">汪凌峰</a>
+	</li>
+	<li>
+		<a href="http://sundyfuther.github.io/">陈晓佳</a>
+	</li>
+	<li>
+		<a href="http://sh5054.github.io/">孙浩</a>
+	</li>
+	<li>
+		<a href="http://quanquanxuan.github.io/">宣圆圆</a>
+	</li>
+	<li>
+		<a href="http://baobeiaini.github.io/">王贝贝</a>
+	</li>
+	<li>
+		<a href="http://crerich.github.io/">程华</a>
+	</li>
+	<li>
+		<a href="http://tyl1002353363.github.io/">谭于磊</a>
+	</li>
+	<li>
+		<a href="http://yamanai.github.io/">张明</a>
+	</li>
+	<li>
+		<a href="http://lck297231489.github.io/">刘臣康</a>
+	</li>
+	<li>
+		<a href="http://tavey.github.io/">王晓伟</a>
+	</li>
+	<li>
+		<a href="http://wj1213180604.github.io/">王娟</a>
+	</li>
+	<li>
+		<a href="http://tang0916tang.github.io/">张晓翠</a>
+	</li>
+	<li>
+		<a href="http://quangege.github.io/">张涌泉</a>
+	</li>
+	
+	<li>
+		<a href="http://changxiangru.github.io/">常相如</a>
+	</li>
+	<li>
+		<a href="http://xuyanchao.github.io/">许颜超</a>
+	</li>
+	<li>
+		<a href="http://samguoqiang.github.io./">陈国强</a>
+	</li>
+</ul>
+</div>
+
+    	<footer id="footer" class="inner"><div class="copyright">
+  
+  &copy; 2015 聂小飞 同學
+  
+</div>
+
+
+
+</footer>
+    </aside>
+    
+    
+    <div id="hidden-navigationBar" class="navigationBar">
+      <a href="/">Crazy tired</a>
+    </div>
+    <div id="main-col" class="alignright">
+    <div id="wrapper">
+      
+<article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+  <header>
+      
+      
+  
+    <h1 class="title">CSS</h1>
+  
+
+      <time datetime="2015-11-26T07:43:52.000Z"><a href="/2015/11/26/CSS/">2015-11-26</a></time>
+      
+  </header>
+    <div class="entry">
+      
+        <p>css（层叠样式表），外文名（Cascading Style Sheets），是一种用来表现HTML（标准通用语言的一个应用）等文件样式的计算机语言。</p>
 <p>css目前最新版本为css3，是能够真正做到网页表现与内容分离的一种样式设计语言。<strong>以下只为学习日记：</strong></p>
 <h3 id="使用方法：">使用方法：</h3><p>1.外联式(linking)（也叫外部样式）：将网页链接到外部样式表。</p>
 <p>2.嵌入式Embedding（也叫内页样式）：在网页上创建嵌入的样式表。</p>
@@ -139,223 +225,38 @@ var _hmt = _hmt || [];
 <p> <strong>选择器的优先级：</strong> id选择器 &gt; 类选择器 &gt; 父子选择器 （层级选择器）&gt; 标签选择器 &gt; 通配选择器。 选择器可以通过important来增加优先级，但不建议使用，也可以使用多个选择器的叠加来增加优先级。</p>
 <p> <strong>声明：</strong> 每一个选择器都可以有多个声明，当有多个声明时之间用逗号隔开，比如 p{color:red; , font-size:12px; , line-height:18px}。 声明中的值若有多个单词时必须用引号包括比如：p{font-family:”sans-serif”;}。</p>
 <p> <strong>所用的选择器和声明中有符号的必须用英文状态下书写</strong></p>
-  
-	</div>
-		<footer class="article-footer clearfix">
 
-
-
-
-<div class="article-share" id="share">
-
-  <div data-url="http://yoursite.com/2015/11/26/CSS/" data-title="CSS | Crazy tired" data-tsina="null" class="share clearfix">
-  </div>
-
-</div>
-</footer>   	       
-	</article>
-	
-<nav class="article-nav clearfix">
- 
- <div class="prev" >
- <a href="/2015/11/27/javascript的基础知识/" title="javascript的基础知识&lt;!-- 阅读全文 --&gt;">
-  <strong>上一篇:</strong><br/>
-  <span>
-  javascript的基础知识&lt;!-- 阅读全文 --&gt;</span>
-</a>
-</div>
-
-
-<div class="next">
-<a href="/2015/11/25/简单叙述/"  title="简单叙述">
- <strong>下一篇:</strong><br/> 
- <span>简单叙述
-</span>
-</a>
-</div>
-
-</nav>
-
-	
-<section class="comment">
-	
-	<div class="ds-thread" data-title="CSS" data-thread-key="CSS" data-author-key="聂小飞 同學" data-url="http://yoursite.com/post/CSS"></div>
-	
-</section>
-
-
-</div>  
+	 
+	     <p style="margin:20px 0; color:#9f9f9f; font-size:12px;">
+<span>Posted by <a style="color:#9f9f9f;" href="http://weibo.com/1961585815/profile?topnav=1&amp;wvr=6"><strong>简单爱一次</strong></a> - 2015-11-26</span><br />
+<span style="line-height:13px;">如需转载，请注明： 本文来自 <a style="color:#9f9f9f;" href="http://yoursite.com"><strong>Crazy tired</strong></a></span>
+</p>
+       	 
+      
     </div>
-    <!--<footer><div id="footer" >
-</div></footer>-->
-    <script src="/js/jquery-2.1.0.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){ 
-  //back to top
-  function backToTop(){
-    var buttonHTML = $("<a href=\"#top\" id=\"back-top\">" + "<span>Back to Top</span></a>");
-    buttonHTML.appendTo($("body"));
-    var buttonToTop = $("#back-top");
-    // hide #back-top first
-    buttonToTop.hide();
-
-    // fade in #back-top
-    $(function() {
-        $(window).scroll(function() {
-            if ($(this).scrollTop() > 200) {
-                buttonToTop.fadeIn();
-            } else {
-                buttonToTop.fadeOut();
-            }
-        });
-        // scroll body to 0px on click
-        buttonToTop.click(function() {
-            $('body,html').animate({
-                scrollTop: 0
-            }, 800);
-            return false;
-        });
-    });
-  }
-  backToTop();
-
-  $('.navbar').click(function(){
-    $('header nav').toggleClass('shownav');
-  });
-  var myWidth = 0;
-  function getSize(){
-    if( typeof( window.innerWidth ) == 'number' ) {
-      myWidth = window.innerWidth;
-    } else if( document.documentElement && document.documentElement.clientWidth) {
-      myWidth = document.documentElement.clientWidth;
-    };
-  };
-  var m = $('#main'),
-      a = $('#asidepart'),
-      c = $('.closeaside'),
-      ta = $('#toc.toc-aside');
-  $(window).resize(function(){
-    getSize(); 
-    if (myWidth >= 1024) {
-      $('header nav').removeClass('shownav');
-    }else
-    {
-      m.removeClass('moveMain');
-      a.css('display', 'block').removeClass('fadeOut');
-        
-    }
-  });
-
-  var show = true;
-  c.click(function(){
-    if(show == true){
-        a.addClass('fadeOut').css('display', 'none');
-        ta.css('display', 'block').addClass('fadeIn');
-        m.addClass('moveMain');  
-    }else{
-        a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');     
-        ta.css('display', 'none'); 
-        m.removeClass('moveMain');
-        $('#toc.toc-aside').css('display', 'none');
-    }
-    show = !show;
-  });
-});
-</script>
-
-<script type="text/javascript">
-$(document).ready(function(){ 
-  var ai = $('.article-content>iframe'),
-      ae = $('.article-content>embed'),
-      t  = $('#toc'),
-      h  = $('article h2')
-      ah = $('article h2'),
-      ta = $('#toc.toc-aside'),
-      o  = $('.openaside'),
-      c  = $('.closeaside');
-  if(ai.length>0){
-    ai.wrap('<div class="video-container" />');
-  };
-  if(ae.length>0){
-   ae.wrap('<div class="video-container" />');
-  };
-  if(ah.length==0){
-    t.css('display','none');
-  }else{
-
-    $(window).scroll(function(){
-      ta.css("top",Math.max(140,240-$(this).scrollTop()));
-    });
-  };
-});
-</script>
+    <footer>
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
 
 
-<script type="text/javascript">
-$(document).ready(function(){ 
-  var $this = $('.share'),
-      url = $this.attr('data-url'),
-      encodedUrl = encodeURIComponent(url),
-      title = $this.attr('data-title'),
-      tsina = $this.attr('data-tsina');
-  var html = [
-  '<a href="#" class="overlay" id="qrcode"></a>',
-  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
-  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
-  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
-  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
-  '<span title="Share to"></span>'
-  ].join('');
-  $this.append(html);
-  $('.article-share-qrcode').click(function(){
-    var imgSrc = $('#qrcode-pic').attr('data-src');
-    $('#qrcode-pic').attr('src', imgSrc);
-    $('#qrcode-pic').load(function(){
-        $('.qrcode strong').text(' ');
-    });
-  });
-});     
-</script>
+</div>
+    </div>
+    <div class="tabbar" onload="divideTabBar()">
+	
+      <div class="tabbaritem"><a class="next" href="/">Home</a></div>
+    
+      <div class="tabbaritem"><a class="next" href="/archives/">Archives</a></div>
+    
+      <div class="tabbaritem"><a class="next" href="/about/">About</a></div>
+    
+      <div class="tabbaritem"><a class="next" href="/atom.xml">Subscribe</a></div>
+    
+</div>
 
 
-<script type="text/javascript">
-  var duoshuoQuery = {short_name:"null"};
-  (function() {
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';ds.async = true;
-    ds.src = '//static.duoshuo.com/embed.js';    //change to ds.src = '/js/embed.js'; to add useragent for duoshuo
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0] 
-    || document.getElementsByTagName('body')[0]).appendChild(ds);
-  })();
-</script> 
-
-
-
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){ 
-  $('.article-content').each(function(i){
-    $(this).find('img').each(function(){
-      if ($(this).parent().hasClass('fancybox')) return;
-      var alt = this.alt;
-      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
-      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
-    });
-    $(this).find('.fancybox').each(function(){
-      $(this).attr('rel', 'article' + i);
-    });
-  });
-  if($.fancybox){
-    $('.fancybox').fancybox();
-  }
-}); 
-</script>
-
-
-
-  </body>
+  </div>
+</body>
 </html>
