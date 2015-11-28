@@ -1,444 +1,301 @@
-<!DOCTYPE HTML>
-<html>
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   
-  <title>Crazy tired</title>
-  <meta name="author" content="聂小飞 同學">
-  
-  <meta name="description" content="Nothing to see">
-  
-  
-  
-  <meta property="og:site_name" content="Crazy tired"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Crazy tired</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="聂小飞 同學">
+    
+    <meta name="description" content="Nothing to see">
+    
+    
+    
+    
+    <link rel="alternative" href="/atom.xml## RSS address." title="Crazy tired" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/Tinny.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/Tinny.jpg">
+    
 
   
-    <meta property="og:image" content="undefined"/>
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    
   
-   <link rel="apple-touch-icon" href="/icon.png" />
-   <link rel="shortcut icon" href="/favicon.png" >
-   <link rel="alternate" href="http://xxx.xx/atom.xml" title="Crazy tired" type="application/atom+xml">
-  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
-  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  <link href="http://cdn.bootcss.com/highlight.js/8.2/styles/railscasts.min.css" rel="stylesheet">
+  <script src="http://cdn.bootcss.com/highlight.js/8.2/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?d182ed77fc48758bf45a33835ee35745";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+      <script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','.............Add your swiftype userID...............');
+</script>
 </head>
 
+  <body>
+    <header>
+      <div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Crazy tired">Crazy tired</a></h1>
+				<h2 class="blog-motto">简单爱一次</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+                    <ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于我</a></li>
+					
+					<li>
+					
+						<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="st-search-inpu" maxlength="20" placeholder="Search" />
+						</form>
+					
+					</li>
+                <!--<li><div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div></li>-->
 
-<body>
-  <div id="content" class="inner">
-    <aside id="sidebar" class="alignleft">
-      <div class="navigationBar">
-        <a href="/">Crazy tired</a>
-      </div>
-    	
-  <nav class="widget" id="menu">
-	<ul>
-    
-      <li class="cell"><a class="next" href="/">Home</a><li>
-    
-      <li class="cell"><a class="next" href="/archives/">Archives</a><li>
-    
-      <li class="cell"><a class="next" href="/about/">About</a><li>
-    
-      <li class="cell"><a class="next" href="/atom.xml">Subscribe</a><li>
-    
-    </ul>
-</nav>
-
-  
-
-  <div class="widget weibo">
-<iframe width="100%" height="100" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=110&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=0&isWeibo=0&isFans=0&uid=null&verifier=78e1ee4d&colors=ffffff,ffffff,999,000,ecfbfd&dpc=1"></iframe>
+				</ul>
+			</nav>	
 </div>
+    </header>
+    <div id="container" class="clearfix">
+      
 
-  
+<div id="main">
 
-  <div class="widget tag">
-<h3 class="title">友情链接</h3>
-<ul class="entry">
-	<li>
-		<a href="http://hanmingyang.github.io/">韩哥</a>
-	</li>
-	<li>
-		<a href="http://zhuqy.github.io/">祝倩莹</a>
-	</li>
-	<li>
-		<a href="http://zgmn.github.io/">胡月</a>
-	</li>
-	<li>
-		<a href="http://running11.github.io/">邝艳芝</a>
-	</li>
-	<li>
-		<a href="http://haomark.github.io/">郝云鹏</a>
-	</li>
-	<li>
-		<a href="http://jameblunt1973.github.io/">张记文</a>
-	</li>
-	<li>
-		<a href="http://bairuoqing666.github.io/">白若卿</a>
-	</li>
-	<li>
-		<a href="http://gcsHaya.github.io/">张俊琪</a>
-	</li>
-	<li>
-		<a href="http://zy8232003.github.io/">张跃</a>
-	</li>
-	<li>
-		<a href="http://weibo0909.github.io/">魏传波</a>
-	</li>
-	<li>
-		<a href="http://luqiqi1225.github.io">陆琦</a>
-	</li>
-	<li>
-		<a href="http://chumengxing1121.github.io/">褚梦星</a>
-	</li>
-	<li>
-		<a href="http://aoyi551083.github.io/">敖艺</a>
-	</li>
-	<li>
-		<a href="http://zoeyzhou.github.io">周叶</a>
-	</li>
-	<li>
-		<a href=" http://athenachu.github.io/">汪凌峰</a>
-	</li>
-	<li>
-		<a href="http://sundyfuther.github.io/">陈晓佳</a>
-	</li>
-	<li>
-		<a href="http://sh5054.github.io/">孙浩</a>
-	</li>
-	<li>
-		<a href="http://quanquanxuan.github.io/">宣圆圆</a>
-	</li>
-	<li>
-		<a href="http://baobeiaini.github.io/">王贝贝</a>
-	</li>
-	<li>
-		<a href="http://crerich.github.io/">程华</a>
-	</li>
-	<li>
-		<a href="http://tyl1002353363.github.io/">谭于磊</a>
-	</li>
-	<li>
-		<a href="http://yamanai.github.io/">张明</a>
-	</li>
-	<li>
-		<a href="http://lck297231489.github.io/">刘臣康</a>
-	</li>
-	<li>
-		<a href="http://tavey.github.io/">王晓伟</a>
-	</li>
-	<li>
-		<a href="http://wj1213180604.github.io/">王娟</a>
-	</li>
-	<li>
-		<a href="http://tang0916tang.github.io/">张晓翠</a>
-	</li>
-	<li>
-		<a href="http://quangege.github.io/">张涌泉</a>
-	</li>
+  <section class="post" itemscope itemprop="blogPost">
+  <article>
+    <h1 itemprop="name">
+      
+        <a href="/2015/11/27/javascript的基础知识/" title="javascript的基础知识&lt;!-- 阅读全文 --&gt;" itemprop="url">
+      
+        javascript的基础知识&lt;!-- 阅读全文 --&gt;
+      </a>
+    </h1>
+    
+     
+           <p itemprop="description" >javascript的基础知识一先说一下浏览器对js解析时做的准备工作
+1.变量和函数表达式的声明提升到当前作用域的最顶端
+2.把函数赋值，可以直接在函数上方调用。
+函数的方式
+1.声明函数：也称函数声明 使用function关键字加上函数名声明的函数，例如
+function e</p>
+        
+    
+    <p class="article-more-link">
+      <time datetime="2015-11-27T12:41:41.000Z" itemprop="datePublished">2015-11-27</time>
+      
+          <a href="/2015/11/27/javascript的基础知识/">阅读更多&raquo;</a>
+      
+    </p>
+
+  </article>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  <article>
+    <h1 itemprop="name">
+      
+        <a href="/2015/11/26/CSS/" title="CSS" itemprop="url">
+      
+        CSS
+      </a>
+    </h1>
+    
+     
+           <p itemprop="description" >css（层叠样式表），外文名（Cascading Style Sheets），是一种用来表现HTML（标准通用语言的一个应用）等文件样式的计算机语言。
+css目前最新版本为css3，是能够真正做到网页表现与内容分离的一种样式设计语言。以下只为学习日记：
+使用方法：1.外联式(li</p>
+        
+    
+    <p class="article-more-link">
+      <time datetime="2015-11-26T07:43:52.000Z" itemprop="datePublished">2015-11-26</time>
+      
+          <a href="/2015/11/26/CSS/">阅读更多&raquo;</a>
+      
+    </p>
+
+  </article>
+</section>
+
+  <section class="post" itemscope itemprop="blogPost">
+  <article>
+    <h1 itemprop="name">
+      
+        <a href="/2015/11/25/简单叙述/" title="简单叙述" itemprop="url">
+      
+        简单叙述
+      </a>
+    </h1>
+    
+     
+           <p itemprop="description" >简简单单的叙述我在这一个月左右的时间里的学习过程。HTML：超文本标记语言。超文本就是指页面内容可以包含图片、链接、甚至音乐、程序等非文字元素。
+其中HTML必须要有声明，声明表示符合什么样的标准以及用什么样的标准来解析这个文档。 
+HTML中分为单标签和双标签。又可分为块级标签</p>
+        
+    
+    <p class="article-more-link">
+      <time datetime="2015-11-25T14:05:09.000Z" itemprop="datePublished">2015-11-25</time>
+      
+          <a href="/2015/11/25/简单叙述/">阅读更多&raquo;</a>
+      
+    </p>
+
+  </article>
+</section>
+
+
+</div>
+      <div id="asidepart">
+<div id="authorInfo">
 	
-	<li>
-		<a href="http://changxiangru.github.io/">常相如</a>
-	</li>
-	<li>
-		<a href="http://xuyanchao.github.io/">许颜超</a>
-	</li>
-	<li>
-		<a href="http://samguoqiang.github.io./">陈国强</a>
-	</li>
-</ul>
+		<div class="author-logo"></div>		
+	
+	
+	<section class="author-info">
+		
+			<p> Levon</p>
+		
+		
+			<p>	大自然爱好者</p>
+		
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		<a href="https://github.com/levonlin" target="_blank" title="github"></a>
+		
+		
+	</div>
+</div>
+<aside class="clearfix">
+
+
+  
+
+  
+
+  <div class="rsspart">
+	<a href="/atom.xml## RSS address." target="_blank" title="rss">RSS 订阅</a>
 </div>
 
-    	<footer id="footer" class="inner"><div class="copyright">
-  
-  &copy; 2015 聂小飞 同學
-  
+</aside>
 </div>
-
-
-
-</footer>
-    </aside>
-    
-    
-    <div id="hidden-navigationBar" class="navigationBar">
-      <a href="/">Crazy tired</a>
     </div>
-    <div id="main-col" class="alignright">
-    <div id="wrapper">
-      
-  
-<article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-  <header>
-      
-      
-  
-    <h1 class="title"><a href="/2015/11/27/javascript的基础知识/">javascript的基础知识&lt;!-- 阅读全文 --&gt;</a></h1>
-  
+    <!--<footer><div id="footer" >
+</div></footer>-->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  //back to top
+  function backToTop(){
+    var buttonHTML = $("<a href=\"#top\" id=\"back-top\">" + "<span>Back to Top</span></a>");
+    buttonHTML.appendTo($("body"));
+    var buttonToTop = $("#back-top");
+    // hide #back-top first
+    buttonToTop.hide();
 
-      <time datetime="2015-11-27T12:41:41.000Z"><a href="/2015/11/27/javascript的基础知识/">2015-11-27</a></time>
-      
-  </header>
-    <div class="entry">
-      
-        <h1 id="javascript的基础知识一">javascript的基础知识一</h1><p><strong>先说一下浏览器对js解析时做的准备工作</strong></p>
-<p>1.变量和函数表达式的声明提升到当前作用域的最顶端</p>
-<p>2.把函数赋值，可以直接在函数上方调用。</p>
-<p><strong>函数的方式</strong></p>
-<p>1.<strong>声明函数：</strong>也称函数声明 使用function关键字加上函数名声明的函数，例如</p>
-<pre><code><span class="function"><span class="keyword">function</span> <span class="title">example</span><span class="params">()</span></span>{}
-</code></pre><p>2.<strong>函数表达式：</strong>函数表达式可以细分为两种</p>
-<p>（1）声明变量的函数,例如:</p>
-<pre><code><span class="keyword">var</span> example = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{}  声明一个变量，值为函数方法             
-</code></pre><p>（2）匿名函数：使用function关键字，但是没有函数名的函数。例如：</p>
-<pre><code><span class="function"><span class="keyword">function</span><span class="params">()</span></span>{}     
-</code></pre><p><strong>函数表达式可以使用（）操作符，表示立即执行，函数声明不可以使用。例如</strong></p>
-<pre><code><span class="list">(<span class="keyword">function</span><span class="list">()</span><span class="collection">{}</span>)</span><span class="list">()</span><span class="comment">; </span>
-</code></pre><p><strong>JS变量种类</strong></p>
-<p>1.全局变量：全局变量可以在任何地方访问。</p>
-<p>2.局部变量：只有在函数内部才能产生局部变量，对外部是不可见的。函数内部是可以访问外部函数的变量</p>
-<p><strong>注意：每一个函数都有默认undefined的返回值</strong></p>
-<p><strong>JS的作用域分为两种</strong></p>
-<p>1.全局作用域：全局作用域其实就是window对象，咱们之前声明的变量，实际上就是在window对象上创建了一个属性,但是在这里我们需要注意，window有自己默认属性，当我们创建的新属性和默认属性有冲突时，会覆盖默认属性。</p>
-<p>2.局部作用域：只有在function方法内才会产生局部作用域，当然也可使用return跳出当前作用域变换成全局的。例如</p>
-<pre><code><span class="function"><span class="keyword">function</span> <span class="title">fn</span><span class="params">()</span></span>{
-    <span class="keyword">var</span> fn2 = <span class="function"><span class="keyword">function</span> <span class="params">(num)</span></span>{
+    // fade in #back-top
+    $(function() {
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                buttonToTop.fadeIn();
+            } else {
+                buttonToTop.fadeOut();
+            }
+        });
+        // scroll body to 0px on click
+        buttonToTop.click(function() {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 800);
+            return false;
+        });
+    });
+  }
+  backToTop();
 
-    } 
-    <span class="keyword">return</span> fn2;
-}
-<span class="keyword">var</span> newFn = fn();也就等于是把fn2()当作一个值赋予给了fn(),那么newFn也就是等于fn2().
-</code></pre><p><strong>计算机运算的函数：</strong></p>
-<p>假设一个函数执行时最后一个参数为运算符</p>
-<p>（1）首先声明一个函数，函数名为computer</p>
-<pre><code><span class="function"><span class="keyword">function</span> <span class="title">computer</span><span class="params">()</span></span>{}
-</code></pre><p>(2)在函数内部声明一个变量，值为参数的最后一个</p>
-<pre><code><span class="keyword">var</span> character =<span class="built_in">arguments</span>[<span class="built_in">arguments</span>.length-<span class="number">1</span>];可以找到最后一个值，也就是运算符
-</code></pre><p>（3）用判断语句来判断当前的运算符是哪一种（我们假设是加法运算）</p>
-<pre><code><span class="keyword">if</span>(character ==<span class="string">'+'</span>){
-    <span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">1</span>; i&lt;<span class="built_in">arguments</span>.length-<span class="number">1</span>; i++){
-        <span class="built_in">arguments</span>[<span class="number">0</span>] = <span class="built_in">arguments</span>[<span class="number">0</span>] + <span class="built_in">arguments</span>[i];使用<span class="keyword">for</span>循环运算出的值最终赋予给<span class="built_in">arguments</span>[<span class="number">0</span>]
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      ta = $('#toc.toc-aside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+        
     }
-    <span class="keyword">return</span> <span class="built_in">arguments</span>[<span class="number">0</span>]; 使用<span class="keyword">return</span>方法返回<span class="built_in">arguments</span>[<span class="number">0</span>]
-}
-</code></pre><p>（4）最后一步就是来执行computer这个函数</p>
-<pre><code>conputer(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="string">'+'</span>); 如果像要看到得到的值可以用开发者工具console.<span class="built_in">log</span>(computer(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="string">'+'</span>))也可用其他的方法。
-</code></pre><p><strong>刚开始学习的时候我们只要求自己把每天学习的东西能掌握就行。一口吃不了胖子，路是一步一步走。只有基础扎实了才能走的更远。</strong>    </p>
+  });
 
-	 
-	     <p style="margin:20px 0; color:#9f9f9f; font-size:12px;">
-<span>Posted by <a style="color:#9f9f9f;" href="http://weibo.com/1961585815/profile?topnav=1&amp;wvr=6"><strong>简单爱一次</strong></a> - 2015-11-27</span><br />
-<span style="line-height:13px;">如需转载，请注明： 本文来自 <a style="color:#9f9f9f;" href="http://yoursite.com"><strong>Crazy tired</strong></a></span>
-</p>
-       	 
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  
-<article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-  <header>
-      
-      
-  
-    <h1 class="title"><a href="/2015/11/26/CSS/">CSS</a></h1>
-  
-
-      <time datetime="2015-11-26T07:43:52.000Z"><a href="/2015/11/26/CSS/">2015-11-26</a></time>
-      
-  </header>
-    <div class="entry">
-      
-        <p>css（层叠样式表），外文名（Cascading Style Sheets），是一种用来表现HTML（标准通用语言的一个应用）等文件样式的计算机语言。</p>
-<p>css目前最新版本为css3，是能够真正做到网页表现与内容分离的一种样式设计语言。<strong>以下只为学习日记：</strong></p>
-<h3 id="使用方法：">使用方法：</h3><p>1.外联式(linking)（也叫外部样式）：将网页链接到外部样式表。</p>
-<p>2.嵌入式Embedding（也叫内页样式）：在网页上创建嵌入的样式表。</p>
-<p>3.内联式Inline（也叫行内样式）：应用内嵌样式到各个网页元素。</p>
-<h3 id="优先级：">优先级：</h3><p>内联式 &gt; 嵌入式 &gt; 外联式 </p>
-<p><strong>外联式：</strong>一般情况下我们使用外联式引用css，更好的显现了与文档内容分离，使文档的内容看起来更加的清晰，也可多个文档引用同一个css文件。外联式的引入放在head中，引入的方法：    </p>
-<pre><code> <span class="tag">&lt;<span class="title">head</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">type</span>=<span class="value">"text/css"</span> <span class="attribute">href</span>=<span class="value">"css文件地址"</span>/&gt;</span>
-<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
-</code></pre><p> <strong>嵌入式:</strong> 当单个文件需要特别样式时，就可以使用内部样式表。你可以在head部分通过&lt; style &gt;标签定义内部样式表。引入方法：</p>
-<pre><code> <span class="tag">&lt;<span class="title">head</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">style</span> <span class="attribute">type</span>=<span class="value">"text/css"</span>&gt;</span><span class="css">
-        需要改变的<span class="tag">css</span>代码
-    </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
-</code></pre><p> <strong>内联样式：</strong> 当特殊的样式需要应用到个别元素时，就可以使用内联样式。使用内联样式。 使用内联样式的方法是在相关的标签中使用样式属性。样式属性可以包含任何CSS属性。但由于优先级特别高不建议使用，一般在修改代码时使用，引用方法：</p>
-<pre><code>&lt;<span class="tag">p</span> style=<span class="string">"color:red;"</span>&gt;This is <span class="tag">a</span> paragraph&lt;/p&gt;
-</code></pre><h3 id="基础语法：">基础语法：</h3><p>  css规则是由两个主要的部分构成：选择器，以及一条或多条声明。</p>
-<p>  <strong>选择器：</strong>选择器可分为标签选择器，类选择器，Id选择器，群组选择器，通配选择器，层级选择器。</p>
-<p>  <strong>标签选择器：</strong> 直接作用于选择的标签元素，是一个集合（包含所有的相同标签）。</p>
-<p>  <strong>id选择器：</strong> 直接作用于该id的标签元素，是一个单数，也是唯一的，一个文档中一个id名称只能出现一次，写法#id｛｝。</p>
-<p>  <strong>层级选择器：</strong> （也称父子选择器），必须是按照层级，父子关系来使用，比如p标签是div的子元素，div p {},div元素与p元素之间必须有空格。</p>
-<p>  <strong>群组选择器：</strong> 多个标签选择器的集合，比如 div, p,h1{},标签与标签之间有那个逗号隔开。</p>
-<p>  <strong>类选择器：</strong> 指定某个标签的类名（class），类名可重复使用写法 .className{}。类名前用点（.）。</p>
-<p>  <strong>通配选择器：</strong> 通配选择器可作用于该文档中的所有标签，清楚所有标签的默认设置，不建议使用，写法：*｛｝。</p>
-<p> <strong>选择器的优先级：</strong> id选择器 &gt; 类选择器 &gt; 父子选择器 （层级选择器）&gt; 标签选择器 &gt; 通配选择器。 选择器可以通过important来增加优先级，但不建议使用，也可以使用多个选择器的叠加来增加优先级。</p>
-<p> <strong>声明：</strong> 每一个选择器都可以有多个声明，当有多个声明时之间用逗号隔开，比如 p{color:red; , font-size:12px; , line-height:18px}。 声明中的值若有多个单词时必须用引号包括比如：p{font-family:”sans-serif”;}。</p>
-<p> <strong>所用的选择器和声明中有符号的必须用英文状态下书写</strong></p>
-
-	 
-	     <p style="margin:20px 0; color:#9f9f9f; font-size:12px;">
-<span>Posted by <a style="color:#9f9f9f;" href="http://weibo.com/1961585815/profile?topnav=1&amp;wvr=6"><strong>简单爱一次</strong></a> - 2015-11-26</span><br />
-<span style="line-height:13px;">如需转载，请注明： 本文来自 <a style="color:#9f9f9f;" href="http://yoursite.com"><strong>Crazy tired</strong></a></span>
-</p>
-       	 
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-  
-<article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <div class="post-content">
-  <header>
-      
-      
-  
-    <h1 class="title"><a href="/2015/11/25/简单叙述/">简单叙述</a></h1>
-  
-
-      <time datetime="2015-11-25T14:05:09.000Z"><a href="/2015/11/25/简单叙述/">2015-11-25</a></time>
-      
-  </header>
-    <div class="entry">
-      
-        <p>简简单单的叙述我在这一个月左右的时间里的学习过程。<br>HTML：超文本标记语言。超文本就是指页面内容可以包含图片、链接、甚至音乐、程序等非文字元素。</p>
-<p>其中HTML必须要有声明，声明表示符合什么样的标准以及用什么样的标准来解析这个文档。 </p>
-<p>HTML中分为单标签和双标签。又可分为块级标签和行级标签以及空标签。</p>
-<p>!doctype html： 声明文档的解析标准。</p>
-<p>html： 创建一个超文本标记语言文档，双标签。</p>
-<p>head：（头）设置文档标题和其它在网页中不显示的信息，双标签。</p>
-<p>meta charset：单标签，编码格式。用什么样的编码格式来解析文档。</p>
-<p>title：文档的标题，每个文档必须有标题。双标签</p>
-<p>body：文档的可视区域，有默认的8px外边距，双标签。</p>
-<p>div ：块级标签，双标签，没有具体语意，表示区域，默认继承父级宽度，内容冲开高度。</p>
-<p>img ：单标签，图片的引入。引入方法 img src= “图片地址” alt=”图片加载不了的时显示图片的信息”</p>
-<p>h1~h6 ：标题标签，双标签，h1等级最高，h6等级最低。有默认的上下外边距。块级标签。</p>
-<p>a ：超链接标签，双标签 ，a标签的正确使用方法为a href=”#”,#代表引入的网址地址，当没有确切的网址时可以用#或者js中的javascript;代替。有四个状态，遵循爱恨法则(love&amp;hate)link、hover、active、visited.有默认的在自身窗口打开。</p>
-<p>p ：段落标签，双标签，有默认的外边距。</p>
-<p>ol ：有序列表标签，双标签，ol和li成套使用，ol li 中不可添加任何标签。</p>
-<p>ul：无序列表标签，双标签，ul和li成套使用，ul li 中不可添加任何标签。</p>
-<p>dl： 自定义列表标签，也成字典标签，标签用于结合dt(定义列表中的项目）和dd（描述列表中的项目）。</p>
-<p>br：单标签，空标签，定义为换行标签。</p>
-<p>del：定义文档中已被删除的文本，双标签。</p>
-<p>ins:双标签，定义已经被插入文档中的文本。</p>
-<p>em：把文本定义为强调的内容，双标签。</p>
-<p>strong:把文本定义为语气更强的强调的内容。双标签</p>
-<p>hr:水平分割线，在文档中创建一条水平线，可以在视觉上将文档分割成各个部分。单标签。</p>
-<p>small：小字号字体，如果被保卫的字体已经是字体模型所支持的最小字号，那么small标签将不起任何作用，双标签。</p>
-<p>big：大字号字体，双标签。</p>
-<p>table:表格标签，有一个或多个tr、th、td元素组成，tr元素定义表格行，th元素定义表头、td元素定义表格单元。更复杂的表格也可能包括caption,thead以及tbody等元素。</p>
-<p>sup和sub：双标签，为上标和下标，包含的内容将会以当前文本流中字符高度的一般来显示。</p>
-<p>form：用于为用户创建HTML表单，双标签，可以包含input,menus,textarea等元素。</p>
-<p>iframe：创建包含另外一个文档的内联框架，双标签。</p>
-
-	 
-	     <p style="margin:20px 0; color:#9f9f9f; font-size:12px;">
-<span>Posted by <a style="color:#9f9f9f;" href="http://weibo.com/1961585815/profile?topnav=1&amp;wvr=6"><strong>简单爱一次</strong></a> - 2015-11-25</span><br />
-<span style="line-height:13px;">如需转载，请注明： 本文来自 <a style="color:#9f9f9f;" href="http://yoursite.com"><strong>Crazy tired</strong></a></span>
-</p>
-       	 
-      
-    </div>
-    <footer>
-      
-        
-        
-      
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
+  var show = true;
+  c.click(function(){
+    if(show == true){
+        a.addClass('fadeOut').css('display', 'none');
+        ta.css('display', 'block').addClass('fadeIn');
+        m.addClass('moveMain');  
+    }else{
+        a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');     
+        ta.css('display', 'none'); 
+        m.removeClass('moveMain');
+        $('#toc.toc-aside').css('display', 'none');
+    }
+    show = !show;
+  });
+});
+</script>
 
 
 
 
 
-<nav id="pagination">
-  
-  
-</nav></div>
-    </div>
-    <div class="tabbar" onload="divideTabBar()">
-	
-      <div class="tabbaritem"><a class="next" href="/">Home</a></div>
-    
-      <div class="tabbaritem"><a class="next" href="/archives/">Archives</a></div>
-    
-      <div class="tabbaritem"><a class="next" href="/about/">About</a></div>
-    
-      <div class="tabbaritem"><a class="next" href="/atom.xml">Subscribe</a></div>
-    
-</div>
 
 
-  </div>
-</body>
-</html>
+  </body>
+ </html>
