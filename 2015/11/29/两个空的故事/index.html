@@ -10,7 +10,7 @@
     <meta name="author" content="聂小飞 同學">
     
     <meta name="description" content="两个空的故事，哪连个空呢，肯定不是孙悟空，在js中我们知道有两个表示空的一个是undefined两一个是null这连个空到底有什么区别呢？？？
-本文章摘自w3cfuns大多数计算机语言，有且仅有一个表示“无”的值，比如，c语言的null，java语言的null，Python语言的None，Ruby语">
+大多数计算机语言，有且仅有一个表示“无”的值，比如，c语言的null，java语言的null，Python语言的None，Ruby语言的nil。但是在js语">
     
     
     
@@ -106,11 +106,11 @@ var _hmt = _hmt || [];
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title"></strong>
-		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#本文章摘自w3cfuns"><span class="toc-number">1.</span> <span class="toc-text">本文章摘自w3cfuns</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一_相似性"><span class="toc-number"></span> <span class="toc-text">一 相似性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二_历史原因"><span class="toc-number"></span> <span class="toc-text">二  历史原因</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#因此，Brendan_Eich又设计了一个undefined"><span class="toc-number">1.</span> <span class="toc-text">因此，Brendan Eich又设计了一个undefined</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三_最初设计"><span class="toc-number"></span> <span class="toc-text">三  最初设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四_目前的用法"><span class="toc-number"></span> <span class="toc-text">四  目前的用法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#null表示”没有对象”，即该处不应该有值。典型用法是："><span class="toc-number">1.</span> <span class="toc-text">null表示”没有对象”，即该处不应该有值。典型用法是：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined表示”缺少值”，就是此处应该有一个值，但是还没有定义。典型用法是："><span class="toc-number">2.</span> <span class="toc-text">undefined表示”缺少值”，就是此处应该有一个值，但是还没有定义。典型用法是：</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一_相似性"><span class="toc-number">1.</span> <span class="toc-text">一 相似性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二_历史原因"><span class="toc-number">2.</span> <span class="toc-text">二  历史原因</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#因此，Brendan_Eich又设计了一个undefined"><span class="toc-number">2.1.</span> <span class="toc-text">因此，Brendan Eich又设计了一个undefined</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三_最初设计"><span class="toc-number">3.</span> <span class="toc-text">三  最初设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四_目前的用法"><span class="toc-number">4.</span> <span class="toc-text">四  目前的用法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#null表示”没有对象”，即该处不应该有值。典型用法是："><span class="toc-number">4.1.</span> <span class="toc-text">null表示”没有对象”，即该处不应该有值。典型用法是：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined表示”缺少值”，就是此处应该有一个值，但是还没有定义。典型用法是："><span class="toc-number">4.2.</span> <span class="toc-text">undefined表示”缺少值”，就是此处应该有一个值，但是还没有定义。典型用法是：</span></a></li></ol></li></ol>
 		</div>
 		
 		<p>两个空的故事，哪连个空呢，肯定不是孙悟空，在js中我们知道有两个表示空的一个是undefined两一个是null这连个空到底有什么区别呢？？？</p>
-<h3 id="本文章摘自w3cfuns">本文章摘自w3cfuns</h3><p>大多数计算机语言，有且仅有一个表示“无”的值，比如，c语言的null，java语言的null，Python语言的None，Ruby语言的nil。但是在js语言中有两个表示“无”的值，undefined和null，这是为什么？</p>
+<p>大多数计算机语言，有且仅有一个表示“无”的值，比如，c语言的null，java语言的null，Python语言的None，Ruby语言的nil。但是在js语言中有两个表示“无”的值，undefined和null，这是为什么？</p>
 <h2 id="一_相似性">一 相似性</h2><p>在JavaScript中，将一个变量赋值为undefined或null，老实说，几乎没区别。</p>
 <pre><code><span class="number">01.</span> <span class="variable"><span class="keyword">var</span> a</span> = undefined;
 <span class="number">02.</span> <span class="variable"><span class="keyword">var</span> a</span> = <span class="literal">null</span>;
