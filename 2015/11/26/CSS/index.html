@@ -1,0 +1,361 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>CSS | Crazy tired</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="聂小飞 同學">
+    
+    <meta name="description" content="css（层叠样式表），外文名（Cascading Style Sheets），是一种用来表现HTML（标准通用语言的一个应用）等文件样式的计算机语言。
+css目前最新版本为css3，是能够真正做到网页表现与内容分离的一种样式设计语言。以下只为学习日记：
+使用方法：1.外联式(linking)（也叫外">
+    
+    
+    
+    
+    <link rel="alternative" href="/atom.xml## RSS address." title="Crazy tired" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/Tinny.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/Tinny.jpg">
+    
+
+  
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    
+  
+  <link href="http://cdn.bootcss.com/highlight.js/8.2/styles/railscasts.min.css" rel="stylesheet">
+  <script src="http://cdn.bootcss.com/highlight.js/8.2/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  
+
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?d182ed77fc48758bf45a33835ee35745";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+      <script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','.............Add your swiftype userID...............');
+</script>
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="Crazy tired">Crazy tired</a></h1>
+				<h2 class="blog-motto">简单爱一次</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+                    <ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于我</a></li>
+					
+					<li>
+					
+						<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="st-search-inpu" maxlength="20" placeholder="Search" />
+						</form>
+					
+					</li>
+                <!--<li><div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div></li>-->
+
+				</ul>
+			</nav>	
+</div>
+    </header>
+    <div id="container" class="clearfix">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/11/26/CSS/" title="CSS" itemprop="url">CSS</a>
+  </h1>
+  <p class="article-time">
+    <time datetime="2015-11-26T07:43:52.000Z" itemprop="datePublished">2015-11-26</time>
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title"></strong>
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用方法："><span class="toc-number">1.</span> <span class="toc-text">使用方法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#优先级："><span class="toc-number">2.</span> <span class="toc-text">优先级：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基础语法："><span class="toc-number">3.</span> <span class="toc-text">基础语法：</span></a></li></ol>
+		</div>
+		
+		<p>css（层叠样式表），外文名（Cascading Style Sheets），是一种用来表现HTML（标准通用语言的一个应用）等文件样式的计算机语言。</p>
+<p>css目前最新版本为css3，是能够真正做到网页表现与内容分离的一种样式设计语言。<strong>以下只为学习日记：</strong></p>
+<h3 id="使用方法：">使用方法：</h3><p>1.外联式(linking)（也叫外部样式）：将网页链接到外部样式表。</p>
+<p>2.嵌入式Embedding（也叫内页样式）：在网页上创建嵌入的样式表。</p>
+<p>3.内联式Inline（也叫行内样式）：应用内嵌样式到各个网页元素。</p>
+<h3 id="优先级：">优先级：</h3><p>内联式 &gt; 嵌入式 &gt; 外联式 </p>
+<p><strong>外联式：</strong>一般情况下我们使用外联式引用css，更好的显现了与文档内容分离，使文档的内容看起来更加的清晰，也可多个文档引用同一个css文件。外联式的引入放在head中，引入的方法：    </p>
+<pre><code> <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">type</span>=<span class="value">"text/css"</span> <span class="attribute">href</span>=<span class="value">"css文件地址"</span>/&gt;</span>
+<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+</code></pre><p> <strong>嵌入式:</strong> 当单个文件需要特别样式时，就可以使用内部样式表。你可以在head部分通过&lt; style &gt;标签定义内部样式表。引入方法：</p>
+<pre><code> <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">style</span> <span class="attribute">type</span>=<span class="value">"text/css"</span>&gt;</span><span class="css">
+        需要改变的<span class="tag">css</span>代码
+    </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+</code></pre><p> <strong>内联样式：</strong> 当特殊的样式需要应用到个别元素时，就可以使用内联样式。使用内联样式。 使用内联样式的方法是在相关的标签中使用样式属性。样式属性可以包含任何CSS属性。但由于优先级特别高不建议使用，一般在修改代码时使用，引用方法：</p>
+<pre><code>&lt;<span class="tag">p</span> style=<span class="string">"color:red;"</span>&gt;This is <span class="tag">a</span> paragraph&lt;/p&gt;
+</code></pre><h3 id="基础语法：">基础语法：</h3><p>  css规则是由两个主要的部分构成：选择器，以及一条或多条声明。</p>
+<p>  <strong>选择器：</strong>选择器可分为标签选择器，类选择器，Id选择器，群组选择器，通配选择器，层级选择器。</p>
+<p>  <strong>标签选择器：</strong> 直接作用于选择的标签元素，是一个集合（包含所有的相同标签）。</p>
+<p>  <strong>id选择器：</strong> 直接作用于该id的标签元素，是一个单数，也是唯一的，一个文档中一个id名称只能出现一次，写法#id｛｝。</p>
+<p>  <strong>层级选择器：</strong> （也称父子选择器），必须是按照层级，父子关系来使用，比如p标签是div的子元素，div p {},div元素与p元素之间必须有空格。</p>
+<p>  <strong>群组选择器：</strong> 多个标签选择器的集合，比如 div, p,h1{},标签与标签之间有那个逗号隔开。</p>
+<p>  <strong>类选择器：</strong> 指定某个标签的类名（class），类名可重复使用写法 .className{}。类名前用点（.）。</p>
+<p>  <strong>通配选择器：</strong> 通配选择器可作用于该文档中的所有标签，清楚所有标签的默认设置，不建议使用，写法：*｛｝。</p>
+<p> <strong>选择器的优先级：</strong> id选择器 &gt; 类选择器 &gt; 父子选择器 （层级选择器）&gt; 标签选择器 &gt; 通配选择器。 选择器可以通过important来增加优先级，但不建议使用，也可以使用多个选择器的叠加来增加优先级。</p>
+<p> <strong>声明：</strong> 每一个选择器都可以有多个声明，当有多个声明时之间用逗号隔开，比如 p{color:red; , font-size:12px; , line-height:18px}。 声明中的值若有多个单词时必须用引号包括比如：p{font-family:”sans-serif”;}。</p>
+<p> <strong>所用的选择器和声明中有符号的必须用英文状态下书写</strong></p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2015/11/26/CSS/" data-title="CSS | Crazy tired" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2015/11/27/javascript的基础知识/" title="javascript的基础知识">
+  <strong>新一篇:</strong><br/>
+  <span>
+  javascript的基础知识</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2015/11/25/简单叙述/"  title="简单叙述">
+ <strong>旧一篇:</strong><br/> 
+ <span>简单叙述
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section class="comment">
+	
+	<div class="ds-thread" data-title="CSS" data-thread-key="CSS" data-author-key="聂小飞 同學" data-url="http://yoursite.com/post/CSS"></div>
+	
+</section>
+
+
+</div>  
+    </div>
+    <!--<footer><div id="footer" >
+</div></footer>-->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  //back to top
+  function backToTop(){
+    var buttonHTML = $("<a href=\"#top\" id=\"back-top\">" + "<span>Back to Top</span></a>");
+    buttonHTML.appendTo($("body"));
+    var buttonToTop = $("#back-top");
+    // hide #back-top first
+    buttonToTop.hide();
+
+    // fade in #back-top
+    $(function() {
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                buttonToTop.fadeIn();
+            } else {
+                buttonToTop.fadeOut();
+            }
+        });
+        // scroll body to 0px on click
+        buttonToTop.click(function() {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 800);
+            return false;
+        });
+    });
+  }
+  backToTop();
+
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      ta = $('#toc.toc-aside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+        
+    }
+  });
+
+  var show = true;
+  c.click(function(){
+    if(show == true){
+        a.addClass('fadeOut').css('display', 'none');
+        ta.css('display', 'block').addClass('fadeIn');
+        m.addClass('moveMain');  
+    }else{
+        a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');     
+        ta.css('display', 'none'); 
+        m.removeClass('moveMain');
+        $('#toc.toc-aside').css('display', 'none');
+    }
+    show = !show;
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,240-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"null"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';    //change to ds.src = '/js/embed.js'; to add useragent for duoshuo
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+  </body>
+</html>
