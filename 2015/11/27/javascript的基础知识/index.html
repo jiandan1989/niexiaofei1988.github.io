@@ -1,0 +1,256 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>javascript的基础知识 | Crazy tired</title>
+  <meta name="author" content="聂小飞 同學">
+  
+  <meta name="description" content="Nothing to see">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="javascript的基础知识"/>
+  <meta property="og:site_name" content="Crazy tired"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+
+
+</head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">Crazy tired</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class="fa fa-archive"></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class="fa fa-folder"></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class="fa fa-tags"></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class="fa fa-user"></i>About
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">		
+			<h1> javascript的基础知识</h1>
+		</div>		
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <h1 id="javascript的基础知识一">javascript的基础知识一</h1><p><strong>先说一下浏览器对js解析时做的准备工作</strong></p>
+<p>1.变量和函数表达式的声明提升到当前作用域的最顶端</p>
+<p>2.把函数赋值，可以直接在函数上方调用。</p>
+<p><strong>函数的方式</strong></p>
+<p>1.<strong>声明函数：</strong>也称函数声明 使用function关键字加上函数名声明的函数，例如</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">example</span><span class="params">()</span></span>{}
+</code></pre><p>2.<strong>函数表达式：</strong>函数表达式可以细分为两种</p>
+<p>（1）声明变量的函数,例如:</p>
+<pre><code><span class="keyword">var</span> example = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{}  声明一个变量，值为函数方法             
+</code></pre><p>（2）匿名函数：使用function关键字，但是没有函数名的函数。例如：</p>
+<pre><code><span class="function"><span class="keyword">function</span><span class="params">()</span></span>{}     
+</code></pre><p><strong>函数表达式可以使用（）操作符，表示立即执行，函数声明不可以使用。例如</strong></p>
+<pre><code><span class="list">(<span class="keyword">function</span><span class="list">()</span><span class="collection">{}</span>)</span><span class="list">()</span><span class="comment">; </span>
+</code></pre><p><strong>JS变量种类</strong></p>
+<p>1.全局变量：全局变量可以在任何地方访问。</p>
+<p>2.局部变量：只有在函数内部才能产生局部变量，对外部是不可见的。函数内部是可以访问外部函数的变量</p>
+<p><strong>注意：每一个函数都有默认undefined的返回值</strong></p>
+<p><strong>JS的作用域分为两种</strong></p>
+<p>1.全局作用域：全局作用域其实就是window对象，咱们之前声明的变量，实际上就是在window对象上创建了一个属性,但是在这里我们需要注意，window有自己默认属性，当我们创建的新属性和默认属性有冲突时，会覆盖默认属性。</p>
+<p>2.局部作用域：只有在function方法内才会产生局部作用域，当然也可使用return跳出当前作用域变换成全局的。例如</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">fn</span><span class="params">()</span></span>{
+    <span class="keyword">var</span> fn2 = <span class="function"><span class="keyword">function</span> <span class="params">(num)</span></span>{
+
+    } 
+    <span class="keyword">return</span> fn2;
+}
+<span class="keyword">var</span> newFn = fn();也就等于是把fn2()当作一个值赋予给了fn(),那么newFn也就是等于fn2().
+</code></pre><p><strong>计算机运算的函数：</strong></p>
+<p>假设一个函数执行时最后一个参数为运算符</p>
+<p>（1）首先声明一个函数，函数名为computer</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">computer</span><span class="params">()</span></span>{}
+</code></pre><p>(2)在函数内部声明一个变量，值为参数的最后一个</p>
+<pre><code><span class="keyword">var</span> character =<span class="built_in">arguments</span>[<span class="built_in">arguments</span>.length-<span class="number">1</span>];可以找到最后一个值，也就是运算符
+</code></pre><p>（3）用判断语句来判断当前的运算符是哪一种（我们假设是加法运算）</p>
+<pre><code><span class="keyword">if</span>(character ==<span class="string">'+'</span>){
+    <span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">1</span>; i&lt;<span class="built_in">arguments</span>.length-<span class="number">1</span>; i++){
+        <span class="built_in">arguments</span>[<span class="number">0</span>] = <span class="built_in">arguments</span>[<span class="number">0</span>] + <span class="built_in">arguments</span>[i];使用<span class="keyword">for</span>循环运算出的值最终赋予给<span class="built_in">arguments</span>[<span class="number">0</span>]
+    }
+    <span class="keyword">return</span> <span class="built_in">arguments</span>[<span class="number">0</span>]; 使用<span class="keyword">return</span>方法返回<span class="built_in">arguments</span>[<span class="number">0</span>]
+}
+</code></pre><p>（4）最后一步就是来执行computer这个函数</p>
+<pre><code>conputer(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="string">'+'</span>); 如果像要看到得到的值可以用开发者工具console.<span class="built_in">log</span>(computer(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="string">'+'</span>))也可用其他的方法。
+</code></pre><p><strong>刚开始学习的时候我们只要求自己把每天学习的东西能掌握就行。一口吃不了胖子，路是一步一步走。只有基础扎实了才能走的更远。</strong>    </p>
+	  
+	</div>
+
+	<div>
+  	<center>
+	<div class="pagination">
+<ul class="pagination">
+	 
+				
+    	<li class="prev"><a href="/2015/11/29/两个空的故事/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
+  		
+
+        <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
+
+		
+		   <li class="next"><a href="/2015/11/26/CSS/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+        
+	
+</ul>
+</div>
+
+    </center>
+	</div>
+	
+	<!-- comment -->
+	
+<section id="comment">
+  <h2 class="title">留言</h2>
+
+  
+</section>
+
+	</div> <!-- col-md-9/col-md-12 -->
+		
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2015-11-27 
+	</div>
+	
+
+	<!-- categories -->
+    
+
+	<!-- tags -->
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
+		
+
+</div><!-- row -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2015 聂小飞 同學
+  
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+</p> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+</body>
+   </html>

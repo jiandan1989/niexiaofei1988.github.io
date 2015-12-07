@@ -1,0 +1,258 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>两个空的故事 | Crazy tired</title>
+  <meta name="author" content="聂小飞 同學">
+  
+  <meta name="description" content="Nothing to see">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="两个空的故事"/>
+  <meta property="og:site_name" content="Crazy tired"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+
+
+
+</head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">Crazy tired</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class="fa fa-archive"></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class="fa fa-folder"></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class="fa fa-tags"></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class="fa fa-user"></i>About
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">		
+			<h1> 两个空的故事</h1>
+		</div>		
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <p>两个空的故事，哪连个空呢，肯定不是孙悟空，在js中我们知道有两个表示空的一个是undefined两一个是null这连个空到底有什么区别呢？？？</p>
+<p>大多数计算机语言，有且仅有一个表示“无”的值，比如，c语言的null，java语言的null，Python语言的None，Ruby语言的nil。但是在js语言中有两个表示“无”的值，undefined和null，这是为什么？</p>
+<h2 id="一_相似性">一 相似性</h2><p>在JavaScript中，将一个变量赋值为undefined或null，老实说，几乎没区别。</p>
+<pre><code><span class="number">01.</span> <span class="variable"><span class="keyword">var</span> a</span> = undefined;
+<span class="number">02.</span> <span class="variable"><span class="keyword">var</span> a</span> = <span class="literal">null</span>;
+</code></pre><p>上面代码中，a变量分别被赋值为undefined和null，这两种写法几乎等价。</p>
+<p>undefined和null在if语句中，都会被自动转为false，相等运算符甚至直接报告两者相等。</p>
+<pre><code><span class="keyword">if</span>（！<span class="literal">undefined</span>）{
+    <span class="built_in">console</span>.log(<span class="string">'undefined is false'</span>);
+    }  <span class="regexp">//</span> <span class="literal">undefined</span> <span class="keyword">is</span> <span class="literal">false</span>
+
+<span class="keyword">if</span>(!<span class="literal">null</span>){
+    <span class="built_in">console</span>.log(<span class="string">'null is false'</span>);
+    }   <span class="regexp">//</span> <span class="literal">null</span> <span class="keyword">is</span> <span class="literal">false</span>
+
+    <span class="literal">undefined</span> == <span class="literal">null</span>;
+    <span class="regexp">//</span> <span class="literal">true</span>
+</code></pre><p>上面代码说明，两者的行为是何等相似!!!</p>
+<p>既然undefined和null的含义与用法都差不多，为什么要同时设置两个这样的值，这不是无端增加JavaScript的复杂度，令初学者困扰吗？Google公司开发的JavaScript语言的替代品Dart语言，就明确规定只有null，没有undefined！</p>
+<h2 id="二_历史原因">二  历史原因</h2><p>原来，这与JavaScript的历史有关。1995年JavaScript诞生时，最初像Java一样，只设置了null作为表示”无”的值。</p>
+<p>根据C语言的传统，null被设计成可以自动转为0。</p>
+<pre><code><span class="function"><span class="title">Numeber</span><span class="params">(null)</span></span>
+<span class="comment">// 0</span>
+
+<span class="number">5</span> + null
+<span class="comment">// 5</span>
+</code></pre><p>但是，JavaScript的设计者Brendan Eich，觉得这样做还不够，有两个原因。</p>
+<p>首先，null像在Java里一样，被当成一个对象。但是，JavaScript的数据类型分成原始类型（primitive）和合成类型（complex）两大类，Brendan Eich觉得表示”无”的值最好不是对象。</p>
+<p>其次，JavaScript的最初版本没有包括错误处理机制，发生数据类型不匹配时，往往是自动转换类型或者默默地失败。Brendan Eich觉得，如果null自动转为0，很不容易发现错误。</p>
+<h3 id="因此，Brendan_Eich又设计了一个undefined">因此，Brendan Eich又设计了一个undefined</h3><h2 id="三_最初设计">三  最初设计</h2><p>JavaScript的最初版本是这样区分的：null是一个表示”无”的对象，转为数值时为0；undefined是一个表示”无”的原始值，转为数值时为NaN。</p>
+<h2 id="四_目前的用法">四  目前的用法</h2><h3 id="null表示”没有对象”，即该处不应该有值。典型用法是：">null表示”没有对象”，即该处不应该有值。典型用法是：</h3><p> （1） 作为函数的参数，表示该函数的参数不是对象。</p>
+<p> （2） 作为对象原型链的终点。</p>
+<pre><code>&lt;b&gt;Object.<span class="function"><span class="title">getPrototypeOf</span><span class="params">(Object.prototype)</span></span>        <span class="comment">// null</span>
+&lt;b&gt;
+</code></pre><h3 id="undefined表示”缺少值”，就是此处应该有一个值，但是还没有定义。典型用法是：">undefined表示”缺少值”，就是此处应该有一个值，但是还没有定义。典型用法是：</h3><p> （1）变量被声明了，但没有赋值时，就等于undefined。</p>
+<pre><code><span class="keyword">var</span> i;   i <span class="comment">// undefined</span>
+</code></pre><p> （2) 调用函数时，应该提供的参数没有提供，该参数等于undefined.</p>
+<pre><code><span class="function"><span class="keyword">function</span> = <span class="title">f</span>(<span class="params">x</span>)</span>{ <span class="built_in">console</span>.log(x)};
+
+f();  <span class="comment">// undefined </span>
+</code></pre><p> （3）对象没有赋值的属性，该属性的值为undefined。</p>
+<pre><code><span class="keyword">var</span> o = <span class="keyword">new</span> <span class="built_in">Object</span>();  o.p <span class="comment">// undefined</span>
+</code></pre><p> （4）函数没有返回值时，默认返回undefined。</p>
+<pre><code><span class="variable"><span class="keyword">var</span> x</span> = f();   x  <span class="comment">// undefined</span>
+</code></pre><p> 转载自：[阮一峰博客]（<a href="http://www.ruanyifeng.com/blog/2014/03/undefined-vs-null.html）" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2014/03/undefined-vs-null.html）</a></p>
+	  
+	</div>
+
+	<div>
+  	<center>
+	<div class="pagination">
+<ul class="pagination">
+	 
+				
+    	<li class="prev"><a href="/2015/12/01/js基础知识二/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>上一页</a></li>
+  		
+
+        <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
+
+		
+		   <li class="next"><a href="/2015/11/27/javascript的基础知识/" class="alignright next">下一页<i class="fa fa-arrow-circle-o-right"></i></a></li>         
+        
+	
+</ul>
+</div>
+
+    </center>
+	</div>
+	
+	<!-- comment -->
+	
+<section id="comment">
+  <h2 class="title">留言</h2>
+
+  
+</section>
+
+	</div> <!-- col-md-9/col-md-12 -->
+		
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2015-11-29 
+	</div>
+	
+
+	<!-- categories -->
+    
+
+	<!-- tags -->
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
+		
+
+</div><!-- row -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2015 聂小飞 同學
+  
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+</p> </footer>
+</div> <!-- container-narrow -->
+  
+
+
+  
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+</body>
+   </html>
