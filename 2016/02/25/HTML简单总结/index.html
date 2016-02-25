@@ -128,20 +128,41 @@ var _hmt = _hmt || [];
 <p>、 (4)注释方式：<!--注释代码--></p>
 <h3 id="2-_标签">2. 标签</h3><p> 在HTML文档中按照书写可分为双标签和单标签，双标签是以&lt;html&gt;开始的和&lt;/html&gt;结束的标签。单标签是&lt;br/&gt;</p>
 <p> 在HTML文档中每个标签都有自己的特定标识。</p>
-<p> html:根标签，告知浏览器此文档是一个HTML文档。</p>
-<p> head:指定了HTML的头部，head的内容不会显示在页面中，但是有这很重要的作用，用来告知浏览器编码格式、文档标题、样式表、js的外部引入地址或者内部引入的代码。</p>
+<p> <strong>html</strong>:根标签，告知浏览器此文档是一个HTML文档。</p>
+<p> <strong>head</strong>:指定了HTML的头部，head的内容不会显示在页面中，但是有这很重要的作用，用来告知浏览器编码格式、文档标题、样式表、js的外部引入地址或者内部引入的代码。</p>
 <p> (1) 标记可以描述页面的作者、摘要、关键词、版权、自动刷新等页面信息 例如：&lt;meta charset=”utf-8”/&gt;指定文档的编码格式，关于meta有很多作用各不相同，不再一一举例。</p>
-<p> (2) title:指定文档的标题</p>
-<p> (3) link:指定文档的css(样式表)的外部引入路径</p>
+<p> (2) <strong>title</strong>:指定文档的标题</p>
+<p> (3) <strong>link</strong>:指定文档的css(样式表)的外部引入路径</p>
+<blockquote>
 <pre><code>&lt;link rel=<span class="string">"stylesheet"</span> <span class="class"><span class="keyword">type</span></span>=<span class="string">"text/css"</span> href=<span class="string">"引入路径"</span> /&gt;
-</code></pre><p> (4) style:指定文档css的内部引入方式</p>
+</code></pre></blockquote>
+<p> (4) <strong>style</strong>:指定文档css的内部引入方式</p>
+<blockquote>
 <pre><code>&lt;style <span class="typedef"><span class="keyword">type</span>="text/css&gt;样式代码&lt;/style&gt;</span>
-</code></pre><p> (5) script:指定js的引入方式</p>
-<pre><code><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript&gt;内部引入&lt;/script&gt;
+</code></pre></blockquote>
+<p> (5) <strong>script</strong>:指定js的引入方式</p>
+<blockquote>
+<pre><code> <span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript&gt;内部引入&lt;/script&gt;
 &lt;script type="</span><span class="value">text</span>/<span class="attribute">javascript</span>" <span class="attribute">src</span>=<span class="value">"JS的引入路径"</span>&gt;</span><span class="undefined">外部引入方式</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
-</code></pre><p> body:指定了文档的主体，文档的正文标记，包含了文档中所有的内容，在浏览器中可视区域中可见得部分。</p>
-<p> 在HTML文档中的正文标题是用h1~h6标签表示，h1~h6依据重要递减，h1标签是最高的等级，在一个文档中最好只有一个，h系列标签在文档的渲染中有默认的外边距(margin) </p>
-<p> <img src="http://7xoo7k.com1.z0.glb.clouddn.com/h.png" alt="h标签的等级显示"></p>
+</code></pre></blockquote>
+<p>####body:</p>
+<p>指定了文档的主体，文档的正文标记，包含了文档中所有的内容，在浏览器中可视区域中可见得部分。</p>
+<p><strong>(1) h1~h6标签</strong></p>
+<p>指定文档主体标题，双标签，并且依据重要递减，<strong>h1</strong>标签是最高的等级，h系列标签在文档的渲染中有默认的外边距(<strong>margin</strong>)。</p>
+<p><img src="http://7xoo7k.com1.z0.glb.clouddn.com/h.png" alt="h标签的等级显示" title="h系列标签的显示情况"></p>
+<p><strong>(2) p标签 :</strong> 指定文档主体创建一个文本段落，双标签，有默认外边距。</p>
+<p><strong>(3) em 和 strong :</strong> 这两个标签都有强调的寓意，双标签，<strong>strong</strong>寓意更重一点，<strong>em</strong>显示为斜体。</p>
+<p><strong>(4) div 和 span :</strong> 标签在文档中没有任何寓意，双标签，<strong>div</strong>指没有语义的块级容器，<strong>span</strong>指包裹内容没有语义的行级标签。</p>
+<p><strong>(5) a标签 :</strong>超链接或者锚点链接，href属性是必须的，指定链接路径、id或者用#、javascript:;代替。title属性指对链接的提示，鼠标划过时显示的文本，target属性指链接的打开方式(_blank在另一个窗口打开， _self在自身窗口打开)</p>
+<blockquote>
+<pre><code><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"链接路径"</span> <span class="attribute">title</span>=<span class="value">"链接描述"</span> <span class="attribute">target</span>=<span class="value">"链接打开方式"</span>&gt;</span>点击跳转到指定路径页面<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"id"</span>&gt;</span>点击跳到页面中带有指定id的位置<span class="tag">&lt;/<span class="title">a</span>&gt;</span> 
+</code></pre></blockquote>
+<p><strong>(6)img :</strong> 图片标签，有src、alt、title属性，src指图片的位置(引入图片的路径),alt指当加载失败时的替代文本，title指对图片的提示，鼠标滑过时显示的文本。在不设置任何width和height时，会显示图片的实际大小。</p>
+<blockquote>
+<pre><code>&lt;<span class="tag">img</span> src=<span class="string">"图片路径"</span> alt=<span class="string">"替代文本"</span> title=<span class="string">"tips"</span>/&gt;
+</code></pre></blockquote>
+<p><strong>(7) q/‘/</strong> </p>
   
 	</div>
 		<footer class="article-footer clearfix">
