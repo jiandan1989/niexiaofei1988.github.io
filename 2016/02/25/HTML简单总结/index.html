@@ -9,9 +9,9 @@
     
     <meta name="author" content="聂小飞 同學">
     
-    <meta name="description" content="有些东西你不用就会废弃，有些东西你不看就会忘记。下面的是HTML的简单总结，回忆一下…1. HTML基本结构:
+    <meta name="description" content="有些东西你不用就会废弃，有些东西你不看就会忘记。下面是HTML的简单总结，回忆一下…1. HTML基本结构:
 &amp;lt;!doctype html&amp;gt;                        &amp;lt;!--html文档的版本声明--&amp;gt;
- &amp;lt;html&amp;gt;           ">
+ &amp;lt;html&amp;gt;            ">
     
     
     
@@ -107,10 +107,10 @@ var _hmt = _hmt || [];
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title"></strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#有些东西你不用就会废弃，有些东西你不看就会忘记。下面的是HTML的简单总结，回忆一下…"><span class="toc-number">1.</span> <span class="toc-text">有些东西你不用就会废弃，有些东西你不看就会忘记。下面的是HTML的简单总结，回忆一下…</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-_HTML基本结构:"><span class="toc-number">1.1.</span> <span class="toc-text">1. HTML基本结构:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-_标签"><span class="toc-number">1.2.</span> <span class="toc-text">2. 标签</span></a></li></ol></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#有些东西你不用就会废弃，有些东西你不看就会忘记。下面是HTML的简单总结，回忆一下…"><span class="toc-number">1.</span> <span class="toc-text">有些东西你不用就会废弃，有些东西你不看就会忘记。下面是HTML的简单总结，回忆一下…</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-_HTML基本结构:"><span class="toc-number">1.1.</span> <span class="toc-text">1. HTML基本结构:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-_标签"><span class="toc-number">1.2.</span> <span class="toc-text">2. 标签</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#body:"><span class="toc-number">1.2.1.</span> <span class="toc-text">body:</span></a></li></ol></li></ol></li></ol>
 		</div>
 		
-		<h2 id="有些东西你不用就会废弃，有些东西你不看就会忘记。下面的是HTML的简单总结，回忆一下…">有些东西你不用就会废弃，有些东西你不看就会忘记。下面的是HTML的简单总结，回忆一下…</h2><h3 id="1-_HTML基本结构:">1. HTML基本结构:</h3><blockquote>
+		<h2 id="有些东西你不用就会废弃，有些东西你不看就会忘记。下面是HTML的简单总结，回忆一下…">有些东西你不用就会废弃，有些东西你不看就会忘记。下面是HTML的简单总结，回忆一下…</h2><h3 id="1-_HTML基本结构:">1. HTML基本结构:</h3><blockquote>
 <pre><code><span class="doctype">&lt;!doctype html&gt;</span>                        <span class="comment">&lt;!--html文档的版本声明--&gt;</span>
  <span class="tag">&lt;<span class="title">html</span>&gt;</span>                                <span class="comment">&lt;!--html文档的开始--&gt;</span>
      <span class="tag">&lt;<span class="title">head</span>&gt;</span>                            <span class="comment">&lt;!--html文档头部的开始--&gt;</span>
@@ -142,11 +142,10 @@ var _hmt = _hmt || [];
 </code></pre></blockquote>
 <p> (5) <strong>script</strong>:指定js的引入方式</p>
 <blockquote>
-<pre><code> <span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript&gt;内部引入&lt;/script&gt;
+<pre><code><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript&gt;内部引入&lt;/script&gt;
 &lt;script type="</span><span class="value">text</span>/<span class="attribute">javascript</span>" <span class="attribute">src</span>=<span class="value">"JS的引入路径"</span>&gt;</span><span class="undefined">外部引入方式</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
 </code></pre></blockquote>
-<p>####body:</p>
-<p>指定了文档的主体，文档的正文标记，包含了文档中所有的内容，在浏览器中可视区域中可见得部分。</p>
+<h4 id="body:">body:</h4><p>指定了文档的主体，文档的正文标记，包含了文档中所有的内容，在浏览器中可视区域中可见得部分。</p>
 <p><strong>(1) h1~h6标签</strong></p>
 <p>指定文档主体标题，双标签，并且依据重要递减，<strong>h1</strong>标签是最高的等级，h系列标签在文档的渲染中有默认的外边距(<strong>margin</strong>)。</p>
 <p><img src="http://7xoo7k.com1.z0.glb.clouddn.com/h.png" alt="h标签的等级显示" title="h系列标签的显示情况"></p>
@@ -162,7 +161,25 @@ var _hmt = _hmt || [];
 <blockquote>
 <pre><code>&lt;<span class="tag">img</span> src=<span class="string">"图片路径"</span> alt=<span class="string">"替代文本"</span> title=<span class="string">"tips"</span>/&gt;
 </code></pre></blockquote>
-<p><strong>(7) q/‘/</strong> </p>
+<p><strong>(7) q标签 ：</strong>短文本引用，比如在你的网页的文章里想引用某个作家的一句诗，这样会使你的文章更加出彩，那么<q>q标签是你所需要的</q>。</p>
+<p><strong>(8) blockquote标签：</strong> 长文本引用。</p>
+<p><strong>(9)br和hr标签：</strong>br表示换行，hr表示分割线。</p>
+<p><strong>(10)address标签：</strong>为页面加入地址信息，样式为斜体。<address>中国上海</address> </p>
+<p><strong>(11)code和pre标签：</strong>为页面加入计算机程序代码，代码为一行时用code,PHP中的变量名,前面要加上 ‘$’ 符号,pre指预格式化的文本，代码为多行时可以用pre标签，不能使用code标签。</p>
+<p><img src="http://7xoo7k.com1.z0.glb.clouddn.com/code-pre.png" alt="code和pre标签的显示" title="code和pre的区别"></p>
+<p><strong>(12)列表：</strong>列表有无序列表(ul li)、无序列表(ol li)、自定义列表(dl dt dd)。列表标签是组合标签，列表容器和列表项之间不能加入任何其他标签。</p>
+<p><img src="http://7xoo7k.com1.z0.glb.clouddn.com/ol-ul-dl.png" alt="三种列表" title="列表区别"></p>
+<p> <strong>(13)table表格:</strong> </p>
+<ul>
+<li>tbody 这个标签现在很少用了 </li>
+<li>tr   表格的一行</li>
+<li>td   表格的一个单元格(列)</li>
+<li>th   表格的头部的一个单元格，表格表头</li>
+<li>caption 表格标题</li>
+<li><p>summary属性 表格的摘要 &lt;table summary=”哈哈哈 红红红”&gt;&lt;/table&gt;</p>
+<p><img src="http://7xoo7k.com1.z0.glb.clouddn.com/table.png" alt="表格" title="table表格"></p>
+</li>
+</ul>
   
 	</div>
 		<footer class="article-footer clearfix">
