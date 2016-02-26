@@ -129,6 +129,7 @@ var _hmt = _hmt || [];
 <p>从上两图可以看出标准盒子模型和IE盒子模型的不同：</p>
 <p>标准盒子模型中内容(content)的高度和宽度都不包含内边距(padding)和边框(border)，但是在IE盒子模型中内容的高度都把内边距和边框包含在内。</p>
 <p><strong>盒子模型中的padding、margin、以及border在应用中都遵循了TRBL法则(Top、Right、Bottom、Left)。</strong></p>
+<p>说完了盒子模型就要涉及到BFC，请<a href="javascript:;" style="font-size:20px; text-decoration:none; color:#f47d31;" target="_blank" rel="external">点击查看</a></p>
 <div style="border:1px  #999 dashed;"></div>
 
 <p><span style="color:red;">声明样式：</span></p>
@@ -138,52 +139,11 @@ var _hmt = _hmt || [];
     <span class="rule"><span class="attribute">font-color</span>:<span class="value">red</span></span>;
 }</span>
 </code></pre><p>对一个元素声明多个样式时，必须由分号(;)隔开。</p>
-<p><div style="border:1px  #999 dashed;"></div><br><span style="color:red;">选择器:</span></p>
-<p>选择分为很多种，按照类型分类的话有基本、组合、伪类、属性等。</p>
-<p><strong>基本的选择器：</strong></p>
-<ul>
-<li><p>通配选择器(*)：匹配所有的元素。</p>
-<pre><code>*<span class="rules">{
-  <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">0</span></span></span>;
-  <span class="rule"><span class="attribute">padding</span>:<span class="value"><span class="number">0</span></span></span>;}</span>
-</code></pre></li>
-<li><p>标签选择器(p): 匹配所有使用p的标签元素。<br>  p{</p>
-<pre><code><span class="attribute">font-size</span>:<span class="number">20px</span>;
-</code></pre><p>  }</p>
-</li>
-<li><p>class选择器(.test):匹配所有带有class为test的元素。</p>
-<pre><code><span class="class">.test</span><span class="rules">{
-<span class="rule"><span class="attribute">font-size</span>:<span class="value"><span class="number">20px</span></span></span>;
-}</span>
-<span class="tag">p</span><span class="class">.test</span><span class="rules">{
-<span class="rule"><span class="attribute">font-size</span>:<span class="value"><span class="number">20px</span></span></span>;
-}</span>
-</code></pre></li>
-<li>id选择器(#id):匹配指定id名的元素，id选择器是唯一的 <code>#test{background-color:red;}</code></li>
-</ul>
-<p><div style="border:1px  #999 dashed;"></div><br><strong>组合选择器：</strong></p>
-<ul>
-<li><p>群组选择器(h1,h2,h3): 同时匹配多个元素，之间用逗号(,)隔开 <code>h1,h2,h3{margin:0;}</code></p>
-</li>
-<li><p>后代元素选择器(div span):匹配所有属于div的span包括子孙级别的元素，之间用空格隔开 <code>div span{display:block;}</code></p>
-</li>
-<li><p>子元素选择器(ul&gt;li):匹配所有属于ul的子元素li <code>ul&gt;li{width:200px;}</code></p>
-</li>
-<li><p>相邻元素选择器(p+div):匹配p元素后相邻的div元素 <code>p+div{width:200px;}</code></p>
-</li>
-</ul>
-<p><div style="border:1px  #999 dashed;"></div><br><strong>伪元素选择器：</strong></p>
-<ul>
-<li><p><strong>p::first-line:</strong> 匹配p元素的第一行 <code>p::first-line{font-color:red;}</code></p>
-</li>
-<li><p><strong>p::first-letter:</strong> 匹配p元素的第一个字符 <code>p::first-letter{font-weight:bold;}</code></p>
-</li>
-<li><p><strong>p::before:</strong> 在p元素之前插入生成的文本 <code>p::before{content:””;width:100px;height:100px;}</code></p>
-</li>
-<li><strong>p::after:</strong> 在p元素之后插入生成的文本 <code>p::after{content:””;width:10px;height:10px;background:red;}</code></li>
-</ul>
-<p><span style="color:red; font-size:18px;">注意:在使用before和after伪类时，必须要有content属性。</span></p>
-<p><div style="border:1px #999 dashed"></div><br><strong>伪类选择器</strong></p>
+<div style="border:1px  #999 dashed;"></div><br><span style="color:red;">选择器:</span><br><br>选择分为很多种，按照类型分类的话有基本、组合、伪类、属性等。<br><br><strong>基本的选择器：</strong><br><br>- 通配选择器(<em>)：匹配所有的元素。
+
+      </em>{<br>        margin:0;<br>        padding:0;}<br><br>- 标签选择器(p): 匹配所有使用p的标签元素。<br>    p{<br>        font-size:20px;<br>    }<br><br>- class选择器(.test):匹配所有带有class为test的元素。<br><br>        .test{<br>        font-size:20px;<br>        }<br>        p.test{<br>        font-size:20px;<br>        }<br>- id选择器(#id):匹配指定id名的元素，id选择器是唯一的 <code>#test{background-color:red;}</code><br><br><div style="border:1px  #999 dashed;"></div><br><strong>组合选择器：</strong><br><br>- 群组选择器(h1,h2,h3): 同时匹配多个元素，之间用逗号(,)隔开 <code>h1,h2,h3{margin:0;}</code><br><br>- 后代元素选择器(div span):匹配所有属于div的span包括子孙级别的元素，之间用空格隔开 <code>div span{display:block;}</code><br><br>- 子元素选择器(ul&gt;li):匹配所有属于ul的子元素li <code>ul&gt;li{width:200px;}</code><br><br>- 相邻元素选择器(p+div):匹配p元素后相邻的div元素 <code>p+div{width:200px;}</code><br><br><div style="border:1px  #999 dashed;"></div><br><strong>伪元素选择器：</strong><br><br>- <strong>p::first-line:</strong> 匹配p元素的第一行 <code>p::first-line{font-color:red;}</code><br><br>- <strong>p::first-letter:</strong> 匹配p元素的第一个字符 <code>p::first-letter{font-weight:bold;}</code><br><br>- <strong>p::before:</strong> 在p元素之前插入生成的文本 <code>p::before{content:””;width:100px;height:100px;}</code><br>- <strong>p::after:</strong> 在p元素之后插入生成的文本 <code>p::after{content:””;width:10px;height:10px;background:red;}</code><br><br><span style="color:red; font-size:18px;">注意:在使用before和after伪类时，必须要有content属性。</span><br><br><div style="border:1px #999 dashed"></div><br><strong>伪类选择器 :</strong><br><br>- <strong>div:first-child:</strong> 匹配div的第一个子元素 <code>div:first-child{width:200px;}</code><br><br>- <strong>a:link:</strong>匹配所有未被点击的a链接 <code>a:link{background:red;}</code><br><br>- <strong>a:visited:</strong>匹配所有已被点击的a链接 <code>a:visited{background:blue;}</code><br><br>- <strong>e:hover:</strong> 匹配所有鼠标悬停其上的E元素 <code>e:hover{background:green;}</code><br><br>- <strong>e:active:</strong> 匹配所有鼠标点击但还没有释放的E元素 <code>e:active{background:yellow;}</code><br><br><span style="color:#f47d31; font-size:16px;">注意：当link,visited,hover,acitve作用于同一个a链接时,是有顺序的如果链接是有效的地址访问过后，link状态不再会被触发</span><br><br><div style="border:1px #999 solid;margin-top:15px;"></div>
+
+<p>这里讲的为CSS2内的选择器,关于CSS3选择器内容请<a href="http://niexiaofei1988.github.io/2016/02/26/CSS%E5%9B%9E%E9%A1%BE%28%E4%B8%80%29/" target="_blank" rel="external">点击查看</a></p>
   
 	</div>
 		<footer class="article-footer clearfix">
