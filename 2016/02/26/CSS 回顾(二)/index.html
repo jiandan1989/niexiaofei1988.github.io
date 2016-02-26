@@ -9,7 +9,7 @@
     
     <meta name="author" content="聂小飞 同學">
     
-    <meta name="description" content="CSS的定义:
+    <meta name="description" content="在这里主要回顾说一下盒子模型和选择器
 盒子模型的构成:
 
 盒子中的内容(content)
@@ -21,7 +21,7 @@
 如果有多个盒子存在，盒子与盒子之间的距离：称为边界—margin，外边距（外补丁）
 
 
-W3C标准规定了标准盒子模型的宽度和高度">
+W3C标准规定了标">
     
     
     
@@ -120,7 +120,7 @@ var _hmt = _hmt || [];
 		
 		</div>
 		
-		<p><span style="color:red;">CSS的定义:</span></p>
+		<p><strong>在这里主要回顾说一下盒子模型和选择器</strong></p>
 <p><span style="color:red;">盒子模型的构成:</span></p>
 <ul>
 <li><p>盒子中的内容(content)</p>
@@ -140,6 +140,8 @@ var _hmt = _hmt || [];
 <p>从上两图可以看出标准盒子模型和IE盒子模型的不同：</p>
 <p>标准盒子模型中内容(content)的高度和宽度都不包含内边距(padding)和边框(border)，但是在IE盒子模型中内容的高度都把内边距和边框包含在内。</p>
 <p><strong>盒子模型中的padding、margin、以及border在应用中都遵循了TRBL法则(Top、Right、Bottom、Left)。</strong></p>
+<div style="border:1px  #999 dashed;"></div>
+
 <p><span style="color:red;">声明样式：</span></p>
 <p>在css中对一个元素或多个元素进行声明样式是一个选择器、一对大括号、属性名和属性值组成</p>
 <pre><code><span class="tag">p</span> <span class="rules">{
@@ -147,7 +149,7 @@ var _hmt = _hmt || [];
     <span class="rule"><span class="attribute">font-color</span>:<span class="value">red</span></span>;
 }</span>
 </code></pre><p>对一个元素声明多个样式时，必须由分号(;)隔开。</p>
-<p><span style="color:red;">选择器:</span></p>
+<p><div style="border:1px  #999 dashed;"></div><br><span style="color:red;">选择器:</span></p>
 <p>选择分为很多种，按照类型分类的话有基本、组合、伪类、属性等。</p>
 <p><strong>基本的选择器：</strong></p>
 <ul>
@@ -170,7 +172,7 @@ var _hmt = _hmt || [];
 </code></pre></li>
 <li>id选择器(#id):匹配指定id名的元素，id选择器是唯一的 <code>#test{background-color:red;}</code></li>
 </ul>
-<p><strong>组合选择器：</strong></p>
+<p><div style="border:1px  #999 dashed;"></div><br><strong>组合选择器：</strong></p>
 <ul>
 <li><p>群组选择器(h1,h2,h3): 同时匹配多个元素，之间用逗号(,)隔开 <code>h1,h2,h3{margin:0;}</code></p>
 </li>
@@ -181,7 +183,7 @@ var _hmt = _hmt || [];
 <li><p>相邻元素选择器(p+div):匹配p元素后相邻的div元素 <code>p+div{width:200px;}</code></p>
 </li>
 </ul>
-<p><strong>伪元素选择器：</strong></p>
+<p><div style="border:1px  #999 dashed;"></div><br><strong>伪元素选择器：</strong></p>
 <ul>
 <li><p><strong>p::first-line:</strong> 匹配p元素的第一行 <code>p::first-line{font-color:red;}</code></p>
 </li>
@@ -192,7 +194,7 @@ var _hmt = _hmt || [];
 <li><strong>p::after:</strong> 在p元素之后插入生成的文本 <code>p::after{content:””;width:10px;height:10px;background:red;}</code></li>
 </ul>
 <p><span style="color:red; font-size:18px;">注意:在使用before和after伪类时，必须要有content属性。</span></p>
-<p><strong>伪类选择器</strong></p>
+<p><div style="border:1px #999 dashed"></div><br><strong>伪类选择器</strong></p>
   
 	</div>
 		<footer class="article-footer clearfix">
