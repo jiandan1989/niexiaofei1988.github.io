@@ -9,12 +9,17 @@
     
     <meta name="author" content="聂小飞 同學">
     
-    <meta name="description" content="我们都知道在html文档中引入css(层叠样式表)有三种方式，三种方式分别是
-行间样式：在标签元素内写入样式
+    <meta name="description" content="CSS 样式由选择符和声明组成，而声明又由属性和值组成
 
-&amp;lt;p style=&quot;font-size:16px; font-color:red;&quot;&amp;gt;This is a paragraph &amp;lt;/p&amp;gt;
 
-内部引入：在head标签内">
+选择器{属性:值}
+
+声明：在英文大括号{}中的就是声明，属性和值之间用冒号(:)分隔。当有多条声明时，中间可以用英文分号(;)分隔。
+
+注释方式: /**/
+
+
+我们都知道在html文档中引入css(层叠样式表)有四种方式，四种方式分别是">
     
     
     
@@ -113,7 +118,17 @@ var _hmt = _hmt || [];
 		
 		</div>
 		
-		<p>我们都知道在html文档中引入css(层叠样式表)有三种方式，三种方式分别是</p>
+		<p style="font-size:18px;">CSS 样式由选择符和声明组成，而声明又由属性和值组成</p>
+
+<ul>
+<li><p>选择器{属性:值}</p>
+</li>
+<li><p>声明：在英文大括号{}中的就是声明，属性和值之间用冒号(:)分隔。当有多条声明时，中间可以用英文分号(;)分隔。</p>
+</li>
+<li><p>注释方式: <code>/**/</code></p>
+</li>
+</ul>
+<p>我们都知道在html文档中引入css(层叠样式表)有四种方式，四种方式分别是</p>
 <p><span style="color:red;">行间样式</span>：在标签元素内写入样式</p>
 <blockquote>
 <pre><code>&lt;<span class="tag">p</span> style=<span class="string">"font-size:16px; font-color:red;"</span>&gt;This is <span class="tag">a</span> paragraph &lt;/p&gt;
@@ -133,9 +148,10 @@ var _hmt = _hmt || [];
 <p>既然有三种引入方式，三种方式有没有优先级之分呢，有没有区别呢？答案是肯定的。</p>
 <p>如若是对同一个标签用三种方式设置同一个样式时，在没有<span style="color:red;">important</span>(不建议使用，不利于后期的修改)情况下，并且有就近原则内部样式在外部引入的样式表的后面。</p><p style="color:red"> 行间  &gt; 内部引入 &gt; 外部引入</p><p></p>
 <p><span style="font-size:16px; color:red;">区别:</span></p>
-<p><strong>1. 行间样式：</strong> 最为简单直接的一中方式，优先级比较高，但是HTML页面不太干净，文件比较大，不利于后期维护和修改。</p>
-<p><strong>2. 内部引入：</strong> 对于单个页面或者是修改某个元素时，可使用内部引入方式。多个页面建议使用外部引入。</p>
-<p><strong>3. 外部引入：</strong> 实现了页面框架代码与表现CSS代码的完全分离，使得前期制作和后期维护都十分方便,可引入多个文件，但是对于单个元素修改时比较麻烦</p>
+<p><strong>- 行间样式：</strong> 最为简单直接的一中方式，优先级比较高，但是HTML页面不太干净，文件比较大，不能实现样式和内容的分离，影响阅读体验，不利于后期维护和修改。</p>
+<p><strong>- 内部引入：</strong> 对于单个页面或者是修改某个元素时，可使用内部引入方式。多个页面建议使用外部引入，不能多次复用，没有多余的请求。</p>
+<p><strong>- 外部引入：</strong> 完美的实现了页面框架代码与表现CSS代码的完全分离，使得前期制作和后期维护都十分方便,可引入多个文件，可复用，但是对于单个元素修改时比较麻烦，增加请求次数。</p>
+<p><span style="color:red">@import url(路径)</span> :使用@import会增加页面的总体加载时间，也会有一次请求，IE中使用@import会改变文件的加载顺序，能会增加CSS文件的加载时间，阻碍页面渲染。这可不建议使用。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
