@@ -139,6 +139,57 @@ var _hmt = _hmt || [];
 <p>从上两图可以看出标准盒子模型和IE盒子模型的不同：</p>
 <p>标准盒子模型中内容(content)的高度和宽度都不包含内边距(padding)和边框(border)，但是在IE盒子模型中内容的高度都把内边距和边框包含在内。</p>
 <p><strong>盒子模型中的padding、margin、以及border在应用中都遵循了TRBL法则(Top、Right、Bottom、Left)。</strong></p>
+<p><span style="color:red;">声明样式：</span></p>
+<p>在css中对一个元素或多个元素进行声明样式是一个选择器、一对大括号、属性名和属性值组成</p>
+<pre><code><span class="tag">p</span> <span class="rules">{
+    <span class="rule"><span class="attribute">font-size</span>:<span class="value"><span class="number">16px</span></span></span>;
+    <span class="rule"><span class="attribute">font-color</span>:<span class="value">red</span></span>;
+}</span>
+</code></pre><p>对一个元素声明多个样式时，必须由分号(;)隔开。</p>
+<p><span style="color:red;">选择器:</span></p>
+<p>选择分为很多种，按照类型分类的话有基本、组合、伪类、属性等。</p>
+<p><strong>基本的选择器：</strong></p>
+<ul>
+<li>通配选择器(*)：匹配所有的元素。</li>
+</ul>
+<p><code>* {<br>        margin:0;<br>        padding:0;    }</code></p>
+<ul>
+<li><p>标签选择器(p): 匹配所有使用p的标签元素。<br>  p{</p>
+<pre><code><span class="attribute">font-size</span>:<span class="number">20px</span>;
+</code></pre><p>  }</p>
+</li>
+<li><p>class选择器(.test):匹配所有带有class为test的元素。</p>
+<p>  .test{</p>
+<pre><code><span class="attribute">font-size</span>:<span class="number">20px</span>;
+</code></pre><p>  }<br>  p.test{</p>
+<pre><code><span class="attribute">font-size</span>:<span class="number">20px</span>;
+</code></pre><p>  }</p>
+</li>
+<li>id选择器(#id):匹配指定id名的元素 <code>#test{background-color:red;}</code></li>
+</ul>
+<p><strong>组合选择器：</strong></p>
+<ul>
+<li><p>群组选择器(h1,h2,h3): 同时匹配多个元素，之间用逗号(,)隔开 <code>h1,h2,h3{margin:0;}</code></p>
+</li>
+<li><p>后代元素选择器(div span):匹配所有属于div的span元素，之间用空格隔开 <code>div span{display:block;}</code></p>
+</li>
+<li><p>子元素选择器(ul&gt;li):匹配所有属于ul的子元素li <code>ul&gt;li{width:200px;}</code></p>
+</li>
+<li><p>相邻元素选择器(p+div):匹配p元素后相邻的div元素 <code>p+div{width:200px;}</code></p>
+</li>
+</ul>
+<p><strong>伪元素选择器：</strong></p>
+<ul>
+<li><p><strong>p:first-line:</strong> 匹配p元素的第一行 <code>p:first-line{font-color:red;}</code></p>
+</li>
+<li><p><strong>p:first-letter:</strong> 匹配p元素的第一个字符 <code>p:first-letter{font-weight:bold;}</code></p>
+</li>
+<li><p><strong>p:before:</strong> 在p元素之前插入生成的文本 <code>p:before{content:””;width:100px;height:100px;}</code></p>
+</li>
+<li><strong>p:after:</strong> 在p元素之后插入生成的文本 <code>p:after{content:””;width:10px;height:10px;background:red;}</code></li>
+</ul>
+<p><span style="color:red; font-size:18px;">注意:在使用before和after伪类时，必须要有content属性。</span></p>
+<p><strong>伪类选择器</strong></p>
   
 	</div>
 		<footer class="article-footer clearfix">
