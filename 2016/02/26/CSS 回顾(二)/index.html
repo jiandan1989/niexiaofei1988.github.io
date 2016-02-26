@@ -9,7 +9,8 @@
     
     <meta name="author" content="聂小飞 同學">
     
-    <meta name="description" content="盒子模型的构成:
+    <meta name="description" content="CSS的定义:
+盒子模型的构成:
 
 盒子中的内容(content)
 
@@ -20,8 +21,7 @@
 如果有多个盒子存在，盒子与盒子之间的距离：称为边界—margin，外边距（外补丁）
 
 
-W3C标准规定了标准盒子模型的宽度和高度的算法：
-整个盒">
+W3C标准规定了标准盒子模型的宽度和高度">
     
     
     
@@ -120,7 +120,8 @@ var _hmt = _hmt || [];
 		
 		</div>
 		
-		<p><span style="color:red;">盒子模型的构成:</span></p>
+		<p><span style="color:red;">CSS的定义:</span></p>
+<p><span style="color:red;">盒子模型的构成:</span></p>
 <ul>
 <li><p>盒子中的内容(content)</p>
 </li>
@@ -160,19 +161,20 @@ var _hmt = _hmt || [];
 </code></pre><p>  }</p>
 </li>
 <li><p>class选择器(.test):匹配所有带有class为test的元素。</p>
-<p>  .test{</p>
-<pre><code><span class="attribute">font-size</span>:<span class="number">20px</span>;
-</code></pre><p>  }<br>  p.test{</p>
-<pre><code><span class="attribute">font-size</span>:<span class="number">20px</span>;
-</code></pre><p>  }</p>
-</li>
-<li>id选择器(#id):匹配指定id名的元素 <code>#test{background-color:red;}</code></li>
+<pre><code><span class="class">.test</span><span class="rules">{
+<span class="rule"><span class="attribute">font-size</span>:<span class="value"><span class="number">20px</span></span></span>;
+}</span>
+<span class="tag">p</span><span class="class">.test</span><span class="rules">{
+<span class="rule"><span class="attribute">font-size</span>:<span class="value"><span class="number">20px</span></span></span>;
+}</span>
+</code></pre></li>
+<li>id选择器(#id):匹配指定id名的元素，id选择器是唯一的 <code>#test{background-color:red;}</code></li>
 </ul>
 <p><strong>组合选择器：</strong></p>
 <ul>
 <li><p>群组选择器(h1,h2,h3): 同时匹配多个元素，之间用逗号(,)隔开 <code>h1,h2,h3{margin:0;}</code></p>
 </li>
-<li><p>后代元素选择器(div span):匹配所有属于div的span元素，之间用空格隔开 <code>div span{display:block;}</code></p>
+<li><p>后代元素选择器(div span):匹配所有属于div的span包括子孙级别的元素，之间用空格隔开 <code>div span{display:block;}</code></p>
 </li>
 <li><p>子元素选择器(ul&gt;li):匹配所有属于ul的子元素li <code>ul&gt;li{width:200px;}</code></p>
 </li>
@@ -181,13 +183,13 @@ var _hmt = _hmt || [];
 </ul>
 <p><strong>伪元素选择器：</strong></p>
 <ul>
-<li><p><strong>p:first-line:</strong> 匹配p元素的第一行 <code>p:first-line{font-color:red;}</code></p>
+<li><p><strong>p::first-line:</strong> 匹配p元素的第一行 <code>p::first-line{font-color:red;}</code></p>
 </li>
-<li><p><strong>p:first-letter:</strong> 匹配p元素的第一个字符 <code>p:first-letter{font-weight:bold;}</code></p>
+<li><p><strong>p::first-letter:</strong> 匹配p元素的第一个字符 <code>p::first-letter{font-weight:bold;}</code></p>
 </li>
-<li><p><strong>p:before:</strong> 在p元素之前插入生成的文本 <code>p:before{content:””;width:100px;height:100px;}</code></p>
+<li><p><strong>p::before:</strong> 在p元素之前插入生成的文本 <code>p::before{content:””;width:100px;height:100px;}</code></p>
 </li>
-<li><strong>p:after:</strong> 在p元素之后插入生成的文本 <code>p:after{content:””;width:10px;height:10px;background:red;}</code></li>
+<li><strong>p::after:</strong> 在p元素之后插入生成的文本 <code>p::after{content:””;width:10px;height:10px;background:red;}</code></li>
 </ul>
 <p><span style="color:red; font-size:18px;">注意:在使用before和after伪类时，必须要有content属性。</span></p>
 <p><strong>伪类选择器</strong></p>
