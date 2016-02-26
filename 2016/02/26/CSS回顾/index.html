@@ -11,8 +11,10 @@
     
     <meta name="description" content="我们都知道在html文档中引入css(层叠样式表)有三种方式，三种方式分别是
 行间样式：在标签元素内写入样式
+
 &amp;lt;p style=&quot;font-size:16px; font-color:red;&quot;&amp;gt;This is a paragraph &amp;lt;/p&amp;gt;
-内部引入：在head标签内使用">
+
+内部引入：在head标签内">
     
     
     
@@ -113,20 +115,28 @@ var _hmt = _hmt || [];
 		
 		<p>我们都知道在html文档中引入css(层叠样式表)有三种方式，三种方式分别是</p>
 <p><span style="color:red;">行间样式</span>：在标签元素内写入样式</p>
+<blockquote>
 <pre><code>&lt;<span class="tag">p</span> style=<span class="string">"font-size:16px; font-color:red;"</span>&gt;This is <span class="tag">a</span> paragraph &lt;/p&gt;
-</code></pre><p><span style="color:red;">内部引入</span>：在head标签内使用style标签引入</p>
-<pre><code><span class="tag">&lt;<span class="title">style</span> <span class="attribute">type</span>=<span class="value">"text/css"</span>&gt;</span><span class="css">
-    <span class="tag">body</span><span class="rules">{
-        <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">0</span></span></span>;
-    }</span>
+</code></pre></blockquote>
+<p><span style="color:red;">内部引入</span>：在head标签内使用style标签引入</p>
+<blockquote>
+<pre><code> <span class="tag">&lt;<span class="title">style</span> <span class="attribute">type</span>=<span class="value">"text/css"</span>&gt;</span><span class="css">
+   <span class="tag">body</span><span class="rules">{
+       <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">0</span></span></span>;
+   }</span>
 </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
-</code></pre><p><span style="color:red;">外部引入</span>：在head标签内使用link方式引入外部样式表</p>
+</code></pre></blockquote>
+<p><span style="color:red;">外部引入</span>：在head标签内使用link方式引入外部样式表</p>
+<blockquote>
 <pre><code>&lt;link rel=<span class="string">"stylesheet"</span> <span class="class"><span class="keyword">type</span></span>=<span class="string">"text/css"</span> href=<span class="string">"样式表引入路径"</span>/&gt;
-</code></pre><p>既然有三种引入方式，三种方式有没有优先级之分呢，有没有区别呢？答案是肯定的。</p>
+</code></pre></blockquote>
+<p>既然</p>
+<p>有三种引入方式，三种方式有没有优先级之分呢，有没有区别呢？答案是肯定的。</p>
 <p>如若是对同一个标签用三种方式设置同一个样式时，在没有<span style="color:red;">important</span>(不建议使用，不利于后期的修改)情况下，并且有就近原则内部样式在外部引入的样式表的后面。</p><p style="color:red"> 行间  &gt; 内部引入 &gt; 外部引入</p><p></p>
 <p><span style="font-size:16px; color:red;">区别:</span></p>
-<p><strong>1.行间样式：</strong> 优先级比较高，但是HTML页面不太干净，文件比较大，不利于后期维护和修改。</p>
-<p><strong>2.内部引入：</strong> </p>
+<p><strong>1. 行间样式：</strong> 最为简单直接的一中方式，优先级比较高，但是HTML页面不太干净，文件比较大，不利于后期维护和修改。</p>
+<p><strong>2. 内部引入：</strong> 对于单个页面或者是修改某个元素时，可使用内部引入方式。多个页面建议使用外部引入。</p>
+<p><strong>3. 外部引入：</strong> 实现了页面框架代码与表现CSS代码的完全分离，使得前期制作和后期维护都十分方便,可引入多个文件，但是对于单个元素修改时比较麻烦</p>
   
 	</div>
 		<footer class="article-footer clearfix">
