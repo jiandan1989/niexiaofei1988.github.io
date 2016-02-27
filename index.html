@@ -1,545 +1,1387 @@
-
- <!DOCTYPE HTML>
-<html lang="zh-CN">
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="UTF-8">
-  
-    <title>Crazy tired</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
-    
-    <meta name="author" content="聂小飞 同學">
-    
-    <meta name="description" content="Nothing to see">
-    
-    
-    
-    
-    <link rel="alternative" href="/atom.xml## RSS address." title="Crazy tired" type="application/atom+xml">
-    
-    
-    <link rel="icon" href="/img/favicon.ico">
-    
-    
-    <link rel="apple-touch-icon" href="/img/Tinny.jpg">
-    <link rel="apple-touch-icon-precomposed" href="/img/Tinny.jpg">
-    
+  <meta charset="utf-8">
+  <meta name="theme-color" content="#1b7aca">
+  <link rel="icon" href="/icon.jpg">
+  <meta name="application-name" content="Crazy tired"/>
+  <meta name="msapplication-TileColor" content="#1b7aca"/>
+  <meta name="msapplication-square70x70logo" content="/icon.jpg" />
+  <meta name="msapplication-square150x150logo" content="/icon.jpg" />
+  <meta name="msapplication-wide310x150logo" content="/icon.jpg" />
+  <meta name="msapplication-square310x310logo" content="/icon.jpg" />
+  <meta name="msapplication-notification" content="frequency=30; polling-uri=/atom.xml" />
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" href="/icon.jpg">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-startup-image" href="/icon.jpg">
 
   
-    <link href="/css/font-awesome.min.css" rel="stylesheet">
-    
+  <title>Crazy tired</title>
+  <meta name="author" content="聂小飞 同學">
   
-  <link href="http://cdn.bootcss.com/highlight.js/8.2/styles/railscasts.min.css" rel="stylesheet">
-  <script src="http://cdn.bootcss.com/highlight.js/8.2/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
+  <meta name="description" content="Nothing to see">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="Crazy tired"/>
+
+  
+    <meta property="og:image" content="undefined"/>
   
 
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
-    <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?d182ed77fc48758bf45a33835ee35745";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="Crazy tired" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  
+    <link href="/css/animate.css" rel="stylesheet">
+  
+  
+    <script src="/js/jquery-2.0.3.min.js"></script>
+  
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script>
+    if (window.location.href.indexOf("yoursite.com")<0) {      location.href = location.href.replace(location.host, "yoursite.com");    }
+  </script>
 
-      <script type="text/javascript">
-  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
-
-  _st('install','.............Add your swiftype userID...............');
-</script>
 </head>
 
-  <body>
-    <header>
-      <div>
-		
-			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="Crazy tired">Crazy tired</a></h1>
-				<h2 class="blog-motto">简单爱一次</h2>
-			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
-			</a></div>
-			<nav class="animated">
-				<ul>
-                    <ul>
-					 
-						<li><a href="/">首页</a></li>
-					
-						<li><a href="/archives">归档</a></li>
-					
-						<li><a href="/about">关于我</a></li>
-					
-					<li>
-					
-						<form class="search" action="/search/index.html" method="get" accept-charset="utf-8">
-						<label>Search</label>
-						<input type="text" id="st-search-inpu" maxlength="20" placeholder="Search" />
-						</form>
-					
-					</li>
-                <!--<li><div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div></li>-->
 
-				</ul>
-			</nav>	
+<body>
+<!--[if lt IE9]>
+<script>
+alert("Please Update Your IE \n请升级您的IE浏览器");
+</script>
+< ![endif]-->
+  <header id="header" class="header header--fixed hide-from-print animated slideInDown"><div class="alignleft backtohome">
+  <a href="/">
+    <img id="icon-photo-small" class="personal-photo  animated rotateIn" src="/icon.jpg" alt="聂小飞 同學">
+  </a>
+  <h1 id="title-mini" class=""><a href="/">Crazy tired</a></h1>
 </div>
-    </header>
-    <div id="container" class="clearfix">
-      
+<a target="_blank" id="mini-toggle" class="more icon alignright"></a>
+<nav id="main-nav" class="alignright animated slideInRight">
 
-<div id="main">
+    
+    
+      <a target="_blank" class="icon twitter" href="http://twitter.com/1ittlecup"></a>
+    
+    
+    
+      <a target="_blank" class="icon googleplus" href="http://plus.google.com/+RuoxinHe"></a> 
+    
+    
+    
+    
+    
+    
+      <a target="_blank" class="icon zhihu" href="http://zhihu.com/people/1ittlecup"></a>
+    
+    
+    
+  <div class="clearfix"></div>
+</nav>
 
-  <section class="post" itemscope itemprop="blogPost">
-  <article>
-    <h1 itemprop="name">
-      
-        <a href="/2016/02/26/CSS 回顾(二)/" title="CSS 回顾(二)" itemprop="url">
-      
-        CSS 回顾(二)
+</header>
+  <aside id="sidebar" class="alignleft animated slideInLeft"><div class="personal-info">
+  <figure>
+    
+    <div  class="backtohome">
+      <a href="/">
+        <img id="icon-photo-normal" class="personal-photo animated rotateIn" src="/icon.jpg" alt="聂小飞 同學">
       </a>
-    </h1>
-    
-     
-       <p itemprop="description" >在这里主要回顾说一下盒子模型和选择器</p>
-      
-    
-    <p class="article-more-link">
-      <time datetime="2016-02-26T02:45:35.000Z" itemprop="datePublished">2016-02-26</time>
-      
-          <a href="/2016/02/26/CSS 回顾(二)/">阅读更多&raquo;</a>
-      
-    </p>
-
-  </article>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  <article>
-    <h1 itemprop="name">
-      
-        <a href="/2016/02/26/CSS回顾(一)/" title="CSS 回顾(一)" itemprop="url">
-      
-        CSS 回顾(一)
-      </a>
-    </h1>
-    
-     
-       <p itemprop="description" >简单回顾一下CSS的引入方式以及区别</p>
-      
-    
-    <p class="article-more-link">
-      <time datetime="2016-02-26T01:31:17.000Z" itemprop="datePublished">2016-02-26</time>
-      
-          <a href="/2016/02/26/CSS回顾(一)/">阅读更多&raquo;</a>
-      
-    </p>
-
-  </article>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  <article>
-    <h1 itemprop="name">
-      
-        <a href="/2016/02/25/HTML简单总结/" title="HTML简单总结(一)" itemprop="url">
-      
-        HTML简单总结(一)
-      </a>
-    </h1>
-    
-     
-       <p itemprop="description" >有些东西你不用就会废弃，有些东西你不看就会忘记。下面是HTML的简单总结，回忆一下…</p>
-      
-    
-    <p class="article-more-link">
-      <time datetime="2016-02-25T07:49:56.000Z" itemprop="datePublished">2016-02-25</time>
-      
-          <a href="/2016/02/25/HTML简单总结/">阅读更多&raquo;</a>
-      
-    </p>
-
-  </article>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  <article>
-    <h1 itemprop="name">
-      
-        <a href="/2015/12/07/刚学的string/" title="String" itemprop="url">
-      
-        String
-      </a>
-    </h1>
-    
-     
-           <p itemprop="description" >字符串：JS字符串是由Unicode字符、数字、标点符号等组成的序列。
-var str =&quot;字符串&quot;; or var str = &#39;字符串&#39;在JS中，包裹字符串单引号与双引号没有任何区别。但是还是建议使用双引号。
-var str = &#39;&quot;&quot;&#39;//定义了一个仅含有一个双引号的字符串</p>
-        
-    
-    <p class="article-more-link">
-      <time datetime="2015-12-07T11:43:18.000Z" itemprop="datePublished">2015-12-07</time>
-      
-          <a href="/2015/12/07/刚学的string/">阅读更多&raquo;</a>
-      
-    </p>
-
-  </article>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  <article>
-    <h1 itemprop="name">
-      
-        <a href="/2015/12/01/js基础知识二/" title="js基础知识二" itemprop="url">
-      
-        js基础知识二
-      </a>
-    </h1>
-    
-     
-           <p itemprop="description" >javascript中的原型：  在javascript中所有的函数都有prototype属性，该属性是一个对象，对象是所有属性的集合，所有的对象都有一个proto属性，所有对象的proto都指向其构造器的prototype。当函数没有任何属性，prototype对象默认有con</p>
-        
-    
-    <p class="article-more-link">
-      <time datetime="2015-12-01T13:26:50.000Z" itemprop="datePublished">2015-12-01</time>
-      
-          <a href="/2015/12/01/js基础知识二/">阅读更多&raquo;</a>
-      
-    </p>
-
-  </article>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  <article>
-    <h1 itemprop="name">
-      
-        <a href="/2015/11/29/两个空的故事/" title="两个空的故事" itemprop="url">
-      
-        两个空的故事
-      </a>
-    </h1>
-    
-     
-           <p itemprop="description" >两个空的故事，哪连个空呢，肯定不是孙悟空，在js中我们知道有两个表示空的一个是undefined两一个是null这连个空到底有什么区别呢？？？
-大多数计算机语言，有且仅有一个表示“无”的值，比如，c语言的null，java语言的null，Python语言的None，Ruby语言的</p>
-        
-    
-    <p class="article-more-link">
-      <time datetime="2015-11-29T04:41:34.000Z" itemprop="datePublished">2015-11-29</time>
-      
-          <a href="/2015/11/29/两个空的故事/">阅读更多&raquo;</a>
-      
-    </p>
-
-  </article>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  <article>
-    <h1 itemprop="name">
-      
-        <a href="/2015/11/27/javascript的基础知识/" title="javascript的基础知识" itemprop="url">
-      
-        javascript的基础知识
-      </a>
-    </h1>
-    
-     
-       <p itemprop="description" >javascript的基础知识一先说一下浏览器对js解析时做的准备工作
-1.变量和函数表达式的声明提升到当前作用域的最顶端
-2.把函数赋值，可以直接在函数上方调用。</p>
-      
-    
-    <p class="article-more-link">
-      <time datetime="2015-11-27T12:41:41.000Z" itemprop="datePublished">2015-11-27</time>
-      
-          <a href="/2015/11/27/javascript的基础知识/">阅读更多&raquo;</a>
-      
-    </p>
-
-  </article>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  <article>
-    <h1 itemprop="name">
-      
-        <a href="/2015/11/26/CSS/" title="CSS" itemprop="url">
-      
-        CSS
-      </a>
-    </h1>
-    
-     
-           <p itemprop="description" >css（层叠样式表），外文名（Cascading Style Sheets），是一种用来表现HTML（标准通用语言的一个应用）等文件样式的计算机语言。
-css目前最新版本为css3，是能够真正做到网页表现与内容分离的一种样式设计语言。以下只为学习日记：
-使用方法：1.外联式(li</p>
-        
-    
-    <p class="article-more-link">
-      <time datetime="2015-11-26T07:43:52.000Z" itemprop="datePublished">2015-11-26</time>
-      
-          <a href="/2015/11/26/CSS/">阅读更多&raquo;</a>
-      
-    </p>
-
-  </article>
-</section>
-
-  <section class="post" itemscope itemprop="blogPost">
-  <article>
-    <h1 itemprop="name">
-      
-        <a href="/2015/11/25/简单叙述/" title="简单叙述" itemprop="url">
-      
-        简单叙述
-      </a>
-    </h1>
-    
-     
-           <p itemprop="description" >简简单单的叙述我在这一个月左右的时间里的学习过程。HTML：超文本标记语言。超文本就是指页面内容可以包含图片、链接、甚至音乐、程序等非文字元素。
-其中HTML必须要有声明，声明表示符合什么样的标准以及用什么样的标准来解析这个文档。 
-HTML中分为单标签和双标签。又可分为块级标签</p>
-        
-    
-    <p class="article-more-link">
-      <time datetime="2015-11-25T14:05:09.000Z" itemprop="datePublished">2015-11-25</time>
-      
-          <a href="/2015/11/25/简单叙述/">阅读更多&raquo;</a>
-      
-    </p>
-
-  </article>
-</section>
-
-
-</div>
-      <div id="asidepart">
-<div id="authorInfo">
-	
-		<div class="author-logo"></div>		
-	
-	
-	<section class="author-info">
-		
-			<p> Levon</p>
-		
-		
-			<p>	大自然爱好者</p>
-		
-	</section>
-	 
-	<div class="social-font" class="clearfix">
-		
-		
-		
-		<a href="https://github.com/levonlin" target="_blank" title="github"></a>
-		
-		
-	</div>
-</div>
-<aside class="clearfix">
-
-
-  
-
-  
-
-  <div class="rsspart">
-	<a href="/atom.xml## RSS address." target="_blank" title="rss">RSS 订阅</a>
-</div>
-
-  <div class="widget tag">
-<h3 class="title">友情链接</h3>
-<ul class="entry">
-	<li>
-		<a href="http://hanmingyang.github.io/">前端大神韩哥</a>
-	</li>
-	<li>
-		<a href="http://zhuqy.github.io/">如鲸向海</a>
-	</li>
-	<li>
-		<a href="http://quanquanxuan.github.io/">两面三道</a>
-	</li>
-	<li>
-		<a href="http://baobeiaini.github.io/">千城雪</a>
-	</li>
-	<li>
-		<a href="http://crerich.github.io/">NewCode-华仔</a>
-	</li>
-	<li>
-		<a href="http://tyl1002353363.github.io/">不羁放纵爱自由</a>
-	</li>
-	<li>
-		<a href="http://yamanai.github.io/">yamanai</a>
-	</li>
-	<li>
-		<a href="http://lck297231489.github.io/">上海滩--新生的开始</a>
-	</li>
-	<li>
-		<a href="http://tavey.github.io/">Tavey.Newtype</a>
-	</li>
-	<li>
-		<a href="http://tang0916tang.github.io/">小翊</a>
-	</li>
-	<li>
-		<a href="http://xuyanchao.github.io/">De Marcia</a>
-	</li>
-	<li>
-		<a href="http://samguoqiang.github.io./">Janmdi</a>
-	</li>
-	
-	<li>
-		<a href="http://zgmn.github.io/">Moon</a>
-	</li>
-	<li>
-		<a href="http://running11.github.io/">晓晓</a>
-	</li>
-	<li>
-		<a href="http://haomark.github.io/">一蓑烟雨任平生</a>
-	</li>
-	<li>
-		<a href="http://jameblunt1973.github.io/">帅的拖网速</a>
-	</li>
-	<li>
-		<a href="http://luqiqi1225.github.io">琦小琦的小窝</a>
-	</li>
-	<li>
-		<a href="http://chumengxing1121.github.io/">小褚的梦想星世界</a>
-	</li>
-	<li>
-		<a href="http://wj1213180604.github.io/">逸仙于誓</a>
-	</li>
-	
-	<li>
-		<a href=" http://athenachu.github.io/">爱茵如梦</a>
-	</li>
-	<li>
-		<a href="http://sundyfuther.github.io/">Sundyfuther</a>
-	</li>
-	<li>
-		<a href="http://sh5054.github.io/">孙浩</a>
-	</li>
-	<li>
-		<a href="http://changxiangru.github.io/">停下来的时光</a>
-	</li>
-	
-	<li>
-		<a href="http://zoeyzhou.github.io">Zoey</a>
-	</li>
-	<li>
-		<a href="http://bairuoqing666.github.io/">TK-Person</a>
-	</li>
-	<li>
-		<a href="http://quangege.github.io/">泉哥の小世界</a>
-	</li>
-	<li>
-		<a href="http://gcsHaya.github.io/">草堂子</a>
-	</li>
-	<li>
-		<a href="http://zy8232003.github.io/">Memory</a>
-	</li>
-	<li>
-		<a href="http://weibo0909.github.io/">Sunday</a>
-	</li>
-	<li>
-		<a href="http://aoyi551083.github.io/">Looking to the future</a>
-	</li>
-</ul>
-</div>
-
-
-</aside>
-</div>
     </div>
-    <!--<footer><div id="footer" >
-</div></footer>-->
-    <script src="/js/jquery-2.1.0.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){ 
-  //back to top
-  function backToTop(){
-    var buttonHTML = $("<a href=\"#top\" id=\"back-top\">" + "<span>Back to Top</span></a>");
-    buttonHTML.appendTo($("body"));
-    var buttonToTop = $("#back-top");
-    // hide #back-top first
-    buttonToTop.hide();
+    
+    <figcaption>
+      <h3 class=>聂小飞 同學</h3>
+      <p>简单爱一次</p>
+    </figcaption>
+  </figure>
+  <section class="social">
+    
+    
+      <a target="_blank" class="icon twitter depth" href="http://twitter.com/1ittlecup"></a>
+    
+    
+    
+      <a target="_blank" class="icon googleplus depth" href="http://plus.google.com/+RuoxinHe"></a> 
+    
+    
+    
+    
+    
+    
+      <a target="_blank" class="icon zhihu depth" href="http://zhihu.com/people/1ittlecup"></a>
+    
+    
+    
+  </section>
+</div>
+<div class="theme-info">
+  <a target="_blank" href="https://github.com/heruoxin/hexo-persona-color" class="html5"> Persona Color Theme</a> 
+  &copy; - 2016 聂小飞 同學
+  
+</div>
+</aside>
+  <div id="content" class="inner">
+    <p id="header-fix"></p>
+    <div id="main-col" class="alignright"><div id="wrapper">
+  <div class="archive titlelist">
+    <article class="post">
+      <div class="post-content animated fadeIn">
+        <header>
+            
+              <div class="icon depth"><a href="/2016/02/26/CSS 回顾(二)/"> </a></div>
+              <h2 class="depth title" ><a class="animated" href="/2016/02/26/CSS 回顾(二)/">CSS 回顾(二)</a></h2>
+            
+            <time class="time title depth" datetime="2016-02-26T02:45:35.000Z">2016-02-26</time>
+          </header>
+      </div>
+    </article>
+  </div>
 
-    // fade in #back-top
-    $(function() {
-        $(window).scroll(function() {
-            if ($(this).scrollTop() > 200) {
-                buttonToTop.fadeIn();
-            } else {
-                buttonToTop.fadeOut();
-            }
-        });
-        // scroll body to 0px on click
-        buttonToTop.click(function() {
-            $('body,html').animate({
-                scrollTop: 0
-            }, 800);
-            return false;
-        });
-    });
-  }
-  backToTop();
+  <div class="archive titlelist">
+    <article class="post">
+      <div class="post-content animated fadeIn">
+        <header>
+            
+              <div class="icon depth"><a href="/2016/02/26/CSS回顾(一)/"> </a></div>
+              <h2 class="depth title" ><a class="animated" href="/2016/02/26/CSS回顾(一)/">CSS 回顾(一)</a></h2>
+            
+            <time class="time title depth" datetime="2016-02-26T01:31:17.000Z">2016-02-26</time>
+          </header>
+      </div>
+    </article>
+  </div>
 
-  $('.navbar').click(function(){
-    $('header nav').toggleClass('shownav');
-  });
-  var myWidth = 0;
-  function getSize(){
-    if( typeof( window.innerWidth ) == 'number' ) {
-      myWidth = window.innerWidth;
-    } else if( document.documentElement && document.documentElement.clientWidth) {
-      myWidth = document.documentElement.clientWidth;
-    };
-  };
-  var m = $('#main'),
-      a = $('#asidepart'),
-      c = $('.closeaside'),
-      ta = $('#toc.toc-aside');
-  $(window).resize(function(){
-    getSize(); 
-    if (myWidth >= 1024) {
-      $('header nav').removeClass('shownav');
-    }else
-    {
-      m.removeClass('moveMain');
-      a.css('display', 'block').removeClass('fadeOut');
+  <div class="archive titlelist">
+    <article class="post">
+      <div class="post-content animated fadeIn">
+        <header>
+            
+              <div class="icon depth"><a href="/2016/02/25/HTML简单总结/"> </a></div>
+              <h2 class="depth title" ><a class="animated" href="/2016/02/25/HTML简单总结/">HTML简单总结(一)</a></h2>
+            
+            <time class="time title depth" datetime="2016-02-25T07:49:56.000Z">2016-02-25</time>
+          </header>
+      </div>
+    </article>
+  </div>
+
+  <div class="archive titlelist">
+    <article class="post">
+      <div class="post-content animated fadeIn">
+        <header>
+            
+              <div class="icon depth"><a href="/2015/12/07/刚学的string/"> </a></div>
+              <h2 class="depth title" ><a class="animated" href="/2015/12/07/刚学的string/">String</a></h2>
+            
+            <time class="time title depth" datetime="2015-12-07T11:43:18.000Z">2015-12-07</time>
+          </header>
+      </div>
+    </article>
+  </div>
+
+  <div class="archive titlelist">
+    <article class="post">
+      <div class="post-content animated fadeIn">
+        <header>
+            
+              <div class="icon depth"><a href="/2015/12/01/js基础知识二/"> </a></div>
+              <h2 class="depth title" ><a class="animated" href="/2015/12/01/js基础知识二/">js基础知识二</a></h2>
+            
+            <time class="time title depth" datetime="2015-12-01T13:26:50.000Z">2015-12-01</time>
+          </header>
+      </div>
+    </article>
+  </div>
+
+  <div class="archive titlelist">
+    <article class="post">
+      <div class="post-content animated fadeIn">
+        <header>
+            
+              <div class="icon depth"><a href="/2015/11/29/两个空的故事/"> </a></div>
+              <h2 class="depth title" ><a class="animated" href="/2015/11/29/两个空的故事/">两个空的故事</a></h2>
+            
+            <time class="time title depth" datetime="2015-11-29T04:41:34.000Z">2015-11-29</time>
+          </header>
+      </div>
+    </article>
+  </div>
+
+  <div class="archive titlelist">
+    <article class="post">
+      <div class="post-content animated fadeIn">
+        <header>
+            
+              <div class="icon depth"><a href="/2015/11/27/javascript的基础知识/"> </a></div>
+              <h2 class="depth title" ><a class="animated" href="/2015/11/27/javascript的基础知识/">javascript的基础知识</a></h2>
+            
+            <time class="time title depth" datetime="2015-11-27T12:41:41.000Z">2015-11-27</time>
+          </header>
+      </div>
+    </article>
+  </div>
+
+  <div class="archive titlelist">
+    <article class="post">
+      <div class="post-content animated fadeIn">
+        <header>
+            
+              <div class="icon depth"><a href="/2015/11/26/CSS/"> </a></div>
+              <h2 class="depth title" ><a class="animated" href="/2015/11/26/CSS/">CSS</a></h2>
+            
+            <time class="time title depth" datetime="2015-11-26T07:43:52.000Z">2015-11-26</time>
+          </header>
+      </div>
+    </article>
+  </div>
+
+  <div class="archive titlelist">
+    <article class="post">
+      <div class="post-content animated fadeIn">
+        <header>
+            
+              <div class="icon depth"><a href="/2015/11/25/简单叙述/"> </a></div>
+              <h2 class="depth title" ><a class="animated" href="/2015/11/25/简单叙述/">简单叙述</a></h2>
+            
+            <time class="time title depth" datetime="2015-11-25T14:05:09.000Z">2015-11-25</time>
+          </header>
+      </div>
+    </article>
+  </div>
+
+
+
+
+  <div class="animated fadeIn" idplus="CSS回顾(二)" style="display: none;">
+    <div idplusp="CSS回顾(二)">
+      <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img s1c="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
+        <time class="depth" datetime="2016-02-26T02:45:35.000Z"><a href="#">2016-02-26</a></time>
+      
+      
+  
+    <h1 class="depth title">CSS 回顾(二)</h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <p><strong>在这里主要回顾说一下盒子模型和选择器</strong></p>
+<a id="more"></a>
+<p><span style="color:red;">盒子模型的构成:</span></p>
+<ul>
+<li><p>盒子中的内容(content)</p>
+</li>
+<li><p>盒子的边框：(border)</p>
+</li>
+<li><p>盒子边框与内容之间的距离：称为填充—padding内边距（内补丁）</p>
+</li>
+<li><p>如果有多个盒子存在，盒子与盒子之间的距离：称为边界—margin，外边距（外补丁）</p>
+</li>
+</ul>
+<p>W3C标准规定了标准盒子模型的宽度和高度的算法：</p>
+<p><strong>整个盒子模型在网页中所占的宽度:左右外边距 + 左右内边距 + 左右边框 + 内容宽度</strong></p>
+<p><strong>整个盒子模型在网页中所占的高度:上下外边距 + 上下内边距 + 上下边框 + 内容高度</strong></p>
+<p><img s1c="http://7xoo7k.com1.z0.glb.clouddn.com/w3c.jpg" alt="标准" title="标准盒子模型"></p>
+<p><img s1c="http://7xoo7k.com1.z0.glb.clouddn.com/ie.jpg" alt="IE" title="IE盒子模型"></p>
+<p>从上两图可以看出标准盒子模型和IE盒子模型的不同：</p>
+<p>标准盒子模型中内容(content)的高度和宽度都不包含内边距(padding)和边框(border)，但是在IE盒子模型中内容的高度都把内边距和边框包含在内。</p>
+<p><strong>盒子模型中的padding、margin、以及border在应用中都遵循了TRBL法则(Top、Right、Bottom、Left)。</strong></p>
+<p>说完了盒子模型就要涉及到BFC，请<a href="javascript:;" style="font-size:20px; text-decoration:none; color:#f47d31;" target="_blank" rel="external">点击查看</a></p>
+<div style="border:1px  #999 dashed;"></div>
+
+<p><span style="color:red;">声明样式：</span></p>
+<p>在css中对一个元素或多个元素进行声明样式是一个选择器、一对大括号、属性名和属性值组成</p>
+<pre><code><span class="tag">p</span> <span class="rules">{
+    <span class="rule"><span class="attribute">font-size</span>:<span class="value"><span class="number">16px</span></span></span>;
+    <span class="rule"><span class="attribute">font-color</span>:<span class="value">red</span></span>;
+}</span>
+</code></pre><p>对一个元素声明多个样式时，必须由分号(;)隔开。</p>
+<div style="border:1px  #999 dashed;"></div>
+
+<p><span style="color:red;">选择器:</span></p>
+<p>选择分为很多种，按照类型分类的话有基本、组合、伪类、属性等。</p>
+<p><strong>基本的选择器：</strong></p>
+<ul>
+<li><p>通配选择器(*)：匹配所有的元素。</p>
+<pre><code>*<span class="rules">{
+  <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">0</span></span></span>;
+  <span class="rule"><span class="attribute">padding</span>:<span class="value"><span class="number">0</span></span></span>;}</span>
+</code></pre></li>
+<li><p>标签选择器(p): 匹配所有使用p的标签元素。<br>  p{</p>
+<pre><code><span class="attribute">font-size</span>:<span class="number">20px</span>;
+</code></pre><p>  }</p>
+</li>
+<li><p>class选择器(.test):匹配所有带有class为test的元素。</p>
+<pre><code><span class="class">.test</span><span class="rules">{
+<span class="rule"><span class="attribute">font-size</span>:<span class="value"><span class="number">20px</span></span></span>;
+}</span>
+<span class="tag">p</span><span class="class">.test</span><span class="rules">{
+<span class="rule"><span class="attribute">font-size</span>:<span class="value"><span class="number">20px</span></span></span>;
+}</span>
+</code></pre></li>
+<li>id选择器(#id):匹配指定id名的元素，id选择器是唯一的 <code>#test{background-color:red;}</code></li>
+</ul>
+<div style="border:1px  #999 dashed;"></div>
+
+<p><strong>组合选择器：</strong></p>
+<ul>
+<li><p>群组选择器(h1,h2,h3): 同时匹配多个元素，之间用逗号(,)隔开 <code>h1,h2,h3{margin:0;}</code></p>
+</li>
+<li><p>后代元素选择器(div span):匹配所有属于div的span包括子孙级别的元素，之间用空格隔开 <code>div span{display:block;}</code></p>
+</li>
+<li><p>子元素选择器(ul&gt;li):匹配所有属于ul的子元素li <code>ul&gt;li{width:200px;}</code></p>
+</li>
+<li><p>相邻元素选择器(p+div):匹配p元素后相邻的div元素 <code>p+div{width:200px;}</code></p>
+</li>
+</ul>
+<div style="border:1px  #999 dashed;"></div>
+
+<p><strong>伪元素选择器：</strong></p>
+<ul>
+<li><p><strong>p::first-line:</strong> 匹配p元素的第一行 <code>p::first-line{font-color:red;}</code></p>
+</li>
+<li><p><strong>p::first-letter:</strong> 匹配p元素的第一个字符 <code>p::first-letter{font-weight:bold;}</code></p>
+</li>
+<li><p><strong>p::before:</strong> 在p元素之前插入生成的文本 <code>p::before{content:””;width:100px;height:100px;}</code></p>
+</li>
+<li><p><strong>p::after:</strong> 在p元素之后插入生成的文本 <code>p::after{content:””;width:10px;height:10px;background:red;}</code></p>
+</li>
+</ul>
+<p><span style="color:red; font-size:18px;">注意:在使用before和after伪类时，必须要有content属性。</span></p>
+<div style="border:1px #999 dashed"></div>
+
+<p><strong>伪类选择器 :</strong></p>
+<ul>
+<li><p><strong>div:first-child:</strong> 匹配div的第一个子元素 <code>div:first-child{width:200px;}</code></p>
+</li>
+<li><p><strong>a:link:</strong>匹配所有未被点击的a链接 <code>a:link{background:red;}</code></p>
+</li>
+<li><p><strong>a:visited:</strong>匹配所有已被点击的a链接 <code>a:visited{background:blue;}</code></p>
+</li>
+<li><p><strong>e:hover:</strong> 匹配所有鼠标悬停其上的E元素 <code>e:hover{background:green;}</code></p>
+</li>
+<li><p><strong>e:active:</strong> 匹配所有鼠标点击但还没有释放的E元素 <code>e:active{background:yellow;}</code></p>
+</li>
+</ul>
+<p><span style="color:#f47d31; font-size:16px;">注意：当link,visited,hover,acitve作用于同一个a链接时,是有顺序的如果链接是有效的地址访问过后，link状态不再会被触发</span></p>
+<div style="border:1px #999 solid;margin-top:15px;"></div>
+
+<p>这里讲的为CSS2内的选择器,关于CSS3选择器内容请<a href="http://niexiaofei1988.github.io/2016/02/26/CSS%E5%9B%9E%E9%A1%BE%28%E4%B8%80%29/" target="_blank" rel="external">点击查看</a> <br><br><span style="font-size:18px;color:#f47d31;">感谢韩大神的技术传授</span></p>
+
+      
+    </div>
+    <footer>
+      
         
-    }
-  });
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
 
-  var show = true;
-  c.click(function(){
-    if(show == true){
-        a.addClass('fadeOut').css('display', 'none');
-        ta.css('display', 'block').addClass('fadeIn');
-        m.addClass('moveMain');  
-    }else{
-        a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');     
-        ta.css('display', 'none'); 
-        m.removeClass('moveMain');
-        $('#toc.toc-aside').css('display', 'none');
+
+
+      
+    </div>
+  </div>
+
+
+
+  <div class="animated fadeIn" idplus="CSS回顾(一)" style="display: none;">
+    <div idplusp="CSS回顾(一)">
+      <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img s1c="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
+        <time class="depth" datetime="2016-02-26T01:31:17.000Z"><a href="#">2016-02-26</a></time>
+      
+      
+  
+    <h1 class="depth title">CSS 回顾(一)</h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <p><strong>简单回顾一下CSS的引入方式以及区别</strong></p>
+<a id="more"></a>
+<p style="font-size:18px;">CSS 样式由选择符和声明组成，而声明又由属性和值组成</p>
+
+<ul>
+<li><p>选择器{属性:值}</p>
+</li>
+<li><p>声明：在英文大括号{}中的就是声明，属性和值之间用冒号(:)分隔。当有多条声明时，中间可以用英文分号(;)分隔。</p>
+</li>
+<li><p>注释方式: <code>/**/</code></p>
+</li>
+</ul>
+<p>我们都知道在html文档中引入css(层叠样式表)有四种方式，四种方式分别是</p>
+<p><span style="color:red;">行间样式</span>：在标签元素内写入样式</p>
+<blockquote>
+<pre><code>&lt;<span class="tag">p</span> style=<span class="string">"font-size:16px; font-color:red;"</span>&gt;This is <span class="tag">a</span> paragraph &lt;/p&gt;
+</code></pre></blockquote>
+<p><span style="color:red;">内部引入</span>：在head标签内使用style标签引入</p>
+<blockquote>
+<pre><code> <span class="tag">&lt;<span class="title">style</span> <span class="attribute">type</span>=<span class="value">"text/css"</span>&gt;</span><span class="css">
+   <span class="tag">body</span><span class="rules">{
+       <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">0</span></span></span>;
+   }</span>
+</span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+</code></pre></blockquote>
+<p><span style="color:red;">外部引入</span>：在head标签内使用link方式引入外部样式表</p>
+<blockquote>
+<pre><code>&lt;link rel=<span class="string">"stylesheet"</span> <span class="class"><span class="keyword">type</span></span>=<span class="string">"text/css"</span> href=<span class="string">"样式表引入路径"</span>/&gt;
+</code></pre></blockquote>
+<p>既然有三种引入方式，三种方式有没有优先级之分呢，有没有区别呢？答案是肯定的。</p>
+<p>如若是对同一个标签用三种方式设置同一个样式时，在没有<span style="color:red;">important</span>(不建议使用，不利于后期的修改)情况下，并且有就近原则内部样式在外部引入的样式表的后面。</p><p style="color:red"> 行间  &gt; 内部引入 &gt; 外部引入</p><p></p>
+<p><span style="font-size:16px; color:red;">区别:</span></p>
+<p><strong>- 行间样式：</strong> 最为简单直接的一中方式，优先级比较高，但是HTML页面不太干净，文件比较大，不能实现样式和内容的分离，影响阅读体验，不利于后期维护和修改。</p>
+<p><strong>- 内部引入：</strong> 对于单个页面或者是修改某个元素时，可使用内部引入方式。多个页面建议使用外部引入，不能多次复用，没有多余的请求。</p>
+<p><strong>- 外部引入：</strong> 完美的实现了页面框架代码与表现CSS代码的完全分离，使得前期制作和后期维护都十分方便,可引入多个文件，可复用，但是对于单个元素修改时比较麻烦，增加请求次数。</p>
+<p><span style="color:red">@import url(路径)</span> :使用@import会增加页面的总体加载时间，也会有一次请求，IE中使用@import会改变文件的加载顺序，能会增加CSS文件的加载时间，阻碍页面渲染。这可不建议使用。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+      
+    </div>
+  </div>
+
+
+
+  <div class="animated fadeIn" idplus="HTML简单总结(一)" style="display: none;">
+    <div idplusp="HTML简单总结(一)">
+      <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img s1c="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
+        <time class="depth" datetime="2016-02-25T07:49:56.000Z"><a href="#">2016-02-25</a></time>
+      
+      
+  
+    <h1 class="depth title">HTML简单总结(一)</h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <h2 id="有些东西你不用就会废弃，有些东西你不看就会忘记。下面是HTML的简单总结，回忆一下…">有些东西你不用就会废弃，有些东西你不看就会忘记。下面是HTML的简单总结，回忆一下…</h2><a id="more"></a>
+<h3 id="1-_HTML基本结构:">1. HTML基本结构:</h3><blockquote>
+<pre><code><span class="doctype">&lt;!doctype html&gt;</span>                        <span class="comment">&lt;!--html文档的版本声明--&gt;</span>
+ <span class="tag">&lt;<span class="title">html</span>&gt;</span>                                <span class="comment">&lt;!--html文档的开始--&gt;</span>
+     <span class="tag">&lt;<span class="title">head</span>&gt;</span>                            <span class="comment">&lt;!--html文档头部的开始--&gt;</span>
+         <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>/&gt;</span>        <span class="comment">&lt;!--html文档的编码格式--&gt;</span>
+         <span class="tag">&lt;<span class="title">title</span>&gt;</span>标题<span class="tag">&lt;/<span class="title">title</span>&gt;</span>           <span class="comment">&lt;!--html文档的标题--&gt;</span>
+     <span class="tag">&lt;/<span class="title">head</span>&gt;</span>                            <span class="comment">&lt;!--html文档头部结束--&gt;</span>
+     <span class="tag">&lt;<span class="title">body</span>&gt;</span>                            <span class="comment">&lt;!--html正文开始--&gt;</span>
+         <span class="tag">&lt;<span class="title">p</span>&gt;</span>我是内容<span class="tag">&lt;/<span class="title">p</span>&gt;</span>              <span class="comment">&lt;!--html正文内容--&gt;</span>
+     <span class="tag">&lt;/<span class="title">body</span>&gt;</span>                            <span class="comment">&lt;!--html正文结束--&gt;</span>
+ <span class="tag">&lt;/<span class="title">html</span>&gt;</span>                                <span class="comment">&lt;!--html文档的结束--&gt;</span>
+</code></pre></blockquote>
+<p>(1) &lt;!doctype html&gt;是html5的标准声明，指定了 HTML 文档遵循的文档类型定义。</p>
+<p> (2) HTML文件均以&lt;html&gt;开始,&lt;/html&gt;结束</p>
+<p> (3)HTML文档对大小写不敏感，但是建议使用小写</p>
+<p> (4)注释方式：<q><!--注释代码--></q></p>
+<h3 id="2-_标签">2. 标签</h3><p> 在HTML文档中按照书写可分为双标签和单标签，双标签是以&lt;html&gt;开始的和&lt;/html&gt;结束的标签。单标签是&lt;br/&gt;</p>
+<p> 在HTML文档中每个标签都有自己的特定标识。</p>
+<p> <strong>html</strong>:根标签，告知浏览器此文档是一个HTML文档。</p>
+<p> <strong>head</strong>:指定了HTML的头部，head的内容不会显示在页面中，但是有这很重要的作用，用来告知浏览器编码格式、文档标题、样式表、js的外部引入地址或者内部引入的代码。</p>
+<p> (1) 标记可以描述页面的作者、摘要、关键词、版权、自动刷新等页面信息 例如：&lt;meta charset=”utf-8”/&gt;指定文档的编码格式，关于meta有很多作用各不相同，不再一一举例。</p>
+<p> (2) <strong>title</strong>:指定文档的标题</p>
+<p> (3) <strong>link</strong>:指定文档的css(样式表)的外部引入路径</p>
+<blockquote>
+<pre><code>&lt;link rel=<span class="string">"stylesheet"</span> <span class="class"><span class="keyword">type</span></span>=<span class="string">"text/css"</span> href=<span class="string">"引入路径"</span> /&gt;
+</code></pre></blockquote>
+<p> (4) <strong>style</strong>:指定文档css的内部引入方式</p>
+<blockquote>
+<pre><code>&lt;style <span class="typedef"><span class="keyword">type</span>="text/css&gt;样式代码&lt;/style&gt;</span>
+</code></pre></blockquote>
+<p> (5) <strong>script</strong>:指定js的引入方式</p>
+<blockquote>
+<pre><code><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript&gt;内部引入&lt;/script&gt;
+&lt;script type="</span><span class="value">text</span>/<span class="attribute">javascript</span>" <span class="attribute">src</span>=<span class="value">"JS的引入路径"</span>&gt;</span><span class="undefined">外部引入方式</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+</code></pre></blockquote>
+<h4 id="body:">body:</h4><p>指定了文档的主体，文档的正文标记，包含了文档中所有的内容，在浏览器中可视区域中可见得部分。</p>
+<p><strong>(1) h1~h6标签</strong></p>
+<p>指定文档主体标题，双标签，并且依据重要递减，<strong>h1</strong>标签是最高的等级，h系列标签在文档的渲染中有默认的外边距(<strong>margin</strong>)。</p>
+<p><img s1c="http://7xoo7k.com1.z0.glb.clouddn.com/h.png" alt="h标签的等级显示" title="h系列标签的显示情况"></p>
+<p><strong>(2) p标签 :</strong> 指定文档主体创建一个文本段落，双标签，有默认外边距。</p>
+<p><strong>(3) em 和 strong :</strong> 这两个标签都有强调的寓意，双标签，<strong>strong</strong>寓意更重一点，<strong>em</strong>显示为斜体。</p>
+<p><strong>(4) div 和 span :</strong> 标签在文档中没有任何寓意，双标签，<strong>div</strong>指没有语义的块级容器，<strong>span</strong>指包裹内容没有语义的行级标签。</p>
+<p><strong>(5) a标签 :</strong>超链接或者锚点链接，href属性是必须的，指定链接路径、id或者用#、javascript:;代替。title属性指对链接的提示，鼠标划过时显示的文本，target属性指链接的打开方式(_blank在另一个窗口打开， _self在自身窗口打开)</p>
+<blockquote>
+<pre><code><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"链接路径"</span> <span class="attribute">title</span>=<span class="value">"链接描述"</span> <span class="attribute">target</span>=<span class="value">"链接打开方式"</span>&gt;</span>点击跳转到指定路径页面<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"id"</span>&gt;</span>点击跳到页面中带有指定id的位置<span class="tag">&lt;/<span class="title">a</span>&gt;</span> 
+</code></pre></blockquote>
+<p><strong>(6)img :</strong> 图片标签，有src、alt、title属性，src指图片的位置(引入图片的路径),alt指当加载失败时的替代文本，title指对图片的提示，鼠标滑过时显示的文本。在不设置任何width和height时，会显示图片的实际大小。</p>
+<blockquote>
+<pre><code>&lt;<span class="tag">img</span> src=<span class="string">"图片路径"</span> alt=<span class="string">"替代文本"</span> title=<span class="string">"tips"</span>/&gt;
+</code></pre></blockquote>
+<p><strong>(7) q标签 ：</strong>短文本引用，比如在你的网页的文章里想引用某个作家的一句诗，这样会使你的文章更加出彩，那么<q>q标签是你所需要的</q>。</p>
+<p><strong>(8) blockquote标签：</strong> 长文本引用。</p>
+<p><strong>(9)br和hr标签：</strong>br表示换行，hr表示分割线。</p>
+<p><strong>(10)address标签：</strong>为页面加入地址信息，样式为斜体。<address>中国上海</address> </p>
+<p><strong>(11)code和pre标签：</strong>为页面加入计算机程序代码，代码为一行时用code,PHP中的变量名,前面要加上 ‘$’ 符号,pre指预格式化的文本，代码为多行时可以用pre标签，不能使用code标签。</p>
+<p><img s1c="http://7xoo7k.com1.z0.glb.clouddn.com/code-pre.png" alt="code和pre标签的显示" title="code和pre的区别"></p>
+<p><strong>(12)列表：</strong>列表有无序列表(ul li)、无序列表(ol li)、自定义列表(dl dt dd)。列表标签是组合标签，列表容器和列表项之间不能加入任何其他标签。</p>
+<p><img s1c="http://7xoo7k.com1.z0.glb.clouddn.com/ol-ul-dl.png" alt="三种列表" title="列表区别"></p>
+<p> <strong>(13)table表格:</strong> </p>
+<ul>
+<li>tbody 这个标签现在很少用了 </li>
+<li>tr   表格的一行</li>
+<li>td   表格的一个单元格(列)</li>
+<li>th   表格的头部的一个单元格，表格表头</li>
+<li>caption 表格标题</li>
+<li><p>summary属性 表格的摘要 &lt;table summary=”哈哈哈 红红红”&gt;&lt;/table&gt;</p>
+<p><img s1c="http://7xoo7k.com1.z0.glb.clouddn.com/table.png" alt="表格" title="table表格"></p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+      
+    </div>
+  </div>
+
+
+
+  <div class="animated fadeIn" idplus="String" style="display: none;">
+    <div idplusp="String">
+      <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img s1c="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
+        <time class="depth" datetime="2015-12-07T11:43:18.000Z"><a href="#">2015-12-07</a></time>
+      
+      
+  
+    <h1 class="depth title">String</h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <h2 id="字符串：">字符串：</h2><p>JS字符串是由Unicode字符、数字、标点符号等组成的序列。</p>
+<pre><code><span class="variable"><span class="keyword">var</span> str</span> =<span class="string">"字符串"</span>; or <span class="variable"><span class="keyword">var</span> str</span> = '字符串'在JS中，包裹字符串单引号与双引号没有任何区别。但是还是建议使用双引号。
+<span class="variable"><span class="keyword">var</span> str</span> = '<span class="string">""</span>'<span class="comment">//定义了一个仅含有一个双引号的字符串。</span>
+<span class="variable"><span class="keyword">var</span> str</span> = <span class="string">"''"</span><span class="comment">//定义了一个仅含有一个单引号的字符串。</span>
+<span class="variable"><span class="keyword">var</span> str</span> = <span class="string">" "</span><span class="comment">//定义一个包含空格的字符串</span>
+</code></pre><p>JS字符串的唯一默认属性：str.lengt=字符串的长度，我们可以调出开发者工具</p>
+<pre><code><span class="keyword">var</span> str = <span class="keyword">new</span> <span class="built_in">String</span> 
+<span class="built_in">console</span>.log(<span class="built_in">String</span>.prototype)<span class="comment">//可以看出length:0</span>
+</code></pre><h3 id="字符串的几种方法">字符串的几种方法</h3><p>1.indexOf()方法可以返回某个指定的字符串值在字符串中首次出现的位置</p>
+<pre><code> <span class="tag">var</span> str = <span class="string">"1 1 1 1 1 2 2"</span>
+ (<span class="number">1</span>) console.<span class="function"><span class="title">log</span><span class="params">(str.indexOf(<span class="string">'1'</span>)</span></span>)<span class="comment">//需要有引号</span>
+ (<span class="number">2</span>)console.<span class="function"><span class="title">log</span><span class="params">(str.indexOf(<span class="string">'3'</span>)</span></span>)<span class="comment">//当前字符串中没有这个字符的    时候返回的值都是-1.</span>
+ (<span class="number">3</span>) console.<span class="function"><span class="title">log</span><span class="params">(str.indexOf(<span class="string">'1'</span>,<span class="number">0</span>)</span></span>)
+ <span class="function"><span class="title">indexOf</span><span class="params">()</span></span>方法中可以有两个参数，<span class="function"><span class="title">indexOf</span><span class="params">(<span class="string">'str'</span>,<span class="number">0</span>)</span></span>第一个参数必
+ 须有，第二个参数表示从字符串中第几个字符开始查找，当第二个参数不
+设置的情况下默认值为<span class="number">0</span>.
+（<span class="number">4</span>）lastIndexOf可以理解为倒序。从后边开始查找。
+</code></pre><p>2.slice()方法可提取字符串的某个部分，并以数组的形式显示。有两个参数</p>
+<pre><code><span class="variable"><span class="keyword">var</span> str</span>=<span class="string">"1 2 3"</span>; 
+<span class="variable"><span class="keyword">var</span> arr</span> = str.slice(<span class="number">0</span>,<span class="number">4</span>)<span class="comment">//第一个参数表示起点位置，第二个参数表示结束位置（结束位置下标的字符不在内包括）。</span>
+console.log(arr)<span class="comment">//输出1 2 </span>
+<span class="variable"><span class="keyword">var</span> arr2</span> = str.slice(<span class="number">0</span>)<span class="comment">//一个参数时表示从第几个下标开始计算，直</span>
+到最后一个字符结束。
+</code></pre><p>3.split()方法用于把一个字符串分割成字符的数组<br>，str.split(‘value’,length)第一个参数表示用value当作分隔符来分割字符串。第二个参数表示生成新数组的长度</p>
+<pre><code><span class="keyword">var</span> str = <span class="string">'1 2 3'</span>;
+<span class="keyword">var</span> arr = str.split(<span class="string">' '</span>,<span class="number">3</span>)//输出[<span class="string">'1'</span>,<span class="string">'2'</span>,<span class="string">'3'</span>]就是用空格来分割
+</code></pre><p>4.substring()提取相应下标的字符。</p>
+<pre><code>var <span class="built_in">str</span>=<span class="string">'a b c'</span>;
+console.<span class="built_in">log</span>(<span class="built_in">str</span>.substring(<span class="number">0</span>,<span class="number">3</span>))<span class="comment">//有两个参数时第一个表示起点</span>
+位置第二个表示结束位置，但不包括结束下标的字符。
+</code></pre><p>5。charCodeAt()返回指定下标位置的字符的Unicode编码，</p>
+<p>6.charAt()返回指定下标位置的字符；只有一个参数。</p>
+<p>7.toLowerCase()把字符串全部转化为小写，没有参数。</p>
+<p>8.toUpperCase()把字符串全部转化为大写，没有参数。</p>
+<p>9.search(),replace(),match()以后再补充</p>
+<h3 id="最后做个练习">最后做个练习</h3><p>用上面的几种方法把字符串中的空格去除掉</p>
+<pre><code><span class="keyword">var</span> str = <span class="string">'a b c d e f'</span>;
+(<span class="number">1</span>).split和join
+    <span class="keyword">var</span> arr = str.split(<span class="string">' '</span>);
+    <span class="built_in">console</span>.log(arr.join(<span class="string">''</span>));
+(<span class="number">2</span>).循环和split
+    <span class="keyword">var</span> arr=str.split(<span class="string">' '</span>)
+    <span class="keyword">var</span> str2 = <span class="string">''</span>;
+    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i &lt;arr.length; i++){
+        str2 += arr[i];
+        }
+(<span class="number">3</span>).循环和charAt()
+    <span class="keyword">var</span> str2 = <span class="string">''</span>
+    <span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">0</span>; i &lt; str.length; i++){
+        <span class="keyword">if</span>(str.charAt(i)!=<span class="string">' '</span>);{
+            str2 += str.charAt(i)
+        },
+        <span class="keyword">if</span>(str.charAt(i)==<span class="string">' '</span>){
+            str3 += str[i]
+        }
+
     }
-    show = !show;
+(<span class="number">4</span>)循环
+    <span class="keyword">var</span> str2 = <span class="string">''</span><span class="comment">//定义一个空的字符串，</span>
+    <span class="keyword">var</span> str3 = <span class="string">''</span>
+    <span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">0</span>; i &lt; str.length; i ++){
+        <span class="keyword">if</span>(str[i] !=<span class="string">' '</span>){
+            str2 += str[i]
+        }
+        <span class="keyword">if</span>(str[i] == <span class="string">' '</span>){
+            str3 += str[i]
+        }
+    }
+(<span class="number">5</span>)<span class="function"><span class="keyword">function</span>(<span class="params"></span>)方法
+    (<span class="params">function(lib</span>)</span>{
+        <span class="keyword">var</span> helper={
+            init:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+                <span class="keyword">this</span>.opction = {
+                    str:opction.str
+                }
+            }
+            <span class="keyword">this</span>.fn();
+        },
+        fn:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+        <span class="keyword">var</span> str = <span class="keyword">this</span>.opction.str;
+        <span class="keyword">var</span> arr = str.split(<span class="string">' '</span>);
+        <span class="keyword">var</span> str2 = <span class="string">''</span>;
+        <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i &lt;arr.length; i++){
+            str2 += arr[i];
+        }
+        }
+        lib.helper = helper;
+    })(<span class="built_in">window</span>.lib={});
+    <span class="built_in">window</span>.lib.helper.init({
+        str:<span class="string">'1 2 3 4 5 6 7'</span>
+    })
+</code></pre><h3 id="以上方法可以自己试一下">以上方法可以自己试一下</h3>
+      
+    </div>
+    <footer>
+      
+        
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+      
+    </div>
+  </div>
+
+
+
+  <div class="animated fadeIn" idplus="js基础知识二" style="display: none;">
+    <div idplusp="js基础知识二">
+      <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img s1c="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
+        <time class="depth" datetime="2015-12-01T13:26:50.000Z"><a href="#">2015-12-01</a></time>
+      
+      
+  
+    <h1 class="depth title">js基础知识二</h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <h2 id="javascript中的原型：">javascript中的原型：</h2><p>  在javascript中所有的函数都有prototype属性，该属性是一个对象，对象是所有属性的集合，所有的对象都有一个<strong>proto</strong>属性，所有对象的<strong>proto</strong>都指向其构造器的prototype。当函数没有任何属性，prototype对象默认有constructor（指向函数本身）属性。</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>{
+    <span class="keyword">return</span> <span class="string">'10'</span>
+    }
+<span class="keyword">var</span> fn2 = <span class="keyword">new</span> fn();<span class="comment">//从fn方法里面new出一个对象，生成对象</span>
+<span class="built_in">console</span>,log(fn2.__proto__===fn.prototype)为<span class="literal">true</span>
+</code></pre><p> 所有构造器的<strong>proto</strong>都指向Function.prototype.完全继承了prototype的属性以及方法。</p>
+<h3 id="javascript中的this">javascript中的this</h3><h3 id="this是javascript语言的一个关键字。下边是几种用法说明。">this是javascript语言的一个关键字。下边是几种用法说明。</h3><h3 id="1-在全局作用域下调用this，this指向Global,也就是window，（函数声明、匿名函数、函数表达式在全局中调用this指向window-">1.在全局作用域下调用this，this指向Global,也就是window，（函数声明、匿名函数、函数表达式在全局中调用this指向window.</h3><pre><code>（<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+    <span class="built_in">console</span>.log(<span class="keyword">this</span>)
+    }();<span class="comment">//匿名函数</span>
+<span class="keyword">var</span> fn= <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+    <span class="built_in">console</span>.log(<span class="keyword">this</span>)
+}
+fn();<span class="comment">//函数表达式</span>
+<span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>{
+    <span class="built_in">console</span>.log(<span class="keyword">this</span>)
+}
+fn();<span class="comment">//函数声明</span>
+</code></pre><p>在上边的例子里边this指向的都是window</p>
+<h3 id="2-用new关键字构造的对象，this指向创建该对象的对象。">2.用new关键字构造的对象，this指向创建该对象的对象。</h3><pre><code><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>{
+    <span class="built_in">console</span>.log(<span class="keyword">this</span>)
+}
+<span class="keyword">var</span> fn2 = <span class="keyword">new</span> fn();
+</code></pre><p>在上边例子中fn2是用new关键字声明的对象，fn()就是创建该对象给你的对象，所以这里this指向的是fn()</p>
+<h3 id="3-this当前的函数为对象属性时，this指向该对象。">3.this当前的函数为对象属性时，this指向该对象。</h3><pre><code><span class="keyword">var</span> obj= {
+    fn:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+        <span class="built_in">console</span>.log(<span class="keyword">this</span>)
+    }
+}
+obj.fn();
+</code></pre><p>在上边的例子里，this当前的函数为fn，fn是obj对象的一个属性，所以this指向的就是该对象（obj）.</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+      
+    </div>
+  </div>
+
+
+
+  <div class="animated fadeIn" idplus="两个空的故事" style="display: none;">
+    <div idplusp="两个空的故事">
+      <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img s1c="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
+        <time class="depth" datetime="2015-11-29T04:41:34.000Z"><a href="#">2015-11-29</a></time>
+      
+      
+  
+    <h1 class="depth title">两个空的故事</h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <p>两个空的故事，哪连个空呢，肯定不是孙悟空，在js中我们知道有两个表示空的一个是undefined两一个是null这连个空到底有什么区别呢？？？</p>
+<p>大多数计算机语言，有且仅有一个表示“无”的值，比如，c语言的null，java语言的null，Python语言的None，Ruby语言的nil。但是在js语言中有两个表示“无”的值，undefined和null，这是为什么？</p>
+<h2 id="一_相似性">一 相似性</h2><p>在JavaScript中，将一个变量赋值为undefined或null，老实说，几乎没区别。</p>
+<pre><code><span class="number">01.</span> <span class="variable"><span class="keyword">var</span> a</span> = undefined;
+<span class="number">02.</span> <span class="variable"><span class="keyword">var</span> a</span> = <span class="literal">null</span>;
+</code></pre><p>上面代码中，a变量分别被赋值为undefined和null，这两种写法几乎等价。</p>
+<p>undefined和null在if语句中，都会被自动转为false，相等运算符甚至直接报告两者相等。</p>
+<pre><code><span class="keyword">if</span>（！<span class="literal">undefined</span>）{
+    <span class="built_in">console</span>.log(<span class="string">'undefined is false'</span>);
+    }  <span class="regexp">//</span> <span class="literal">undefined</span> <span class="keyword">is</span> <span class="literal">false</span>
+
+<span class="keyword">if</span>(!<span class="literal">null</span>){
+    <span class="built_in">console</span>.log(<span class="string">'null is false'</span>);
+    }   <span class="regexp">//</span> <span class="literal">null</span> <span class="keyword">is</span> <span class="literal">false</span>
+
+    <span class="literal">undefined</span> == <span class="literal">null</span>;
+    <span class="regexp">//</span> <span class="literal">true</span>
+</code></pre><p>上面代码说明，两者的行为是何等相似!!!</p>
+<p>既然undefined和null的含义与用法都差不多，为什么要同时设置两个这样的值，这不是无端增加JavaScript的复杂度，令初学者困扰吗？Google公司开发的JavaScript语言的替代品Dart语言，就明确规定只有null，没有undefined！</p>
+<h2 id="二_历史原因">二  历史原因</h2><p>原来，这与JavaScript的历史有关。1995年JavaScript诞生时，最初像Java一样，只设置了null作为表示”无”的值。</p>
+<p>根据C语言的传统，null被设计成可以自动转为0。</p>
+<pre><code><span class="function"><span class="title">Numeber</span><span class="params">(null)</span></span>
+<span class="comment">// 0</span>
+
+<span class="number">5</span> + null
+<span class="comment">// 5</span>
+</code></pre><p>但是，JavaScript的设计者Brendan Eich，觉得这样做还不够，有两个原因。</p>
+<p>首先，null像在Java里一样，被当成一个对象。但是，JavaScript的数据类型分成原始类型（primitive）和合成类型（complex）两大类，Brendan Eich觉得表示”无”的值最好不是对象。</p>
+<p>其次，JavaScript的最初版本没有包括错误处理机制，发生数据类型不匹配时，往往是自动转换类型或者默默地失败。Brendan Eich觉得，如果null自动转为0，很不容易发现错误。</p>
+<h3 id="因此，Brendan_Eich又设计了一个undefined">因此，Brendan Eich又设计了一个undefined</h3><h2 id="三_最初设计">三  最初设计</h2><p>JavaScript的最初版本是这样区分的：null是一个表示”无”的对象，转为数值时为0；undefined是一个表示”无”的原始值，转为数值时为NaN。</p>
+<h2 id="四_目前的用法">四  目前的用法</h2><h3 id="null表示”没有对象”，即该处不应该有值。典型用法是：">null表示”没有对象”，即该处不应该有值。典型用法是：</h3><p> （1） 作为函数的参数，表示该函数的参数不是对象。</p>
+<p> （2） 作为对象原型链的终点。</p>
+<pre><code>&lt;b&gt;Object.<span class="function"><span class="title">getPrototypeOf</span><span class="params">(Object.prototype)</span></span>        <span class="comment">// null</span>
+&lt;b&gt;
+</code></pre><h3 id="undefined表示”缺少值”，就是此处应该有一个值，但是还没有定义。典型用法是：">undefined表示”缺少值”，就是此处应该有一个值，但是还没有定义。典型用法是：</h3><p> （1）变量被声明了，但没有赋值时，就等于undefined。</p>
+<pre><code><span class="keyword">var</span> i;   i <span class="comment">// undefined</span>
+</code></pre><p> （2) 调用函数时，应该提供的参数没有提供，该参数等于undefined.</p>
+<pre><code><span class="function"><span class="keyword">function</span> = <span class="title">f</span>(<span class="params">x</span>)</span>{ <span class="built_in">console</span>.log(x)};
+
+f();  <span class="comment">// undefined </span>
+</code></pre><p> （3）对象没有赋值的属性，该属性的值为undefined。</p>
+<pre><code><span class="keyword">var</span> o = <span class="keyword">new</span> <span class="built_in">Object</span>();  o.p <span class="comment">// undefined</span>
+</code></pre><p> （4）函数没有返回值时，默认返回undefined。</p>
+<pre><code><span class="variable"><span class="keyword">var</span> x</span> = f();   x  <span class="comment">// undefined</span>
+</code></pre><p> 转载自：[阮一峰博客]（<a href="http://www.ruanyifeng.com/blog/2014/03/undefined-vs-null.html）" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2014/03/undefined-vs-null.html）</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+      
+    </div>
+  </div>
+
+
+
+  <div class="animated fadeIn" idplus="javascript的基础知识" style="display: none;">
+    <div idplusp="javascript的基础知识">
+      <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img s1c="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
+        <time class="depth" datetime="2015-11-27T12:41:41.000Z"><a href="#">2015-11-27</a></time>
+      
+      
+  
+    <h1 class="depth title">javascript的基础知识</h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <h1 id="javascript的基础知识一">javascript的基础知识一</h1><p><strong>先说一下浏览器对js解析时做的准备工作</strong></p>
+<p>1.变量和函数表达式的声明提升到当前作用域的最顶端</p>
+<p>2.把函数赋值，可以直接在函数上方调用。</p>
+<a id="more"></a>
+<p><strong>函数的方式</strong></p>
+<p>1.<strong>声明函数：</strong>也称函数声明 使用function关键字加上函数名声明的函数，例如</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">example</span><span class="params">()</span></span>{}
+</code></pre><p>2.<strong>函数表达式：</strong>函数表达式可以细分为两种</p>
+<p>（1）声明变量的函数,例如:</p>
+<pre><code><span class="keyword">var</span> example = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>{}  声明一个变量，值为函数方法             
+</code></pre><p>（2）匿名函数：使用function关键字，但是没有函数名的函数。例如：</p>
+<pre><code><span class="function"><span class="keyword">function</span><span class="params">()</span></span>{}     
+</code></pre><p><strong>函数表达式可以使用（）操作符，表示立即执行，函数声明不可以使用。例如</strong></p>
+<pre><code><span class="list">(<span class="keyword">function</span><span class="list">()</span><span class="collection">{}</span>)</span><span class="list">()</span><span class="comment">; </span>
+</code></pre><p><strong>JS变量种类</strong></p>
+<p>1.全局变量：全局变量可以在任何地方访问。</p>
+<p>2.局部变量：只有在函数内部才能产生局部变量，对外部是不可见的。函数内部是可以访问外部函数的变量</p>
+<p><strong>注意：每一个函数都有默认undefined的返回值</strong></p>
+<p><strong>JS的作用域分为两种</strong></p>
+<p>1.全局作用域：全局作用域其实就是window对象，咱们之前声明的变量，实际上就是在window对象上创建了一个属性,但是在这里我们需要注意，window有自己默认属性，当我们创建的新属性和默认属性有冲突时，会覆盖默认属性。</p>
+<p>2.局部作用域：只有在function方法内才会产生局部作用域，当然也可使用return跳出当前作用域变换成全局的。例如</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">fn</span><span class="params">()</span></span>{
+    <span class="keyword">var</span> fn2 = <span class="function"><span class="keyword">function</span> <span class="params">(num)</span></span>{
+
+    } 
+    <span class="keyword">return</span> fn2;
+}
+<span class="keyword">var</span> newFn = fn();也就等于是把fn2()当作一个值赋予给了fn(),那么newFn也就是等于fn2().
+</code></pre><p><strong>计算机运算的函数：</strong></p>
+<p>假设一个函数执行时最后一个参数为运算符</p>
+<p>（1）首先声明一个函数，函数名为computer</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">computer</span><span class="params">()</span></span>{}
+</code></pre><p>(2)在函数内部声明一个变量，值为参数的最后一个</p>
+<pre><code><span class="keyword">var</span> character =<span class="built_in">arguments</span>[<span class="built_in">arguments</span>.length-<span class="number">1</span>];可以找到最后一个值，也就是运算符
+</code></pre><p>（3）用判断语句来判断当前的运算符是哪一种（我们假设是加法运算）</p>
+<pre><code><span class="keyword">if</span>(character ==<span class="string">'+'</span>){
+    <span class="keyword">for</span>(<span class="keyword">var</span> i =<span class="number">1</span>; i&lt;<span class="built_in">arguments</span>.length-<span class="number">1</span>; i++){
+        <span class="built_in">arguments</span>[<span class="number">0</span>] = <span class="built_in">arguments</span>[<span class="number">0</span>] + <span class="built_in">arguments</span>[i];使用<span class="keyword">for</span>循环运算出的值最终赋予给<span class="built_in">arguments</span>[<span class="number">0</span>]
+    }
+    <span class="keyword">return</span> <span class="built_in">arguments</span>[<span class="number">0</span>]; 使用<span class="keyword">return</span>方法返回<span class="built_in">arguments</span>[<span class="number">0</span>]
+}
+</code></pre><p>（4）最后一步就是来执行computer这个函数</p>
+<pre><code>conputer(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="string">'+'</span>); 如果像要看到得到的值可以用开发者工具console.<span class="built_in">log</span>(computer(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="string">'+'</span>))也可用其他的方法。
+</code></pre><p><strong>刚开始学习的时候我们只要求自己把每天学习的东西能掌握就行。一口吃不了胖子，路是一步一步走。只有基础扎实了才能走的更远。</strong>    </p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+      
+    </div>
+  </div>
+
+
+
+  <div class="animated fadeIn" idplus="CSS" style="display: none;">
+    <div idplusp="CSS">
+      <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img s1c="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
+        <time class="depth" datetime="2015-11-26T07:43:52.000Z"><a href="#">2015-11-26</a></time>
+      
+      
+  
+    <h1 class="depth title">CSS</h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <p>css（层叠样式表），外文名（Cascading Style Sheets），是一种用来表现HTML（标准通用语言的一个应用）等文件样式的计算机语言。</p>
+<p>css目前最新版本为css3，是能够真正做到网页表现与内容分离的一种样式设计语言。<strong>以下只为学习日记：</strong></p>
+<h3 id="使用方法：">使用方法：</h3><p>1.外联式(linking)（也叫外部样式）：将网页链接到外部样式表。</p>
+<p>2.嵌入式Embedding（也叫内页样式）：在网页上创建嵌入的样式表。</p>
+<p>3.内联式Inline（也叫行内样式）：应用内嵌样式到各个网页元素。</p>
+<h3 id="优先级：">优先级：</h3><p>内联式 &gt; 嵌入式 &gt; 外联式 </p>
+<p><strong>外联式：</strong>一般情况下我们使用外联式引用css，更好的显现了与文档内容分离，使文档的内容看起来更加的清晰，也可多个文档引用同一个css文件。外联式的引入放在head中，引入的方法：    </p>
+<pre><code> <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">type</span>=<span class="value">"text/css"</span> <span class="attribute">href</span>=<span class="value">"css文件地址"</span>/&gt;</span>
+<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+</code></pre><p> <strong>嵌入式:</strong> 当单个文件需要特别样式时，就可以使用内部样式表。你可以在head部分通过&lt; style &gt;标签定义内部样式表。引入方法：</p>
+<pre><code> <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">style</span> <span class="attribute">type</span>=<span class="value">"text/css"</span>&gt;</span><span class="css">
+        需要改变的<span class="tag">css</span>代码
+    </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+</code></pre><p> <strong>内联样式：</strong> 当特殊的样式需要应用到个别元素时，就可以使用内联样式。使用内联样式。 使用内联样式的方法是在相关的标签中使用样式属性。样式属性可以包含任何CSS属性。但由于优先级特别高不建议使用，一般在修改代码时使用，引用方法：</p>
+<pre><code>&lt;<span class="tag">p</span> style=<span class="string">"color:red;"</span>&gt;This is <span class="tag">a</span> paragraph&lt;/p&gt;
+</code></pre><h3 id="基础语法：">基础语法：</h3><p>  css规则是由两个主要的部分构成：选择器，以及一条或多条声明。</p>
+<p>  <strong>选择器：</strong>选择器可分为标签选择器，类选择器，Id选择器，群组选择器，通配选择器，层级选择器。</p>
+<p>  <strong>标签选择器：</strong> 直接作用于选择的标签元素，是一个集合（包含所有的相同标签）。</p>
+<p>  <strong>id选择器：</strong> 直接作用于该id的标签元素，是一个单数，也是唯一的，一个文档中一个id名称只能出现一次，写法#id｛｝。</p>
+<p>  <strong>层级选择器：</strong> （也称父子选择器），必须是按照层级，父子关系来使用，比如p标签是div的子元素，div p {},div元素与p元素之间必须有空格。</p>
+<p>  <strong>群组选择器：</strong> 多个标签选择器的集合，比如 div, p,h1{},标签与标签之间有那个逗号隔开。</p>
+<p>  <strong>类选择器：</strong> 指定某个标签的类名（class），类名可重复使用写法 .className{}。类名前用点（.）。</p>
+<p>  <strong>通配选择器：</strong> 通配选择器可作用于该文档中的所有标签，清楚所有标签的默认设置，不建议使用，写法：*｛｝。</p>
+<p> <strong>选择器的优先级：</strong> id选择器 &gt; 类选择器 &gt; 父子选择器 （层级选择器）&gt; 标签选择器 &gt; 通配选择器。 选择器可以通过important来增加优先级，但不建议使用，也可以使用多个选择器的叠加来增加优先级。</p>
+<p> <strong>声明：</strong> 每一个选择器都可以有多个声明，当有多个声明时之间用逗号隔开，比如 p{color:red; , font-size:12px; , line-height:18px}。 声明中的值若有多个单词时必须用引号包括比如：p{font-family:”sans-serif”;}。</p>
+<p> <strong>所用的选择器和声明中有符号的必须用英文状态下书写</strong></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+      
+    </div>
+  </div>
+
+
+
+  <div class="animated fadeIn" idplus="简单叙述" style="display: none;">
+    <div idplusp="简单叙述">
+      <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img s1c="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
+        <time class="depth" datetime="2015-11-25T14:05:09.000Z"><a href="#">2015-11-25</a></time>
+      
+      
+  
+    <h1 class="depth title">简单叙述</h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <p>简简单单的叙述我在这一个月左右的时间里的学习过程。<br>HTML：超文本标记语言。超文本就是指页面内容可以包含图片、链接、甚至音乐、程序等非文字元素。</p>
+<p>其中HTML必须要有声明，声明表示符合什么样的标准以及用什么样的标准来解析这个文档。 </p>
+<p>HTML中分为单标签和双标签。又可分为块级标签和行级标签以及空标签。</p>
+<p>!doctype html： 声明文档的解析标准。</p>
+<p>html： 创建一个超文本标记语言文档，双标签。</p>
+<p>head：（头）设置文档标题和其它在网页中不显示的信息，双标签。</p>
+<p>meta charset：单标签，编码格式。用什么样的编码格式来解析文档。</p>
+<p>title：文档的标题，每个文档必须有标题。双标签</p>
+<p>body：文档的可视区域，有默认的8px外边距，双标签。</p>
+<p>div ：块级标签，双标签，没有具体语意，表示区域，默认继承父级宽度，内容冲开高度。</p>
+<p>img ：单标签，图片的引入。引入方法 img s1c= “图片地址” alt=”图片加载不了的时显示图片的信息”</p>
+<p>h1~h6 ：标题标签，双标签，h1等级最高，h6等级最低。有默认的上下外边距。块级标签。</p>
+<p>a ：超链接标签，双标签 ，a标签的正确使用方法为a href=”#”,#代表引入的网址地址，当没有确切的网址时可以用#或者js中的javascript;代替。有四个状态，遵循爱恨法则(love&amp;hate)link、hover、active、visited.有默认的在自身窗口打开。</p>
+<p>p ：段落标签，双标签，有默认的外边距。</p>
+<p>ol ：有序列表标签，双标签，ol和li成套使用，ol li 中不可添加任何标签。</p>
+<p>ul：无序列表标签，双标签，ul和li成套使用，ul li 中不可添加任何标签。</p>
+<p>dl： 自定义列表标签，也成字典标签，标签用于结合dt(定义列表中的项目）和dd（描述列表中的项目）。</p>
+<p>br：单标签，空标签，定义为换行标签。</p>
+<p>del：定义文档中已被删除的文本，双标签。</p>
+<p>ins:双标签，定义已经被插入文档中的文本。</p>
+<p>em：把文本定义为强调的内容，双标签。</p>
+<p>strong:把文本定义为语气更强的强调的内容。双标签</p>
+<p>hr:水平分割线，在文档中创建一条水平线，可以在视觉上将文档分割成各个部分。单标签。</p>
+<p>small：小字号字体，如果被保卫的字体已经是字体模型所支持的最小字号，那么small标签将不起任何作用，双标签。</p>
+<p>big：大字号字体，双标签。</p>
+<p>table:表格标签，有一个或多个tr、th、td元素组成，tr元素定义表格行，th元素定义表头、td元素定义表格单元。更复杂的表格也可能包括caption,thead以及tbody等元素。</p>
+<p>sup和sub：双标签，为上标和下标，包含的内容将会以当前文本流中字符高度的一般来显示。</p>
+<p>form：用于为用户创建HTML表单，双标签，可以包含input,menus,textarea等元素。</p>
+<p>iframe：创建包含另外一个文档的内联框架，双标签。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+      
+    </div>
+  </div>
+
+
+
+
+
+
+  <script>
+  $(".archive").click(function (e) {
+      if ($("title").text().indexOf( "Crazy tired" )>=0 ){
+          if (e.target.href){
+              $(".animated:contains(\'"+e.target.text+"\')").addClass("bounceOut");
+              setTimeout(function(){
+                  var pageTitle=e.target.text;
+                  loadpage(pageTitle);
+                  $(".animated:contains(\'"+e.target.text+"\')").removeClass("bounceOut");
+                  history.pushState( pageTitle, $("title").text(), e.target.href);
+              }, 500);
+          }
+      }
+      return false;
   });
+  </script>
+  <script>
+  $(".backtohome").click(function (e) {
+      if ($("title").text() != "Crazy tired"){
+          //go back to home
+          setTimeout(function(){
+              loadpage();
+              history.pushState( null, $("title").text(), "/");
+          }, 150);
+      } else {
+          //go to tag cloud
+          loadpage("#tag");
+          history.pushState( "#tag", $("title").text(), "#tag");
+      }
+      return false;
+  });
+  </script>
+
+  <script>
+  function loadpage(pageTitle) {
+      scroll(0,0);
+      if ( !pageTitle ){
+          //home
+          $('#myCanvasContainer').css("display","none");
+          $("title").text("Crazy tired");
+          $("[idplus]").css("display","none");
+          $(".titlelist").css("display","");
+      } else if ( pageTitle.indexOf("#tag")>=0 ) {
+          //tagcloud
+          $('#myCanvasContainer').css("display","");
+          $("[idplus]").css("display","none");
+          $(".titlelist").css("display","none");
+          $("title").text("Tag Cloud | Crazy tired");
+      } else {
+          //pages
+          $('#myCanvasContainer').css("display","none");
+          $("title").text(pageTitle + " | Crazy tired");
+          var pageIDplus=pageTitle.replace(/\s+/g,"")
+          $(".titlelist").css("display","none");
+          $("[idplus=\'" + pageIDplus +"\']" ).css("display","");
+          $("[idplusp=\'" + pageIDplus +"\']" ).replaceWith($("[idplus=\'" + pageIDplus +"\']").html().replace(/img\ s1c/g, "img src"));
+      }
+  };
+  </script>
+  <script>
+  window.addEventListener('popstate', function(e) {
+      if (location.href.indexOf("#comment") > 0){
+          location.reload();
+      }else {
+          loadpage(e.state);
+      }
+      },false);
+  </script>
+  <script>
+
+  </script>
+
+
+
+
+<nav id="pagination" class="titlelist">
+  
+  
+  <div class="clearfix"></div>
+</nav>
+
+</div></div>
+    <div class="clearfix"></div>
+  </div>
+
+  <footer id="footer" class="inner"></footer>
+  <script src="/js/headroom.min.and.gallery.js"></script>
+<script>
+$("#mini-toggle").click(function () {
+    $( "#main-nav" ).css("display","inline");
+    setTimeout(function(){
+        $( "#main-nav" ).removeClass("slideInRight").addClass("slideOutRight");
+    }, 3000);
+    setTimeout(function(){
+        $( "#main-nav" ).css("display","");
+        $( "#main-nav" ).removeClass("slideOutRight").addClass("slideInRight");
+    }, 3555);
+});
+</script>
+
+<script>
+$("#header").headroom({
+  "tolerance": 0,
+  "offset": 200,
+  "classes": {
+    "initial": "",
+    "pinned": "slideInDown",
+    "unpinned": "slideOutUp"
+  }
+});
+$("#header").headroom("destroy");
+console.log("这网站没彩蛋，不用找了……")
+</script>
+
+<script>
+$("a").click(function () {
+    $( "#icon-photo-small"  ).removeClass( "rotateIn" ).addClass( "rotateOut" );
+    $( "#icon-photo-normal" ).removeClass( "rotateIn" ).addClass( "rotateOut" );
+    setTimeout(function(){
+        $( "#icon-photo-small"  ).removeClass( "rotateOut" ).addClass( "rotateIn" );
+        $( "#icon-photo-normal" ).removeClass( "rotateOut" ).addClass( "rotateIn" );
+    }, 900);
 });
 </script>
 
 
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-46393541-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+<!--[if lt IE 9]><script src="/js/excanvas.js"></script><![endif]-->
+<script src="/js/jquery.tagcanvas.min.js"></script>
+ <script type="text/javascript">
+ $(document).ready(function() {
+   if( ! $('#myCanvas').tagcanvas({
+     textColour : '#6d6d6d',
+     outlineThickness : 1,
+     textHeight: 20,
+     maxSpeed : 0.04,
+     depth : 0.75
+   })) {
+     // TagCanvas failed to load
+     $('#myCanvasContainer').hide();
+   }
+   // your other jQuery stuff here...
+ });
+ </script>
+
+
+<script src="/js/pangu.js"></script>
+<script>pangu.page_spacing();</script>
 
 
 
+<script src="/js/jquery.imagesloaded.min.js"></script>
 
 
-  </body>
- </html>
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+</body>
+</html>
