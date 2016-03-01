@@ -214,67 +214,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="对于this纠结了很久,其实想要搞清楚this指针的指向要弄清楚调用的方式和对象,浏览器的解析模式，函数和变量的优先级、原型链等。">对于this纠结了很久,其实想要搞清楚this指针的指向要弄清楚调用的方式和对象,浏览器的解析模式，函数和变量的优先级、原型链等。</h3><h4 id="this是Javascript语言的一个关键字,它代表函数运行时，自动生成的一个内部对象，只能在函数内使用。">this是Javascript语言的一个关键字,它代表函数运行时，自动生成的一个内部对象，只能在函数内使用。</h4><p>随着函数使用场合的不同，this的值会发生变化，但是有一个总的原则，那就是this指的是调用函数的那个对象。</p>
-<p>下面分四种情况，详细讨论this的用法。</p>
-<p><span style="color:red; font-size:16px;">情况一: 纯粹的函数调用(普通函数)</span></p>
-<p>这是函数的最通常用法，属于全局性调用，因此this就代表全局对象Global(window)。</p>
-<pre><code>    <span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>)</span>{
-    <span class="keyword">this</span>.x = <span class="number">1</span>;
-    <span class="built_in">console</span>.log(<span class="keyword">this</span>)
-}
-test();<span class="comment">// this = window</span>
-<span class="built_in">console</span>.log(<span class="keyword">this</span>.x);<span class="comment">//1</span>
-</code></pre><p>在浏览器的解析中,函数的优先级会提高，提至最顶端，随着就是变量的声明。上段代码解析就会是在window下创建了一个属性，而属性的值等于1.所以<code>console.log(this.x);</code>得到的值是 1。</p>
-<p><span style="color:red; font-size:16px;">情况二: 作为对象方法的调用</span></p>
-<p>函数还可以作为某个对象的方法调用，这时的this就指这个上级对象。</p>
-<pre><code><span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">()</span></span>{ alert(<span class="keyword">this</span>.x)}
-<span class="keyword">var</span> obj = {}; obj.x = <span class="number">1</span>; obj.m = test; obj.m(); <span class="comment">//1 </span>
-</code></pre><p>在上段代码中.在对象obj中创建了两个属性，并赋予了值,obj.m的值就是test方法,而 m 作为对象obj的属性，调用的时候this指向的是当前对象obj，alert(this.x)就等同于alert(obj.x)弹出的值为1.</p>
-<p><span style="color:red; font-size:16px;">情况三: 作为构造函数调用</span></p>
-<p>所谓构造函数,就是通过new关键词生成的一个新对象(Object),这时this指向这个新对象。</p>
-<pre><code><span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">()</span></span>{
-    <span class="keyword">this</span>.x = <span class="number">1</span>;
-}
-<span class="keyword">var</span> obj = <span class="keyword">new</span> test();
-alert(obj.x); <span class="comment">//1 </span>
-</code></pre><p>在上段代码中,对象obj是通过关键字new出来的一个实例,而通过new出来的对象都有<em>proto</em>属性,该属性完美的继承了test的prototype属性.在原型链中，如果自身没有该属性时会顺着原型链中继续向上找,直到找到原型链的最终点.为了表明这时的this不是全局对象，可以参考下面的代码，做个比较。</p>
-<pre><code><span class="keyword">var</span> x = <span class="number">2</span>;
-<span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">()</span></span>{
-    <span class="keyword">this</span>.x = <span class="number">1</span>;
-}
-<span class="keyword">var</span> obj = <span class="keyword">new</span> test();
-alert(x); <span class="comment">//2</span>
-</code></pre><p><span style="color:red; font-size:16px;">情况四: apply调用</span></p>
-<p>apply()是函数对象的一个方法，它的作用是改变函数的调用对象，它的第一个参数就表示改变后的调用函数的对象，因此this指的就是这第一个参数。</p>
-<pre><code><span class="keyword">var</span> x = <span class="number">0</span>;
-<span class="function"><span class="keyword">function</span> <span class="title">test</span><span class="params">()</span></span>{
-    alert(<span class="keyword">this</span>.x);
-}
-<span class="keyword">var</span> obj = {};
-obj.x = <span class="number">1</span>;
-obj.m = test;
-obj.m.apply(); <span class="comment">//0;</span>
-</code></pre><p>apply()的参数为空时,默认调用全局对象(window),因此这时运行的结果是0,apply()方法改变了this的指向。为了证明this指的是全局对象。我们把最后调用函数的代码改下。</p>
-<pre><code>obj<span class="class">.m</span><span class="class">.apply</span>(obj) <span class="comment">//1 这里的参数为obj执行时this的指向为obj。</span>
-</code></pre><h4 id="有很多面试题都要考察对调用函数的理解。下面有道面试题，可以看一下。">有很多面试题都要考察对调用函数的理解。下面有道面试题，可以看一下。</h4><pre><code><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params"></span>) </span>{
-getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{ <span class="built_in">console</span>.log(<span class="number">1</span>); };
-<span class="keyword">return</span> <span class="keyword">this</span>;
-}
-Foo.getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{ <span class="built_in">console</span>.log(<span class="number">2</span>); };
-Foo.prototype.getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{ <span class="built_in">console</span>.log(<span class="number">3</span>); };
-<span class="keyword">var</span> getName = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>{ <span class="built_in">console</span>.log(<span class="number">4</span>); };
-<span class="function"><span class="keyword">function</span> <span class="title">getName</span>(<span class="params"></span>) </span>{ <span class="built_in">console</span>.log(<span class="number">5</span>); }
-
-<span class="comment">//请写出以下输出结果：</span>
-Foo.getName();<span class="comment">//2</span>
-getName();<span class="comment">//4</span>
-Foo().getName();<span class="comment">//1</span>
-getName();<span class="comment">//1</span>
-<span class="keyword">new</span> Foo.getName();<span class="comment">//2</span>
-<span class="keyword">new</span> Foo().getName();<span class="comment">//3</span>
-<span class="keyword">new</span> <span class="keyword">new</span> Foo().getName();<span class="comment">//3</span>
-</code></pre><p>有不理解的地方可以一起讨论一下。可以自己多找些关于this的面试题。顺便说下本文参考 <a href="http://www.jb51.net/article/41656.htm" target="_blank" rel="external">http://www.jb51.net/article/41656.htm</a></p>
-
+        <h3 id="对于this纠结了很久,其实想要搞清楚this指针的指向要弄清楚调用的方式和对象,浏览器的解析模式，函数和变量的优先级、原型链等。">对于this纠结了很久,其实想要搞清楚this指针的指向要弄清楚调用的方式和对象,浏览器的解析模式，函数和变量的优先级、原型链等。</h3><h4 id="this是Javascript语言的一个关键字,它代表函数运行时，自动生成的一个内部对象，只能在函数内使用。">this是Javascript语言的一个关键字,它代表函数运行时，自动生成的一个内部对象，只能在函数内使用。</h4>
       
     </div>
     
@@ -283,6 +223,10 @@ getName();<span class="comment">//1</span>
       
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/01/关于this-一直很头疼的词/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>

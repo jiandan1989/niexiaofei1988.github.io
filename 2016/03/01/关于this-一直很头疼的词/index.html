@@ -6,22 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>关于this(一直很头疼的词) | Simple Love</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="对于this纠结了很久,其实想要搞清楚this指针的指向要弄清楚调用的方式和对象,浏览器的解析模式，函数和变量的优先级、原型链等。this是Javascript语言的一个关键字,它代表函数运行时，自动生成的一个内部对象，只能在函数内使用。随着函数使用场合的不同，this的值会发生变化，但是有一个总的原则，那就是this指的是调用函数的那个对象。
-下面分四种情况，详细讨论this的用法。
-情况一:">
+  <meta name="description" content="对于this纠结了很久,其实想要搞清楚this指针的指向要弄清楚调用的方式和对象,浏览器的解析模式，函数和变量的优先级、原型链等。this是Javascript语言的一个关键字,它代表函数运行时，自动生成的一个内部对象，只能在函数内使用。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于this(一直很头疼的词)">
 <meta property="og:url" content="http://yoursite.com/2016/03/01/关于this-一直很头疼的词/index.html">
 <meta property="og:site_name" content="Simple Love">
-<meta property="og:description" content="对于this纠结了很久,其实想要搞清楚this指针的指向要弄清楚调用的方式和对象,浏览器的解析模式，函数和变量的优先级、原型链等。this是Javascript语言的一个关键字,它代表函数运行时，自动生成的一个内部对象，只能在函数内使用。随着函数使用场合的不同，this的值会发生变化，但是有一个总的原则，那就是this指的是调用函数的那个对象。
-下面分四种情况，详细讨论this的用法。
-情况一:">
-<meta property="og:updated_time" content="2016-03-01T10:00:49.000Z">
+<meta property="og:description" content="对于this纠结了很久,其实想要搞清楚this指针的指向要弄清楚调用的方式和对象,浏览器的解析模式，函数和变量的优先级、原型链等。this是Javascript语言的一个关键字,它代表函数运行时，自动生成的一个内部对象，只能在函数内使用。">
+<meta property="og:updated_time" content="2016-03-01T10:02:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于this(一直很头疼的词)">
-<meta name="twitter:description" content="对于this纠结了很久,其实想要搞清楚this指针的指向要弄清楚调用的方式和对象,浏览器的解析模式，函数和变量的优先级、原型链等。this是Javascript语言的一个关键字,它代表函数运行时，自动生成的一个内部对象，只能在函数内使用。随着函数使用场合的不同，this的值会发生变化，但是有一个总的原则，那就是this指的是调用函数的那个对象。
-下面分四种情况，详细讨论this的用法。
-情况一:">
+<meta name="twitter:description" content="对于this纠结了很久,其实想要搞清楚this指针的指向要弄清楚调用的方式和对象,浏览器的解析模式，函数和变量的优先级、原型链等。this是Javascript语言的一个关键字,它代表函数运行时，自动生成的一个内部对象，只能在函数内使用。">
   
     <link rel="alternative" href="/atom.xml" title="Simple Love" type="application/atom+xml">
   
@@ -226,7 +220,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="对于this纠结了很久,其实想要搞清楚this指针的指向要弄清楚调用的方式和对象,浏览器的解析模式，函数和变量的优先级、原型链等。">对于this纠结了很久,其实想要搞清楚this指针的指向要弄清楚调用的方式和对象,浏览器的解析模式，函数和变量的优先级、原型链等。</h3><h4 id="this是Javascript语言的一个关键字,它代表函数运行时，自动生成的一个内部对象，只能在函数内使用。">this是Javascript语言的一个关键字,它代表函数运行时，自动生成的一个内部对象，只能在函数内使用。</h4><p>随着函数使用场合的不同，this的值会发生变化，但是有一个总的原则，那就是this指的是调用函数的那个对象。</p>
+        <h3 id="对于this纠结了很久,其实想要搞清楚this指针的指向要弄清楚调用的方式和对象,浏览器的解析模式，函数和变量的优先级、原型链等。">对于this纠结了很久,其实想要搞清楚this指针的指向要弄清楚调用的方式和对象,浏览器的解析模式，函数和变量的优先级、原型链等。</h3><h4 id="this是Javascript语言的一个关键字,它代表函数运行时，自动生成的一个内部对象，只能在函数内使用。">this是Javascript语言的一个关键字,它代表函数运行时，自动生成的一个内部对象，只能在函数内使用。</h4><a id="more"></a>
+<p>随着函数使用场合的不同，this的值会发生变化，但是有一个总的原则，那就是this指的是调用函数的那个对象。</p>
 <p>下面分四种情况，详细讨论this的用法。</p>
 <p><span style="color:red; font-size:16px;">情况一: 纯粹的函数调用(普通函数)</span></p>
 <p>这是函数的最通常用法，属于全局性调用，因此this就代表全局对象Global(window)。</p>
