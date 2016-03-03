@@ -4,21 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>关于jQuery的基本知识 | Simple Love</title>
+  <title>jQuery的基本选择器用法 | Simple Love</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="jQuery的由来:
-jQuery是一个兼容多浏览器的javascript库,核心理念是Write less,do more(写得更少,做的更多).jQuery在2006年1月由美国人John Resig在纽约的barcamp发布,吸引了来自世界各地的众多Javascript高手加入,由Dave Methvin率领团队进行开发,如今jQuery已经成为最流行的javascript库,在世界前100">
+  <meta name="description" content="不得不说jQuery的选择器功能确实是很强大,只要是我们能想到的几乎都能找到相应的方法来实现。来看看到底有多么得强大.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于jQuery的基本知识">
-<meta property="og:url" content="http://yoursite.com/2016/03/02/关于jQuery的基本知识/index.html">
+<meta property="og:title" content="jQuery的基本选择器用法">
+<meta property="og:url" content="http://yoursite.com/2016/03/03/jQuery的选择器/index.html">
 <meta property="og:site_name" content="Simple Love">
-<meta property="og:description" content="jQuery的由来:
-jQuery是一个兼容多浏览器的javascript库,核心理念是Write less,do more(写得更少,做的更多).jQuery在2006年1月由美国人John Resig在纽约的barcamp发布,吸引了来自世界各地的众多Javascript高手加入,由Dave Methvin率领团队进行开发,如今jQuery已经成为最流行的javascript库,在世界前100">
-<meta property="og:updated_time" content="2016-03-03T01:15:10.000Z">
+<meta property="og:description" content="不得不说jQuery的选择器功能确实是很强大,只要是我们能想到的几乎都能找到相应的方法来实现。来看看到底有多么得强大.">
+<meta property="og:updated_time" content="2016-03-03T03:40:25.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于jQuery的基本知识">
-<meta name="twitter:description" content="jQuery的由来:
-jQuery是一个兼容多浏览器的javascript库,核心理念是Write less,do more(写得更少,做的更多).jQuery在2006年1月由美国人John Resig在纽约的barcamp发布,吸引了来自世界各地的众多Javascript高手加入,由Dave Methvin率领团队进行开发,如今jQuery已经成为最流行的javascript库,在世界前100">
+<meta name="twitter:title" content="jQuery的基本选择器用法">
+<meta name="twitter:description" content="不得不说jQuery的选择器功能确实是很强大,只要是我们能想到的几乎都能找到相应的方法来实现。来看看到底有多么得强大.">
   
     <link rel="alternative" href="/atom.xml" title="Simple Love" type="application/atom+xml">
   
@@ -190,11 +187,11 @@ jQuery是一个兼容多浏览器的javascript库,核心理念是Write less,do m
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-关于jQuery的基本知识" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-jQuery的选择器" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/02/关于jQuery的基本知识/" class="article-date">
-  	<time datetime="2016-03-02T13:42:57.000Z" itemprop="datePublished">2016-03-02</time>
+      <a href="/2016/03/03/jQuery的选择器/" class="article-date">
+  	<time datetime="2016-03-03T03:15:13.000Z" itemprop="datePublished">2016-03-03</time>
 </a>
     </div>
   
@@ -207,7 +204,7 @@ jQuery是一个兼容多浏览器的javascript库,核心理念是Write less,do m
         
   
     <h1 class="article-title" itemprop="name">
-      关于jQuery的基本知识
+      jQuery的基本选择器用法
     </h1>
   
 
@@ -223,30 +220,37 @@ jQuery是一个兼容多浏览器的javascript库,核心理念是Write less,do m
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><span style="font-size:18px;color:red;">jQuery的由来:</span></p>
-<p>jQuery是一个兼容多浏览器的javascript库,核心理念是Write less,do more(写得更少,做的更多).jQuery在2006年1月由美国人John Resig在纽约的barcamp发布,吸引了来自世界各地的众多Javascript高手加入,由Dave Methvin率领团队进行开发,如今jQuery已经成为最流行的javascript库,在世界前10000个访问最多的网站中，有超过55%在使用jQuery。<span style="font-size:18px;color:#999;">(本段文字摘自百度。。。)</span></p>
-<a id="more"></a>
-<p><span style="font-size:18px;color:red;">jQuery的特点:</span></p>
-<p>一 、动态特效</p>
-<p>二 、AJAX</p>
-<p>三 、通过插件来扩展</p>
-<p>四 、方便的工具-例如浏览器版本来判断</p>
-<p>五 、渐进增强</p>
-<p>六 、链式调用</p>
-<p>七 、 多浏览器支持，支持Internet Explorer6.0+ 、    Opera9.0+、Firefox2+、Safari2.0+、Chrome1.0+（在2.0.0中取消了对Internet Explorer6,7,8的支持）</p>
-<p><span style="font-size:18px; color:red;">使用方法:</span></p>
-<h4 id="一_、Production_version_-_用于实际的网站中,已被精简和压缩">一 、Production version - 用于实际的网站中,已被精简和压缩</h4><h4 id="二_、Development_version_-_用于测试和开始(未压缩,是可读的代码)">二 、Development version - 用于测试和开始(未压缩,是可读的代码)</h4><p> 我们看到的是只是它的使用用途,应该怎么使用呢？</p>
-<p>在head内使用script标签src属性引入,引入方法很简单，和平时引入外部js一样，建议放在所有js的最上边/</p>
-<pre><code><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span> = "<span class="attribute">http:</span>//<span class="attribute">ajax.googleapis.com</span>/<span class="attribute">ajax</span>/<span class="attribute">libs</span>/<span class="attribute">jquery</span>/<span class="attribute">2.1.0</span>/<span class="attribute">jquery.min.js</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
-</code></pre><p> <span style="font-size:18px; color:red;">注意事项:</span></p>
-<p>1 、Wordpress内置jQuery库,其末尾防止JS库冲突而加入的jQuery.noConflict()使得主题中所有jQuery代码都要做一些小修改，更可能导致一些插件效果失效</p>
-<p>2 、Google CDN(国内的有新浪、百度云等提供)库的地址采用了协议相对路径，它可以很好的解决https引起的一些问题，具体可以看Paul Irish的介绍，当然你依旧可以使用带“http:”的路径。</p>
-<p>3 、 许多网站都采用Google CDN提供的jQuery库，使用它可以得到出色的缓存效果。</p>
-<p>4 、把jQuery代码统统放到页面底部可以提高载入速度。</p>
-<p>5 、使用HTML5重构的页面可省略掉 type=”text/javascript”。</p>
-<p>6 、推荐使用国内CDN公共库，速度更快，稳定性更高。</p>
-<p>来源:百度</p>
-
+        <h3 id="不得不说jQuery的选择器功能确实是很强大,只要是我们能想到的几乎都能找到相应的方法来实现。来看看到底有多么得强大-"><span style="font-size:16px; color:red;">不得不说jQuery的选择器功能确实是很强大,只要是我们能想到的几乎都能找到相应的方法来实现。来看看到底有多么得强大.</span></h3><a id="more"></a>
+<h3 id="基本选择器:">基本选择器:</h3><p> <span style="color:red;">#id选择器:</span>根据给定的id匹配一个元素。当id名中出现任何的元字符(如:! # $ %)等必须用两个反斜杠转义.</p>
+<p>HTML代码:</p>
+<pre><code>&lt;<span class="keyword">div</span> <span class="property">id</span> = <span class="string">"first"</span>&gt;我是第一个&lt;/<span class="keyword">div</span>&gt;
+&lt;<span class="keyword">div</span> <span class="property">id</span> = <span class="string">"second[two]"</span>&gt;我是第二个&lt;/<span class="keyword">div</span>&gt;
+</code></pre><p>jQuery 代码:</p>
+<pre><code>$<span class="comment">("#first")</span>          <span class="comment">//查找匹配id名为first的元素</span>
+$<span class="comment">("#second\\[two\\])</span> <span class="comment">//查找匹配id名为second[two]的元素，有特殊符号需要转义</span>
+</code></pre><p> <span style="color:red;">element选择器:</span>根据给定的元素标签名匹配所有元素。</p>
+<p> HTML代码:</p>
+<pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"first"</span>&gt;
+    &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"second"</span>&gt;&lt;span&gt;我是span&lt;/span&gt;&lt;/<span class="keyword">div</span>&gt;
+&lt;/<span class="keyword">div</span>&gt;
+</code></pre><p>jQuery 代码:</p>
+<pre><code>$(<span class="string">"div"</span>) <span class="comment">//查找到所有的div,对span不会产生影响</span>
+</code></pre><p><span style="color:red;">.class选择器:</span>根据给定的css类名匹配元素。一个元素可以有很多个类名,但是只要有查找给定类名就会被搜索到。</p>
+<p> HTML代码:</p>
+<pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"first"</span>&gt;我是带有<span class="keyword">first</span>类名的<span class="keyword">div</span>&lt;/<span class="keyword">div</span>&gt;
+&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"first one"</span>&gt;我是带有<span class="keyword">first</span>类名的<span class="keyword">div</span>&lt;/<span class="keyword">div</span>&gt;
+&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"second"</span>&gt;我是带有<span class="keyword">second</span>类名的<span class="keyword">div</span>&lt;/<span class="keyword">div</span>&gt;
+</code></pre><p> jQuery代码:</p>
+<pre><code>$(<span class="variable">".first"</span>)  //查找到带有first类名的<span class="keyword">div</span>，不会匹配到带有second类名的<span class="keyword">div</span>
+</code></pre><p><span style="color:red;">*(通配)选择器:</span>匹配文档中所有的元素。</p>
+<p>HTML代码:</p>
+<pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"first"</span>&gt;
+    &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"second"</span>&gt;我是<span class="keyword">div</span>&lt;/<span class="keyword">div</span>&gt;
+    &lt;span&gt;我是span&lt;/span&gt;
+&lt;/<span class="keyword">div</span>&gt;
+</code></pre><p>jQuery代码:</p>
+<pre><code>$(<span class="string">"*"</span>) <span class="comment">//匹配所有的元素，不管你是什么样的标签</span>
+</code></pre>
       
     </div>
     
@@ -255,18 +259,9 @@ jQuery是一个兼容多浏览器的javascript库,核心理念是Write less,do m
     
 <nav id="article-nav">
   
-    <a href="/2016/03/03/jQuery的选择器/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          jQuery的基本选择器用法
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/03/01/关于this-一直很头疼的词/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">关于this(一直很头疼的词)</div>
+    <a href="/2016/03/02/关于jQuery的基本知识/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">关于jQuery的基本知识</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -301,7 +296,7 @@ jQuery是一个兼容多浏览器的javascript库,核心理念是Write less,do m
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="关于jQuery的基本知识" data-title="关于jQuery的基本知识" data-url="http://yoursite.com/2016/03/02/关于jQuery的基本知识/"></div>
+	<div class="ds-thread" data-thread-key="jQuery的选择器" data-title="jQuery的基本选择器用法" data-url="http://yoursite.com/2016/03/03/jQuery的选择器/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
