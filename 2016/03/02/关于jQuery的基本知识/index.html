@@ -6,16 +6,19 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>关于jQuery的基本知识 | Simple Love</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
+  <meta name="description" content="jQuery的由来:
+jQuery是一个兼容多浏览器的javascript库,核心理念是Write less,do more(写得更少,做的更多).jQuery在2006年1月由美国人John Resig在纽约的barcamp发布,吸引了来自世界各地的众多Javascript高手加入,由Dave Methvin率领团队进行开发,如今jQuery已经成为最流行的javascript库,在世界前100">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于jQuery的基本知识">
 <meta property="og:url" content="http://yoursite.com/2016/03/02/关于jQuery的基本知识/index.html">
 <meta property="og:site_name" content="Simple Love">
-<meta property="og:description">
-<meta property="og:updated_time" content="2016-03-02T13:42:57.000Z">
+<meta property="og:description" content="jQuery的由来:
+jQuery是一个兼容多浏览器的javascript库,核心理念是Write less,do more(写得更少,做的更多).jQuery在2006年1月由美国人John Resig在纽约的barcamp发布,吸引了来自世界各地的众多Javascript高手加入,由Dave Methvin率领团队进行开发,如今jQuery已经成为最流行的javascript库,在世界前100">
+<meta property="og:updated_time" content="2016-03-03T01:11:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于jQuery的基本知识">
-<meta name="twitter:description">
+<meta name="twitter:description" content="jQuery的由来:
+jQuery是一个兼容多浏览器的javascript库,核心理念是Write less,do more(写得更少,做的更多).jQuery在2006年1月由美国人John Resig在纽约的barcamp发布,吸引了来自世界各地的众多Javascript高手加入,由Dave Methvin率领团队进行开发,如今jQuery已经成为最流行的javascript库,在世界前100">
   
     <link rel="alternative" href="/atom.xml" title="Simple Love" type="application/atom+xml">
   
@@ -220,7 +223,29 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p><span style="font-size:18px;color:red;">jQuery的由来:</span></p>
+<p>jQuery是一个兼容多浏览器的javascript库,核心理念是Write less,do more(写得更少,做的更多).jQuery在2006年1月由美国人John Resig在纽约的barcamp发布,吸引了来自世界各地的众多Javascript高手加入,由Dave Methvin率领团队进行开发,如今jQuery已经成为最流行的javascript库,在世界前10000个访问最多的网站中，有超过55%在使用jQuery。<span style="font-size:18px;color:#999;">(本段文字摘自百度。。。)</span></p>
+<p><span style="font-size:18px;color:red;">jQuery的特点:</span></p>
+<p>一 、动态特效</p>
+<p>二 、AJAX</p>
+<p>三 、通过插件来扩展</p>
+<p>四 、方便的工具-例如浏览器版本来判断</p>
+<p>五 、渐进增强</p>
+<p>六 、链式调用</p>
+<p>七 、 多浏览器支持，支持Internet Explorer6.0+ 、    Opera9.0+、Firefox2+、Safari2.0+、Chrome1.0+（在2.0.0中取消了对Internet Explorer6,7,8的支持）</p>
+<p><span style="font-size:18px; color:red;">使用方法:</span></p>
+<h4 id="一_、Production_version_-_用于实际的网站中,已被精简和压缩">一 、Production version - 用于实际的网站中,已被精简和压缩</h4><h4 id="二_、Development_version_-_用于测试和开始(未压缩,是可读的代码)">二 、Development version - 用于测试和开始(未压缩,是可读的代码)</h4><p> 我们看到的是只是它的使用用途,应该怎么使用呢？</p>
+<p>在head内使用script标签src属性引入,引入方法很简单，和平时引入外部js一样，建议放在所有js的最上边/</p>
+<pre><code><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span> = "<span class="attribute">http:</span>//<span class="attribute">ajax.googleapis.com</span>/<span class="attribute">ajax</span>/<span class="attribute">libs</span>/<span class="attribute">jquery</span>/<span class="attribute">2.1.0</span>/<span class="attribute">jquery.min.js</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+</code></pre><p> <span style="font-size:18px; color:red;">注意事项:</span></p>
+<p>1 、Wordpress内置jQuery库,其末尾防止JS库冲突而加入的jQuery.noConflict()使得主题中所有jQuery代码都要做一些小修改，更可能导致一些插件效果失效</p>
+<p>2 、Google CDN(国内的有新浪、百度云等提供)库的地址采用了协议相对路径，它可以很好的解决https引起的一些问题，具体可以看Paul Irish的介绍，当然你依旧可以使用带“http:”的路径。</p>
+<p>3 、 许多网站都采用Google CDN提供的jQuery库，使用它可以得到出色的缓存效果。</p>
+<p>4 、把jQuery代码统统放到页面底部可以提高载入速度。</p>
+<p>5 、使用HTML5重构的页面可省略掉 type=”text/javascript”。</p>
+<p>6 、推荐使用国内CDN公共库，速度更快，稳定性更高。</p>
+<p>来源:百度</p>
+
       
     </div>
     
