@@ -26,7 +26,7 @@
 什么事关系型数据库? : 数据被分门别类的存放在一些结构化的数据表(table)中，而数据表之间又往往会形成种种内在的交叉关系，存在于数据表之间的这种关系(relation)使数据库又被称为关系型数据库
 
 关系型数据库系统 :MySQL、">
-<meta property="og:updated_time" content="2016-03-09T14:34:31.000Z">
+<meta property="og:updated_time" content="2016-03-09T14:36:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于MySQL数据">
 <meta name="twitter:description" content="MySQL数据库简介
@@ -304,46 +304,16 @@
 <ul>
 <li>比较运算符  </li>
 </ul>
-<pre><code><span class="variable">&lt;table border="1" width="300px"&gt;</span>
-    <span class="variable">&lt;tr&gt;</span>
-        <span class="variable">&lt;td&gt;</span>运算符<span class="variable">&lt;/td&gt;</span>
-        <span class="variable">&lt;td&gt;</span>含义<span class="variable">&lt;/td&gt;</span>
-    <span class="variable">&lt;/tr&gt;</span>
-    <span class="variable">&lt;tr&gt;</span>
-        <span class="variable">&lt;td&gt;</span> = <span class="variable">&lt;/td&gt;</span>
-        <span class="variable">&lt;td&gt;</span>等于<span class="variable">&lt;/td&gt;</span>
-    <span class="variable">&lt;/tr&gt;</span>
-        <span class="variable">&lt;tr&gt;</span>
-        <span class="variable">&lt;td&gt;</span>&gt;<span class="variable">&lt;/td&gt;</span>
-        <span class="variable">&lt;td&gt;</span>大于<span class="variable">&lt;/td&gt;</span>
-    <span class="variable">&lt;/tr&gt;</span>
-    <span class="variable">&lt;tr&gt;</span>
-        <span class="variable">&lt;td&gt;</span>&gt;=<span class="variable">&lt;/td&gt;</span>
-        <span class="variable">&lt;td&gt;</span>大于等于<span class="variable">&lt;/td&gt;</span>
-    <span class="variable">&lt;/tr&gt;</span>
-    <span class="variable">&lt;tr&gt;</span>
-        <span class="variable">&lt;td&gt;</span><span class="variable">&lt;&lt;/td&gt;</span>
-        <span class="variable">&lt;td&gt;</span>小于<span class="variable">&lt;/td&gt;</span>
-    <span class="variable">&lt;/tr&gt;</span>        
-    <span class="variable">&lt;tr&gt;</span>
-        <span class="variable">&lt;td&gt;</span><span class="variable">&lt;=&lt;/td&gt;</span>
-        <span class="variable">&lt;td&gt;</span>小于等于<span class="variable">&lt;/td&gt;</span>
-    <span class="variable">&lt;/tr&gt;</span>
-    <span class="variable">&lt;tr&gt;</span>
-        <span class="variable">&lt;td&gt;</span><span class="variable">&lt;&gt;</span><span class="variable">&lt;/td&gt;</span>
-        <span class="variable">&lt;td&gt;</span>不等于<span class="variable">&lt;/td&gt;</span>
-    <span class="variable">&lt;/tr&gt;</span>
-<span class="variable">&lt;/table&gt;</span>
+<table border="1" width="300px"><br>    <tr><br>        <td>运算符</td><br>        <td>含义</td><br>    </tr><br>    <tr><br>        <td> = </td><br>        <td>等于</td><br>    </tr><br>        <tr><br>        <td>&gt;</td><br>        <td>大于</td><br>    </tr><br>    <tr><br>        <td>&gt;=</td><br>        <td>大于等于</td><br>    </tr><br>    <tr><br>        <td>&lt;</td><br>        <td>小于</td><br>    </tr><br>    <tr><br>        <td>&lt;=</td><br>        <td>小于等于</td><br>    </tr><br>    <tr><br>        <td>&lt;&gt;</td><br>        <td>不等于</td><br>    </tr><br></table>
 
-    SELECT * FROM <span class="keyword">user</span> WHERE uid = <span class="number">10</span>;//从<span class="keyword">user</span>数据表中查找等于<span class="number">10</span>的数据
-    SELECT * FROM <span class="keyword">user</span> WHERE uid <span class="variable">&lt;=10; //从user数据表中查找小于等于10的数据</span>
+<pre><code><span class="operator"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">user</span> <span class="keyword">WHERE</span> uid = <span class="number">10</span>;</span>//从user数据表中查找等于10的数据
+<span class="operator"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">user</span> <span class="keyword">WHERE</span> uid &lt;=<span class="number">10</span>;</span> //从user数据表中查找小于等于10的数据
 </code></pre><ul>
-<li><p>逻辑运算符</p>
-  <table border="1" width="300px"><br>      <tr><br>          <td>运算符</td><br>          <td style="width:400px;">含义</td><br>      </tr><br>      <tr><br>          <td> AND </td><br>          <td style="width:400px;">如果组合的条件都是TRUE，返回TRUE，否则返回FALSE</td><br>      </tr><br>      <tr><br>          <td>OR</td><br>          <td style="width:400px;">如果组合的条件其一是TRUE，返回TRUE</td><br>      </tr><br>      <tr><br>          <td>NOT</td><br>          <td style="width:400px;">如果条件是FALSE，返回TRUE</td><br>      </tr><br>  </table>
-
-
-</li>
+<li>逻辑运算符</li>
 </ul>
+<table border="1" width="300px"><br>    <tr><br>        <td>运算符</td><br>        <td style="width:400px;">含义</td><br>    </tr><br>    <tr><br>        <td> AND </td><br>        <td style="width:400px;">如果组合的条件都是TRUE，返回TRUE，否则返回FALSE</td><br>    </tr><br>    <tr><br>        <td>OR</td><br>        <td style="width:400px;">如果组合的条件其一是TRUE，返回TRUE</td><br>    </tr><br>    <tr><br>        <td>NOT</td><br>        <td style="width:400px;">如果条件是FALSE，返回TRUE</td><br>    </tr><br></table>
+
+
 <ul>
 <li><p>范围运算符(BETWEEN…AND…)判断表达式值是否在指定的范围</p>
 <pre><code><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> products <span class="keyword">WHERE</span> price BETWEEN <span class="number">1000</span> <span class="keyword">AND</span> <span class="number">2000</span>;
