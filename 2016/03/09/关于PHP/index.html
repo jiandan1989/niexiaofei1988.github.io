@@ -6,16 +6,58 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>关于PHP | Simple Love</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
+  <meta name="description" content="在PHP中很多东西方法都能在js中找到相对应的方法，其实学习PHP的时候可以把它的方法在你熟悉的语言中找到相对应的方法理解，这样容易一点。
+常量:
+常量的定义:
+
+常量是指在程序执行中无法修改的值.如PI(3.1415926)
+
+在脚本执行期间该值不能改变
+
+常量对大小写敏感，通常常量名总是大写
+
+常量是全局的，可以在脚本的任何地方引用
+
+常量分为内置常量和自定义常量
+
+常量使用define()函">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于PHP">
 <meta property="og:url" content="http://yoursite.com/2016/03/09/关于PHP/index.html">
 <meta property="og:site_name" content="Simple Love">
-<meta property="og:description">
-<meta property="og:updated_time" content="2016-03-09T05:15:40.000Z">
+<meta property="og:description" content="在PHP中很多东西方法都能在js中找到相对应的方法，其实学习PHP的时候可以把它的方法在你熟悉的语言中找到相对应的方法理解，这样容易一点。
+常量:
+常量的定义:
+
+常量是指在程序执行中无法修改的值.如PI(3.1415926)
+
+在脚本执行期间该值不能改变
+
+常量对大小写敏感，通常常量名总是大写
+
+常量是全局的，可以在脚本的任何地方引用
+
+常量分为内置常量和自定义常量
+
+常量使用define()函">
+<meta property="og:updated_time" content="2016-03-09T06:02:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于PHP">
-<meta name="twitter:description">
+<meta name="twitter:description" content="在PHP中很多东西方法都能在js中找到相对应的方法，其实学习PHP的时候可以把它的方法在你熟悉的语言中找到相对应的方法理解，这样容易一点。
+常量:
+常量的定义:
+
+常量是指在程序执行中无法修改的值.如PI(3.1415926)
+
+在脚本执行期间该值不能改变
+
+常量对大小写敏感，通常常量名总是大写
+
+常量是全局的，可以在脚本的任何地方引用
+
+常量分为内置常量和自定义常量
+
+常量使用define()函">
   
     <link rel="alternative" href="/atom.xml" title="Simple Love" type="application/atom+xml">
   
@@ -220,7 +262,131 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>在PHP中很多东西方法都能在js中找到相对应的方法，其实学习PHP的时候可以把它的方法在你熟悉的语言中找到相对应的方法理解，这样容易一点。</p>
+<h3 id="常量:">常量:</h3><ul>
+<li><p>常量的定义:</p>
+<ul>
+<li><p>常量是指在程序执行中无法修改的值.如PI(3.1415926)</p>
+</li>
+<li><p>在脚本执行期间该值不能改变</p>
+</li>
+<li><p>常量对大小写敏感，通常常量名总是大写</p>
+</li>
+<li><p>常量是全局的，可以在脚本的任何地方引用</p>
+</li>
+<li><p>常量分为内置常量和自定义常量</p>
+</li>
+<li><p>常量使用define()函数定义</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>例:              </p>
+<pre><code><span class="class"><span class="keyword">define</span></span>(<span class="string">"PI"</span>, <span class="number">3.1415926</span>); 
+echo PI; <span class="comment">//3.1415926</span>
+</code></pre><ul>
+<li><p>内置常量:</p>
+<p>  PHP_OS  php所在操作系统的名称</p>
+<p>  PHP_VERSION 当前php的版本号</p>
+</li>
+<li><p>魔术常量:是指那种值是不可变，也可变的。</p>
+</li>
+</ul>
+<pre><code><span class="strong">__LINE__</span>文件中的当前行号
+<span class="strong">__FILE__</span>文件的完整路径和文件名
+<span class="strong">__FUNCTION__</span> 函数名称
+<span class="strong">__CLASS__</span> 类的名称
+<span class="strong">__METHOD__</span> 类的方法名
+</code></pre><h4 id="数据类型:">数据类型:</h4><h5 id="1_、标量数据类型:">1 、标量数据类型:</h5><ul>
+<li><p>字符串:字符串有三种定义方式:单引号，双引号，定界符(heredoc)。</p>
+</li>
+<li><p>单引号字符串中出现的变量不会被变量的值替代</p>
+</li>
+<li><p>双引号字符串中最重要的一点是其中的变量会被变量值替代</p>
+</li>
+<li><p>如果遇到美元符号($)解析器会尽可能的取得后面的字符以组成一个合法的变量名，如果想明确的指定名字的结束，用花括号把变量名括起来</p>
+<p>例:</p>
+<pre><code><span class="variable">$beer</span> = <span class="string">"Heineken"</span>;
+echo <span class="string">"He drank some{$beer}s"</span>;
+</code></pre><ul>
+<li>字符串定界的方法使用定界符语法”&lt;&lt;&lt;”</li>
+</ul>
+</li>
+</ul>
+<pre><code>  <span class="variable">$str</span> = &lt;&lt;&lt;EOD    
+  Example <span class="keyword">of</span> string
+  using heredoc syntax
+EOD    
+</code></pre><p>在PHP定界符中的任何特殊字符，都不需要转义,PHP定界符中的PHP变量会被正常的用其值来替换，使用定界符要注意:结束标识符所在的行不能包含任何其他字符，这以为这该标识符不能被缩进，在分号之前之后都不能有任何空格或制表符。</p>
+<ul>
+<li><p>字符串转义:</p>
+<pre><code><span class="string">\n</span> 换行
+<span class="string">\r</span> 回车
+<span class="string">\\</span> <span class="string">\(反斜杠)</span>
+<span class="string">\$</span> $(美元符)
+<span class="string">\"</span> <span class="string">"(双引号)</span>
+</code></pre></li>
+</ul>
+<h5 id="2_、整型">2 、整型</h5><pre><code><span class="variable">$age</span> = <span class="number">25</span>;
+</code></pre><h5 id="3_、浮点型(float,double)">3 、浮点型(float,double)</h5><pre><code><span class="variable">$num</span> = <span class="number">5.39</span>;
+</code></pre><h5 id="4_、布尔型(bool)">4 、布尔型(bool)</h5><pre><code><span class="variable">$bo</span> = TRUE; <span class="variable">$bo</span> =FALSE;
+</code></pre><h5 id="3_、复合数据类型:">3 、复合数据类型:</h5><ul>
+<li><p>数组</p>
+<pre><code><span class="variable">$week</span> = <span class="keyword">array</span>(<span class="string">"星期一"</span>,<span class="string">"星期二"</span>,<span class="string">"星期三"</span>)
+</code></pre></li>
+<li><p>对象</p>
+<pre><code><span class="variable">$db</span> = new db;
+</code></pre></li>
+</ul>
+<h5 id="4_、特殊数据类型">4 、特殊数据类型</h5><ul>
+<li><p>资源</p>
+<pre><code><span class="variable">$fh</span> = fopen(<span class="string">"test.txt"</span>,<span class="string">"r"</span>);
+</code></pre></li>
+<li><p>null:无，表示没有值，null不表示空格，也不表示0，以下情况，默认为null;</p>
+<ul>
+<li><p>没有设置为任何预定义的变量</p>
+</li>
+<li><p>明确的赋值为null</p>
+</li>
+<li><p>使用函数unset()清除</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="5_、自动类型转换">5 、自动类型转换</h5><p>因为PHP对于类型定义非常的松散，所有有时会根据引用变量的环境，将变量自动转换为最适合的类型。</p>
+<pre><code>1    <span class="label">$num</span> = 5; 
+    <span class="label">$str</span> = "15;
+    echo <span class="label">$num</span> +<span class="label">$str</span> ; <span class="comment">//20</span>
+
+2 <span class="label">$str</span> = <span class="string">"100 hello"</span>;
+  <span class="label">$num</span> = 200;
+  echo <span class="label">$str</span> + <span class="label">$num</span> ; <span class="comment">//300</span>
+
+3 <span class="label">$str</span> = <span class="string">"1,2"</span>;
+   <span class="keyword">if</span>(<span class="label">$str</span>){ <span class="comment">//判断为true</span>
+           echo <span class="string">"hello world"</span>
+   }     
+</code></pre><h5 id="6、类型相关函数">6、类型相关函数</h5><ul>
+<li><p>gettype()返回变量的类型，共有8个可能的值(string,integer,float,boolean,array,object,null,unknow)</p>
+<pre><code><span class="variable">$str</span> = <span class="string">"hello"</span>
+echo gettype(<span class="variable">$str</span>); //string
+</code></pre></li>
+<li><p>is_type()查看变量是否属于某个类型，是返回TRUE，否返回FALSE</p>
+<pre><code><span class="variable">$arr</span> = <span class="keyword">array</span>(<span class="number">1</span>);
+echo is_array(<span class="variable">$arr</span>); //<span class="literal">true</span>
+<span class="variable">$num</span> = <span class="number">5</span>;
+echo is_int(<span class="variable">$num</span>); //<span class="literal">true</span>
+</code></pre></li>
+<li><p>var_dump()获取变量的值和类型的详细信息</p>
+<pre><code><span class="variable">$str</span> = <span class="string">"hello"</span>
+var_dump(<span class="variable">$str</span>);
+
+<span class="variable">$arr</span> = <span class="keyword">array</span>(<span class="string">"a"</span>,<span class="string">"b"</span>,<span class="string">"c"</span>);
+var_dump(<span class="variable">$arr</span>);
+</code></pre></li>
+</ul>
+<p>其实PHP有很多方法，没事的时候可以自己查看一下。。。。。</p>
+
       
     </div>
     
