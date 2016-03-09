@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>关于MySQL数据 | Simple Love</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="MySQL数据库简介
+相关术语
+
+什么是数据库? :数据库(database)就是一个由一批数据构成的有序集合，这个集合通常被保存为一个或多个彼此相关的文件。
+
+什么事关系型数据库? : 数据被分门别类的存放在一些结构化的数据表(table)中，而数据表之间又往往会形成种种内在的交叉关系，存在于数据表之间的这种关系(relation)使数据库又被称为关系型数据库
+
+关系型数据库系统 :MySQL、">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于MySQL数据">
+<meta property="og:url" content="http://yoursite.com/2016/03/09/关于MySQL数据/index.html">
+<meta property="og:site_name" content="Simple Love">
+<meta property="og:description" content="MySQL数据库简介
+相关术语
+
+什么是数据库? :数据库(database)就是一个由一批数据构成的有序集合，这个集合通常被保存为一个或多个彼此相关的文件。
+
+什么事关系型数据库? : 数据被分门别类的存放在一些结构化的数据表(table)中，而数据表之间又往往会形成种种内在的交叉关系，存在于数据表之间的这种关系(relation)使数据库又被称为关系型数据库
+
+关系型数据库系统 :MySQL、">
+<meta property="og:updated_time" content="2016-03-09T14:34:31.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于MySQL数据">
+<meta name="twitter:description" content="MySQL数据库简介
+相关术语
+
+什么是数据库? :数据库(database)就是一个由一批数据构成的有序集合，这个集合通常被保存为一个或多个彼此相关的文件。
+
+什么事关系型数据库? : 数据被分门别类的存放在一些结构化的数据表(table)中，而数据表之间又往往会形成种种内在的交叉关系，存在于数据表之间的这种关系(relation)使数据库又被称为关系型数据库
+
+关系型数据库系统 :MySQL、">
+  
+    <link rel="alternative" href="/atom.xml" title="Simple Love" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://7xoo7k.com1.z0.glb.clouddn.com/psu.jpeg">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://7xoo7k.com1.z0.glb.clouddn.com/psu.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Simple love</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>標籤</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>關於</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="http://niexiaofei1988.github.io/" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/jiandanaiyici" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="http://niexiaofei@yahoo.com" title="mail">mail</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">简简单单的我，只想写出一行属于我们自己的代码...</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Simple love</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://7xoo7k.com1.z0.glb.clouddn.com/psu.jpeg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Simple love</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="http://niexiaofei1988.github.io/" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/jiandanaiyici" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="http://niexiaofei@yahoo.com" title="mail">mail</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-关于MySQL数据" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/09/关于MySQL数据/" class="article-date">
+  	<time datetime="2016-03-09T13:39:07.000Z" itemprop="datePublished">2016-03-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      关于MySQL数据
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="MySQL数据库简介">MySQL数据库简介</h4><ul>
+<li><p>相关术语</p>
+<ul>
+<li><p>什么是数据库? :数据库(database)就是一个由一批数据构成的有序集合，这个集合通常被保存为一个或多个彼此相关的文件。</p>
+</li>
+<li><p>什么事关系型数据库? : 数据被分门别类的存放在一些结构化的数据表(table)中，而数据表之间又往往会形成种种内在的交叉关系，存在于数据表之间的这种关系(relation)使数据库又被称为关系型数据库</p>
+</li>
+<li><p>关系型数据库系统 :MySQL、 Oracle 、 Microsoft SQL Server 和IBM DB2都是关系型数据库系统(database system)。除了管理数据，一个这样的系统还包括用来管理各种关系数据库的程序，一个合格的关系数据库系统不仅要确保各种数据的存储情况安全可靠，还必须能够处理对现有数据进行查询，分析和排序以及对新数据进行保存等诸多命令。</p>
+</li>
+<li><p>数据表、记录、字段、查询、SQL、索引 </p>
+</li>
+</ul>
+</li>
+</ul>
+  <a id="more"></a>
+<pre><code>- 数据表<span class="comment">(table)</span>即用来实际存放有关数据的框架结构，这种数据表里的每一行被称为一跳数据记录<span class="comment">(data record)</span>,简称<span class="string">"记录"</span>，每条记录的结构和格式是由人们在定义该数据表时决定的，例如，在某个用户表里，每条记录可能包含着用户的姓名，出生日期，注册时间等多个字段<span class="comment">(field)</span>，每个字段对自己所能存储的信息类型又有着一定的要求<span class="comment">(例如，它必须是一个有着某种特定格式的数字或者是一个字符个数不得超过某个预定义最大值的字符串)</span>。
+
+- 查询是人们用各种SQL指令构造出来的，SQL指令负责具体完成筛选和提取结果数据的工作。
+
+- SQL<span class="comment">(Structured Query Lanuage)</span> 结构化查询语言，这种语言已发展为人们在构造数据库查询命令的一个标准
+</code></pre><ul>
+<li><p>常用命令</p>
+<ul>
+<li><p>status(\s) :查看数据状态信息</p>
+</li>
+<li><p>clear(\c) :放弃仔仔输入的命令</p>
+</li>
+<li><p>exit或quit(\q) : 退出MySQL程序</p>
+</li>
+<li><p>help(\p) :显示帮助信息(命令清单)</p>
+</li>
+<li><p>use database(\u):选择一个数据库</p>
+</li>
+<li><p>show databases :查看数据库</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="SQL语言简介">SQL语言简介</h4><p>SQL命令可以分类以下三大类别:</p>
+<ul>
+<li><p>DML(Data Manipulation Language数据处理语言) :这类命令主要包括SELECT 、INSERT 、UPDATE、DELETE等用来从数据表读出数据，把数据存入数据表或是对数据表里的现有记录进行修改的命令</p>
+</li>
+<li><p>DDL(Data Definition Langage数据定义语言) :这类命令主要包括CREATE TABLE、 ALTER TABLE等用来定义和改变数据库结构的命令</p>
+</li>
+<li><p>DCL(Data Control Langage 数据控制语言) :这类命令主要包括GRANT 、REVOKE以及另外几个用来帮助人们设置和调整MySQL访问控制机制的SQL命令</p>
+</li>
+</ul>
+<h4 id="命令的基本用法:">命令的基本用法:</h4><ul>
+<li><p>SELECT 命令</p>
+<ul>
+<li><p>简单查询 SELECT * FROM tablename //从数据表中查询某些字段</p>
+</li>
+<li><p>限制查询结果中的数据列个数 SELECT column1, column2 FROM tablename//从数据表中查询具体的字段</p>
+</li>
+<li><p>确定数据里有多少条数据记录 SELECT COUNT(id) FROM tablename //返回的是数据表内有多少条记录</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="WHERE_子句:设置查询条件，过滤掉不需要的数据行，例如查询年龄大于20的记录，_SELECT_*_FROM_usertable_WHERE_age_&gt;20">WHERE 子句:设置查询条件，过滤掉不需要的数据行，例如查询年龄大于20的记录， SELECT * FROM usertable WHERE age &gt;20</h5><p>WHERE子句可包括多种条件运算符</p>
+<ul>
+<li>比较运算符  </li>
+</ul>
+<pre><code><span class="variable">&lt;table border="1" width="300px"&gt;</span>
+    <span class="variable">&lt;tr&gt;</span>
+        <span class="variable">&lt;td&gt;</span>运算符<span class="variable">&lt;/td&gt;</span>
+        <span class="variable">&lt;td&gt;</span>含义<span class="variable">&lt;/td&gt;</span>
+    <span class="variable">&lt;/tr&gt;</span>
+    <span class="variable">&lt;tr&gt;</span>
+        <span class="variable">&lt;td&gt;</span> = <span class="variable">&lt;/td&gt;</span>
+        <span class="variable">&lt;td&gt;</span>等于<span class="variable">&lt;/td&gt;</span>
+    <span class="variable">&lt;/tr&gt;</span>
+        <span class="variable">&lt;tr&gt;</span>
+        <span class="variable">&lt;td&gt;</span>&gt;<span class="variable">&lt;/td&gt;</span>
+        <span class="variable">&lt;td&gt;</span>大于<span class="variable">&lt;/td&gt;</span>
+    <span class="variable">&lt;/tr&gt;</span>
+    <span class="variable">&lt;tr&gt;</span>
+        <span class="variable">&lt;td&gt;</span>&gt;=<span class="variable">&lt;/td&gt;</span>
+        <span class="variable">&lt;td&gt;</span>大于等于<span class="variable">&lt;/td&gt;</span>
+    <span class="variable">&lt;/tr&gt;</span>
+    <span class="variable">&lt;tr&gt;</span>
+        <span class="variable">&lt;td&gt;</span><span class="variable">&lt;&lt;/td&gt;</span>
+        <span class="variable">&lt;td&gt;</span>小于<span class="variable">&lt;/td&gt;</span>
+    <span class="variable">&lt;/tr&gt;</span>        
+    <span class="variable">&lt;tr&gt;</span>
+        <span class="variable">&lt;td&gt;</span><span class="variable">&lt;=&lt;/td&gt;</span>
+        <span class="variable">&lt;td&gt;</span>小于等于<span class="variable">&lt;/td&gt;</span>
+    <span class="variable">&lt;/tr&gt;</span>
+    <span class="variable">&lt;tr&gt;</span>
+        <span class="variable">&lt;td&gt;</span><span class="variable">&lt;&gt;</span><span class="variable">&lt;/td&gt;</span>
+        <span class="variable">&lt;td&gt;</span>不等于<span class="variable">&lt;/td&gt;</span>
+    <span class="variable">&lt;/tr&gt;</span>
+<span class="variable">&lt;/table&gt;</span>
+
+    SELECT * FROM <span class="keyword">user</span> WHERE uid = <span class="number">10</span>;//从<span class="keyword">user</span>数据表中查找等于<span class="number">10</span>的数据
+    SELECT * FROM <span class="keyword">user</span> WHERE uid <span class="variable">&lt;=10; //从user数据表中查找小于等于10的数据</span>
+</code></pre><ul>
+<li><p>逻辑运算符</p>
+  <table border="1" width="300px"><br>      <tr><br>          <td>运算符</td><br>          <td style="width:400px;">含义</td><br>      </tr><br>      <tr><br>          <td> AND </td><br>          <td style="width:400px;">如果组合的条件都是TRUE，返回TRUE，否则返回FALSE</td><br>      </tr><br>      <tr><br>          <td>OR</td><br>          <td style="width:400px;">如果组合的条件其一是TRUE，返回TRUE</td><br>      </tr><br>      <tr><br>          <td>NOT</td><br>          <td style="width:400px;">如果条件是FALSE，返回TRUE</td><br>      </tr><br>  </table>
+
+
+</li>
+</ul>
+<ul>
+<li><p>范围运算符(BETWEEN…AND…)判断表达式值是否在指定的范围</p>
+<pre><code><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> products <span class="keyword">WHERE</span> price BETWEEN <span class="number">1000</span> <span class="keyword">AND</span> <span class="number">2000</span>;
+price &gt;= <span class="number">100</span> <span class="keyword">AND</span> price &lt;=<span class="number">2000</span>; <span class="comment">//这两条的意思是一样的就是在1000到2000之间的数据</span>
+</code></pre></li>
+</ul>
+<h4 id="限制查询:">限制查询:</h4><p>LIMIT子句用于强制SELECT语句返回指定的记录数，LIMIT接受一个或两个参数，参数必须是一个整数常量，如果给定两个参数，第一个参数指定第一个返回记录行的偏移量，第二个参数指定返回记录行的最大数目，注意:初始记录行的偏移量是0而不是1</p>
+<pre><code><span class="operator"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">table</span> <span class="keyword">LIMIT</span> <span class="number">5</span> ;</span>// 检索前5个记录行
+<span class="operator"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">table</span> <span class="keyword">LIMIT</span> <span class="number">5</span>,<span class="number">10</span> ;</span>//检索记录行6-15，从第5行开始检索
+</code></pre><h4 id="查询结构排序">查询结构排序</h4><p>使用ORDER BY子句对查询返回的结果排序,ORDER BY子句的语法格式为:ORDER BY{column_name[ASCIDESC]}[,…n]，其中ASC表示升序，为默认值，DESC为降序。</p>
+<pre><code><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> user <span class="keyword">ORDER</span> <span class="keyword">BY</span> uid <span class="keyword">ASC</span> <span class="comment">//默认为升序</span>
+<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> user <span class="keyword">ORDER</span> <span class="keyword">BY</span> uid <span class="keyword">DESC</span> <span class="comment">//降序</span>
+</code></pre><h4 id="增删改">增删改</h4><ul>
+<li><p>插入数据记录(INSERT):格式—INSERT INTO user(username,password);</p>
+<pre><code><span class="operator"><span class="keyword">SELECT</span> <span class="keyword">INTO</span> <span class="keyword">user</span> (username,<span class="keyword">password</span>)<span class="keyword">VALUES</span>(<span class="string">"user1"</span>,<span class="string">"123456"</span>),(<span class="string">"user2"</span>,<span class="string">"123456"</span>) //在<span class="keyword">user</span>数据表中插入两条记录</span>
+</code></pre></li>
+<li><p>修改数据记录(UPDATE) </p>
+<pre><code><span class="operator"><span class="keyword">UPDATE</span> <span class="keyword">user</span> <span class="keyword">SET</span> username = <span class="string">"admin1"</span>,<span class="keyword">password</span> = <span class="string">"456123"</span> <span class="keyword">WHERE</span> uid = <span class="number">10</span>;</span>//
+把user数据表中的第10条记录中的username,password修改
+</code></pre></li>
+<li><p>删除数据记录(DELETE)</p>
+<pre><code><span class="operator"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> <span class="keyword">user</span> <span class="keyword">WHERE</span> uid = <span class="number">10</span>;</span> //在user数据表中删除第10行记录
+</code></pre></li>
+</ul>
+<p>以上都是些基本语言，来自学习笔记，后期会做些实例..结合实例学习起来容易很多—再见—</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/03/09/关于正则表达式/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">关于正则表达式</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="关于MySQL数据" data-title="关于MySQL数据" data-url="http://yoursite.com/2016/03/09/关于MySQL数据/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Simple love
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
