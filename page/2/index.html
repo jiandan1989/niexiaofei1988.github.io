@@ -188,6 +188,68 @@
 
       <div class="body-wrap">
   
+    <article id="post-js基础知识二" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/12/01/js基础知识二/" class="article-date">
+  	<time datetime="2015-12-01T13:26:50.000Z" itemprop="datePublished">2015-12-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/01/js基础知识二/">js基础知识二</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="javascript中的原型：">javascript中的原型：</h2><p>  在javascript中所有的函数都有prototype属性，该属性是一个对象，对象是所有属性的集合，所有的对象都有一个<strong>proto</strong>属性，所有对象的<strong>proto</strong>都指向其构造器的prototype。当函数没有任何属性，prototype对象默认有constructor（指向函数本身）属性。</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>{
+    <span class="keyword">return</span> <span class="string">'10'</span>
+    }
+<span class="keyword">var</span> fn2 = <span class="keyword">new</span> fn();<span class="comment">//从fn方法里面new出一个对象，生成对象</span>
+<span class="built_in">console</span>,log(fn2.__proto__===fn.prototype)为<span class="literal">true</span>
+</code></pre><p> 所有构造器的<strong>proto</strong>都指向Function.prototype.完全继承了prototype的属性以及方法。</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2015/12/01/js基础知识二/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-两个空的故事" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
