@@ -188,6 +188,116 @@
 
       <div class="body-wrap">
   
+    <article id="post-node-js的学习" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/28/node-js的学习/" class="article-date">
+  	<time datetime="2016-03-28T10:37:05.000Z" itemprop="datePublished">2016-03-28</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/28/node-js的学习/">node.js的学习</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>关于node的使用，相信很多人都应该知道Facebook和淘宝，淘宝的2015年的双十一活动的所有后台都是使用node.js来渲染的，使得node.js代替了很多服务端的使用。到底应该怎么样来使用node.js呢？？？我也很迷茫只能是慢慢的查找和应用。</p>
+<p>首先呢node并不是一门语言，它是个运行javascript的平台，内置有使用Chorme的v8引擎，不需要考虑兼容性。</p>
+<p>node.js呢我是使用Sublime编辑器来使用的,需要安装插件nodejs。</p>
+<p>然后呢就是建一个文件夹，文件夹内有index.html,form.html,和一个404.html,更重要的是一个server.js，然后在server.js中引用模块。基本的html布局和样式就不再说了.</p>
+<p>index.html代码</p>
+<pre><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"outside"</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">h1</span>&gt;</span>欢迎来到我的世界<span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"/login"</span>&gt;</span>注册<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+</code></pre><p>form.html代码</p>
+<pre><code>&lt;form action=<span class="string">"login_in"</span> method=<span class="string">"<span class="keyword">POST</span>"</span>&gt;
+    &lt;input type=<span class="string">"text"</span> name=<span class="string">"name"</span> value=<span class="string">"请输入你的名字"</span>/&gt;
+    &lt;button&gt;提交&lt;/button&gt;
+&lt;/form&gt;
+</code></pre><p>404.html代码</p>
+<pre><code><span class="tag">&lt;<span class="title">h1</span>&gt;</span>404<span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
+<span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"/"</span>&gt;</span>请回吧<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+</code></pre><p>server.js代码</p>
+<pre><code><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);<span class="pi">//引入http模块
+var fs = require("fs);     //</span>引入fs模块
+
+http.createServer(<span class="keyword">function</span>(req,res){
+    <span class="keyword">switch</span>(req.url){
+        <span class="keyword">case</span> <span class="string">"/"</span> :{
+            fs.readFile(<span class="string">"./index.html"</span>,<span class="string">"utf-8"</span>,<span class="keyword">function</span>(err,data){
+                res.writeHead(<span class="number">200</span>,{<span class="string">"content-Type"</span>:<span class="string">"text/html"</span>});
+                res.end(data);
+            })
+            <span class="keyword">break</span>;
+        }
+        <span class="keyword">case</span> <span class="string">"/login"</span> :{
+            fs.readFile(<span class="string">"./form.html"</span>,<span class="string">"utf-8"</span>,<span class="keyword">function</span>(err,data){
+                res.writeHead(<span class="number">200</span>,{<span class="string">"content-Type"</span>:<span class="string">"text/html"</span>});
+                res.end(data);
+            })
+            <span class="keyword">break</span>;
+        }
+        <span class="keyword">case</span> <span class="string">"/login_in"</span> :{
+            <span class="keyword">var</span> str =<span class="string">""</span>;
+            req.<span class="literal">on</span>(<span class="string">"data"</span>,<span class="keyword">function</span>(chunk){
+                str+=chunk;
+            });
+            req.<span class="literal">on</span>(<span class="string">"end"</span>,<span class="keyword">function</span>(){
+                res.writeHead(<span class="number">200</span>,{<span class="string">"content-Type"</span>:<span class="string">"text/html"</span>});
+                res.end(<span class="string">"&lt;h2&gt;you send : "</span>+str+<span class="string">"&lt;/h2&gt;"</span>);
+            })
+            <span class="keyword">break</span>;
+        }
+        <span class="attribute">default</span>:{
+            fs.readFile(<span class="string">"./404.html"</span>,<span class="string">"utf-8"</span>,<span class="keyword">function</span>(err,data){
+                res.writeHead(<span class="number">200</span>,{<span class="string">"content-Type"</span>:<span class="string">"text/html"</span>});
+                res.end(data);
+            })
+        }
+    }
+}).listen(<span class="number">3000</span>);
+</code></pre><p>上面的代码都写完以后直接在终端命令中输入node server.js就可以看到页面了，当然了 这个是最简单的，如果想要弄得好看一点，就研究研究自己的css，怎么弄好看就怎么弄.</p>
+<p><strong><strong><strong><strong>__</strong></strong></strong></strong>再  见<strong><strong><strong><strong>___</strong></strong></strong></strong></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-数据库" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -732,62 +842,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/03/01/关于this-一直很头疼的词/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-CSS 回顾(二)" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/26/CSS 回顾(二)/" class="article-date">
-  	<time datetime="2016-02-26T02:45:35.000Z" itemprop="datePublished">2016-02-26</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/26/CSS 回顾(二)/">CSS 回顾(二)</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>在这里主要回顾说一下盒子模型和选择器</strong></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/26/CSS 回顾(二)/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
