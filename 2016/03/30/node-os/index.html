@@ -22,7 +22,7 @@ console.log(os">
 var os = require(&quot;os&quot;); //引入os模块
 使用console.log()方法来查看我们要查看的信息。
 console.log(os">
-<meta property="og:updated_time" content="2016-03-30T12:02:07.000Z">
+<meta property="og:updated_time" content="2016-03-30T12:23:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node-os">
 <meta name="twitter:description" content="关于node 有很多用法，我们也可以用node 来查看关于电脑的一些信息比如说电脑操作系统的版本以及内存的使用量，下面我们来看看使用node怎么来查看关于电脑的信息吧。
@@ -286,9 +286,10 @@ console.log(os">
 </li>
 <li><p>进程的输入流，通过注册事件的方式来获取输入的内容</p>
 <pre><code>process.stdin.on(<span class="string">"readable"</span>,<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+
     <span class="keyword">var</span> chunk = process.stdin.read();
     <span class="keyword">if</span>(chunk!==<span class="literal">null</span>){
-    process.stdout.write(<span class="string">"data"</span>+ chunk);
+        process.stdout.write(<span class="string">"data"</span>+ chunk);
     }
 });
 </code></pre></li>
@@ -308,83 +309,57 @@ console.log(os">
 <ul>
 <li>process.stderr.setEncoding(编码)</li>
 </ul>
-<p><strong>*fs 文件管理</strong><br>fs模块提供了异步和同步两个版本fs.readFile() fs.readFileSync()</p>
-<ul>
-<li><p>写入文件内容</p>
+<p><strong>fs 文件管理</strong></p>
+<p>fs模块提供了异步和同步两个版本fs.readFile() fs.readFileSync()</p>
+<p><strong><em>1 、写入文件内容</em></strong></p>
 <pre><code>fs.writeFile(<span class="string">"test.txt"</span>,<span class="string">"Hello Node"</span>,<span class="string">[encoding]</span>,<span class="string">[callback]</span>);
 </code></pre></li>
 </ul>
-</li>
-</ul>
-<ul>
-<li><p>追加写入</p>
+<p><strong><em>2、 追加写入</em></strong></p>
 <pre><code>fs.appendFile(<span class="string">"test.txt"</span>,<span class="string">"Hello Node"</span>,<span class="string">[encoding]</span>,<span class="string">[callback]</span>);
-</code></pre></li>
-<li><p>查看文件是否存在</p>
+</code></pre><p><strong><em>3、 查看文件是否存在</em></strong></p>
 <pre><code><span class="tag">fs</span><span class="class">.exists</span>("<span class="tag">test</span><span class="class">.txt</span>",<span class="attr_selector">[callback]</span>);
-</code></pre></li>
-<li><p>修改文件名</p>
+</code></pre><p><strong><em>4、修改文件名</em></strong></p>
 <pre><code><span class="tag">fs</span><span class="class">.rename</span>(旧文件，新文件，<span class="attr_selector">[callback]</span>);
-</code></pre></li>
-<li><p>移动文件，没有专门函数，通过修改文件名可以达到目的</p>
+</code></pre><p><strong><em>5、移动文件，没有专门函数，通过修改文件名可以达到目的</em></strong></p>
 <pre><code><span class="tag">fs</span><span class="class">.rename</span>(<span class="tag">oldPath</span>,<span class="tag">newPath</span>,<span class="attr_selector">[callback]</span>);
 </code></pre></li>
-<li><p>读取文件内容</p>
+</ul>
+<p> <strong><em>6、读取文件内容</em></strong></p>
 <pre><code><span class="tag">fs</span><span class="class">.readFile</span>("<span class="tag">test</span><span class="class">.txt</span>",<span class="attr_selector">[encoding]</span>,<span class="attr_selector">[callback]</span>);
-</code></pre></li>
-<li><p>删除文件 </p>
+</code></pre><p> <strong><em>7、 删除文件</em></strong> </p>
 <pre><code><span class="tag">fs</span><span class="class">.unlink</span>("<span class="tag">test</span><span class="class">.txt</span>",<span class="attr_selector">[callback]</span>);
-</code></pre></li>
-<li><p>创建目录</p>
-<pre><code><span class="tag">fs</span><span class="class">.mkdir</span>(路径，权限，<span class="attr_selector">[callback]</span>);   目录:新创建的目录 
-权限:可选参数，只在<span class="tag">linux</span>下有效，表示目录的权限，默认为0777，表示文件所有者、文件所有者所在的组的用户、所有用户，都有权限进行读、写、执行的操作。
-</code></pre></li>
-<li><p>删除目录</p>
+</code></pre><p> <strong><em>8、创建目录</em></strong></p>
+<pre><code><span class="tag">fs</span><span class="class">.mkdir</span>(路径，权限，<span class="attr_selector">[callback]</span>);   目录:新创建的目录 权限:可选参数，只在<span class="tag">linux</span>下有效，表示目录的权限，默认为0777，表示文件所有者、文件所有者所在的组的用户、所有用户，都有权限进行读、写、执行的操作。
+</code></pre><p> <strong><em>9、删除目录</em></strong></p>
 <pre><code><span class="built_in">fs</span>.<span class="built_in">rmdir</span>(<span class="built_in">path</span>,[callback]);
-</code></pre></li>
-<li><p>读取目录，读取到指定目录下所有的文件</p>
+</code></pre><p> <strong><em>10、读取目录，读取到指定目录下所有的文件</em></strong></p>
 <pre><code><span class="tag">fs</span><span class="class">.readdir</span>(<span class="tag">path</span>,<span class="attr_selector">[callback]</span>);
-</code></pre></li>
-<li><p>打开文件</p>
+</code></pre><p>  <strong><em>11、 打开文件</em></strong></p>
 <pre><code><span class="tag">fs</span><span class="class">.open</span>(<span class="tag">path</span>,<span class="tag">flags</span>,<span class="attr_selector">[mode]</span>,<span class="attr_selector">[callback]</span>);
-</code></pre></li>
-</ul>
-</li>
-<li><p>关闭文件</p>
+</code></pre><p> <strong><em>12、关闭文件</em></strong></p>
 <pre><code><span class="tag">fs</span><span class="class">.close</span>(<span class="tag">fd</span>,<span class="attr_selector">[callback]</span>); <span class="tag">fd</span>是打开文件后的标示符
-</code></pre></li>
-<li><p>读取文件</p>
+</code></pre><p> <strong><em>13、读取文件</em></strong></p>
 <pre><code>fs.<span class="command">read</span>(fd,buffer,<span class="command">offset</span>,<span class="property">length</span>,position,[callback(err,bytesRead,buffer)])
-</code></pre></li>
-<li><p>写入文件</p>
+</code></pre><p> <strong><em>14、写入文件</em></strong></p>
 <pre><code><span class="tag">fs</span><span class="class">.writeFile</span>(<span class="tag">filename</span>,<span class="tag">data</span>,<span class="attr_selector">[encoding]</span>,<span class="attr_selector">[callback]</span>);
-</code></pre></li>
-<li><p>获取真实路径</p>
+</code></pre><p> <strong><em>15、获取真实路径</em></strong></p>
 <pre><code>fs.<span class="function"><span class="title">realpath</span><span class="params">(path,[callback(err,resolvedPath)</span></span>])
-</code></pre></li>
-<li><p>更改所有权</p>
+</code></pre><p> <strong><em>16、更改所有权</em></strong></p>
 <pre><code>fs.<span class="function"><span class="title">chown</span><span class="params">(path,uid,gid,[callback])</span></span>
-</code></pre></li>
-<li><p>更改权限</p>
+</code></pre><p>  <strong><em>17、更改权限</em></strong></p>
 <pre><code>fs.<span class="function"><span class="title">fchmod</span><span class="params">(fd,mode,[callback(err)</span></span>])
-</code></pre></li>
-<li><p>获取文件信息</p>
+</code></pre><p>   <strong><em>18、获取文件信息</em></strong></p>
 <pre><code>fs.<span class="function"><span class="title">stat</span><span class="params">(path,[callback(err,stats)</span></span>])
-</code></pre></li>
-<li><p>创建硬链接</p>
+</code></pre><p>  <strong><em>19、创建硬链接</em></strong></p>
 <pre><code>fs.<span class="function"><span class="title">link</span><span class="params">(srcpath,dspath,[callback(err)</span></span>])
-</code></pre></li>
-<li><p>读取链接</p>
+</code></pre><p>  <strong><em>20、读取链接</em></strong></p>
 <pre><code>fs.<span class="function"><span class="title">readlink</span><span class="params">(path,[callback(err,linkString)</span></span>])
-</code></pre></li>
-<li><p>修改文件时间戳</p>
+</code></pre><p> <strong><em>21、修改文件时间戳</em></strong></p>
 <pre><code>fs.<span class="function"><span class="title">utimes</span><span class="params">(path,atime,mtime,[callback(err)</span></span>])
-</code></pre></li>
-<li><p>同步磁盘缓存</p>
+</code></pre><p> <strong><em>22、同步磁盘缓存</em></strong></p>
 <pre><code>fs.<span class="function"><span class="title">fsync</span><span class="params">(fd,[callback(err)</span></span>])
-</code></pre></li>
-</ul>
-<p>—————暂时告一段路 后期还有  会补上———————-  </p>
+</code></pre><p>—————暂时告一段路 后期还有  会补上———————-  </p>
 
       
     </div>
