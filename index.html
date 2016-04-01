@@ -188,6 +188,110 @@
 
       <div class="body-wrap">
   
+    <article id="post-牛逼的简历(一)" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/01/牛逼的简历(一)/" class="article-date">
+  	<time datetime="2016-04-01T11:43:52.000Z" itemprop="datePublished">2016-04-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/01/牛逼的简历(一)/">牛逼的简历(-)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在网上有很多牛逼的简历，他们的简历到底都是怎么写出来的呢，其实仔细看看都是很简单的东西。有一些是自动打字然后出来效果。怎么写的呢 下面来看看(原生js不使用任何的js库)</p>
+<p>index.html代码</p>
+<pre><code><span class="doctype">&lt;!doctype html&gt;</span>
+<span class="tag">&lt;<span class="title">html</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">head</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>/&gt;</span>
+        <span class="tag">&lt;<span class="title">title</span>&gt;</span>测试<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">style</span> <span class="attribute">type</span>=<span class="value">"text/css"</span>&gt;</span><span class="css">
+            <span class="tag">body</span><span class="rules">{
+                <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">0</span></span></span>;
+            }</span>
+            <span class="tag">p</span><span class="rules">{
+                <span class="rule"><span class="attribute">margin</span>:<span class="value"><span class="number">100px</span> auto</span></span>;
+                <span class="rule"><span class="attribute">white-space</span>:<span class="value">pre-wrap</span></span>;
+                <span class="rule"><span class="attribute">font-size</span>:<span class="value"><span class="number">14px</span></span></span>;
+                <span class="rule"><span class="attribute">line-height</span>:<span class="value"><span class="number">30px</span></span></span>;
+                <span class="rule"><span class="attribute">color</span>:<span class="value">gold</span></span>;
+                <span class="rule"><span class="attribute">text-shadow</span>:<span class="value"><span class="number">1px</span> <span class="number">1px</span> <span class="number">1px</span> gold</span></span>;
+                <span class="rule"><span class="attribute">border</span>:<span class="value"><span class="number">1px</span> red solid</span></span>;
+                <span class="rule"><span class="attribute">text-indent</span>:<span class="value"><span class="number">2rem</span></span></span>;
+                <span class="rule"><span class="attribute">text-align</span>:<span class="value">left</span></span>;
+                <span class="rule"><span class="attribute">box-sizing</span>:<span class="value">border-box</span></span>;
+                <span class="rule"><span class="attribute">padding</span>:<span class="value"><span class="number">5px</span></span></span>;
+            }</span>
+        </span><span class="tag">&lt;/<span class="title">style</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">body</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">p</span> <span class="attribute">id</span>=<span class="value">"test"</span>&gt;</span><span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript">
+            <span class="keyword">var</span> str =<span class="string">"p{\n margin:100px auto; \nwidth:200px; \nwhite-space:pre-wrap; \nfont-size:20px; \nline-height:30px; \ncolor:gold; \ntext-shadow:1px 1px 1px gold; \nborder:1px red solid; \ntext-indent:2rem; \ntext-align:center; \nbox-sizing:border-box; \npadding:5px;\n}\n"</span>;
+            <span class="keyword">var</span> p = <span class="built_in">document</span>.getElementById(<span class="string">"test"</span>);
+            <span class="function"><span class="keyword">function</span> <span class="title">automatic</span>(<span class="params">obj,str</span>)</span>{ <span class="comment">//传入要插入的节点，要插入的文本内容</span>
+                <span class="keyword">var</span> timer = <span class="literal">null</span>;
+                <span class="keyword">var</span> length = str.length;
+                <span class="keyword">var</span> index = <span class="number">0</span>;
+                <span class="keyword">var</span> req = <span class="regexp">/\n/</span>;
+                timer = setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{
+                    str.replace(req,<span class="string">"&lt;br/&gt;"</span>);
+                    <span class="keyword">if</span>(index &gt;=length-<span class="number">1</span>){
+                        clearInterval(timer);
+                        timer = <span class="literal">null</span>;
+                    }
+                    obj.innerHTML += str[index];
+                    index++;
+                },<span class="number">30</span>);
+            }
+            automatic(p,str)
+        </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</code></pre><p>在这里没有引入外部的css，上面的代码有许多不足的地方，希望能够指正。后续还会有相关的。</p>
+<p>————————下次再见————————————</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-node-os" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -756,66 +860,9 @@
 
 
   
-    <article id="post-关于jQuery的基本知识" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/02/关于jQuery的基本知识/" class="article-date">
-  	<time datetime="2016-03-02T13:42:57.000Z" itemprop="datePublished">2016-03-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/02/关于jQuery的基本知识/">关于jQuery的基本知识</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><span style="font-size:18px;color:red;">jQuery的由来:</span></p>
-<p>jQuery是一个兼容多浏览器的javascript库,核心理念是Write less,do more(写得更少,做的更多).jQuery在2006年1月由美国人John Resig在纽约的barcamp发布,吸引了来自世界各地的众多Javascript高手加入,由Dave Methvin率领团队进行开发,如今jQuery已经成为最流行的javascript库,在世界前10000个访问最多的网站中，有超过55%在使用jQuery。<span style="font-size:18px;color:#999;">(本段文字摘自百度。。。)</span></p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/03/02/关于jQuery的基本知识/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 </div>
