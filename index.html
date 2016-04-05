@@ -287,21 +287,19 @@ alert(cat1.<span class="keyword">type</span>); <span class="comment">//猫科动
 cat1.eat() ; <span class="comment">//吃老鼠</span>
 </code></pre><p>这时所有实例的type属性和eat()方法，其实都是一同一个内存地址，指向prototypr对象，因此就提高了运行效率</p>
 <pre><code>alert(cat1.eat == cat2.eat) ; <span class="regexp">//</span> <span class="literal">true</span>
-</code></pre><h3 id="六、Prototype模式的验证方法">六、Prototype模式的验证方法</h3><ul>
-<li><p>isPrototypeOf()<br>  这个方法用来判断，某个prototype对象和某个实例之间的关系</p>
-<pre><code>alert<span class="list">(<span class="keyword">Cat</span>.prototype.isPrototypeOf<span class="list">(<span class="keyword">cat1</span>)</span>)</span><span class="comment">; //true</span>
-alert<span class="list">(<span class="keyword">Cat</span>.prototype.isPrototypeOf<span class="list">(<span class="keyword">cat2</span>)</span>)</span><span class="comment">; //true</span>
-</code></pre></li>
-<li><p>hasOwnProperty()<br>  每个实例对象都有一个hasOwnProperty()方法，用来判断某一个属性到底是本地属性，还是继承自prototype对象的属性</p>
-<pre><code>alert<span class="list">(<span class="keyword">cat1</span>.hasOwnProperty<span class="list">(<span class="string">"name"</span>)</span>)</span><span class="comment">; //true</span>
-alert<span class="list">(<span class="keyword">cat1</span>.hasOwnProperty<span class="list">(<span class="string">"type"</span>)</span>)</span><span class="comment">; //false</span>
-</code></pre></li>
-<li><p>in运算符<br>  in运算符可以用来判断，某个实例是否含有某个属性，不管是不是本地属性</p>
-<pre><code>alert(<span class="string">"name"</span> <span class="keyword">in</span> cat1) ; <span class="comment">//true </span>
-alert(<span class="string">"type"</span> <span class="keyword">in</span> cat1) ;<span class="comment">//true</span>
-</code></pre></li>
-</ul>
-<p>in运算符还可以用来遍历某个对象的所有属性</p>
+</code></pre><h3 id="六、Prototype模式的验证方法">六、Prototype模式的验证方法</h3><h5 id="isPrototypeOf()">isPrototypeOf()</h5><pre><code>这个方法用来判断，某个prototype对象和某个实例之间的关系
+
+        alert<span class="comment">(Cat.prototype.isPrototypeOf(cat1)</span>); <span class="comment">//true</span>
+        alert<span class="comment">(Cat.prototype.isPrototypeOf(cat2)</span>); <span class="comment">//true</span>
+</code></pre><h5 id="hasOwnProperty()">hasOwnProperty()</h5><pre><code>每个实例对象都有一个<span class="function">hasOwnProperty</span>()方法，用来判断某一个属性到底是本地属性，还是继承自prototype对象的属性
+
+        <span class="function">alert</span>(cat1<span class="class">.hasOwnProperty</span>("name")); <span class="comment">//true</span>
+        <span class="function">alert</span>(cat1<span class="class">.hasOwnProperty</span>("type")); <span class="comment">//false</span>
+</code></pre><h5 id="in运算符">in运算符</h5><pre><code><span class="keyword">in</span>运算符可以用来判断，某个实例是否含有某个属性，不管是不是本地属性
+
+        alert(<span class="string">"name"</span> <span class="keyword">in</span> cat1) ; <span class="comment">//true </span>
+        alert(<span class="string">"type"</span> <span class="keyword">in</span> cat1) ;<span class="comment">//true</span>
+</code></pre><p>in运算符还可以用来遍历某个对象的所有属性</p>
 <pre><code><span class="keyword">for</span>(<span class="keyword">var</span> <span class="keyword">prop</span> <span class="keyword">in</span> cat1){alert(<span class="string">"cat1["</span>+<span class="keyword">prop</span>+<span class="string">"]="</span> cat1[<span class="keyword">prop</span>]);}
 </code></pre><p>未完，本文来自阮一峰 老师</p>
 <p>——————————————————下次再见————————————————</p>
