@@ -6,22 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>调用相机 | Simple Love</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="关于调用相机，我纠结了很久，终于是有点小进步了———在做移动端的时候有很多都要求是调用相机的，在微信开发文档中有关于调用相机的API,在经过查看mozilla开发文档中可以看到有调用相机的开发。先看下边的代码吧
-HTML代码：(省略其他代码)&amp;lt;input type=&quot;file&quot; accept=&quot;image/*&quot;  id=&quot;take-picture&quot;&amp;gt;
-&amp;lt;img src=&quot;&quot; al">
+  <meta name="description" content="关于调用相机，我纠结了很久，终于是有点小进步了———在做移动端的时候有很多都要求是调用相机的，在微信开发文档中有关于调用相机的API,在经过查看mozilla开发文档中可以看到有调用相机的开发。先看下边的代码吧">
 <meta property="og:type" content="article">
 <meta property="og:title" content="调用相机">
 <meta property="og:url" content="http://yoursite.com/2016/05/16/调用相机/index.html">
 <meta property="og:site_name" content="Simple Love">
-<meta property="og:description" content="关于调用相机，我纠结了很久，终于是有点小进步了———在做移动端的时候有很多都要求是调用相机的，在微信开发文档中有关于调用相机的API,在经过查看mozilla开发文档中可以看到有调用相机的开发。先看下边的代码吧
-HTML代码：(省略其他代码)&amp;lt;input type=&quot;file&quot; accept=&quot;image/*&quot;  id=&quot;take-picture&quot;&amp;gt;
-&amp;lt;img src=&quot;&quot; al">
-<meta property="og:updated_time" content="2016-05-15T17:10:39.000Z">
+<meta property="og:description" content="关于调用相机，我纠结了很久，终于是有点小进步了———在做移动端的时候有很多都要求是调用相机的，在微信开发文档中有关于调用相机的API,在经过查看mozilla开发文档中可以看到有调用相机的开发。先看下边的代码吧">
+<meta property="og:updated_time" content="2016-05-15T17:12:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="调用相机">
-<meta name="twitter:description" content="关于调用相机，我纠结了很久，终于是有点小进步了———在做移动端的时候有很多都要求是调用相机的，在微信开发文档中有关于调用相机的API,在经过查看mozilla开发文档中可以看到有调用相机的开发。先看下边的代码吧
-HTML代码：(省略其他代码)&amp;lt;input type=&quot;file&quot; accept=&quot;image/*&quot;  id=&quot;take-picture&quot;&amp;gt;
-&amp;lt;img src=&quot;&quot; al">
+<meta name="twitter:description" content="关于调用相机，我纠结了很久，终于是有点小进步了———在做移动端的时候有很多都要求是调用相机的，在微信开发文档中有关于调用相机的API,在经过查看mozilla开发文档中可以看到有调用相机的开发。先看下边的代码吧">
   
     <link rel="alternative" href="/atom.xml" title="Simple Love" type="application/atom+xml">
   
@@ -227,6 +221,7 @@ HTML代码：(省略其他代码)&amp;lt;input type=&quot;file&quot; accept=&quo
     <div class="article-entry" itemprop="articleBody">
       
         <p>关于调用相机，我纠结了很久，终于是有点小进步了———<br>在做移动端的时候有很多都要求是调用相机的，在微信开发文档中有关于调用相机的API,在经过查看mozilla开发文档中可以看到有调用相机的开发。先看下边的代码吧</p>
+<a id="more"></a>
 <h3 id="HTML代码：(省略其他代码)">HTML代码：(省略其他代码)</h3><pre><code>&lt;<span class="tag">input</span> type=<span class="string">"file"</span> accept=<span class="string">"image/*"</span>  id=<span class="string">"take-picture"</span>&gt;
 &lt;<span class="tag">img</span> src=<span class="string">""</span> alt=<span class="string">"相片"</span> id=<span class="string">"show-picture"</span>&gt;
 </code></pre><h3 id="script代码：">script代码：</h3><pre><code><span class="keyword">var</span> takePicture = <span class="built_in">document</span>.getElementById(<span class="string">"take-picture"</span>);
@@ -241,8 +236,17 @@ takePicture.onchange = <span class="function"><span class="keyword">function</sp
     }
 }
 </code></pre><p>这样写出来的是没有做兼容的，有的浏览器是不兼容createObjectURL的，可以用fileReader 来处理；暂时没试，以后会补上去。</p>
-<p>上面的js代码其实也是可以封装的，本人js不是特别好，只能做简单的封装<br>    function uploadImg(event,obj){<br>        var file,files = event.target.files;<br>        if(files &amp;&amp; files.length &gt; 0){<br>            file = files[0];<br>            var URL = window.URL || window.webkit.URL;<br>            var imgURL = URL.createObjectURL(file);<br>            obj.src = imgURL;<br>        }<br>    }</p>
-<p>如果是多个input上传，使用循环的方法，给所有input加上onchange事件，然后调用uploadImg方法就行了。</p>
+<p>上面的js代码其实也是可以封装的，本人js不是特别好，只能做简单的封装</p>
+<pre><code>function uploadImg(event,obj){
+    var <span class="keyword">file</span>,<span class="keyword">files</span> = event.target.<span class="keyword">files</span>;
+    <span class="keyword">if</span>(<span class="keyword">files</span> &amp;&amp; <span class="keyword">files</span>.length &gt; <span class="number">0</span>){
+        <span class="keyword">file</span> = <span class="keyword">files</span>[<span class="number">0</span>];
+        var URL = window.URL || window.webkit.URL;
+        var imgURL = URL.createObjectURL(<span class="keyword">file</span>);
+        obj.src = imgURL;
+    }
+}
+</code></pre><p>如果是多个input上传，使用循环的方法，给所有input加上onchange事件，然后调用uploadImg方法就行了。</p>
 <p><hr style="width:100%;height:1px; background:red; "><br>只是做参考，详细的可以<a style="text-decoration: none; " href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/API/Camera" target="_blank" rel="external"> 点击查看</a>    </p>
 
       
