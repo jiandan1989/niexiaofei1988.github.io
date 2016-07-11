@@ -188,6 +188,200 @@
 
       <div class="body-wrap">
   
+    <article id="post-nodejs-path对象" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/11/nodejs-path对象/" class="article-date">
+  	<time datetime="2016-07-11T14:59:43.000Z" itemprop="datePublished">2016-07-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/07/11/nodejs-path对象/">nodejs path对象</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>NodeJS中的Path对象，用于处理目录的对象，提高开发效率。</p>
+<p>用NodeJS的Path命令，与使用Linux下的shell脚本命令相似。 </p>
+<p>引入path对象 </p>
+<pre><code><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);
+</code></pre><p>比较实用的方法： </p>
+<h4 id="格式化路径_path-normalize(p)">格式化路径  path.normalize(p)</h4><p>特点：将不符合规范的路径格式化，简化开发人员中处理各种复杂</p>
+<pre><code>path.<span class="keyword">normalize</span>(<span class="string">'/foo/bar//baz/asdf/quux/..'</span>);  
+<span class="comment">// returns   </span>
+<span class="string">'/foo/bar/baz/asdf'</span> 
+</code></pre><h4 id="路径联合_path-join([path1],_[path2],_[…])">路径联合 path.join([path1], [path2], […])</h4><p>特点：将所有名称用path.seq串联起来，然后用normailze格式化 </p>
+<pre><code>path.<span class="keyword">join</span>(<span class="string">'///foo'</span>, <span class="string">'bar'</span>, <span class="string">'//baz/asdf'</span>, <span class="string">'quux'</span>, <span class="string">'..'</span>);  
+<span class="comment">// returns   </span>
+<span class="string">'/foo/bar/baz/asdf'</span>  
+</code></pre><h4 id="文件夹名称_path-dirname(p)">文件夹名称 path.dirname(p)</h4><p>特点：返回路径的所在的文件夹名称 </p>
+<pre><code>path.dirname(<span class="string">'/foo/bar/baz/asdf/quux'</span>)  
+<span class="comment">// returns  </span>
+<span class="string">'/foo/bar/baz/asdf'</span>  
+<span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);
+
+<span class="keyword">var</span> url1 = path.dirname(<span class="string">'/foo/bar/baz/asdf/a.txt'</span>);
+<span class="keyword">var</span> url2 = path.dirname(<span class="string">'/foo/bar/baz/asdf/'</span>);
+<span class="keyword">var</span> url3 = path.dirname(<span class="string">'C:/vajoy/test/aaa'</span>);
+
+<span class="built_in">console</span>.log(<span class="string">'url1:'</span>,url1);  <span class="comment">// /foo/bar/baz/asdf</span>
+<span class="built_in">console</span>.log(<span class="string">'url2:'</span>,url2);  <span class="comment">// /foo/bar/baz</span>
+<span class="built_in">console</span>.log(<span class="string">'url3:'</span>,url3);  <span class="comment">// C:/vajoy/test</span>
+</code></pre><h4 id="文件名称_path-basename(p,_[ext])">文件名称 path.basename(p, [ext])</h4><p>特点：返回指定的文件名，返回结果可排除[ext]后缀字符串 返回路径中的最后一部分，类似于Unix 的 basename 命令。 ext 为需要截掉的尾缀内容：</p>
+<pre><code>path.basename(<span class="string">'/foo/bar/baz/asdf/quux.html'</span>)  
+<span class="comment">// returns  </span>
+<span class="string">'quux.html'</span>  
+
+path.basename(<span class="string">'/foo/bar/baz/asdf/quux.html'</span>, <span class="string">'.html'</span>)  
+<span class="comment">// returns  </span>
+<span class="string">'quux'</span>  
+<span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);
+<span class="keyword">var</span> url1 = path.basename(<span class="string">'/foo/bar/baz/asdf/a.txt'</span>);
+<span class="keyword">var</span> url2 = path.basename(<span class="string">'/foo/bar/baz/asdf/a.txt'</span>,<span class="string">'.txt'</span>);
+<span class="keyword">var</span> url3 = path.basename(<span class="string">'/foo/bar/baz/asdf/'</span>);
+<span class="keyword">var</span> url4 = path.basename(<span class="string">'C:/vajoy/test/aaa'</span>);
+
+<span class="built_in">console</span>.log(<span class="string">'url1:'</span>,url1);  <span class="comment">// a.txt</span>
+<span class="built_in">console</span>.log(<span class="string">'url2:'</span>,url2);  <span class="comment">// a</span>
+<span class="built_in">console</span>.log(<span class="string">'url3:'</span>,url3);  <span class="comment">// asdf</span>
+<span class="built_in">console</span>.log(<span class="string">'url4:'</span>,url4);  <span class="comment">// aaa</span>
+</code></pre><h4 id="扩展名称_path-extname(p)">扩展名称 path.extname(p)</h4><p> 特点：返回指定文件名的扩展名称 </p>
+<pre><code>path.extname(<span class="string">'index.html'</span>)  
+<span class="comment">// returns  </span>
+<span class="string">'.html'</span>  
+
+path.extname(<span class="string">'index.'</span>)  
+<span class="comment">// returns  </span>
+<span class="string">'.'</span>  
+
+path.extname(<span class="string">'index'</span>)  
+<span class="comment">// returns  </span>
+<span class="string">' '</span>
+<span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);
+<span class="keyword">var</span> url1 = path.extname(<span class="string">'/foo/bar/baz/asdf/a.txt'</span>);
+<span class="keyword">var</span> url2 = path.extname(<span class="string">'/foo/bar/baz/asdf/a.txt.html'</span>);
+<span class="keyword">var</span> url3 = path.extname(<span class="string">'/foo/bar/baz/asdf/a.'</span>);
+<span class="keyword">var</span> url4 = path.extname(<span class="string">'C:/vajoy/test/.'</span>);
+<span class="keyword">var</span> url5 = path.extname(<span class="string">'C:/vajoy/test/a'</span>);
+
+<span class="built_in">console</span>.log(<span class="string">'url1:'</span>,url1);  <span class="comment">// .txt</span>
+<span class="built_in">console</span>.log(<span class="string">'url2:'</span>,url2);  <span class="comment">// .html</span>
+<span class="built_in">console</span>.log(<span class="string">'url3:'</span>,url3);  <span class="comment">// .</span>
+<span class="built_in">console</span>.log(<span class="string">'url4:'</span>,url4);  <span class="comment">//</span>
+<span class="built_in">console</span>.log(<span class="string">'url5:'</span>,url5);  <span class="comment">//</span>
+</code></pre><h4 id="路径分隔符_path-sep">路径分隔符 path.sep</h4><p>特点：获取文件路径的分隔符，主要是与操作系统相关 </p>
+<p>linux:</p>
+<pre><code><span class="string">'foo/bar/baz'</span>.<span class="function"><span class="title">split</span><span class="params">(path.sep)</span></span>  
+<span class="comment">// returns  </span>
+[<span class="string">'foo'</span>, <span class="string">'bar'</span>, <span class="string">'baz'</span>]  
+</code></pre><p>window:</p>
+<pre><code><span class="string">'foo\\bar\\baz'</span>.<span class="function"><span class="title">split</span><span class="params">(path.sep)</span></span>  
+<span class="comment">// returns  </span>
+[<span class="string">'foo'</span>, <span class="string">'bar'</span>, <span class="string">'baz'</span>]  
+</code></pre><h4 id="path-delimiter">path.delimiter</h4><p>返回对应平台下的路径分隔符，win下为’;’，*nix下为’:’：</p>
+<pre><code>var path = require('path');
+var env = process.env.PATH; //当前系统的环境变量PATH
+var url1 = env.split(path.delimiter);
+
+console.log(path.delimiter); //win下为“;”，*nix下为“:”
+console.log('env:',env);  // C:<span class="command">\ProgramData</span><span class="command">\Oracle</span><span class="command">\Java</span><span class="command">\javapath</span>;C:<span class="command">\Program</span> Files (x86)<span class="command">\Intel</span><span class="command">\iCLS</span> Client<span class="command">\;</span>
+console.log('url1:',url1);  // <span class="special">[</span>'C:<span class="command">\ProgramData</span><span class="command">\Oracle</span><span class="command">\Java</span><span class="command">\javapath</span>','C:<span class="command">\Program</span> Files (x86)<span class="command">\Intel</span><span class="command">\iCLS</span> Client<span class="command">\'</span><span class="special">]</span>
+</code></pre><h4 id="path-isAbsolute(path)">path.isAbsolute(path)</h4><p>判断 path 是否绝对路径。这块可以理解为，path 是否真的是一个绝对路径（比如 ‘E:/abc’），或者是以“/”开头的路径，二者都会返回true：</p>
+<pre><code><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);
+<span class="keyword">var</span> url1 = path.isAbsolute(<span class="string">'../testFiles/secLayer'</span>);
+<span class="keyword">var</span> url2 = path.isAbsolute(<span class="string">'./join.js'</span>);
+<span class="keyword">var</span> url3 = path.isAbsolute(<span class="string">'temp'</span>);
+<span class="keyword">var</span> url4 = path.isAbsolute(<span class="string">'/temp/../..'</span>);
+<span class="keyword">var</span> url5 = path.isAbsolute(<span class="string">'E:/github/nodeAPI/abc/efg'</span>);
+<span class="keyword">var</span> url6 = path.isAbsolute(<span class="string">'///temp123'</span>);
+
+<span class="built_in">console</span>.log(<span class="string">'url1:'</span>,url1);  <span class="comment">// false</span>
+<span class="built_in">console</span>.log(<span class="string">'url2:'</span>,url2);  <span class="comment">// false</span>
+<span class="built_in">console</span>.log(<span class="string">'url3:'</span>,url3);  <span class="comment">// false</span>
+<span class="built_in">console</span>.log(<span class="string">'url4:'</span>,url4);  <span class="comment">// true</span>
+<span class="built_in">console</span>.log(<span class="string">'url5:'</span>,url5);  <span class="comment">// true</span>
+<span class="built_in">console</span>.log(<span class="string">'url6:'</span>,url6);  <span class="comment">// true</span>
+</code></pre><h4 id="相对路径_path-relative(from,_to)">相对路径 path.relative(from, to)</h4><p>特点：返回某个路径下相对于另一个路径的相对位置串，相当于：path.resolve(from, path.relative(from, to)) == path.resolve(to) </p>
+<pre><code>path.relative(<span class="string">'C:\\orandea\\test\\aaa'</span>, <span class="string">'C:\\orandea\\impl\\bbb'</span>)  
+<span class="comment">// returns  </span>
+<span class="string">'..\\..\\impl\\bbb'</span>  
+
+path.relative(<span class="string">'/data/orandea/test/aaa'</span>, <span class="string">'/data/orandea/impl/bbb'</span>)  
+<span class="comment">// returns  </span>
+<span class="string">'../../impl/bbb'</span>  
+
+<span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);
+
+<span class="keyword">var</span> url1 = path.relative(<span class="string">'C:\\vajoy\\test\\aaa'</span>, <span class="string">'C:\\vajoy\\impl\\bbb'</span>);
+<span class="keyword">var</span> url2 = path.relative(<span class="string">'C:/vajoy/test/aaa'</span>, <span class="string">'C:/vajoy/bbb'</span>);
+<span class="keyword">var</span> url3 = path.relative(<span class="string">'C:/vajoy/test/aaa'</span>, <span class="string">'D:/vajoy/bbb'</span>);
+
+<span class="built_in">console</span>.log(<span class="string">'url1:'</span>,url1);  <span class="comment">//..\..\impl\bbb</span>
+<span class="built_in">console</span>.log(<span class="string">'url2:'</span>,url2);  <span class="comment">//url2: ..\..\bbb</span>
+<span class="built_in">console</span>.log(<span class="string">'url3:'</span>,url3);  <span class="comment">//D:\vajoy\bbb</span>
+</code></pre><h4 id="path-resolve([from_…],_to)">path.resolve([from …], to)</h4><p>从源地址 from 到目的地址 to 的绝对路径。</p>
+<p>可以理解为 cd XXX 的形式，如在D盘上执行 path.resolve(‘a’, ‘D:/b’, ‘../c’, ‘v.txt’)，得到的绝对路径“D:/v.txt”，相当于执行如下指令后所处的路径：</p>
+<pre><code>cd a
+D:
+cd b  <span class="comment">//同上一行对应 'D:/b'</span>
+cd ../c
+cd v.txt
+<span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);
+
+<span class="keyword">var</span> url1 = path.resolve(<span class="string">'.'</span>, <span class="string">'testFiles/..'</span>, <span class="string">'trdLayer'</span>);
+<span class="keyword">var</span> url2 = path.resolve(<span class="string">'..'</span>, <span class="string">'testFiles'</span>, <span class="string">'a.txt'</span>);
+<span class="keyword">var</span> url3 = path.resolve(<span class="string">'D:/vajoy'</span>, <span class="string">'abc'</span>, <span class="string">'D:/a'</span>);
+<span class="keyword">var</span> url4 = path.resolve(<span class="string">'abc'</span>, <span class="string">'vajoy'</span>, <span class="string">'ok.gif'</span>);
+<span class="keyword">var</span> url5 = path.resolve(<span class="string">'abc'</span>, <span class="string">'/vajoy'</span>, <span class="string">'..'</span>, <span class="string">'a/../subfile'</span>); <span class="comment">//'abc'参数将被忽略，源路径改从'E:/vajoy'开始</span>
+
+<span class="built_in">console</span>.log(<span class="string">'url1:'</span>,url1);  <span class="comment">// E:\github\nodeAPI\path\trdLayer</span>
+<span class="built_in">console</span>.log(<span class="string">'url2:'</span>,url2);  <span class="comment">// E:\github\nodeAPI\testFiles\a.txt</span>
+<span class="built_in">console</span>.log(<span class="string">'url3:'</span>,url3);  <span class="comment">// D:\a</span>
+<span class="built_in">console</span>.log(<span class="string">'url4:'</span>,url4);  <span class="comment">// E:\github\nodeAPI\path\abc\vajoy\ok.gif</span>
+<span class="built_in">console</span>.log(<span class="string">'url5:'</span>,url5);  <span class="comment">// E:\subfile</span>
+</code></pre><p>要注意的是，如果某个 from 或 to 参数是绝对路径（比如 ‘E:/abc’，或是以“/”开头的路径），则将忽略之前的 from 参数。</p>
+<hr>    
+
+<p>摘自网络</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-前端规范" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -905,70 +1099,6 @@ window.open ('page.html', 'newwindow', 'height=100, width=400, top=0, left=0, to
       
         <p class="article-more-link">
           <a  href="/2016/03/09/关于MySQL数据/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-关于正则表达式" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/09/关于正则表达式/" class="article-date">
-  	<time datetime="2016-03-09T10:51:44.000Z" itemprop="datePublished">2016-03-09</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/09/关于正则表达式/">关于正则表达式</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="为什么使用正则表达式?">为什么使用正则表达式?</h4><p>典型的搜索和替换操作要求你提供与预期的搜索结果匹配的确切文本，虽然这种技术对于对静态文本执行简单搜索和替换任务可能已经足够了，但它缺乏灵活性，若采用这种方法搜索动态文本，计时不是不可能，至少也会变得很困难，通过使用正则表达式可以:</p>
-<ul>
-<li><p>测试字符串内的模式:例如可以测试输入字符串，以查看字符串内是否出现电话号码模式或信用卡模式，这成为数据验证。</p>
-</li>
-<li><p>替换文本:可以使用正则表达式来识别文档中的特定文本，完全删除该文本或者用其他文本替换它。</p>
-</li>
-<li><p>基于模式匹配从字符串中提取子字符串:可以查找文档内或输入域内特定的文本。</p>
-</li>
-</ul>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/03/09/关于正则表达式/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

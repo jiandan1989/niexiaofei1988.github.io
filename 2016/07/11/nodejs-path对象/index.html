@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>nodejs path对象 | Simple Love</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="NodeJS中的Path对象，用于处理目录的对象，提高开发效率。
+用NodeJS的Path命令，与使用Linux下的shell脚本命令相似。 
+引入path对象 
+var path = require(&apos;path&apos;);
+比较实用的方法： 
+格式化路径  path.normalize(p)特点：将不符合规范的路径格式化，简化开发人员中处理各种复杂
+path.normalize(&apos;/foo/bar//">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nodejs path对象">
+<meta property="og:url" content="http://yoursite.com/2016/07/11/nodejs-path对象/index.html">
+<meta property="og:site_name" content="Simple Love">
+<meta property="og:description" content="NodeJS中的Path对象，用于处理目录的对象，提高开发效率。
+用NodeJS的Path命令，与使用Linux下的shell脚本命令相似。 
+引入path对象 
+var path = require(&apos;path&apos;);
+比较实用的方法： 
+格式化路径  path.normalize(p)特点：将不符合规范的路径格式化，简化开发人员中处理各种复杂
+path.normalize(&apos;/foo/bar//">
+<meta property="og:updated_time" content="2016-07-11T15:30:37.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="nodejs path对象">
+<meta name="twitter:description" content="NodeJS中的Path对象，用于处理目录的对象，提高开发效率。
+用NodeJS的Path命令，与使用Linux下的shell脚本命令相似。 
+引入path对象 
+var path = require(&apos;path&apos;);
+比较实用的方法： 
+格式化路径  path.normalize(p)特点：将不符合规范的路径格式化，简化开发人员中处理各种复杂
+path.normalize(&apos;/foo/bar//">
+  
+    <link rel="alternative" href="/atom.xml" title="Simple Love" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://7xoo7k.com1.z0.glb.clouddn.com/psu.jpeg">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="http://7xoo7k.com1.z0.glb.clouddn.com/psu.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Simple love</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>標籤</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>關於</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="http://niexiaofei1988.github.io/" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/jiandanaiyici" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="http://niexiaofei@yahoo.com" title="mail">mail</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">简简单单的我，只想写出一行属于我们自己的代码...</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Simple love</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="http://7xoo7k.com1.z0.glb.clouddn.com/psu.jpeg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Simple love</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="http://niexiaofei1988.github.io/" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/jiandanaiyici" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="http://niexiaofei@yahoo.com" title="mail">mail</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-nodejs-path对象" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/11/nodejs-path对象/" class="article-date">
+  	<time datetime="2016-07-11T14:59:43.000Z" itemprop="datePublished">2016-07-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      nodejs path对象
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>NodeJS中的Path对象，用于处理目录的对象，提高开发效率。</p>
+<p>用NodeJS的Path命令，与使用Linux下的shell脚本命令相似。 </p>
+<p>引入path对象 </p>
+<pre><code><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);
+</code></pre><p>比较实用的方法： </p>
+<h4 id="格式化路径_path-normalize(p)">格式化路径  path.normalize(p)</h4><p>特点：将不符合规范的路径格式化，简化开发人员中处理各种复杂</p>
+<pre><code>path.<span class="keyword">normalize</span>(<span class="string">'/foo/bar//baz/asdf/quux/..'</span>);  
+<span class="comment">// returns   </span>
+<span class="string">'/foo/bar/baz/asdf'</span> 
+</code></pre><h4 id="路径联合_path-join([path1],_[path2],_[…])">路径联合 path.join([path1], [path2], […])</h4><p>特点：将所有名称用path.seq串联起来，然后用normailze格式化 </p>
+<pre><code>path.<span class="keyword">join</span>(<span class="string">'///foo'</span>, <span class="string">'bar'</span>, <span class="string">'//baz/asdf'</span>, <span class="string">'quux'</span>, <span class="string">'..'</span>);  
+<span class="comment">// returns   </span>
+<span class="string">'/foo/bar/baz/asdf'</span>  
+</code></pre><h4 id="文件夹名称_path-dirname(p)">文件夹名称 path.dirname(p)</h4><p>特点：返回路径的所在的文件夹名称 </p>
+<pre><code>path.dirname(<span class="string">'/foo/bar/baz/asdf/quux'</span>)  
+<span class="comment">// returns  </span>
+<span class="string">'/foo/bar/baz/asdf'</span>  
+<span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);
+
+<span class="keyword">var</span> url1 = path.dirname(<span class="string">'/foo/bar/baz/asdf/a.txt'</span>);
+<span class="keyword">var</span> url2 = path.dirname(<span class="string">'/foo/bar/baz/asdf/'</span>);
+<span class="keyword">var</span> url3 = path.dirname(<span class="string">'C:/vajoy/test/aaa'</span>);
+
+<span class="built_in">console</span>.log(<span class="string">'url1:'</span>,url1);  <span class="comment">// /foo/bar/baz/asdf</span>
+<span class="built_in">console</span>.log(<span class="string">'url2:'</span>,url2);  <span class="comment">// /foo/bar/baz</span>
+<span class="built_in">console</span>.log(<span class="string">'url3:'</span>,url3);  <span class="comment">// C:/vajoy/test</span>
+</code></pre><h4 id="文件名称_path-basename(p,_[ext])">文件名称 path.basename(p, [ext])</h4><p>特点：返回指定的文件名，返回结果可排除[ext]后缀字符串 返回路径中的最后一部分，类似于Unix 的 basename 命令。 ext 为需要截掉的尾缀内容：</p>
+<pre><code>path.basename(<span class="string">'/foo/bar/baz/asdf/quux.html'</span>)  
+<span class="comment">// returns  </span>
+<span class="string">'quux.html'</span>  
+
+path.basename(<span class="string">'/foo/bar/baz/asdf/quux.html'</span>, <span class="string">'.html'</span>)  
+<span class="comment">// returns  </span>
+<span class="string">'quux'</span>  
+<span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);
+<span class="keyword">var</span> url1 = path.basename(<span class="string">'/foo/bar/baz/asdf/a.txt'</span>);
+<span class="keyword">var</span> url2 = path.basename(<span class="string">'/foo/bar/baz/asdf/a.txt'</span>,<span class="string">'.txt'</span>);
+<span class="keyword">var</span> url3 = path.basename(<span class="string">'/foo/bar/baz/asdf/'</span>);
+<span class="keyword">var</span> url4 = path.basename(<span class="string">'C:/vajoy/test/aaa'</span>);
+
+<span class="built_in">console</span>.log(<span class="string">'url1:'</span>,url1);  <span class="comment">// a.txt</span>
+<span class="built_in">console</span>.log(<span class="string">'url2:'</span>,url2);  <span class="comment">// a</span>
+<span class="built_in">console</span>.log(<span class="string">'url3:'</span>,url3);  <span class="comment">// asdf</span>
+<span class="built_in">console</span>.log(<span class="string">'url4:'</span>,url4);  <span class="comment">// aaa</span>
+</code></pre><h4 id="扩展名称_path-extname(p)">扩展名称 path.extname(p)</h4><p> 特点：返回指定文件名的扩展名称 </p>
+<pre><code>path.extname(<span class="string">'index.html'</span>)  
+<span class="comment">// returns  </span>
+<span class="string">'.html'</span>  
+
+path.extname(<span class="string">'index.'</span>)  
+<span class="comment">// returns  </span>
+<span class="string">'.'</span>  
+
+path.extname(<span class="string">'index'</span>)  
+<span class="comment">// returns  </span>
+<span class="string">' '</span>
+<span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);
+<span class="keyword">var</span> url1 = path.extname(<span class="string">'/foo/bar/baz/asdf/a.txt'</span>);
+<span class="keyword">var</span> url2 = path.extname(<span class="string">'/foo/bar/baz/asdf/a.txt.html'</span>);
+<span class="keyword">var</span> url3 = path.extname(<span class="string">'/foo/bar/baz/asdf/a.'</span>);
+<span class="keyword">var</span> url4 = path.extname(<span class="string">'C:/vajoy/test/.'</span>);
+<span class="keyword">var</span> url5 = path.extname(<span class="string">'C:/vajoy/test/a'</span>);
+
+<span class="built_in">console</span>.log(<span class="string">'url1:'</span>,url1);  <span class="comment">// .txt</span>
+<span class="built_in">console</span>.log(<span class="string">'url2:'</span>,url2);  <span class="comment">// .html</span>
+<span class="built_in">console</span>.log(<span class="string">'url3:'</span>,url3);  <span class="comment">// .</span>
+<span class="built_in">console</span>.log(<span class="string">'url4:'</span>,url4);  <span class="comment">//</span>
+<span class="built_in">console</span>.log(<span class="string">'url5:'</span>,url5);  <span class="comment">//</span>
+</code></pre><h4 id="路径分隔符_path-sep">路径分隔符 path.sep</h4><p>特点：获取文件路径的分隔符，主要是与操作系统相关 </p>
+<p>linux:</p>
+<pre><code><span class="string">'foo/bar/baz'</span>.<span class="function"><span class="title">split</span><span class="params">(path.sep)</span></span>  
+<span class="comment">// returns  </span>
+[<span class="string">'foo'</span>, <span class="string">'bar'</span>, <span class="string">'baz'</span>]  
+</code></pre><p>window:</p>
+<pre><code><span class="string">'foo\\bar\\baz'</span>.<span class="function"><span class="title">split</span><span class="params">(path.sep)</span></span>  
+<span class="comment">// returns  </span>
+[<span class="string">'foo'</span>, <span class="string">'bar'</span>, <span class="string">'baz'</span>]  
+</code></pre><h4 id="path-delimiter">path.delimiter</h4><p>返回对应平台下的路径分隔符，win下为’;’，*nix下为’:’：</p>
+<pre><code>var path = require('path');
+var env = process.env.PATH; //当前系统的环境变量PATH
+var url1 = env.split(path.delimiter);
+
+console.log(path.delimiter); //win下为“;”，*nix下为“:”
+console.log('env:',env);  // C:<span class="command">\ProgramData</span><span class="command">\Oracle</span><span class="command">\Java</span><span class="command">\javapath</span>;C:<span class="command">\Program</span> Files (x86)<span class="command">\Intel</span><span class="command">\iCLS</span> Client<span class="command">\;</span>
+console.log('url1:',url1);  // <span class="special">[</span>'C:<span class="command">\ProgramData</span><span class="command">\Oracle</span><span class="command">\Java</span><span class="command">\javapath</span>','C:<span class="command">\Program</span> Files (x86)<span class="command">\Intel</span><span class="command">\iCLS</span> Client<span class="command">\'</span><span class="special">]</span>
+</code></pre><h4 id="path-isAbsolute(path)">path.isAbsolute(path)</h4><p>判断 path 是否绝对路径。这块可以理解为，path 是否真的是一个绝对路径（比如 ‘E:/abc’），或者是以“/”开头的路径，二者都会返回true：</p>
+<pre><code><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);
+<span class="keyword">var</span> url1 = path.isAbsolute(<span class="string">'../testFiles/secLayer'</span>);
+<span class="keyword">var</span> url2 = path.isAbsolute(<span class="string">'./join.js'</span>);
+<span class="keyword">var</span> url3 = path.isAbsolute(<span class="string">'temp'</span>);
+<span class="keyword">var</span> url4 = path.isAbsolute(<span class="string">'/temp/../..'</span>);
+<span class="keyword">var</span> url5 = path.isAbsolute(<span class="string">'E:/github/nodeAPI/abc/efg'</span>);
+<span class="keyword">var</span> url6 = path.isAbsolute(<span class="string">'///temp123'</span>);
+
+<span class="built_in">console</span>.log(<span class="string">'url1:'</span>,url1);  <span class="comment">// false</span>
+<span class="built_in">console</span>.log(<span class="string">'url2:'</span>,url2);  <span class="comment">// false</span>
+<span class="built_in">console</span>.log(<span class="string">'url3:'</span>,url3);  <span class="comment">// false</span>
+<span class="built_in">console</span>.log(<span class="string">'url4:'</span>,url4);  <span class="comment">// true</span>
+<span class="built_in">console</span>.log(<span class="string">'url5:'</span>,url5);  <span class="comment">// true</span>
+<span class="built_in">console</span>.log(<span class="string">'url6:'</span>,url6);  <span class="comment">// true</span>
+</code></pre><h4 id="相对路径_path-relative(from,_to)">相对路径 path.relative(from, to)</h4><p>特点：返回某个路径下相对于另一个路径的相对位置串，相当于：path.resolve(from, path.relative(from, to)) == path.resolve(to) </p>
+<pre><code>path.relative(<span class="string">'C:\\orandea\\test\\aaa'</span>, <span class="string">'C:\\orandea\\impl\\bbb'</span>)  
+<span class="comment">// returns  </span>
+<span class="string">'..\\..\\impl\\bbb'</span>  
+
+path.relative(<span class="string">'/data/orandea/test/aaa'</span>, <span class="string">'/data/orandea/impl/bbb'</span>)  
+<span class="comment">// returns  </span>
+<span class="string">'../../impl/bbb'</span>  
+
+<span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);
+
+<span class="keyword">var</span> url1 = path.relative(<span class="string">'C:\\vajoy\\test\\aaa'</span>, <span class="string">'C:\\vajoy\\impl\\bbb'</span>);
+<span class="keyword">var</span> url2 = path.relative(<span class="string">'C:/vajoy/test/aaa'</span>, <span class="string">'C:/vajoy/bbb'</span>);
+<span class="keyword">var</span> url3 = path.relative(<span class="string">'C:/vajoy/test/aaa'</span>, <span class="string">'D:/vajoy/bbb'</span>);
+
+<span class="built_in">console</span>.log(<span class="string">'url1:'</span>,url1);  <span class="comment">//..\..\impl\bbb</span>
+<span class="built_in">console</span>.log(<span class="string">'url2:'</span>,url2);  <span class="comment">//url2: ..\..\bbb</span>
+<span class="built_in">console</span>.log(<span class="string">'url3:'</span>,url3);  <span class="comment">//D:\vajoy\bbb</span>
+</code></pre><h4 id="path-resolve([from_…],_to)">path.resolve([from …], to)</h4><p>从源地址 from 到目的地址 to 的绝对路径。</p>
+<p>可以理解为 cd XXX 的形式，如在D盘上执行 path.resolve(‘a’, ‘D:/b’, ‘../c’, ‘v.txt’)，得到的绝对路径“D:/v.txt”，相当于执行如下指令后所处的路径：</p>
+<pre><code>cd a
+D:
+cd b  <span class="comment">//同上一行对应 'D:/b'</span>
+cd ../c
+cd v.txt
+<span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);
+
+<span class="keyword">var</span> url1 = path.resolve(<span class="string">'.'</span>, <span class="string">'testFiles/..'</span>, <span class="string">'trdLayer'</span>);
+<span class="keyword">var</span> url2 = path.resolve(<span class="string">'..'</span>, <span class="string">'testFiles'</span>, <span class="string">'a.txt'</span>);
+<span class="keyword">var</span> url3 = path.resolve(<span class="string">'D:/vajoy'</span>, <span class="string">'abc'</span>, <span class="string">'D:/a'</span>);
+<span class="keyword">var</span> url4 = path.resolve(<span class="string">'abc'</span>, <span class="string">'vajoy'</span>, <span class="string">'ok.gif'</span>);
+<span class="keyword">var</span> url5 = path.resolve(<span class="string">'abc'</span>, <span class="string">'/vajoy'</span>, <span class="string">'..'</span>, <span class="string">'a/../subfile'</span>); <span class="comment">//'abc'参数将被忽略，源路径改从'E:/vajoy'开始</span>
+
+<span class="built_in">console</span>.log(<span class="string">'url1:'</span>,url1);  <span class="comment">// E:\github\nodeAPI\path\trdLayer</span>
+<span class="built_in">console</span>.log(<span class="string">'url2:'</span>,url2);  <span class="comment">// E:\github\nodeAPI\testFiles\a.txt</span>
+<span class="built_in">console</span>.log(<span class="string">'url3:'</span>,url3);  <span class="comment">// D:\a</span>
+<span class="built_in">console</span>.log(<span class="string">'url4:'</span>,url4);  <span class="comment">// E:\github\nodeAPI\path\abc\vajoy\ok.gif</span>
+<span class="built_in">console</span>.log(<span class="string">'url5:'</span>,url5);  <span class="comment">// E:\subfile</span>
+</code></pre><p>要注意的是，如果某个 from 或 to 参数是绝对路径（比如 ‘E:/abc’，或是以“/”开头的路径），则将忽略之前的 from 参数。</p>
+<hr>    
+
+<p>摘自网络</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/06/12/前端规范/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前端规范</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="nodejs-path对象" data-title="nodejs path对象" data-url="http://yoursite.com/2016/07/11/nodejs-path对象/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Simple love
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
