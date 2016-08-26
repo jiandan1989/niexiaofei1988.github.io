@@ -22,7 +22,7 @@ con">
 console.log(&quot;这是log&quot;) // 打印普通信息
 console.error(&quot;这是error信息&quot;)  //错误信息
 con">
-<meta property="og:updated_time" content="2016-08-26T16:49:55.000Z">
+<meta property="og:updated_time" content="2016-08-26T16:52:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="console命令">
 <meta name="twitter:description" content="摘自阮一峰Firebug控制台详解
@@ -244,7 +244,8 @@ console.<span class="function"><span class="title">error</span><span class="para
 console.<span class="function"><span class="title">info</span><span class="params">(<span class="string">"这是info信息"</span>)</span></span>     <span class="comment">// 一般信息</span>
 console.<span class="function"><span class="title">debug</span><span class="params">(<span class="string">"这是debug信息"</span>)</span></span> <span class="comment">//除错信息</span>
 console.<span class="function"><span class="title">warn</span><span class="params">(<span class="string">"这是warn信息"</span>)</span></span>
-</code></pre><h4 id="二、占位符">二、占位符</h4><p>console对象的上面5种方法，都可以使用printf风格的占位符。不过，占位符的种类比较少，只支持字符（%s）、整数（%d或%i）、浮点数（%f）和对象（%o）四种。</p>
+</code></pre><a id="more"></a>    
+<h4 id="二、占位符">二、占位符</h4><p>console对象的上面5种方法，都可以使用printf风格的占位符。不过，占位符的种类比较少，只支持字符（%s）、整数（%d或%i）、浮点数（%f）和对象（%o）四种。</p>
 <p>比如:</p>
 <pre><code>console.<span class="built_in">log</span>(<span class="string">"%d年%d月%d日"</span>,<span class="number">2011</span>,<span class="number">3</span>,<span class="number">26</span>);     <span class="comment">//2011年3月26日</span>
 console.<span class="built_in">log</span>(<span class="string">"圆周率是%f"</span>,<span class="number">3.1415926</span>);         <span class="comment">//3.1415926</span>

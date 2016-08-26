@@ -215,7 +215,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <ul>
-<li><a href="http://www.ruanyifeng.com/blog/2011/03/firebug_console_tutorial.html" target="_blank" rel="external">摘自阮一峰Firebug控制台详解</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2011/03/firebug_console_tutorial.html">摘自阮一峰Firebug控制台详解</a></li>
 </ul>
 <h4 id="一、显示信息的命令">一、显示信息的命令</h4><p>在javascript调试中可以使用console的命令来代替alert或者document.write命令，不影响页面显示，也不会阻碍js的执行，内置有5种打印信息的命令，根据不同的信息使用不同的命令:</p>
 <pre><code>console.<span class="function"><span class="title">log</span><span class="params">(<span class="string">"这是log"</span>)</span></span> <span class="comment">// 打印普通信息</span>
@@ -223,75 +223,6 @@ console.<span class="function"><span class="title">error</span><span class="para
 console.<span class="function"><span class="title">info</span><span class="params">(<span class="string">"这是info信息"</span>)</span></span>     <span class="comment">// 一般信息</span>
 console.<span class="function"><span class="title">debug</span><span class="params">(<span class="string">"这是debug信息"</span>)</span></span> <span class="comment">//除错信息</span>
 console.<span class="function"><span class="title">warn</span><span class="params">(<span class="string">"这是warn信息"</span>)</span></span>
-</code></pre><h4 id="二、占位符">二、占位符</h4><p>console对象的上面5种方法，都可以使用printf风格的占位符。不过，占位符的种类比较少，只支持字符（%s）、整数（%d或%i）、浮点数（%f）和对象（%o）四种。</p>
-<p>比如:</p>
-<pre><code>console.<span class="built_in">log</span>(<span class="string">"%d年%d月%d日"</span>,<span class="number">2011</span>,<span class="number">3</span>,<span class="number">26</span>);     <span class="comment">//2011年3月26日</span>
-console.<span class="built_in">log</span>(<span class="string">"圆周率是%f"</span>,<span class="number">3.1415926</span>);         <span class="comment">//3.1415926</span>
-</code></pre><p>%o占位符，可以用来查看一个对象内部情况。比如，有这样一个对象：</p>
-<pre><code>var dog = {} ;
-　　dog.name = <span class="string">"大毛"</span> ;
-　　dog.<span class="keyword">color</span> = <span class="string">"黄色"</span>;    
-　    console.<span class="keyword">log</span>(<span class="variable">%o</span>,dog) ==&gt;  Object{name:<span class="string">"大毛"</span>,<span class="keyword">color</span>:<span class="string">"黄色"</span>}
-　    
-</code></pre><h4 id="三、分组显示">三、分组显示</h4><p>如果信息太多，可以分组显示，用到的方法是console.group()和console.groupEnd()。    　    </p>
-<pre><code><span class="built_in">console</span>.group(<span class="string">"第一组信息"</span>);
-　<span class="built_in">console</span>.log(<span class="string">"第一组第一条"</span>);
-    <span class="built_in">console</span>.log(<span class="string">"第一组第二条"</span>);
-<span class="built_in">console</span>.groupEnd();
-<span class="built_in">console</span>.group(<span class="string">"第二组信息"</span>);
-    <span class="built_in">console</span>.log(<span class="string">"第二组第一条"</span>);
-    <span class="built_in">console</span>.log(<span class="string">"第二组第二条"</span>);
-<span class="built_in">console</span>.groupEnd();
-</code></pre><h4 id="四、console-dir()">四、console.dir()</h4><p>console.dir()可以显示一个对象所有的属性和方法。</p>
-<p>比如，现在为第二节的dog对象，添加一个bark()方法。</p>
-<pre><code>dog.bark = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{alert(<span class="string">"汪汪汪"</span>);};
-<span class="built_in">console</span>.dir(dog) == &gt;color :<span class="string">"黄色"</span> name:<span class="string">"大毛"</span> bark : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>
-</code></pre><h4 id="五、console-dirxml()">五、console.dirxml()</h4><p>console.dirxml()用来显示网页的某个节点（node）所包含的html/xml代码。</p>
-<p>比如，先获取一个表格节点，</p>
-<pre><code><span class="keyword">var</span> <span class="keyword">table</span> = document.getElementById(<span class="string">"table1"</span>);
-console.dirxml(<span class="keyword">table</span>)  ==&gt;<span class="keyword">table</span>节点的html结构以及元素被打印出来
-</code></pre><h4 id="六、console-assert()">六、console.assert()</h4><p>console.assert()用来判断一个表达式或变量是否为真。如果结果为否，则在控制台输出一条相应信息，并且抛出一个异常。</p>
-<p>比如，下面两个判断的结果都为否。</p>
-<pre><code>　　<span class="keyword">var</span> <span class="literal">result</span> = <span class="number">0</span>;
-console.assert( <span class="literal">result</span> );
-<span class="keyword">var</span> year = <span class="number">2000</span>;
-console.assert(year == <span class="number">2011</span> );    
-</code></pre><h4 id="七、console-trace()">七、console.trace()</h4><p>console.trace()用来追踪函数的调用轨迹。</p>
-<p>比如，有一个加法器函数。</p>
-<pre><code><span class="function"><span class="keyword">function</span> <span class="title">add</span><span class="params">(a,b)</span></span>{
-    <span class="keyword">return</span> a+b;
-　}    
-</code></pre><p>我想知道这个函数的调用，只要在函数中加入console.trace()方法就可以了</p>
-<pre><code><span class="function"><span class="keyword">function</span> <span class="title">add</span><span class="params">(a,b)</span></span>{
-    console.<span class="keyword">trace</span>();
-    <span class="keyword">return</span> a + b ;
-}    
-</code></pre><h4 id="八、计时功能">八、计时功能</h4><p>console.time()和console.timeEnd()，用来显示代码的运行时间。</p>
-<pre><code>console.time(<span class="string">"计时器一"</span>);
-
-<span class="keyword">for</span>(var i=<span class="number">0</span>;i&lt;<span class="number">1000</span>;i++){
-    <span class="keyword">for</span>(var j=<span class="number">0</span>;j&lt;<span class="number">1000</span>;j++){}
-}
-console.timeEnd(<span class="string">"计时器一"</span>);    
-</code></pre><h4 id="九、性能分析">九、性能分析</h4><p>性能分析（Profiler）就是分析程序各个部分的运行时间，找出瓶颈所在，使用的方法是console.profile()。</p>
-<p>假定有一个函数Foo()，里面调用了另外两个函数funcA()和funcB()，其中funcA()调用10次，funcB()调用1次。</p>
-<pre><code><span class="function"><span class="keyword">function</span> <span class="title">Foo</span><span class="params">()</span>{</span>
-    <span class="keyword">for</span>(var <span class="built_in">i</span>=<span class="number">0</span>;<span class="built_in">i</span>&lt;<span class="number">10</span>;<span class="built_in">i</span>++)<span class="cell">{
-        funcA(<span class="number">1000</span>);
-    }</span>
-　　    　    funcB(<span class="number">10000</span>);
-　　}
-
-　　<span class="function"><span class="keyword">function</span> <span class="title">funcA</span><span class="params">(count)</span>{</span>
-    <span class="keyword">for</span>(var <span class="built_in">i</span>=<span class="number">0</span>;<span class="built_in">i</span>&lt;count;<span class="built_in">i</span>++)<span class="cell">{}</span>
-}
-<span class="function"><span class="keyword">function</span> <span class="title">funcB</span><span class="params">(count)</span>{</span>
-    <span class="keyword">for</span>(var <span class="built_in">i</span>=<span class="number">0</span>;<span class="built_in">i</span>&lt;count;<span class="built_in">i</span>++)<span class="cell">{}</span>
-}    
-
-console.profile(<span class="string">'性能分析器一'</span>);
-Foo();
-console.profileEnd();
 </code></pre>
       
     </div>
@@ -301,6 +232,10 @@ console.profileEnd();
       
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/08/27/console命令/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
