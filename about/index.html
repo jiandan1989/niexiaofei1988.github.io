@@ -84,16 +84,13 @@
 
 
 
-<meta name="description" content="关于调用相机，我纠结了很久，终于是有点小进步了———在做移动端的时候有很多都要求是调用相机的，在微信开发文档中有关于调用相机的API,在经过查看mozilla开发文档中可以看到有调用相机的开发。先看下边的代码吧">
-<meta property="og:type" content="article">
-<meta property="og:title" content="调用相机">
-<meta property="og:url" content="http://yoursite.com/2016/05/16/调用相机/index.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="about">
+<meta property="og:url" content="http://yoursite.com/about/index.html">
 <meta property="og:site_name" content="NHF">
-<meta property="og:description" content="关于调用相机，我纠结了很久，终于是有点小进步了———在做移动端的时候有很多都要求是调用相机的，在微信开发文档中有关于调用相机的API,在经过查看mozilla开发文档中可以看到有调用相机的开发。先看下边的代码吧">
-<meta property="og:updated_time" content="2016-05-15T17:12:28.000Z">
+<meta property="og:updated_time" content="2016-12-03T16:23:33.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="调用相机">
-<meta name="twitter:description" content="关于调用相机，我纠结了很久，终于是有点小进步了———在做移动端的时候有很多都要求是调用相机的，在微信开发文档中有关于调用相机的API,在经过查看mozilla开发文档中可以看到有调用相机的开发。先看下边的代码吧">
+<meta name="twitter:title" content="about">
 
 
 
@@ -121,13 +118,19 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/05/16/调用相机/"/>
+  <link rel="canonical" href="http://yoursite.com/about/"/>
 
 
 
 
 
-  <title> 调用相机 | NHF </title>
+  <title>
+  
+
+  
+    about | NHF
+  
+</title>
 </head>
 
 
@@ -149,7 +152,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail ">
+  <div class="container one-collumn sidebar-position-left  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -230,171 +233,18 @@
             
 
   <div id="posts" class="posts-expand">
-    
+  <header class="post-header">
 
-  
+	<h2 class="post-title" itemprop="name headline">about</h2>
 
-  
-  
-  
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/16/调用相机/">
 
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="NHF">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/nhf.png">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="NHF">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="NHF" src="">
-    </span>
-  </span>
+</header>
 
     
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                调用相机
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-05-16T00:50:16+08:00">
-                2016-05-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
     
-
-
-    <div class="post-body" itemprop="articleBody">
-
       
-      
-
-      
-        <p>关于调用相机，我纠结了很久，终于是有点小进步了———<br>在做移动端的时候有很多都要求是调用相机的，在微信开发文档中有关于调用相机的API,在经过查看mozilla开发文档中可以看到有调用相机的开发。先看下边的代码吧</p>
-<a id="more"></a>
-<h3 id="HTML代码：-省略其他代码"><a href="#HTML代码：-省略其他代码" class="headerlink" title="HTML代码：(省略其他代码)"></a>HTML代码：(省略其他代码)</h3><pre><code>&lt;input type=&quot;file&quot; accept=&quot;image/*&quot;  id=&quot;take-picture&quot;&gt;
-&lt;img src=&quot;&quot; alt=&quot;相片&quot; id=&quot;show-picture&quot;&gt;
-</code></pre><h3 id="script代码："><a href="#script代码：" class="headerlink" title="script代码："></a>script代码：</h3><pre><code>var takePicture = document.getElementById(&quot;take-picture&quot;);
-var showPicture = document.getElementById(&quot;show-picture&quot;);
-takePicture.onchange = function(event){
-    var file,files = event.target.files;
-    if(files&amp;&amp;files.length &gt; 0){
-        file = files[0];
-        var URL = window.URL || window.webkitURL;
-        var imgURL = URL.createObjectURL(file);
-        showPicture.src = imgURL;
-    }
-}
-</code></pre><p>这样写出来的是没有做兼容的，有的浏览器是不兼容createObjectURL的，可以用fileReader 来处理；暂时没试，以后会补上去。</p>
-<p>上面的js代码其实也是可以封装的，本人js不是特别好，只能做简单的封装</p>
-<pre><code>function uploadImg(event,obj){
-    var file,files = event.target.files;
-    if(files &amp;&amp; files.length &gt; 0){
-        file = files[0];
-        var URL = window.URL || window.webkit.URL;
-        var imgURL = URL.createObjectURL(file);
-        obj.src = imgURL;
-    }
-}
-</code></pre><p>如果是多个input上传，使用循环的方法，给所有input加上onchange事件，然后调用uploadImg方法就行了。</p>
-<p><hr style="width:100%;height:1px; background:red; "><br>只是做参考，详细的可以<a style="text-decoration: none; " href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/API/Camera" target="_blank" rel="external"> 点击查看</a>    </p>
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-    <div>
-      
-        
-
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2016/04/05/面向对象-一/" rel="next" title="面向对象(一)">
-                <i class="fa fa-chevron-left"></i> 面向对象(一)
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/06/05/每日小知识一/" rel="prev" title="每日小知识">
-                每日小知识 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
+    
   </div>
 
 
@@ -426,17 +276,8 @@ takePicture.onchange = function(event){
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/nhf.png"
@@ -513,22 +354,6 @@ takePicture.onchange = function(event){
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML代码：-省略其他代码"><span class="nav-number">1.</span> <span class="nav-text">HTML代码：(省略其他代码)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#script代码："><span class="nav-number">2.</span> <span class="nav-text">script代码：</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
     </div>
@@ -634,10 +459,6 @@ takePicture.onchange = function(event){
 
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
-
-
 
   
 
