@@ -1,12 +1,90 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
+<!doctype html>
+
+
+
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>关于MySQL数据 | Simple Love</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="MySQL数据库简介
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="MySQL数据库简介
 相关术语
 
 什么是数据库? :数据库(database)就是一个由一批数据构成的有序集合，这个集合通常被保存为一个或多个彼此相关的文件。
@@ -17,7 +95,7 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于MySQL数据">
 <meta property="og:url" content="http://yoursite.com/2016/03/09/关于MySQL数据/index.html">
-<meta property="og:site_name" content="Simple Love">
+<meta property="og:site_name" content="NHF">
 <meta property="og:description" content="MySQL数据库简介
 相关术语
 
@@ -37,211 +115,216 @@
 什么事关系型数据库? : 数据被分门别类的存放在一些结构化的数据表(table)中，而数据表之间又往往会形成种种内在的交叉关系，存在于数据表之间的这种关系(relation)使数据库又被称为关系型数据库
 
 关系型数据库系统 :MySQL、">
-  
-    <link rel="alternative" href="/atom.xml" title="Simple Love" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="http://7xoo7k.com1.z0.glb.clouddn.com/psu.jpeg">
-  
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/03/09/关于MySQL数据/"/>
+
+
+
+
+
+  <title> 关于MySQL数据 | NHF </title>
 </head>
 
-<body>
-  <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-	<header id="header" class="inner">
-		<a href="/" class="profilepic">
-			
-			<img lazy-src="http://7xoo7k.com1.z0.glb.clouddn.com/psu.jpeg" class="js-avatar">
-			
-		</a>
 
-		<hgroup>
-		  <h1 class="header-author"><a href="/">Simple love</a></h1>
-		</hgroup>
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
 
-		
+  
 
-		
-			<div class="switch-btn">
-				<div class="icon">
-					<div class="icon-ctn">
-						<div class="icon-wrap icon-house" data-idx="0">
-							<div class="birdhouse"></div>
-							<div class="birdhouse_holes"></div>
-						</div>
-						<div class="icon-wrap icon-ribbon hide" data-idx="1">
-							<div class="ribbon"></div>
-						</div>
-						
-						<div class="icon-wrap icon-link hide" data-idx="2">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
-						
-						<div class="icon-wrap icon-me hide" data-idx="3">
-							<div class="user"></div>
-							<div class="shoulder"></div>
-						</div>
-						
-					</div>
-					
-				</div>
-				<div class="tips-box hide">
-					<div class="tips-arrow"></div>
-					<ul class="tips-inner">
-						<li>菜单</li>
-						<li>標籤</li>
-						
-						<li>友情链接</li>
-						
-						
-						<li>關於</li>
-						
-					</ul>
-				</div>
-			</div>
-		
 
-		<div class="switch-area">
-			<div class="switch-wrap">
-				<section class="switch-part switch-part1">
-					<nav class="header-menu">
-						<ul>
-						
-							<li><a href="/">主页</a></li>
-				        
-							<li><a href="/archives">所有文章</a></li>
-				        
-						</ul>
-					</nav>
-					<nav class="header-nav">
-						<div class="social">
-							
-								<a class="github" target="_blank" href="http://niexiaofei1988.github.io/" title="github">github</a>
-					        
-								<a class="weibo" target="_blank" href="http://weibo.com/jiandanaiyici" title="weibo">weibo</a>
-					        
-								<a class="mail" target="_blank" href="http://niexiaofei@yahoo.com" title="mail">mail</a>
-					        
-								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
-					        
-						</div>
-					</nav>
-				</section>
-				
-				
-				<section class="switch-part switch-part2">
-					<div class="widget tagcloud" id="js-tagcloud">
-						
-					</div>
-				</section>
-				
-				
-				
-				<section class="switch-part switch-part3">
-					<div id="js-friends">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
-			        
-			        </div>
-				</section>
-				
 
-				
-				
-				<section class="switch-part switch-part4">
-				
-					<div id="js-aboutme">简简单单的我，只想写出一行属于我们自己的代码...</div>
-				</section>
-				
-			</div>
-		</div>
-	</header>				
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">NHF</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
 </div>
 
-    </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-  	<div class="overlay">
-  		<div class="slider-trigger"></div>
-  		<h1 class="header-author js-mobile-header hide">Simple love</h1>
-  	</div>
-	<div class="intrude-less">
-		<header id="header" class="inner">
-			<div class="profilepic">
-			
-				<img lazy-src="http://7xoo7k.com1.z0.glb.clouddn.com/psu.jpeg" class="js-avatar">
-			
-			</div>
-			<hgroup>
-			  <h1 class="header-author">Simple love</h1>
-			</hgroup>
-			
-			<nav class="header-menu">
-				<ul>
-				
-					<li><a href="/">主页</a></li>
-		        
-					<li><a href="/archives">所有文章</a></li>
-		        
-		        <div class="clearfix"></div>
-				</ul>
-			</nav>
-			<nav class="header-nav">
-				<div class="social">
-					
-						<a class="github" target="_blank" href="http://niexiaofei1988.github.io/" title="github">github</a>
-			        
-						<a class="weibo" target="_blank" href="http://weibo.com/jiandanaiyici" title="weibo">weibo</a>
-			        
-						<a class="mail" target="_blank" href="http://niexiaofei@yahoo.com" title="mail">mail</a>
-			        
-						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
-			        
-				</div>
-			</nav>
-		</header>				
-	</div>
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
 </nav>
 
-      <div class="body-wrap"><article id="post-关于MySQL数据" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/09/关于MySQL数据/" class="article-date">
-  	<time datetime="2016-03-09T13:39:07.000Z" itemprop="datePublished">2016-03-09</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
     
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      关于MySQL数据
-    </h1>
+
   
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/03/09/关于MySQL数据/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="NHF">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/nhf.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="NHF">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="NHF" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                关于MySQL数据
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Veröffentlicht am</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-03-09T21:39:07+08:00">
+                2016-03-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
       </header>
-      
-      <div class="article-info article-info-post">
-        
-        
-
-        <div class="clearfix"></div>
-      </div>
-      
     
-    <div class="article-entry" itemprop="articleBody">
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
-        <h4 id="MySQL数据库简介">MySQL数据库简介</h4><ul>
+      
+
+      
+        <h4 id="MySQL数据库简介"><a href="#MySQL数据库简介" class="headerlink" title="MySQL数据库简介"></a>MySQL数据库简介</h4><ul>
 <li><p>相关术语</p>
 <ul>
 <li><p>什么是数据库? :数据库(database)就是一个由一批数据构成的有序集合，这个集合通常被保存为一个或多个彼此相关的文件。</p>
@@ -256,11 +339,11 @@
 </li>
 </ul>
   <a id="more"></a>
-<pre><code>- 数据表<span class="comment">(table)</span>即用来实际存放有关数据的框架结构，这种数据表里的每一行被称为一跳数据记录<span class="comment">(data record)</span>,简称<span class="string">"记录"</span>，每条记录的结构和格式是由人们在定义该数据表时决定的，例如，在某个用户表里，每条记录可能包含着用户的姓名，出生日期，注册时间等多个字段<span class="comment">(field)</span>，每个字段对自己所能存储的信息类型又有着一定的要求<span class="comment">(例如，它必须是一个有着某种特定格式的数字或者是一个字符个数不得超过某个预定义最大值的字符串)</span>。
+<pre><code>- 数据表(table)即用来实际存放有关数据的框架结构，这种数据表里的每一行被称为一跳数据记录(data record),简称&quot;记录&quot;，每条记录的结构和格式是由人们在定义该数据表时决定的，例如，在某个用户表里，每条记录可能包含着用户的姓名，出生日期，注册时间等多个字段(field)，每个字段对自己所能存储的信息类型又有着一定的要求(例如，它必须是一个有着某种特定格式的数字或者是一个字符个数不得超过某个预定义最大值的字符串)。
 
 - 查询是人们用各种SQL指令构造出来的，SQL指令负责具体完成筛选和提取结果数据的工作。
 
-- SQL<span class="comment">(Structured Query Lanuage)</span> 结构化查询语言，这种语言已发展为人们在构造数据库查询命令的一个标准
+- SQL(Structured Query Lanuage) 结构化查询语言，这种语言已发展为人们在构造数据库查询命令的一个标准
 </code></pre><ul>
 <li><p>常用命令</p>
 <ul>
@@ -279,7 +362,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="SQL语言简介">SQL语言简介</h4><p>SQL命令可以分类以下三大类别:</p>
+<h4 id="SQL语言简介"><a href="#SQL语言简介" class="headerlink" title="SQL语言简介"></a>SQL语言简介</h4><p>SQL命令可以分类以下三大类别:</p>
 <ul>
 <li><p>DML(Data Manipulation Language数据处理语言) :这类命令主要包括SELECT 、INSERT 、UPDATE、DELETE等用来从数据表读出数据，把数据存入数据表或是对数据表里的现有记录进行修改的命令</p>
 </li>
@@ -288,7 +371,7 @@
 <li><p>DCL(Data Control Langage 数据控制语言) :这类命令主要包括GRANT 、REVOKE以及另外几个用来帮助人们设置和调整MySQL访问控制机制的SQL命令</p>
 </li>
 </ul>
-<h4 id="命令的基本用法:">命令的基本用法:</h4><ul>
+<h4 id="命令的基本用法"><a href="#命令的基本用法" class="headerlink" title="命令的基本用法:"></a>命令的基本用法:</h4><ul>
 <li><p>SELECT 命令</p>
 <ul>
 <li><p>简单查询 SELECT * FROM tablename //从数据表中查询某些字段</p>
@@ -300,7 +383,7 @@
 </ul>
 </li>
 </ul>
-<h5 id="WHERE_子句:设置查询条件，过滤掉不需要的数据行，例如查询年龄大于20的记录，_SELECT_*_FROM_usertable_WHERE_age_&gt;20">WHERE 子句:设置查询条件，过滤掉不需要的数据行，例如查询年龄大于20的记录， SELECT * FROM usertable WHERE age &gt;20</h5><p>WHERE子句可包括多种条件运算符</p>
+<h5 id="WHERE-子句-设置查询条件，过滤掉不需要的数据行，例如查询年龄大于20的记录，-SELECT-FROM-usertable-WHERE-age-gt-20"><a href="#WHERE-子句-设置查询条件，过滤掉不需要的数据行，例如查询年龄大于20的记录，-SELECT-FROM-usertable-WHERE-age-gt-20" class="headerlink" title="WHERE 子句:设置查询条件，过滤掉不需要的数据行，例如查询年龄大于20的记录， SELECT * FROM usertable WHERE age &gt;20"></a>WHERE 子句:设置查询条件，过滤掉不需要的数据行，例如查询年龄大于20的记录， SELECT * FROM usertable WHERE age &gt;20</h5><p>WHERE子句可包括多种条件运算符</p>
 <ul>
 <li>比较运算符  </li>
 </ul>
@@ -308,8 +391,8 @@
 
 
 
-<pre><code><span class="operator"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">user</span> <span class="keyword">WHERE</span> uid = <span class="number">10</span>;</span>//从user数据表中查找等于10的数据
-<span class="operator"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">user</span> <span class="keyword">WHERE</span> uid &lt;=<span class="number">10</span>;</span> //从user数据表中查找小于等于10的数据
+<pre><code>SELECT * FROM user WHERE uid = 10;//从user数据表中查找等于10的数据
+SELECT * FROM user WHERE uid &lt;=10; //从user数据表中查找小于等于10的数据
 </code></pre><ul>
 <li>逻辑运算符</li>
 </ul>
@@ -318,164 +401,359 @@
 
 <ul>
 <li><p>范围运算符(BETWEEN…AND…)判断表达式值是否在指定的范围</p>
-<pre><code><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> products <span class="keyword">WHERE</span> price BETWEEN <span class="number">1000</span> <span class="keyword">AND</span> <span class="number">2000</span>;
-price &gt;= <span class="number">100</span> <span class="keyword">AND</span> price &lt;=<span class="number">2000</span>; <span class="comment">//这两条的意思是一样的就是在1000到2000之间的数据</span>
+<pre><code>SELECT * FROM products WHERE price BETWEEN 1000 AND 2000;
+price &gt;= 100 AND price &lt;=2000; //这两条的意思是一样的就是在1000到2000之间的数据
 </code></pre></li>
 </ul>
-<h4 id="限制查询:">限制查询:</h4><p>LIMIT子句用于强制SELECT语句返回指定的记录数，LIMIT接受一个或两个参数，参数必须是一个整数常量，如果给定两个参数，第一个参数指定第一个返回记录行的偏移量，第二个参数指定返回记录行的最大数目，注意:初始记录行的偏移量是0而不是1</p>
-<pre><code><span class="operator"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">table</span> <span class="keyword">LIMIT</span> <span class="number">5</span> ;</span>// 检索前5个记录行
-<span class="operator"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">table</span> <span class="keyword">LIMIT</span> <span class="number">5</span>,<span class="number">10</span> ;</span>//检索记录行6-15，从第5行开始检索
-</code></pre><h4 id="查询结构排序">查询结构排序</h4><p>使用ORDER BY子句对查询返回的结果排序,ORDER BY子句的语法格式为:ORDER BY{column_name[ASCIDESC]}[,…n]，其中ASC表示升序，为默认值，DESC为降序。</p>
-<pre><code><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> user <span class="keyword">ORDER</span> <span class="keyword">BY</span> uid <span class="keyword">ASC</span> <span class="comment">//默认为升序</span>
-<span class="keyword">SELECT</span> * <span class="keyword">FROM</span> user <span class="keyword">ORDER</span> <span class="keyword">BY</span> uid <span class="keyword">DESC</span> <span class="comment">//降序</span>
-</code></pre><h4 id="增删改">增删改</h4><ul>
+<h4 id="限制查询"><a href="#限制查询" class="headerlink" title="限制查询:"></a>限制查询:</h4><p>LIMIT子句用于强制SELECT语句返回指定的记录数，LIMIT接受一个或两个参数，参数必须是一个整数常量，如果给定两个参数，第一个参数指定第一个返回记录行的偏移量，第二个参数指定返回记录行的最大数目，注意:初始记录行的偏移量是0而不是1</p>
+<pre><code>SELECT * FROM table LIMIT 5 ;// 检索前5个记录行
+SELECT * FROM table LIMIT 5,10 ;//检索记录行6-15，从第5行开始检索
+</code></pre><h4 id="查询结构排序"><a href="#查询结构排序" class="headerlink" title="查询结构排序"></a>查询结构排序</h4><p>使用ORDER BY子句对查询返回的结果排序,ORDER BY子句的语法格式为:ORDER BY{column_name[ASCIDESC]}[,…n]，其中ASC表示升序，为默认值，DESC为降序。</p>
+<pre><code>SELECT * FROM user ORDER BY uid ASC //默认为升序
+SELECT * FROM user ORDER BY uid DESC //降序
+</code></pre><h4 id="增删改"><a href="#增删改" class="headerlink" title="增删改"></a>增删改</h4><ul>
 <li><p>插入数据记录(INSERT):格式—INSERT INTO user(username,password);</p>
-<pre><code><span class="operator"><span class="keyword">SELECT</span> <span class="keyword">INTO</span> <span class="keyword">user</span> (username,<span class="keyword">password</span>)<span class="keyword">VALUES</span>(<span class="string">"user1"</span>,<span class="string">"123456"</span>),(<span class="string">"user2"</span>,<span class="string">"123456"</span>) //在<span class="keyword">user</span>数据表中插入两条记录</span>
+<pre><code>SELECT INTO user (username,password)VALUES(&quot;user1&quot;,&quot;123456&quot;),(&quot;user2&quot;,&quot;123456&quot;) //在user数据表中插入两条记录
 </code></pre></li>
 <li><p>修改数据记录(UPDATE) </p>
-<pre><code><span class="operator"><span class="keyword">UPDATE</span> <span class="keyword">user</span> <span class="keyword">SET</span> username = <span class="string">"admin1"</span>,<span class="keyword">password</span> = <span class="string">"456123"</span> <span class="keyword">WHERE</span> uid = <span class="number">10</span>;</span>//
+<pre><code>UPDATE user SET username = &quot;admin1&quot;,password = &quot;456123&quot; WHERE uid = 10;//
 把user数据表中的第10条记录中的username,password修改
 </code></pre></li>
 <li><p>删除数据记录(DELETE)</p>
-<pre><code><span class="operator"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> <span class="keyword">user</span> <span class="keyword">WHERE</span> uid = <span class="number">10</span>;</span> //在user数据表中删除第10行记录
+<pre><code>DELETE FROM user WHERE uid = 10; //在user数据表中删除第10行记录
 </code></pre></li>
 </ul>
 <p>以上都是些基本语言，来自学习笔记，后期会做些实例..结合实例学习起来容易很多—再见—</p>
 
       
     </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/09/关于正则表达式/" rel="next" title="关于正则表达式">
+                <i class="fa fa-chevron-left"></i> 关于正则表达式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/03/10/数据库/" rel="prev" title="关于登录框的验证">
+                关于登录框的验证 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
     
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2016/03/10/数据库/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
+
+
+        </div>
         
-          关于登录框的验证
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/nhf.png"
+               alt="NHF" />
+          <p class="site-author-name" itemprop="name">NHF</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">29</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/niexiaofei1988" target="_blank" title="github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/niexiaofei1989" target="_blank" title="twitter">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/jiandanaiyici" target="_blank" title="weibo">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/nie-xiao-fei-58/activities" target="_blank" title="zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#MySQL数据库简介"><span class="nav-number">1.</span> <span class="nav-text">MySQL数据库简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#SQL语言简介"><span class="nav-number">2.</span> <span class="nav-text">SQL语言简介</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#命令的基本用法"><span class="nav-number">3.</span> <span class="nav-text">命令的基本用法:</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#WHERE-子句-设置查询条件，过滤掉不需要的数据行，例如查询年龄大于20的记录，-SELECT-FROM-usertable-WHERE-age-gt-20"><span class="nav-number">3.1.</span> <span class="nav-text">WHERE 子句:设置查询条件，过滤掉不需要的数据行，例如查询年龄大于20的记录， SELECT * FROM usertable WHERE age >20</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#限制查询"><span class="nav-number">4.</span> <span class="nav-text">限制查询:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查询结构排序"><span class="nav-number">5.</span> <span class="nav-text">查询结构排序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#增删改"><span class="nav-number">6.</span> <span class="nav-text">增删改</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
         
       </div>
-    </a>
-  
-  
-    <a href="/2016/03/09/关于正则表达式/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">关于正则表达式</div>
-      <strong class="article-nav-caption">></strong>
-    </a>
-  
-</nav>
+    </main>
 
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
   
-</article>
-
-
-<div class="share_jia">
-	<!-- JiaThis Button BEGIN -->
-	<div class="jiathis_style">
-		<span class="jiathis_txt">分享到: &nbsp; </span>
-		<a class="jiathis_button_facebook"></a> 
-    <a class="jiathis_button_twitter"></a>
-    <a class="jiathis_button_plus"></a> 
-    <a class="jiathis_button_tsina"></a>
-		<a class="jiathis_button_cqq"></a>
-		<a class="jiathis_button_douban"></a>
-		<a class="jiathis_button_weixin"></a>
-		<a class="jiathis_button_tumblr"></a>
-    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
-	</div>
-	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
-	<!-- JiaThis Button END -->
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">NHF</span>
 </div>
 
 
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
 
-
-
-
-<div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="关于MySQL数据" data-title="关于MySQL数据" data-url="http://yoursite.com/2016/03/09/关于MySQL数据/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"true"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
 </div>
 
 
+        
 
+        
+      </div>
+    </footer>
 
-</div>
-      <footer id="footer">
-  <div class="outer">
-    <div id="footer-info">
-    	<div class="footer-left">
-    		&copy; 2016 Simple love
-    	</div>
-      	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-      	</div>
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
     </div>
   </div>
-</footer>
-    </div>
-    
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
 
+  
 
-<script>
-	var yiliaConfig = {
-		fancybox: true,
-		mathjax: true,
-		animate: true,
-		isHome: false,
-		isPost: true,
-		isArchive: false,
-		isTag: false,
-		isCategory: false,
-		open_in_new: false
-	}
-</script>
-<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
-
-
-
-
-
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-});
-
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
-</script>
-
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
 
-  </div>
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
 </body>
 </html>

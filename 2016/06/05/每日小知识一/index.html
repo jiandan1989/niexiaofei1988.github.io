@@ -1,18 +1,96 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
+<!doctype html>
+
+
+
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>每日小知识 | Simple Love</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="title: 每日小知识date: 2016-06-05 23:19:23
+
+
+<html class="theme-next pisces use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="title: 每日小知识date: 2016-06-05 23:19:23
 tags:js弹出框、对话框、提示框、弹框总结当我们浏览网页时，总是会有弹出框弹出，这些弹出框是怎么实现的呢，接下来我们看看弹出框的实现，本文摘自anhuidelinger的博客
 一、JS的三种最常见的对话框">
 <meta property="og:type" content="article">
 <meta property="og:title" content="每日小知识">
 <meta property="og:url" content="http://yoursite.com/2016/06/05/每日小知识一/index.html">
-<meta property="og:site_name" content="Simple Love">
+<meta property="og:site_name" content="NHF">
 <meta property="og:description" content="title: 每日小知识date: 2016-06-05 23:19:23
 tags:js弹出框、对话框、提示框、弹框总结当我们浏览网页时，总是会有弹出框弹出，这些弹出框是怎么实现的呢，接下来我们看看弹出框的实现，本文摘自anhuidelinger的博客
 一、JS的三种最常见的对话框">
@@ -22,549 +100,749 @@ tags:js弹出框、对话框、提示框、弹框总结当我们浏览网页时�
 <meta name="twitter:description" content="title: 每日小知识date: 2016-06-05 23:19:23
 tags:js弹出框、对话框、提示框、弹框总结当我们浏览网页时，总是会有弹出框弹出，这些弹出框是怎么实现的呢，接下来我们看看弹出框的实现，本文摘自anhuidelinger的博客
 一、JS的三种最常见的对话框">
-  
-    <link rel="alternative" href="/atom.xml" title="Simple Love" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="http://7xoo7k.com1.z0.glb.clouddn.com/psu.jpeg">
-  
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/06/05/每日小知识一/"/>
+
+
+
+
+
+  <title> 每日小知识 | NHF </title>
 </head>
 
-<body>
-  <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-	<header id="header" class="inner">
-		<a href="/" class="profilepic">
-			
-			<img lazy-src="http://7xoo7k.com1.z0.glb.clouddn.com/psu.jpeg" class="js-avatar">
-			
-		</a>
 
-		<hgroup>
-		  <h1 class="header-author"><a href="/">Simple love</a></h1>
-		</hgroup>
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
 
-		
+  
 
-		
-			<div class="switch-btn">
-				<div class="icon">
-					<div class="icon-ctn">
-						<div class="icon-wrap icon-house" data-idx="0">
-							<div class="birdhouse"></div>
-							<div class="birdhouse_holes"></div>
-						</div>
-						<div class="icon-wrap icon-ribbon hide" data-idx="1">
-							<div class="ribbon"></div>
-						</div>
-						
-						<div class="icon-wrap icon-link hide" data-idx="2">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
-						
-						<div class="icon-wrap icon-me hide" data-idx="3">
-							<div class="user"></div>
-							<div class="shoulder"></div>
-						</div>
-						
-					</div>
-					
-				</div>
-				<div class="tips-box hide">
-					<div class="tips-arrow"></div>
-					<ul class="tips-inner">
-						<li>菜单</li>
-						<li>標籤</li>
-						
-						<li>友情链接</li>
-						
-						
-						<li>關於</li>
-						
-					</ul>
-				</div>
-			</div>
-		
 
-		<div class="switch-area">
-			<div class="switch-wrap">
-				<section class="switch-part switch-part1">
-					<nav class="header-menu">
-						<ul>
-						
-							<li><a href="/">主页</a></li>
-				        
-							<li><a href="/archives">所有文章</a></li>
-				        
-						</ul>
-					</nav>
-					<nav class="header-nav">
-						<div class="social">
-							
-								<a class="github" target="_blank" href="http://niexiaofei1988.github.io/" title="github">github</a>
-					        
-								<a class="weibo" target="_blank" href="http://weibo.com/jiandanaiyici" title="weibo">weibo</a>
-					        
-								<a class="mail" target="_blank" href="http://niexiaofei@yahoo.com" title="mail">mail</a>
-					        
-								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
-					        
-						</div>
-					</nav>
-				</section>
-				
-				
-				<section class="switch-part switch-part2">
-					<div class="widget tagcloud" id="js-tagcloud">
-						
-					</div>
-				</section>
-				
-				
-				
-				<section class="switch-part switch-part3">
-					<div id="js-friends">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
-			        
-			        </div>
-				</section>
-				
 
-				
-				
-				<section class="switch-part switch-part4">
-				
-					<div id="js-aboutme">简简单单的我，只想写出一行属于我们自己的代码...</div>
-				</section>
-				
-			</div>
-		</div>
-	</header>				
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">NHF</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
 </div>
 
-    </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-  	<div class="overlay">
-  		<div class="slider-trigger"></div>
-  		<h1 class="header-author js-mobile-header hide">Simple love</h1>
-  	</div>
-	<div class="intrude-less">
-		<header id="header" class="inner">
-			<div class="profilepic">
-			
-				<img lazy-src="http://7xoo7k.com1.z0.glb.clouddn.com/psu.jpeg" class="js-avatar">
-			
-			</div>
-			<hgroup>
-			  <h1 class="header-author">Simple love</h1>
-			</hgroup>
-			
-			<nav class="header-menu">
-				<ul>
-				
-					<li><a href="/">主页</a></li>
-		        
-					<li><a href="/archives">所有文章</a></li>
-		        
-		        <div class="clearfix"></div>
-				</ul>
-			</nav>
-			<nav class="header-nav">
-				<div class="social">
-					
-						<a class="github" target="_blank" href="http://niexiaofei1988.github.io/" title="github">github</a>
-			        
-						<a class="weibo" target="_blank" href="http://weibo.com/jiandanaiyici" title="weibo">weibo</a>
-			        
-						<a class="mail" target="_blank" href="http://niexiaofei@yahoo.com" title="mail">mail</a>
-			        
-						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
-			        
-				</div>
-			</nav>
-		</header>				
-	</div>
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
 </nav>
 
-      <div class="body-wrap"><article id="post-每日小知识一" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/05/每日小知识一/" class="article-date">
-  	<time datetime="2016-06-05T15:19:23.000Z" itemprop="datePublished">2016-06-05</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
     
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      每日小知识
-    </h1>
+
   
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/06/05/每日小知识一/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="NHF">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/nhf.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="NHF">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="NHF" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                每日小知识
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Veröffentlicht am</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-06-05T23:19:23+08:00">
+                2016-06-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
       </header>
-      
-      <div class="article-info article-info-post">
-        
-        
-
-        <div class="clearfix"></div>
-      </div>
-      
     
-    <div class="article-entry" itemprop="articleBody">
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
       
         <p>title: 每日小知识<br>date: 2016-06-05 23:19:23</p>
-<h2 id="tags:">tags:</h2><h3 id="js弹出框、对话框、提示框、弹框总结">js弹出框、对话框、提示框、弹框总结</h3><p>当我们浏览网页时，总是会有弹出框弹出，这些弹出框是怎么实现的呢，接下来我们看看弹出框的实现，本文摘自anhuidelinger的博客</p>
-<h4 id="一、JS的三种最常见的对话框">一、JS的三种最常见的对话框</h4><a id="more"></a>
-<pre><code>    <span class="comment">//====================== JS最常用三种弹出对话框 ========================</span>
-<span class="comment">//弹出对话框并输出一段提示信息</span>
-<span class="function"><span class="keyword">function</span> <span class="title">ale</span><span class="params">()</span> </span>{
-    <span class="comment">//弹出一个对话框</span>
-    alert(<span class="string">"提示信息！"</span>);
+<h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><h3 id="js弹出框、对话框、提示框、弹框总结"><a href="#js弹出框、对话框、提示框、弹框总结" class="headerlink" title="js弹出框、对话框、提示框、弹框总结"></a>js弹出框、对话框、提示框、弹框总结</h3><p>当我们浏览网页时，总是会有弹出框弹出，这些弹出框是怎么实现的呢，接下来我们看看弹出框的实现，本文摘自anhuidelinger的博客</p>
+<h4 id="一、JS的三种最常见的对话框"><a href="#一、JS的三种最常见的对话框" class="headerlink" title="一、JS的三种最常见的对话框"></a>一、JS的三种最常见的对话框</h4><a id="more"></a>
+<pre><code>    //====================== JS最常用三种弹出对话框 ========================
+//弹出对话框并输出一段提示信息
+function ale() {
+    //弹出一个对话框
+    alert(&quot;提示信息！&quot;);
 }
-<span class="comment">//弹出一个询问框，有确定和取消按钮</span>
-<span class="function"><span class="keyword">function</span> <span class="title">firm</span><span class="params">()</span> </span>{
-    <span class="comment">//利用对话框返回的值 （true 或者 false）</span>
-    <span class="keyword">if</span> (confirm(<span class="string">"你确定提交吗？"</span>)) {
-        alert(<span class="string">"点击了确定"</span>);
+//弹出一个询问框，有确定和取消按钮
+function firm() {
+    //利用对话框返回的值 （true 或者 false）
+    if (confirm(&quot;你确定提交吗？&quot;)) {
+        alert(&quot;点击了确定&quot;);
     }
-    <span class="keyword">else</span> {
-        alert(<span class="string">"点击了取消"</span>);
+    else {
+        alert(&quot;点击了取消&quot;);
     }
 }
-<span class="comment">//弹出一个输入框，输入一段文字，可以提交</span>
-<span class="function"><span class="keyword">function</span> <span class="title">prom</span><span class="params">()</span> </span>{
-    <span class="keyword">var</span> name = prompt(<span class="string">"请输入您的名字"</span>, <span class="string">""</span>); <span class="comment">//将输入的内容赋给变量 name ，</span>
+//弹出一个输入框，输入一段文字，可以提交
+function prom() {
+    var name = prompt(&quot;请输入您的名字&quot;, &quot;&quot;); //将输入的内容赋给变量 name ，
 
-    <span class="comment">//这里需要注意的是，prompt有两个参数，前面是提示的话，后面是当对话框出来后，在对话框里的默认值</span>
-    <span class="keyword">if</span> (name)<span class="comment">//如果返回的有内容</span>
+    //这里需要注意的是，prompt有两个参数，前面是提示的话，后面是当对话框出来后，在对话框里的默认值
+    if (name)//如果返回的有内容
     {
-        alert(<span class="string">"欢迎您："</span> + name)
+        alert(&quot;欢迎您：&quot; + name)
     }
 }
-</code></pre><h4 id="二、点击按钮时常用的6中提示框和操作">二、点击按钮时常用的6中提示框和操作</h4><pre><code><span class="comment">&lt;!-----------按钮提示框----------&gt;</span>  
+</code></pre><h4 id="二、点击按钮时常用的6中提示框和操作"><a href="#二、点击按钮时常用的6中提示框和操作" class="headerlink" title="二、点击按钮时常用的6中提示框和操作"></a>二、点击按钮时常用的6中提示框和操作</h4><pre><code>&lt;!-----------按钮提示框----------&gt;  
 
-<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">name</span>=<span class="value">"btn2"</span> <span class="attribute">id</span>=<span class="value">"btn2"</span> <span class="attribute">value</span>=<span class="value">"删除"</span> <span class="attribute">onclick</span>=<span class="value">"return confirm('Yes/No'););  
+&lt;input type=&quot;button&quot; name=&quot;btn2&quot; id=&quot;btn2&quot; value=&quot;删除&quot; onclick=&quot;return confirm(&apos;Yes/No&apos;););  
 &lt;!-----------按钮提示框----------&gt;   
 
-&lt;input type="</span><span class="value">button"</span> <span class="attribute">name</span>=<span class="value">"btn2"</span> <span class="attribute">id</span>=<span class="value">"btn2"</span> <span class="attribute">value</span>=<span class="value">"提示"</span> <span class="attribute">onclick</span>=<span class="value">"javaScript:alert('您确定要删除吗？');  
+&lt;input type=&quot;button&quot; name=&quot;btn2&quot; id=&quot;btn2&quot; value=&quot;提示&quot; onclick=&quot;javaScript:alert(&apos;您确定要删除吗？&apos;);  
 &lt;!-----------提交按钮----------&gt;   
 
-&lt;input type="</span><span class="value">button"</span> <span class="attribute">value</span>=<span class="value">"提交"</span> <span class="attribute">onclick</span>=<span class="value">"javaScript:window.location.href='http://www.baidu.com';"</span>/&gt;</span>  
+&lt;input type=&quot;button&quot; value=&quot;提交&quot; onclick=&quot;javaScript:window.location.href=&apos;http://www.baidu.com&apos;;&quot;/&gt;  
 
-<span class="comment">&lt;!-----------关闭按钮----------&gt;</span>   
-<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">value</span>=<span class="value">"关闭"</span> <span class="attribute">onclick</span>=<span class="value">"javaScript:window.close();"</span>&gt;</span>  
+&lt;!-----------关闭按钮----------&gt;   
+&lt;input type=&quot;button&quot; value=&quot;关闭&quot; onclick=&quot;javaScript:window.close();&quot;&gt;  
 
-<span class="comment">&lt;!-----------返回并关闭连接----------&gt;</span>   
-<span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span> <span class="attribute">onclick</span>=<span class="value">"javascript:;window.opener.location.reload();window.close()"</span>&gt;</span>返回<span class="tag">&lt;/<span class="title">a</span>&gt;</span>  
+&lt;!-----------返回并关闭连接----------&gt;   
+&lt;a href=&quot;#&quot; onclick=&quot;javascript:;window.opener.location.reload();window.close()&quot;&gt;返回&lt;/a&gt;  
 javaScript:window.location.reload();//返回当前页并刷新  
 
-<span class="comment">&lt;!-----------返回上一级页面----------&gt;</span>   
-<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">name</span>=<span class="value">"button"</span> <span class="attribute">value</span>=<span class="value">"&lt; 返回"</span> <span class="attribute">onclick</span>=<span class="value">"javascript:history.go(-1)"</span>/&gt;</span>  
-</code></pre><h4 id="三、弹出独立窗口">三、弹出独立窗口</h4><pre><code>  //关闭,父窗口弹出对话框,子窗口直接关闭 
-this.Response.Write("<span class="tag">&lt;<span class="title">script</span> <span class="attribute">language</span>=<span class="value">javascript</span>&gt;</span><span class="javascript"><span class="built_in">window</span>.close();</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>");
+&lt;!-----------返回上一级页面----------&gt;   
+&lt;input type=&quot;button&quot; name=&quot;button&quot; value=&quot;&lt; 返回&quot; onclick=&quot;javascript:history.go(-1)&quot;/&gt;  
+</code></pre><h4 id="三、弹出独立窗口"><a href="#三、弹出独立窗口" class="headerlink" title="三、弹出独立窗口"></a>三、弹出独立窗口</h4><pre><code>  //关闭,父窗口弹出对话框,子窗口直接关闭 
+this.Response.Write(&quot;&lt;script language=javascript&gt;window.close();&lt;/script&gt;&quot;);
 
 //关闭,父窗口和子窗口都不弹出对话框,直接关闭 
-this.Response.Write("<span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="undefined">"); 
-this.Response.Write("{top.opener =null;top.close();}"); 
-this.Response.Write("</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>");
+this.Response.Write(&quot;&lt;script&gt;&quot;); 
+this.Response.Write(&quot;{top.opener =null;top.close();}&quot;); 
+this.Response.Write(&quot;&lt;/script&gt;&quot;);
 
 //弹出窗口刷新当前页面width=200 height=200菜单。菜单栏,工具条,地址栏,状态栏全没有 
-this.Response.Write("<span class="tag">&lt;<span class="title">script</span> <span class="attribute">language</span>=<span class="value">javascript</span>&gt;</span><span class="javascript"><span class="built_in">window</span>.open(<span class="string">'rows.aspx'</span>,<span class="string">'newwindow'</span>,<span class="string">'width=200,height=200'</span>)</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>");
+this.Response.Write(&quot;&lt;script language=javascript&gt;window.open(&apos;rows.aspx&apos;,&apos;newwindow&apos;,&apos;width=200,height=200&apos;)&lt;/script&gt;&quot;);
 
 //弹出窗口刷新当前页面 
-this.Response.Write("<span class="tag">&lt;<span class="title">script</span> <span class="attribute">language</span>=<span class="value">javascript</span>&gt;</span><span class="javascript"><span class="built_in">window</span>.open(<span class="string">'rows.aspx'</span>)</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>");
-this.Response.Write("<span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"><span class="built_in">window</span>.open(<span class="string">'WebForm2.aspx'</span>,<span class="string">'_blank'</span>);</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>");
+this.Response.Write(&quot;&lt;script language=javascript&gt;window.open(&apos;rows.aspx&apos;)&lt;/script&gt;&quot;);
+this.Response.Write(&quot;&lt;script&gt;window.open(&apos;WebForm2.aspx&apos;,&apos;_blank&apos;);&lt;/script&gt;&quot;);
 
 //弹出提示窗口跳到webform2.aspx页(在一个IE窗口中) 
-this.Response.Write(" <span class="tag">&lt;<span class="title">script</span> <span class="attribute">language</span>=<span class="value">javascript</span>&gt;</span><span class="javascript">alert(<span class="string">'注册成功'</span>);<span class="built_in">window</span>.window.location.href=<span class="string">'WebForm2.aspx'</span>;</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span> ");
+this.Response.Write(&quot; &lt;script language=javascript&gt;alert(&apos;注册成功&apos;);window.window.location.href=&apos;WebForm2.aspx&apos;;&lt;/script&gt; &quot;);
 
 //关闭当前子窗口,刷新父窗口 
-this.Response.Write("<span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"><span class="built_in">window</span>.opener.location.href=<span class="built_in">window</span>.opener.location.href;<span class="built_in">window</span>.close();</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>");
-this.Response.Write("<span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"><span class="built_in">window</span>.opener.location.replace(<span class="built_in">window</span>.opener.document.referrer);<span class="built_in">window</span>.close();</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>");
+this.Response.Write(&quot;&lt;script&gt;window.opener.location.href=window.opener.location.href;window.close();&lt;/script&gt;&quot;);
+this.Response.Write(&quot;&lt;script&gt;window.opener.location.replace(window.opener.document.referrer);window.close();&lt;/script&gt;&quot;);
 
 //子窗口刷新父窗口 
-this.Response.Write("<span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"><span class="built_in">window</span>.opener.location.href=<span class="built_in">window</span>.opener.location.href;</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>");
-this.Response.Write("<span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"><span class="built_in">window</span>.opener.location.href=<span class="string">'WebForm1.aspx'</span>;</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>");
+this.Response.Write(&quot;&lt;script&gt;window.opener.location.href=window.opener.location.href;&lt;/script&gt;&quot;);
+this.Response.Write(&quot;&lt;script&gt;window.opener.location.href=&apos;WebForm1.aspx&apos;;&lt;/script&gt;&quot;);
 
 //弹出提示窗口.确定后弹出子窗口(WebForm2.aspx) 
-this.Response.Write("<span class="tag">&lt;<span class="title">script</span> <span class="attribute">language</span>=<span class="value">'javascript'</span>&gt;</span><span class="javascript">alert(<span class="string">'发表成功！'</span>);<span class="built_in">window</span>.open(<span class="string">'WebForm2.aspx'</span>)</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>");
+this.Response.Write(&quot;&lt;script language=&apos;javascript&apos;&gt;alert(&apos;发表成功！&apos;);window.open(&apos;WebForm2.aspx&apos;)&lt;/script&gt;&quot;);
 
 //弹出提示窗口,确定后,刷新父窗口 
-this.Response.Write("<span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">alert(<span class="string">'发表成功！'</span>);<span class="built_in">window</span>.opener.location.href=<span class="built_in">window</span>.opener.location.href;</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>");
+this.Response.Write(&quot;&lt;script&gt;alert(&apos;发表成功！&apos;);window.opener.location.href=window.opener.location.href;&lt;/script&gt;&quot;);
 
 //弹出相同的一页 
-<span class="tag">&lt;<span class="title">INPUT</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">value</span>=<span class="value">"Button"</span> <span class="attribute">onclick</span>=<span class="value">"javascript:window.open(window.location.href)"</span>&gt;</span>
+&lt;INPUT type=&quot;button&quot; value=&quot;Button&quot; onclick=&quot;javascript:window.open(window.location.href)&quot;&gt;
 
 // 
-Response.Write("parent.mainFrameBottom.location.href='yourwebform.aspx?temp=" +str+"';");
+Response.Write(&quot;parent.mainFrameBottom.location.href=&apos;yourwebform.aspx?temp=&quot; +str+&quot;&apos;;&quot;);
 </code></pre><p>   参数解释：<br>window.open 弹出新窗口的命令； </p>
 <p>‘page.html’ 弹出窗口的文件名； </p>
 <p>‘newwindow’ 弹出窗口的名字（不是文件名），非必须，可用空’’代替； </p>
-<pre><code>height=<span class="number">100</span> 窗口高度； 
-width=<span class="number">400</span> 窗口宽度； 
-top=<span class="number">0</span> 窗口距离屏幕上方的象素值；
-left=<span class="number">0</span> 窗口距离屏幕左侧的象素值；
-toolbar=<span class="literal">no</span> 是否显示工具栏，<span class="literal">yes</span>为显示；     
+<pre><code>height=100 窗口高度； 
+width=400 窗口宽度； 
+top=0 窗口距离屏幕上方的象素值；
+left=0 窗口距离屏幕左侧的象素值；
+toolbar=no 是否显示工具栏，yes为显示；     
 menubar，scrollbars 表示菜单栏和滚动栏。 
-resizable=<span class="literal">no</span> 是否允许改变窗口大小，<span class="literal">yes</span>为允许； 
-location=<span class="literal">no</span> 是否显示地址栏，<span class="literal">yes</span>为允许； 
-status=<span class="literal">no</span> 是否显示状态栏内的信息（通常是文件已经打开），<span class="literal">yes</span>为允许；
+resizable=no 是否允许改变窗口大小，yes为允许； 
+location=no 是否显示地址栏，yes为允许； 
+status=no 是否显示状态栏内的信息（通常是文件已经打开），yes为允许；
 </code></pre><p>‘newwin’:隐藏菜单栏地址栏工具条 </p>
-<h4 id="四、弹出窗口实例演示">四、弹出窗口实例演示</h4><p>   1、最基本的弹出窗口代码</p>
-<pre><code>window.<span class="keyword">open</span> (<span class="symbol">'page</span>.html') 
+<h4 id="四、弹出窗口实例演示"><a href="#四、弹出窗口实例演示" class="headerlink" title="四、弹出窗口实例演示"></a>四、弹出窗口实例演示</h4><p>   1、最基本的弹出窗口代码</p>
+<pre><code>window.open (&apos;page.html&apos;) 
 </code></pre><p>   2、经过设置后的弹出窗口</p>
-<pre><code>    　　<span class="built_in">window</span>.open(<span class="string">'page.html'</span>, <span class="string">'newwindow'</span>, <span class="string">'height=100, width=400, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=n o, status=no'</span>) <span class="regexp">//</span>这句要写成一行
+<pre><code>    　　window.open(&apos;page.html&apos;, &apos;newwindow&apos;, &apos;height=100, width=400, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=n o, status=no&apos;) //这句要写成一行
 
 
     参数解释：
- <span class="built_in">window</span>.open 弹出新窗口的命令； 
-<span class="string">'page.html'</span> 弹出窗口的文件名；
-<span class="string">'newwindow'</span> 弹出窗口的名字（不是文件名），非必须，可用空<span class="string">''</span>代替； 
- height=<span class="number">100</span> 窗口高度； 
- width=<span class="number">400</span> 窗口宽度； 
- top=<span class="number">0</span> 窗口距离屏幕上方的象素值； 
- left=<span class="number">0</span> 窗口距离屏幕左侧的象素值； 
- toolbar=<span class="literal">no</span> 是否显示工具栏，<span class="literal">yes</span>为显示； 
+ window.open 弹出新窗口的命令； 
+&apos;page.html&apos; 弹出窗口的文件名；
+&apos;newwindow&apos; 弹出窗口的名字（不是文件名），非必须，可用空&apos;&apos;代替； 
+ height=100 窗口高度； 
+ width=400 窗口宽度； 
+ top=0 窗口距离屏幕上方的象素值； 
+ left=0 窗口距离屏幕左侧的象素值； 
+ toolbar=no 是否显示工具栏，yes为显示； 
  menubar，scrollbars 表示菜单栏和滚动栏。 
- resizable=<span class="literal">no</span> 是否允许改变窗口大小，<span class="literal">yes</span>为允许； 
- location=<span class="literal">no</span> 是否显示地址栏，<span class="literal">yes</span>为允许； 
- status=<span class="literal">no</span> 是否显示状态栏内的信息（通常是文件已经打开），<span class="literal">yes</span>为允许； 
+ resizable=no 是否允许改变窗口大小，yes为允许； 
+ location=no 是否显示地址栏，yes为允许； 
+ status=no 是否显示状态栏内的信息（通常是文件已经打开），yes为允许； 
 　　
 </code></pre><p>3、用函数控制弹出窗口</p>
-<pre><code><span class="function"><span class="keyword">function</span> <span class="title">openwin</span>(<span class="params"></span>) </span>{
-    <span class="built_in">window</span>.open(<span class="string">"page.html"</span>, <span class="string">"newwindow"</span>, <span class="string">"height=100, width=400, toolbar =no, menubar=no, scrollbars=no, resizable=no, location=no, status=no"</span>) <span class="comment">//写成一行</span>
+<pre><code>function openwin() {
+    window.open(&quot;page.html&quot;, &quot;newwindow&quot;, &quot;height=100, width=400, toolbar =no, menubar=no, scrollbars=no, resizable=no, location=no, status=no&quot;) //写成一行
     　　} 
-        $(<span class="built_in">document</span>).ready(fucntion(){
+        $(document).ready(fucntion(){
             openwin();
  });
-　　<span class="comment">//这里定义了一个函数openwin(),函数内容就是打开一个窗口。在调用它之前没有任何用途。怎么调用呢？</span>
+　　//这里定义了一个函数openwin(),函数内容就是打开一个窗口。在调用它之前没有任何用途。怎么调用呢？
 
-　　<span class="comment">//方法一：&lt;body onload="openwin()"&gt; 浏览器读页面时弹出窗口； </span>
-　　<span class="comment">//方法二：&lt;body onunload="openwin()"&gt; 浏览器离开页面时弹出窗口； </span>
-　　<span class="comment">//方法三：用一个连接调用： </span>
-　　<span class="comment">//&lt;a href="#" onclick="openwin()"&gt;打开一个窗口&lt;/a&gt; </span>
-　　<span class="comment">//注意：使用的“#”是虚连接。 </span>
-　　<span class="comment">//方法四：用一个按钮调用： </span>
-　　<span class="comment">//&lt;input type="button" onclick="openwin()" value="打开窗口"&gt; </span>
+　　//方法一：&lt;body onload=&quot;openwin()&quot;&gt; 浏览器读页面时弹出窗口； 
+　　//方法二：&lt;body onunload=&quot;openwin()&quot;&gt; 浏览器离开页面时弹出窗口； 
+　　//方法三：用一个连接调用： 
+　　//&lt;a href=&quot;#&quot; onclick=&quot;openwin()&quot;&gt;打开一个窗口&lt;/a&gt; 
+　　//注意：使用的“#”是虚连接。 
+　　//方法四：用一个按钮调用： 
+　　//&lt;input type=&quot;button&quot; onclick=&quot;openwin()&quot; value=&quot;打开窗口&quot;&gt; 
 </code></pre><p>　<br>4、同时弹出2个窗口 </p>
-<pre><code><span class="function"><span class="keyword">function</span> <span class="title">openwin</span>(<span class="params"></span>) </span>{
-    　　        <span class="built_in">window</span>.open(<span class="string">"page.html"</span>, <span class="string">"newwindow"</span>, <span class="string">"height=100, width=100, top=0, left=0,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=n o, status=no"</span>)<span class="comment">//写成一行</span>
-    　　        <span class="built_in">window</span>.open(<span class="string">"page2.html"</span>, <span class="string">"newwindow2"</span>, <span class="string">"height=100, width=100, top=1 00, left=100,toolbar=no, menubar=no, scrollbars=no, resizable=no, loca tion=no, status=no"</span>)<span class="comment">//写成一行</span>
+<pre><code>function openwin() {
+    　　        window.open(&quot;page.html&quot;, &quot;newwindow&quot;, &quot;height=100, width=100, top=0, left=0,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=n o, status=no&quot;)//写成一行
+    　　        window.open(&quot;page2.html&quot;, &quot;newwindow2&quot;, &quot;height=100, width=100, top=1 00, left=100,toolbar=no, menubar=no, scrollbars=no, resizable=no, loca tion=no, status=no&quot;)//写成一行
     　　    } 
-　　<span class="comment">//为避免弹出的2个窗口覆盖，用top和left控制一下弹出的位置不要相互覆盖即可 。最后用上面说过的四种方法调用即可。 </span>
-　　<span class="comment">//注意：2个窗口的name(newwindows和newwindow2)不要相同，或者干脆全部为空。</span>
+　　//为避免弹出的2个窗口覆盖，用top和left控制一下弹出的位置不要相互覆盖即可 。最后用上面说过的四种方法调用即可。 
+　　//注意：2个窗口的name(newwindows和newwindow2)不要相同，或者干脆全部为空。
 </code></pre><p>5、主窗口打开文件1.htm，同时弹出小窗口page.html</p>
-<pre><code><span class="function"><span class="keyword">function</span> <span class="title">openwin</span>(<span class="params"></span>) </span>{
-　　        <span class="built_in">window</span>.open(<span class="string">"page.html"</span>, <span class="string">""</span>, <span class="string">"width=200,height=200"</span>)
+<pre><code>function openwin() {
+　　        window.open(&quot;page.html&quot;, &quot;&quot;, &quot;width=200,height=200&quot;)
 　　    }  
-　　<span class="comment">//调用：&lt;a href="1.htm" onclick="openwin()"&gt;open&lt;/a&gt;</span>
+　　//调用：&lt;a href=&quot;1.htm&quot; onclick=&quot;openwin()&quot;&gt;open&lt;/a&gt;
 </code></pre><p>6、弹出的窗口之定时关闭控制<br>　　<br>　下面我们再对弹出的窗口进行一些控制，效果就更好了。如果我们再将一小段 代码加入弹出的页面(注意是加入page.html的HTML中，不是主页面中)，让它10秒后自动关闭是不是更酷了？</p>
 <p>首先，将如下代码加入page.html文件的<head>区： </head></p>
-<pre><code>　 <span class="function"><span class="keyword">function</span> <span class="title">closeit</span>(<span class="params"></span>) </span>{
-　　      setTimeout(<span class="string">"self.close()"</span>, <span class="number">10000</span>) <span class="comment">//毫秒 </span>
+<pre><code>　 function closeit() {
+　　      setTimeout(&quot;self.close()&quot;, 10000) //毫秒 
 　　  } 
-<span class="comment">//页面加载完成调用关闭事件</span>
-　　$(<span class="built_in">document</span>).ready(fucntion(){
+//页面加载完成调用关闭事件
+　　$(document).ready(fucntion(){
     closeit();
     });
 </code></pre><p>7、在弹出窗口中加上一个关闭按钮</p>
-<pre><code><span class="tag">&lt;<span class="title">INPUT</span> <span class="attribute">TYPE</span>=<span class="value">'BUTTON'</span> <span class="attribute">VALUE</span>=<span class="value">'关闭'</span> <span class="attribute">onClick</span>=<span class="value">'window.close()'</span>&gt;</span> 
+<pre><code>&lt;INPUT TYPE=&apos;BUTTON&apos; VALUE=&apos;关闭&apos; onClick=&apos;window.close()&apos;&gt; 
 </code></pre><p>　　</p>
 <p>8、内包含的弹出窗口-一个页面两个窗口</p>
 <p>上面的例子都包含两个窗口，一个是主窗口，另一个是弹出的小窗口。通过下面的例子，你可以在一个页面内完成上面的效果。</p>
-<pre><code><span class="function"><span class="keyword">function</span> <span class="title">openwin</span><span class="params">()</span> {</span>
-　　  OpenWindow = window.<span class="keyword">open</span>(<span class="string">""</span>, <span class="string">"newwin"</span>, <span class="string">"height=250, width=250,toolbar=no ,scrollbars="</span> + scroll + <span class="string">",menubar=no"</span>);
+<pre><code>function openwin() {
+　　  OpenWindow = window.open(&quot;&quot;, &quot;newwin&quot;, &quot;height=250, width=250,toolbar=no ,scrollbars=&quot; + scroll + &quot;,menubar=no&quot;);
 　　        //写成一行 
-　　   OpenWindow.document.<span class="keyword">write</span>(<span class="string">"&lt;TITLE&gt;例子&lt;/TITLE&gt;"</span>)
-　　        OpenWindow.document.<span class="keyword">write</span>(<span class="string">"&lt;BODY BGCOLOR=#ffffff&gt;"</span>)
-　　        OpenWindow.document.<span class="keyword">write</span>(<span class="string">"&lt;h1&gt;Hello!&lt;/h1&gt;"</span>)
-　　        OpenWindow.document.<span class="keyword">write</span>(<span class="string">"New window opened!"</span>)
-　　        OpenWindow.document.<span class="keyword">write</span>(<span class="string">"&lt;/BODY&gt;"</span>)
-　　        OpenWindow.document.<span class="keyword">write</span>(<span class="string">"&lt;/HTML&gt;"</span>)
-　　        OpenWindow.document.<span class="keyword">close</span>()
+　　   OpenWindow.document.write(&quot;&lt;TITLE&gt;例子&lt;/TITLE&gt;&quot;)
+　　        OpenWindow.document.write(&quot;&lt;BODY BGCOLOR=#ffffff&gt;&quot;)
+　　        OpenWindow.document.write(&quot;&lt;h1&gt;Hello!&lt;/h1&gt;&quot;)
+　　        OpenWindow.document.write(&quot;New window opened!&quot;)
+　　        OpenWindow.document.write(&quot;&lt;/BODY&gt;&quot;)
+　　        OpenWindow.document.write(&quot;&lt;/HTML&gt;&quot;)
+　　        OpenWindow.document.close()
  } 
-　　&lt;<span class="keyword">a</span> href=<span class="string">"#"</span> onclick=<span class="string">"openwin()"</span>&gt;打开一个窗口&lt;/<span class="keyword">a</span>&gt; 
-　　&lt;<span class="built_in">input</span> <span class="built_in">type</span>=<span class="string">"button"</span> onclick=<span class="string">"openwin()"</span> value=<span class="string">"打开窗口"</span>&gt; 
+　　&lt;a href=&quot;#&quot; onclick=&quot;openwin()&quot;&gt;打开一个窗口&lt;/a&gt; 
+　　&lt;input type=&quot;button&quot; onclick=&quot;openwin()&quot; value=&quot;打开窗口&quot;&gt; 
 </code></pre><p>9、终极应用–弹出的窗口之Cookie控制,<br>回想一下，上面的弹出窗口虽然酷，但是有一点小毛病，比如你将上面的脚本放在一个需要频繁经过的页面里(例如首页)，那么每次刷新这个页面，窗口都会弹出一次，我们使用cookie来控制一下就可以了。</p>
 <p>首先，将如下代码加入主页面HTML的<head>区：</head></p>
-<pre><code><span class="function"><span class="keyword">function</span> <span class="title">openwin</span>(<span class="params"></span>) </span>{
-　　        <span class="built_in">window</span>.open(<span class="string">"page.html"</span>, <span class="string">""</span>, <span class="string">"width=200,height=200"</span>)
+<pre><code>function openwin() {
+　　        window.open(&quot;page.html&quot;, &quot;&quot;, &quot;width=200,height=200&quot;)
 　　    }
-　　    <span class="function"><span class="keyword">function</span> <span class="title">get_cookie</span>(<span class="params">Name</span>) </span>{
-　　        <span class="keyword">var</span> search = Name + <span class="string">"="</span>
-　　        <span class="keyword">var</span> returnvalue = <span class="string">""</span>;
-　　        <span class="keyword">if</span> (<span class="built_in">document</span>.cookie.length &gt; <span class="number">0</span>) {
-　　            offset = <span class="built_in">document</span>.cookie.indexOf(search)
-　　            <span class="keyword">if</span> (offset != -<span class="number">1</span>) {
+　　    function get_cookie(Name) {
+　　        var search = Name + &quot;=&quot;
+　　        var returnvalue = &quot;&quot;;
+　　        if (document.cookie.length &gt; 0) {
+　　            offset = document.cookie.indexOf(search)
+　　            if (offset != -1) {
 　　                offset += search.length
-　　                end = <span class="built_in">document</span>.cookie.indexOf(<span class="string">";"</span>, offset);
-　　                <span class="keyword">if</span> (end == -<span class="number">1</span>)
-　　                    end = <span class="built_in">document</span>.cookie.length;
-　　                returnvalue = <span class="built_in">unescape</span>(<span class="built_in">document</span>.cookie.substring(offset, end))
+　　                end = document.cookie.indexOf(&quot;;&quot;, offset);
+　　                if (end == -1)
+　　                    end = document.cookie.length;
+　　                returnvalue = unescape(document.cookie.substring(offset, end))
 　　            }
 　　        }
-　　        <span class="keyword">return</span> returnvalue;
+　　        return returnvalue;
 　　    }
-　　    <span class="function"><span class="keyword">function</span> <span class="title">loadpopup</span>(<span class="params"></span>) </span>{
-　　        <span class="keyword">if</span> (get_cookie(<span class="string">'popped'</span>) == <span class="string">''</span>) {
+　　    function loadpopup() {
+　　        if (get_cookie(&apos;popped&apos;) == &apos;&apos;) {
 　　            openwin()
-　　            <span class="built_in">document</span>.cookie = <span class="string">"popped=yes"</span>
+　　            document.cookie = &quot;popped=yes&quot;
 　　        }
 　　    } 
 </code></pre><p>然后，用<body onload="loadpopup()">（注意不是openwin而是loadpop啊！）替换主页面中原有的<body>这一句即可。你可以试着刷新一下这个页面或重新进入该页面，窗口再也不会弹出了。真正的Pop-Only-Once！</body></body></p>
-<pre><code><span class="tag">&lt;<span class="title">SCRIPT</span> <span class="attribute">LANGUAGE</span>=<span class="value">"javascript"</span>&gt;</span><span class="handlebars"><span class="xml"> 
-<span class="comment">&lt;!-- 
-window.open ('page.html', 'newwindow', 'height=100, width=400, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=n o, status=no') //这句要写成一行
---&gt;</span> </span></span>
+<pre><code>&lt;SCRIPT LANGUAGE=&quot;javascript&quot;&gt; 
+&lt;!-- 
+window.open (&apos;page.html&apos;, &apos;newwindow&apos;, &apos;height=100, width=400, top=0, left=0, toolbar=no, menubar=no, scrollbars=no, resizable=no,location=n o, status=no&apos;) //这句要写成一行
+--&gt; 
 </code></pre>
       
     </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/16/调用相机/" rel="next" title="调用相机">
+                <i class="fa fa-chevron-left"></i> 调用相机
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/12/前端规范/" rel="prev" title="前端规范">
+                前端规范 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
     
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2016/06/12/前端规范/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
+
+
+        </div>
         
-          前端规范
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/nhf.png"
+               alt="NHF" />
+          <p class="site-author-name" itemprop="name">NHF</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">29</span>
+              <span class="site-state-item-name">Artikel</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/niexiaofei1988" target="_blank" title="github">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/niexiaofei1989" target="_blank" title="twitter">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/jiandanaiyici" target="_blank" title="weibo">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  weibo
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/nie-xiao-fei-58/activities" target="_blank" title="zhihu">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  zhihu
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tags"><span class="nav-number">1.</span> <span class="nav-text">tags:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#js弹出框、对话框、提示框、弹框总结"><span class="nav-number">1.1.</span> <span class="nav-text">js弹出框、对话框、提示框、弹框总结</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、JS的三种最常见的对话框"><span class="nav-number">1.1.1.</span> <span class="nav-text">一、JS的三种最常见的对话框</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、点击按钮时常用的6中提示框和操作"><span class="nav-number">1.1.2.</span> <span class="nav-text">二、点击按钮时常用的6中提示框和操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、弹出独立窗口"><span class="nav-number">1.1.3.</span> <span class="nav-text">三、弹出独立窗口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四、弹出窗口实例演示"><span class="nav-number">1.1.4.</span> <span class="nav-text">四、弹出窗口实例演示</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
         
       </div>
-    </a>
-  
-  
-    <a href="/2016/05/16/调用相机/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">调用相机</div>
-      <strong class="article-nav-caption">></strong>
-    </a>
-  
-</nav>
+    </main>
 
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
   
-</article>
-
-
-<div class="share_jia">
-	<!-- JiaThis Button BEGIN -->
-	<div class="jiathis_style">
-		<span class="jiathis_txt">分享到: &nbsp; </span>
-		<a class="jiathis_button_facebook"></a> 
-    <a class="jiathis_button_twitter"></a>
-    <a class="jiathis_button_plus"></a> 
-    <a class="jiathis_button_tsina"></a>
-		<a class="jiathis_button_cqq"></a>
-		<a class="jiathis_button_douban"></a>
-		<a class="jiathis_button_weixin"></a>
-		<a class="jiathis_button_tumblr"></a>
-    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
-	</div>
-	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
-	<!-- JiaThis Button END -->
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">NHF</span>
 </div>
 
 
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
 
-
-
-
-<div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="每日小知识一" data-title="每日小知识" data-url="http://yoursite.com/2016/06/05/每日小知识一/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"true"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
 </div>
 
 
+        
 
+        
+      </div>
+    </footer>
 
-</div>
-      <footer id="footer">
-  <div class="outer">
-    <div id="footer-info">
-    	<div class="footer-left">
-    		&copy; 2016 Simple love
-    	</div>
-      	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-      	</div>
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
     </div>
   </div>
-</footer>
-    </div>
-    
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
 
+  
 
-<script>
-	var yiliaConfig = {
-		fancybox: true,
-		mathjax: true,
-		animate: true,
-		isHome: false,
-		isPost: true,
-		isArchive: false,
-		isTag: false,
-		isCategory: false,
-		open_in_new: false
-	}
-</script>
-<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
-
-
-
-
-
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-});
-
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
-</script>
-
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
 </script>
 
 
-  </div>
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
 </body>
 </html>
