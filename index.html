@@ -203,7 +203,7 @@ var _hmt = _hmt || [];
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -213,7 +213,7 @@ var _hmt = _hmt || [];
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -236,6 +236,176 @@ var _hmt = _hmt || [];
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://niexiaofei1988.github.io/2016/12/05/我的前端路之JS(排序)/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="NHF">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/nhf.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="NHF">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="NHF" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/05/我的前端路之JS(排序)/" itemprop="url">
+                  JS排序
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-05T22:23:36+08:00">
+                2016-12-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>以前一直以为用了原生数组继承的sort函数就可以直接把数字内元素为数字的数组排序？原来我的理解一直是错误的。先上代码–&gt;别人的</p>
+<pre><code>var by = function(name){
+    return function(o,p){
+        var a,b ;
+        if(typeof o === &quot;object&quot; &amp;&amp; typeof p === &quot;object&quot; &amp;&amp; o &amp;&amp; p){
+            a = o[name];
+            b = p[name];
+            if(a === b){
+                return 0 ;
+            }
+            if(typeof a === typeof b ){
+                return a &lt; b ? -1 : 1 ;
+            }
+            return typeof a &lt; typeof b ? -1 : 1 ;
+        }else{
+            throw(&quot;error&quot;);
+        }
+    }
+}
+
+
+//by2函数接受一个成员名字符串和一个可选的次要比较函数做为参数
+//并返回一个可以用来包含该成员的对象数组进行排序的比较函数
+//当o[age] 和 p[age] 相等时，次要比较函数被用来决出高下
+var by2 = function(name,minor){
+    return function(o,p){
+        var a,b;
+        if(o &amp;&amp; p &amp;&amp; typeof o === &apos;object&apos; &amp;&amp; typeof p ===&apos;object&apos;){
+            a = o[name];
+            b = p[name];
+            if(a === b){
+                return typeof minor === &apos;function&apos; ? minor(o,p):0;
+            }
+            if(typeof a === typeof b){
+                return a &lt;b ? -1:1;
+                            }
+                            return typeof a &lt; typeof b ? -1 : 1;
+        }else{
+            thro(&quot;error&quot;);
+        }
+    }
+}
+
+var employees = [{name: &quot;George&quot;, age: 32, retiredate: &quot;March 12, 2014&quot;},
+                {name: &quot;Edward&quot;, age: 17, retiredate: &quot;June 2, 2023&quot;},
+                {name: &quot;Christine&quot;, age: 58, retiredate: &quot;December 20, 2036&quot;},
+                {name: &quot;Sarah&quot;, age: 62, retiredate: &quot;April 30, 2020&quot;}];
+</code></pre><p> 这是一个用于操作数组内对象根据某个属性排序,可能会常用,所以放上边 不用往下翻了</p>
+<p> <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare">string.prototype.localeCompare()</a></p>
+          <!--noindex-->
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/12/05/我的前端路之JS(排序)/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
       
 
@@ -285,7 +455,7 @@ var _hmt = _hmt || [];
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Veröffentlicht am</span>
+              <span class="post-meta-item-text">Posted on</span>
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-05T00:34:59+08:00">
                 2016-12-05
               </time>
@@ -403,7 +573,7 @@ var _hmt = _hmt || [];
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Veröffentlicht am</span>
+              <span class="post-meta-item-text">Posted on</span>
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-27T00:11:56+08:00">
                 2016-08-27
               </time>
@@ -452,7 +622,7 @@ console.warn(&quot;这是warn信息&quot;)
           <!--noindex-->
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/08/27/console命令/#more" rel="contents">
-              Weiterlesen &raquo;
+              Read more &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -531,7 +701,7 @@ console.warn(&quot;这是warn信息&quot;)
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Veröffentlicht am</span>
+              <span class="post-meta-item-text">Posted on</span>
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-24T19:36:01+08:00">
                 2016-08-24
               </time>
@@ -600,7 +770,7 @@ console.warn(&quot;这是warn信息&quot;)
           <!--noindex-->
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/08/24/前端技能/#more" rel="contents">
-              Weiterlesen &raquo;
+              Read more &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -679,7 +849,7 @@ console.warn(&quot;这是warn信息&quot;)
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Veröffentlicht am</span>
+              <span class="post-meta-item-text">Posted on</span>
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-08-24T00:50:14+08:00">
                 2016-08-24
               </time>
@@ -724,7 +894,7 @@ console.warn(&quot;这是warn信息&quot;)
           <!--noindex-->
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/08/24/webpack-demo/#more" rel="contents">
-              Weiterlesen &raquo;
+              Read more &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -803,7 +973,7 @@ console.warn(&quot;这是warn信息&quot;)
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Veröffentlicht am</span>
+              <span class="post-meta-item-text">Posted on</span>
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-07-11T22:59:43+08:00">
                 2016-07-11
               </time>
@@ -850,7 +1020,7 @@ console.warn(&quot;这是warn信息&quot;)
           <!--noindex-->
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/07/11/nodejs-path对象/#more" rel="contents">
-              Weiterlesen &raquo;
+              Read more &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -929,7 +1099,7 @@ console.warn(&quot;这是warn信息&quot;)
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Veröffentlicht am</span>
+              <span class="post-meta-item-text">Posted on</span>
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-06-12T00:07:09+08:00">
                 2016-06-12
               </time>
@@ -972,7 +1142,7 @@ console.warn(&quot;这是warn信息&quot;)
           <!--noindex-->
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/06/12/前端规范/#more" rel="contents">
-              Weiterlesen &raquo;
+              Read more &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -1051,7 +1221,7 @@ console.warn(&quot;这是warn信息&quot;)
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Veröffentlicht am</span>
+              <span class="post-meta-item-text">Posted on</span>
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-06-05T23:19:23+08:00">
                 2016-06-05
               </time>
@@ -1096,7 +1266,7 @@ console.warn(&quot;这是warn信息&quot;)
           <!--noindex-->
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/06/05/每日小知识一/#more" rel="contents">
-              Weiterlesen &raquo;
+              Read more &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -1175,7 +1345,7 @@ console.warn(&quot;这是warn信息&quot;)
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Veröffentlicht am</span>
+              <span class="post-meta-item-text">Posted on</span>
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-05-16T00:50:16+08:00">
                 2016-05-16
               </time>
@@ -1218,7 +1388,7 @@ console.warn(&quot;这是warn信息&quot;)
           <!--noindex-->
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/05/16/调用相机/#more" rel="contents">
-              Weiterlesen &raquo;
+              Read more &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -1297,7 +1467,7 @@ console.warn(&quot;这是warn信息&quot;)
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Veröffentlicht am</span>
+              <span class="post-meta-item-text">Posted on</span>
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-04-05T18:58:21+08:00">
                 2016-04-05
               </time>
@@ -1341,129 +1511,7 @@ console.warn(&quot;这是warn信息&quot;)
           <!--noindex-->
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/04/05/面向对象-一/#more" rel="contents">
-              Weiterlesen &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="https://niexiaofei1988.github.io/2016/04/01/牛逼的简历(一)/">
-
-  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <meta itemprop="name" content="NHF">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="/images/nhf.png">
-  </span>
-
-  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="NHF">
-    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
-      <img style="display:none;" itemprop="url image" alt="NHF" src="">
-    </span>
-  </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/01/牛逼的简历(一)/" itemprop="url">
-                  牛逼的简历(-)
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Veröffentlicht am</span>
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-04-01T19:43:52+08:00">
-                2016-04-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>在网上有很多牛逼的简历，他们的简历到底都是怎么写出来的呢，其实仔细看看都是很简单的东西。有一些是自动打字然后出来效果。怎么写的呢 下面来看看(原生js不使用任何的js库)</p>
-          <!--noindex-->
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/04/01/牛逼的简历(一)/#more" rel="contents">
-              Weiterlesen &raquo;
+              Read more &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -1498,7 +1546,7 @@ console.warn(&quot;这是warn信息&quot;)
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1539,8 +1587,8 @@ console.warn(&quot;这是warn信息&quot;)
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives/">
-              <span class="site-state-item-count">30</span>
-              <span class="site-state-item-name">Artikel</span>
+              <span class="site-state-item-count">31</span>
+              <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
@@ -1629,7 +1677,7 @@ console.warn(&quot;这是warn信息&quot;)
 
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
