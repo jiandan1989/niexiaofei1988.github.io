@@ -17,20 +17,20 @@
 <!--<![endif]-->
 
 <head>
-  <title>NHF</title>
+  <title>鑫晨</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content="NHF">
-    <meta name="author" content="NHF">
+    <meta name="generator" content="鑫晨">
+    <meta name="author" content="niexiaofei">
     <meta name="description" content="" />
     <meta name="keywords" content="" />
 
     <!-- Favicon, (keep icon in root folder) -->
     <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
 
-    <link rel="alternate" href="/atom.xml" title="NHF" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="鑫晨" type="application/atom+xml">
     <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
 	
     <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
@@ -154,7 +154,7 @@
                     <!-- Info-bar -->
                     <nav>
                         <ul class="nav">
-                            <li><a href="/" class="animsition-link">NHF</a></li>
+                            <li><a href="/" class="animsition-link">鑫晨</a></li>
                             <li class="nolink"><span>Always </span>Creative.</li>
                             
                             <li><a href="niexiaofei.github.io" title="Github" target="_blank"><i class="icon-github"></i></a></li>
@@ -277,54 +277,6 @@
                     <p>
                       
                         <p>以前一直以为用了原生数组继承的sort函数就可以直接把数字内元素为数字的数组排序？原来我的理解一直是错误的。先上代码–&gt;别人的</p>
-<pre><code>var by = function(name){
-    return function(o,p){
-        var a,b ;
-        if(typeof o === &quot;object&quot; &amp;&amp; typeof p === &quot;object&quot; &amp;&amp; o &amp;&amp; p){
-            a = o[name];
-            b = p[name];
-            if(a === b){
-                return 0 ;
-            }
-            if(typeof a === typeof b ){
-                return a &lt; b ? -1 : 1 ;
-            }
-            return typeof a &lt; typeof b ? -1 : 1 ;
-        }else{
-            throw(&quot;error&quot;);
-        }
-    }
-}
-
-
-//by2函数接受一个成员名字符串和一个可选的次要比较函数做为参数
-//并返回一个可以用来包含该成员的对象数组进行排序的比较函数
-//当o[age] 和 p[age] 相等时，次要比较函数被用来决出高下
-var by2 = function(name,minor){
-    return function(o,p){
-        var a,b;
-        if(o &amp;&amp; p &amp;&amp; typeof o === &apos;object&apos; &amp;&amp; typeof p ===&apos;object&apos;){
-            a = o[name];
-            b = p[name];
-            if(a === b){
-                return typeof minor === &apos;function&apos; ? minor(o,p):0;
-            }
-            if(typeof a === typeof b){
-                return a &lt;b ? -1:1;
-                            }
-                            return typeof a &lt; typeof b ? -1 : 1;
-        }else{
-            thro(&quot;error&quot;);
-        }
-    }
-}
-
-var employees = [{name: &quot;George&quot;, age: 32, retiredate: &quot;March 12, 2014&quot;},
-                {name: &quot;Edward&quot;, age: 17, retiredate: &quot;June 2, 2023&quot;},
-                {name: &quot;Christine&quot;, age: 58, retiredate: &quot;December 20, 2036&quot;},
-                {name: &quot;Sarah&quot;, age: 62, retiredate: &quot;April 30, 2020&quot;}];
-</code></pre><p> 这是一个用于操作数组内对象根据某个属性排序,可能会常用,所以放上边 不用往下翻了</p>
-<p> <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare">string.prototype.localeCompare()</a></p>
                       
                     </p>
                     
@@ -385,12 +337,6 @@ var employees = [{name: &quot;George&quot;, age: 32, retiredate: &quot;March 12,
                     <p>
                       
                         <h4 id="一、显示信息的命令"><a href="#一、显示信息的命令" class="headerlink" title="一、显示信息的命令"></a>一、显示信息的命令</h4><p>在javascript调试中可以使用console的命令来代替alert或者document.write命令，不影响页面显示，也不会阻碍js的执行，内置有5种打印信息的命令，根据不同的信息使用不同的命令:</p>
-<pre><code>console.log(&quot;这是log&quot;) // 打印普通信息
-console.error(&quot;这是error信息&quot;)  //错误信息
-console.info(&quot;这是info信息&quot;)     // 一般信息
-console.debug(&quot;这是debug信息&quot;) //除错信息
-console.warn(&quot;这是warn信息&quot;)
-</code></pre>
                       
                     </p>
                     
@@ -421,32 +367,6 @@ console.warn(&quot;这是warn信息&quot;)
                     <p>
                       
                         <p>前端的发展速度已经超出我们学习技能的速度，各种工具，各种框架，各种插件把我们微小的脑袋充的实实在在的。为了适应这样的发展速度，我们需要学些什么呢？</p>
-<h4 id="前端框架"><a href="#前端框架" class="headerlink" title="前端框架"></a>前端框架</h4><ul>
-<li><p><a href="https://facebook.github.io/react/">react 官网</a></p>
-</li>
-<li><p><a href="https://pan.baidu.com/s/1bRlERs">react 百度云 密码: 94f5</a></p>
-<ul>
-<li><p><a href="https://pan.baidu.com/s/1qXUMQEo">angular 视频  密码: c87r</a></p>
-</li>
-<li><p><a href="https://pan.baidu.com/s/1cdwUTK">bootstrap 视频  密码: tvqa</a></p>
-</li>
-<li><p><a href="https://pan.baidu.com/s/1pLMrFWv">jquery 视频  密码: eq69</a></p>
-</li>
-<li><p><a href="https://pan.baidu.com/s/1c174KAO">nodejs 视频  密码: usiv</a></p>
-</li>
-</ul>
-</li>
-<li><p><a href="https://pan.baidu.com/s/1dFFk4cL">html5视频  密码: 41hd</a></p>
-</li>
-<li><p><a href="https://pan.baidu.com/s/1o8iyfIa">性能优化  密码: pudu</a></p>
-</li>
-<li><p><a href="https://pan.baidu.com/s/1bp4znyf">安卓开发  密码: a38p</a></p>
-</li>
-<li><p><a href="https://pan.baidu.com/s/1c1AS59Y">微信公众开发平台搭建与开发  密码: nip8</a></p>
-</li>
-<li><p><a href="https://pan.baidu.com/s/1eSyn2nC">Axure 视频教程  密码: 8fqr</a></p>
-</li>
-</ul>
                       
                     </p>
                     
@@ -640,7 +560,7 @@ console.warn(&quot;这是warn信息&quot;)
     <div class="container">
             <div class="copy">
                 <p>
-                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By NHF. All Rights Reserved.
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By niexiaofei. All Rights Reserved.
                 </p>
                 <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
             </div>
