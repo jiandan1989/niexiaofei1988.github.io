@@ -885,6 +885,81 @@ function on(id,type,,fn){
     }
 };
 </code></pre><p>真是大意了</p>
+<h3 id="模块分明"><a href="#模块分明" class="headerlink" title="模块分明"></a>模块分明</h3><p>其实在Javascript中大力模式除了定义命名空间外，还有一个作用你需要知道，就是通过当里模式来管理代码库的各个模块，比如早起百度tangram，雅虎的YUI都是通过单例模式来控制自己的每个功能模块的，比如tangram中定义命名空间为百度，当添加设置元素class方法，插入一个元素方法是，他们会放到dom模块，当添加事件中阻止事件的冒泡方法，阻止事件的默认行为方法的时候，会放到Event模块里,当添加去除字符创首位空白字符方法将字符串进行html编码时，会放到string模块中….</p>
+<blockquote>
+<p>baidu.dom.addclass //添加元素类<br>baidu.dom.apped //插入元素<br>baidu.event.stopProgagation //阻止冒泡T<br>baidu.event.trim //去除字符串首尾空白字符<br>baidu.string.encodeHTML //将字符串进行html编码</p>
+</blockquote>
+<h4 id="创建一个小型代码库"><a href="#创建一个小型代码库" class="headerlink" title="创建一个小型代码库"></a>创建一个小型代码库</h4><p>所以我们以后写自己的小型方法库的时候也可以用单例模式来规范我们自己代码库的各个模块，比如我们有一个A库，它包含共用模块，工具模块，ajax模块和其他模块，那么我们就可以自己定制一个如下的小型代码库</p>
+<pre><code>var A = {
+    Util : {
+        util_method1:function(){},
+        util_method2:function(){}
+    },
+    Tool:{
+        tool1_method:function(){},
+        tool2_method:function(){}
+    },
+    Ajax:{
+        get:function(){},
+        post:function(){}
+    },
+    others:{}
+}
+</code></pre><p>那么我们想使用公共模块。工具模块，ajax模块方法时就像下面这样。</p>
+<pre><code>A.Util.util_method1()
+A.Tool.tool1_method
+</code></pre><h4 id="无法修改的静态变量"><a href="#无法修改的静态变量" class="headerlink" title="无法修改的静态变量"></a>无法修改的静态变量</h4><p>“看上去代码哭的结构真的很清晰了，大家使用起来更容易了”  小白说</p>
+<p>“恩，这正是单例模式的好处，不过这是在对代码管理上，其实有一个功能用单例模式实现更适合，就是管理静态变量”</p>
+<p>“静态变量，Javascript中不是没有静态变量么，” 小白追问</p>
+<p>“你知道，Javascript根本没有static这类关键字，所以定义任何变量理论上都是可以更改的，所以在Javascript中实现创建静态变量又变的很重要，当然Javascript很灵活，人们根据静态变脸只能方位不能修改并且无创建后就能使用这一特点，想出来一个好主意，能访问的变量定义的方式有很多，比如定义在全局空间里，或者定义一个函数内部，并定义一个特权方法访问，等等，既然不能修改，定义在全局空间里就显得很不靠谱了，而如果将变量放在一个函数内部，那必须通过特权方法访问，如果我们不提供赋值变量的方法，值提供获取变量的方法，不就可以做到限制变量的修改并且可以供外界访问的需求了么？但是还有最后一个问题就是目前放在函数内部的变量还能供外界访问，为实现创建后就能使用这一需求，我们就需要让他创建的函数执行一次，此时我们创建的对象内保存静态变量通过取值器访问，最后将这个对象作为一个单例放在全局空间里作为静态变量单例对象共他人使用”</p>
+<pre><code>var Conf = (function(){
+
+        //私有变量
+        var conf = {
+            MAX_NUM :100,
+            MIN_NUM :1,
+            COUNT:1000
+        }
+        //返回取值器对象
+        return {
+            get:function(name){
+                return conf[name] ? conf[name] : null;
+            }
+        }
+    })();
+</code></pre><p>“很奇妙啊，没有赋值器我们就不能修改内部定义的变量了那么我们想要使用创建了的静态变量，像下面这种方式就可以了吧” 小白说</p>
+<pre><code>var count = Conf.get(&apos;COUNT&apos;);
+console.log(count);
+</code></pre><h4 id="惰性单例"><a href="#惰性单例" class="headerlink" title="惰性单例"></a>惰性单例</h4><p>“不过为什么静态变量都是大写啊？”小白问</p>
+<p>“这是一种定义习惯，在其他编程语言中静态变量都习惯大写，所以在Javascript中虽然是模拟的静态变量我们也要尊重这一使用习惯，有些时候对于单例对象需要延迟创建，所以在单例中还存在一种延迟创建的形式，有人也称之为’惰性创建’”</p>
+<pre><code>//惰性载入单例
+
+var LazySingl = (function(){
+    //单例实例引用
+    var _instance = null;
+    //单例
+    function Single(){
+        /*这里定义私有属性和方法*/
+        return {
+            publicMethod:function(){},
+            publicProperty :1.0
+        }
+    }
+     // 获取单例独享接口
+     return function(){
+        //如果为创建单例将创建单例
+        if(!_instance){
+            _instance = Single();
+        }
+        return _instance;
+     }
+    })();
+</code></pre><p>我们测试一下可以看出通过LazySingle对象可以成功获取内部创建的单例对象了</p>
+<blockquote>
+<p>console.log(LazySingle().publicProperty);//1.0</p>
+</blockquote>
+<h4 id="忆之获-2"><a href="#忆之获-2" class="headerlink" title="忆之获"></a>忆之获</h4><p>单例模式有时也被称为单体模式，它是一个值允许实例化一次的对象类，有时这么做也是为了节省系统资源，当然Javascript中单例模式经常作为命名空间来实现，通过单例对象我们可以将各个模块的代码井井有条的树立在一起</p>
+<p>所以如果你想让系统中只存在一个对象，那么单例模式则是最佳解决方案</p>
 <hr>
 <h4 id="外观模式"><a href="#外观模式" class="headerlink" title="外观模式"></a>外观模式</h4><hr>
 <h4 id="适配器模式"><a href="#适配器模式" class="headerlink" title="适配器模式"></a>适配器模式</h4><hr>
