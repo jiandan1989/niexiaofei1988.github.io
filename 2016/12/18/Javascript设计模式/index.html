@@ -1327,9 +1327,205 @@ header(&quot;Location: &quot; .$proxy.?callback=&quot;.$callback.&quot; &amp; ar
 <p>当然无论代理模式在处理系统。对象之间的耦合度问题还是在结局系统资源开销问题，他都讲构建出一个复杂的代理对象，增加系统的复杂度，同事也增加了一定的系统开销，当然有时对于这种开销往往是可接受的</p>
 <p>在Javascript中，它的执行常常依托于浏览器，所以代理模式解决问题的思想有事也为我们提供了一些解决问题的方案。</p>
 <hr>
-<h4 id="装饰者模式"><a href="#装饰者模式" class="headerlink" title="装饰者模式"></a>装饰者模式</h4><hr>
-<h4 id="桥接模式"><a href="#桥接模式" class="headerlink" title="桥接模式"></a>桥接模式</h4><hr>
-<h4 id="组合模式"><a href="#组合模式" class="headerlink" title="组合模式"></a>组合模式</h4><hr>
+<h4 id="装饰者模式"><a href="#装饰者模式" class="headerlink" title="装饰者模式"></a>装饰者模式</h4><p>装饰者模式(Decorator):在不改变元对象的基础上， 通过对其进行包装拓展(添加属性或者方法)使原有对象可以满足用户的更复杂需求</p>
+<p>静止是相对的，运动是绝对的，所以没有一成不变的需求，这不，为增强用户使用表单的交互体验，项目经理找来小白，正在谈后续需求改进呢</p>
+<p>“小白”，项目经理走过来，”用户信息表单需求有些变化，以前是当用户点击输入框时，如果输入框输入的内容有限制，那么气后面显示用户输入内容的限制格式的提示文案，现在我们要多加一条，默认输入框上边显示一行提示文案，当用户点击输入框时文案消失”</p>
+<p>小白一听心想:”这很简单，找到对应的代码，然后在后面增加几句就可以了嘛”，于是小白浏览一下前任写过的代码。</p>
+<pre><code>//输入框元素
+var telInput = document.getElementById(&apos;tel_input&apos;);
+//输入格式提示文案
+var telWranText = document.getElementById(&apos;tel_wran_text&apos;);
+//点击输入框显示输入框输入格式提示文案
+input.onclick = function(){
+    telWranText.style.display = &apos;inline-block&apos;;
+}
+//于是小白不假思索的修改了这些写过的代码
+//输入框元素
+var telInput = document.getElementById(&apos;tel_input&apos;);
+//输入框输入格式提示文案
+var telWranText = document.getElementById(&apos;tel_warn_text&apos;);
+//点击输入框显示输入框输入格式提示文案并隐藏输入提示文案
+input.onclick = function(){
+    telWranText.style.display = &apos;inline-block&apos;;
+    telDemoText.style.display = &apos;none&apos;;
+}
+</code></pre><p>可是悲剧发生了，小白修改了一个电话输入框，后面还有姓名输入框，地址输入框，等等，还要像电话输入框这样在文件中查找功能代码，然后一个一个修改么？ 小白皱起眉头。</p>
+<p>小明看到后，走过来:”小白，怎么了”</p>
+<p>项目经理让我给原来用户信息输入框增加一些需求，然而我改一个容易，后面还有这么多输入框，我还要一个一个去文件中查找代码，真不知道该如何是好了</p>
+<p>“哦，这样啊，试试装饰者模式吧”</p>
+<p>“装饰者模式，以前没有听过，是添加东西的意思么”</p>
+<h4 id="装饰已有的功能对象"><a href="#装饰已有的功能对象" class="headerlink" title="装饰已有的功能对象"></a>装饰已有的功能对象</h4><p>“恩，很简单，比如你买一个房子，你想住的更舒适，那么你刚刚买的为装饰过的新房子就不能满足你的需求了，所以你要对其装修一番，放置一个床，摆上一个沙发，抬进来一个电视，这样生活更舒适，同样，装饰者模式也是这个道理，原有的功能已经不能满足用户的需求了，此时你要做的就是为原有功能添砖加瓦，设置新功能和属性来满足用户提出的需求，”</p>
+<p>“我明白一些了，不过我要如何实现呢？”</p>
+<p>“首先明确原有的功能是那些，看看你已经写过的功能代码，这些就是原有的功能，你要做的就是在这基础上添加一些功能来满足用户提出的需求”</p>
+<pre><code>//装饰者
+var decorator = function(input,fn){
+    //获取事件源目标对象
+    var input = document.getElementById(input);
+    //若时间源已经绑定事件
+    if(typeof input.onclick ===&apos;function&apos;){
+        //缓存时间源原有回调函数
+        var oldClick = input.onclick;
+        //为事件源定义新的事件
+        input.onclick = function(){
+            //事件源原有回调函数
+            oldClick();
+            //执行事件源新增回调函数
+            fn();
+        }
+    }else{
+        //事件源为绑定事件，直接为事件源添加新增回调函数
+        input.onclick = fn;
+    }
+    //做其他事情
+}
+</code></pre><h4 id="为输入框添砖加瓦"><a href="#为输入框添砖加瓦" class="headerlink" title="为输入框添砖加瓦"></a>为输入框添砖加瓦</h4><p>“看看上面的代码，此时装饰者不仅仅可以对绑定过事件的输入框添加新的功能，未绑定过的输入框同样可以，你可以像下面这样调用” </p>
+<pre><code>//电话输入框功能装饰
+decorator(&apos;tel_input&apos;,function(){
+    document.getElementById(&apos;tel_demo_text&apos;).style.display = &apos;none&apos;;    
+})
+//姓名输入框功能装饰
+decorator(&apos;name_input&apos;,function(){
+    document.getElementById(&apos;name_demo_text&apos;).style.display = &quot;none&quot;;    
+});
+//地址输入框功能装饰
+decorator(&apos;adress_input&apos;,function(){
+    docuemnt.getElementById(&apos;address_demo_text&apos;).style.display = &quot;none&quot;;    
+});
+</code></pre><p>“真是太棒了，通过使用装饰者对象方法，无论输入框是否绑定过事件，都可以轻松完成增加隐藏示例框的需求，真的很不错，” 小白感叹道</p>
+<p>“装饰者模式很简单，就是对原有对象的属性与方法的添加”</p>
+<p>小白想了想问:”前几天我们学过的适配器模式也是对一个对象的装饰来适配其他对象，那么它与装饰者模式有什么不同呢？”</p>
+<p>“适配器方法是对原有对象适配，添加的方法与原有方法功能上大致相似，但是装饰者提供的方法与原来的方法功能项是有一定区别的，不需要了解对象原有的功能，并且对象原有的方法照样可以原封不动的使用，”小明答道</p>
+<p>“哦，对了，你也提醒了我，这么说既然在适配器模式中增加的方法要调用原有方法，是不是就要了解原有方法实现的具体细节，而在装饰者中原封不懂的使用，我们就不需要知道原有方法实现的具体细节，只有当我们调用方法时才会知道的”</p>
+<p>“恩，正式这样” 小明笑了</p>
+<h3 id="忆之获-6"><a href="#忆之获-6" class="headerlink" title="忆之获"></a>忆之获</h3><p>通过小白对输入框交互功能的拓展，我们学习了一种可以在不了解原有功能的基础上对功能拓展模式，这是对原有功能的一种增强与拓展，当然同样对原有对象进行拓展的模式还有适配器模式，所不同的是适配器进行拓展很多时候是对对象内部结构的重组，因此了解其自身结构是必须的，而装饰者对对象的拓展是一种良性拓展，不用了解其具体实现，只是在外部进行了一次封装拓展，这又是对原有功能完整性的一种保护</p>
+<hr>
+<h4 id="桥接模式"><a href="#桥接模式" class="headerlink" title="桥接模式"></a>桥接模式</h4><p>桥接模式(Bridge):在系统沿着多个维度变化的同事，又不增加其复杂度并已达到解耦。有时候页面中的一些小小细节改变常常因逻辑相似导致大片臃肿的代码，让页面苦涩不堪，小白为解决这类问题，已经熬了整整一上午了</p>
+<h4 id="添加事件交互"><a href="#添加事件交互" class="headerlink" title="添加事件交互"></a>添加事件交互</h4><p>“小白，什么功能让你谢了一上午” 小明问道</p>
+<p>“这不，项目经理让我把页面上不的用户信息部分添加一些鼠标划过特效”</p>
+<p>小白接着说:”哎，不过用户信息有很多小部件组成，你看，对于用户名，鼠标划过直接改变背景色，但是像用户等级，用户信息这类不见只能改变里边的数字内容，处理的逻辑不太一样，所以写了不少代码，不过写完时，自己柑橘很多是陈宇的，却又不知道该如何改善”</p>
+<p>“哦，来让我看看你的代码吧”</p>
+<pre><code>var spans = document.getElementsByTagName(&apos;span&apos;);
+//为用户绑定特效
+spans[0].onmouseover = function(){
+    this.style.color = &apos;red&apos;;
+    this.style.background= &apos;#ddd&apos;;
+}
+spans[0].onmouseout = function(){
+    this.style.color = &apos;#333&apos;;
+    this.style.background = &apos;#f5f5f5&apos;;
+}
+
+//为等级绑定特效
+
+spans[1].onmouseover =function(){
+    this.getElementsByTagName(&apos;strong&apos;)[0].style.color = &apos;red&apos;;
+    this.getElementsByTagName(&apos;strong&apos;)[0].style.background=&quot;#ddd&quot;;
+}
+spans[1].onmouseout = function(){
+    this.getElementsByTagName(&apos;strong&apos;)[0].style.color=&apos;#333;
+    this.getElementsByTagName(&apos;strong&apos;)[0].style.background=&quot;#f5f5f5&quot;;
+}
+</code></pre><h3 id="提取共同点"><a href="#提取共同点" class="headerlink" title="提取共同点"></a>提取共同点</h3><p>“看你的代码是有点，不过你知道你的问题在那里么？”</p>
+<p>“要对事件的回调函数再做处理么?” 小白问小明道</p>
+<p>“恩，你在写代码时一定要注意对相同的逻辑做抽象提取处理，这一点很重要，如果这一点你能做到，那么你的代码将会更加简洁，重用率也会更大，当然可读性更高，这也是我推荐你使用面向对象思想编程的一个目的” 小明接着说:”对于用户信息模块的每一个部分鼠标划过与鼠标离开两个事件的执行函数由很大一部分是相似的，比如他们都处理每个部件中的某个元素，他们都是处理改元的字体颜色和背景颜色，所以对于这个相似点的抽象提取是很有必要的，因此你可以创建下面这样一个函数，让它解除与事件中的this的耦合”</p>
+<pre><code>//抽象
+function changeColor(dom,color,bg){
+    //设置元素的字体颜色
+    dom.style.color = color;
+    dom.style.background = bg;
+}
+</code></pre><h4 id="事件与业务逻辑之间的桥梁"><a href="#事件与业务逻辑之间的桥梁" class="headerlink" title="事件与业务逻辑之间的桥梁"></a>事件与业务逻辑之间的桥梁</h4><p>“剩下你要做的就是对元素进行绑定事件了，但是有一点你要明白，仅仅知道元素事件绑定与抽象提起的设置样式方法changeColor还是不够的，你需要用一个方法将它们链接起来，那么这个方法就是桥接方法，这种模式就是桥接魔爱黑丝，就像你在北京开着车去沈阳旅游，那么你就要找到一条连接北京与沈阳的公路，才能顺利的两地王法”，小明接着说:”那么对于事件的桥接方法，我们可以用一个匿名函数代替，否则直接将changeColor作为事件的回调函数，那么我们刚才所作的事情就白做了，因为它们还将耦合在一起，如下面的用户绑定事件”    </p>
+<pre><code>var spans = document.getElemensByTagName(&apos;span&apos;);
+spans[0].onmouseover = function(){
+    changeColor(this,&apos;red&apos;,&apos;#ddd&apos;);
+}
+</code></pre><p>“changeColor方法中的dom实质上是事件回调函数汇总的this,那么我们想接触它们之间的耦合，我们就需要一个桥接方法—匿名回调函数，通过这个回调函数我们将获取到的this传递到changeColor函数中，即可实现需求，同样对于用户名模块的鼠标一开事件用同样的方式即可”  </p>
+<pre><code>spans[0].onmouseout = function(){
+    changeColor(this,&apos;#333&apos;,&apos;#f5f5f5&apos;);
+}
+</code></pre><p>“好了，小白，对于用户等级这类特殊的需求你知道该怎么做了吧” 小明道</p>
+<p>“恩，既然用户名模块的this在桥接匿名函数中获取，那么也应该是同样的道理应用在用户等级上，通过桥接函数来获取数字元素，然后闯入changColor就可以了吧，”</p>
+<pre><code>spans[1].onmouseover = function(){
+    changeColor(this.getElementsByTagName(&apos;strong&apos;)[0],&apos;red&apos;,&apos;#ddd&apos;);
+}
+spans[1].onmouseout = function(){
+    changeColor(this.getElementsByTagName(&apos;strong&apos;)[0],&apos;#333&apos;,&apos;#f5f5f5&apos;);
+}
+</code></pre><p>“恩，小白你再来看看是不是现在与之前相比清晰多了，如果再想对需求做任何修改我们只需要修改changeColor的内容就可以了，而不比取到每个时间回到函数中去修改，当然这种实现方法看起来调理更清晰，但是别忘了她是以新增一个桥接函数为代价实现的”</p>
+<p>“是啊， 听你说的，感觉桥接模式只是先抽象提取共用部分，然后将实现与抽象通过桥接方法链接在一起，来实现解耦的作用的吧”</p>
+<h4 id="多元化对象"><a href="#多元化对象" class="headerlink" title="多元化对象"></a>多元化对象</h4><p>“你所得对，不过桥接模式的强大之处不仅仅在此，甚至对于多维的变化也同样适用，比如我们书写一个canvas跑步游戏的时候，对于游戏中的人、小精灵、小球等一系列的实物都有动作单元，而他们的每个动作实现起来方式又都是统一的，比如人和精灵和求的运动其实就是位置坐标X和Y的变化，求的颜色与精灵的色彩的绘制方式都相似等，这样我们可以将这些多维变化部分，提取出来作为一个抽象运动单元进行保存，而当我们创建实体时，将需要的每个抽象动作单元通过桥接，链接在一起运作，这样它们之间不会相互影响并且该方式降低了它们之间的耦合。”</p>
+<pre><code>//多维变量类
+//运动单元
+function Speed(x,y){
+    this.x = x ;
+    this.y = y ;
+
+}
+Speed.prototype.run = function(){
+    console.log(&apos;跑起来&apos;)
+}
+//着色单元
+function Color(cl){
+    this.color = cl;
+}
+Color.prototype.draw = function(){
+    console.log(&apos;绘制色彩&apos;)
+}
+//变形单元
+function Shape(sp){
+    this.shape = sp;
+}
+
+Shape.prototype.change = function(){
+    console.log(&apos;改变形状&apos;)
+}
+//说话单元
+function Speek(wd){
+    this.word = wd;
+}
+Speek.prototype.say = function(){
+    console.log(&apos;书写字体&apos;);
+}
+</code></pre><p>“于是我们想创建一个类，并且它可以运动，可以着色”</p>
+<pre><code>function Ball(x,y,c){
+    //实现运动单元
+    this.speed - new Speed(x,y);
+    //实现着色单元
+    this.color = new Color(c);
+}
+Ball.prototype.init = function(){
+    //实现运动
+    this.speed.run();
+    //实现着色
+    this.color.draw()
+}
+</code></pre><p>“同样我们想创建一个人物类，他可以运动以及说话”</p>
+<pre><code>function People(x,y,f){
+    this.speed = new Speed(x,y);
+    this.font = new Speek(f);
+};
+
+People.prototype.init = function(){
+    this.speed.run();
+    this.font.say();
+}
+</code></pre><p>“当然我们也可以创建一个精灵类，让它可以运动可以着色可以改变形状”</p>
+<pre><code>function Spirite(x,y,c,s){
+    this.speed = new Speed(x,y);
+    this.color = new Color(c);
+    this.shape = new Shape(s);
+};
+
+Spirite.prototype.init = function(){
+    this.speed.run();
+    this.color.draw();
+    this.shape.chagne();
+}
+</code></pre><p>“当我们想实现一个任务时，我们直接实例化一个人物对象，这样他就可以有运动和说话的动作了”</p>
+<pre><code>var p = new People(10,12,16);
+p.init();
+</code></pre><h3 id="忆之获-7"><a href="#忆之获-7" class="headerlink" title="忆之获"></a>忆之获</h3><p>桥接模式最主要的特点既是将实现层(如元素绑定的时间)与抽象层(如装饰页面UI逻辑)解耦分离，使两部分可以独立变化，由此可以看出桥接模式主要是对结构之间的结构，而前面学过的抽象工厂模式与创建者模式主要业务在于创建，通过桥接模式实现的解耦，使实现层与抽象层分开处理，避免需求的改变造成对象内部的修改，提现了面向对象对拓展的开发及对修改的关闭原则，这是很有用的。</p>
+<h2 id="当然由于桥接的添加，有时也造成开发成本的增加，有时性能上也会受到影响。"><a href="#当然由于桥接的添加，有时也造成开发成本的增加，有时性能上也会受到影响。" class="headerlink" title="当然由于桥接的添加，有时也造成开发成本的增加，有时性能上也会受到影响。"></a>当然由于桥接的添加，有时也造成开发成本的增加，有时性能上也会受到影响。</h2><h4 id="组合模式"><a href="#组合模式" class="headerlink" title="组合模式"></a>组合模式</h4><hr>
 <h4 id="享元模式"><a href="#享元模式" class="headerlink" title="享元模式"></a>享元模式</h4><hr>
 <h4 id="模板方法模式"><a href="#模板方法模式" class="headerlink" title="模板方法模式"></a>模板方法模式</h4><hr>
 <h4 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h4><hr>
