@@ -145,55 +145,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-关于this-一直很头疼的词" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/01/关于this-一直很头疼的词/">关于this(一直很头疼的词)</a>
-    </h1>
-  
-
-        
-        <a href="/2016/03/01/关于this-一直很头疼的词/" class="archive-article-date">
-  	<time datetime="2016-03-01T09:06:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-03-01</time>
-</a>
-
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="对于this纠结了很久-其实想要搞清楚this指针的指向要弄清楚调用的方式和对象-浏览器的解析模式，函数和变量的优先级、原型链等。"><a href="#对于this纠结了很久-其实想要搞清楚this指针的指向要弄清楚调用的方式和对象-浏览器的解析模式，函数和变量的优先级、原型链等。" class="headerlink" title="对于this纠结了很久,其实想要搞清楚this指针的指向要弄清楚调用的方式和对象,浏览器的解析模式，函数和变量的优先级、原型链等。"></a>对于this纠结了很久,其实想要搞清楚this指针的指向要弄清楚调用的方式和对象,浏览器的解析模式，函数和变量的优先级、原型链等。</h3><h4 id="this是Javascript语言的一个关键字-它代表函数运行时，自动生成的一个内部对象，只能在函数内使用。"><a href="#this是Javascript语言的一个关键字-它代表函数运行时，自动生成的一个内部对象，只能在函数内使用。" class="headerlink" title="this是Javascript语言的一个关键字,它代表函数运行时，自动生成的一个内部对象，只能在函数内使用。"></a>this是Javascript语言的一个关键字,它代表函数运行时，自动生成的一个内部对象，只能在函数内使用。</h4>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/03/01/关于this-一直很头疼的词/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
     <article id="post-CSS 回顾(二)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -420,12 +371,8 @@ console.log(String.prototype)//可以看出length:0
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="javascript中的原型："><a href="#javascript中的原型：" class="headerlink" title="javascript中的原型："></a>javascript中的原型：</h2><p>  在javascript中所有的函数都有prototype属性，该属性是一个对象，对象是所有属性的集合，所有的对象都有一个<strong>proto</strong>属性，所有对象的<strong>proto</strong>都指向其构造器的prototype。当函数没有任何属性，prototype对象默认有constructor（指向函数本身）属性。</p>
-<pre><code>function fn(){
-    return &apos;10&apos;
-    }
-var fn2 = new fn();//从fn方法里面new出一个对象，生成对象
-console,log(fn2.__proto__===fn.prototype)为true
-</code></pre><p> 所有构造器的<strong>proto</strong>都指向Function.prototype.完全继承了prototype的属性以及方法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="string">'10'</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">const</span> fn2 = <span class="keyword">new</span> fn();<span class="comment">//从fn方法里面new出一个对象，生成对象</span></div><div class="line"><span class="built_in">console</span>,log(fn2.__proto__===fn.prototype)为<span class="literal">true</span></div></pre></td></tr></table></figure>
+<p> 所有构造器的<strong>proto</strong>都指向Function.prototype.完全继承了prototype的属性以及方法。</p>
         
       
 

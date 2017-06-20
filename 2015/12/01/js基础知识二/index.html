@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="https://niexiaofei1988.github.io">
   <title>js基础知识二 | Niexiaofei</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="javascript中的原型：  在javascript中所有的函数都有prototype属性，该属性是一个对象，对象是所有属性的集合，所有的对象都有一个proto属性，所有对象的proto都指向其构造器的prototype。当函数没有任何属性，prototype对象默认有constructor（指向函数本身）属性。 function fn(){     return &amp;apos;10&amp;apos;">
+  <meta name="description" content="javascript中的原型：  在javascript中所有的函数都有prototype属性，该属性是一个对象，对象是所有属性的集合，所有的对象都有一个proto属性，所有对象的proto都指向其构造器的prototype。当函数没有任何属性，prototype对象默认有constructor（指向函数本身）属性。 12345function fn()&amp;#123;  return &apos;10&apos;&amp;#1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js基础知识二">
 <meta property="og:url" content="https://niexiaofei1988.github.io/2015/12/01/js基础知识二/index.html">
 <meta property="og:site_name" content="Niexiaofei">
-<meta property="og:description" content="javascript中的原型：  在javascript中所有的函数都有prototype属性，该属性是一个对象，对象是所有属性的集合，所有的对象都有一个proto属性，所有对象的proto都指向其构造器的prototype。当函数没有任何属性，prototype对象默认有constructor（指向函数本身）属性。 function fn(){     return &amp;apos;10&amp;apos;">
-<meta property="og:updated_time" content="2016-02-27T13:28:00.000Z">
+<meta property="og:description" content="javascript中的原型：  在javascript中所有的函数都有prototype属性，该属性是一个对象，对象是所有属性的集合，所有的对象都有一个proto属性，所有对象的proto都指向其构造器的prototype。当函数没有任何属性，prototype对象默认有constructor（指向函数本身）属性。 12345function fn()&amp;#123;  return &apos;10&apos;&amp;#1">
+<meta property="og:updated_time" content="2017-06-20T16:02:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js基础知识二">
-<meta name="twitter:description" content="javascript中的原型：  在javascript中所有的函数都有prototype属性，该属性是一个对象，对象是所有属性的集合，所有的对象都有一个proto属性，所有对象的proto都指向其构造器的prototype。当函数没有任何属性，prototype对象默认有constructor（指向函数本身）属性。 function fn(){     return &amp;apos;10&amp;apos;">
+<meta name="twitter:description" content="javascript中的原型：  在javascript中所有的函数都有prototype属性，该属性是一个对象，对象是所有属性的集合，所有的对象都有一个proto属性，所有对象的proto都指向其构造器的prototype。当函数没有任何属性，prototype对象默认有constructor（指向函数本身）属性。 12345function fn()&amp;#123;  return &apos;10&apos;&amp;#1">
   
     <link rel="alternative" href="/atom.xml" title="Niexiaofei" type="application/atom+xml">
   
@@ -169,37 +169,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="javascript中的原型："><a href="#javascript中的原型：" class="headerlink" title="javascript中的原型："></a>javascript中的原型：</h2><p>  在javascript中所有的函数都有prototype属性，该属性是一个对象，对象是所有属性的集合，所有的对象都有一个<strong>proto</strong>属性，所有对象的<strong>proto</strong>都指向其构造器的prototype。当函数没有任何属性，prototype对象默认有constructor（指向函数本身）属性。</p>
-<pre><code>function fn(){
-    return &apos;10&apos;
-    }
-var fn2 = new fn();//从fn方法里面new出一个对象，生成对象
-console,log(fn2.__proto__===fn.prototype)为true
-</code></pre><p> 所有构造器的<strong>proto</strong>都指向Function.prototype.完全继承了prototype的属性以及方法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="string">'10'</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">const</span> fn2 = <span class="keyword">new</span> fn();<span class="comment">//从fn方法里面new出一个对象，生成对象</span></div><div class="line"><span class="built_in">console</span>,log(fn2.__proto__===fn.prototype)为<span class="literal">true</span></div></pre></td></tr></table></figure>
+<p> 所有构造器的<strong>proto</strong>都指向Function.prototype.完全继承了prototype的属性以及方法。</p>
 <a id="more"></a>
-<h3 id="javascript中的this"><a href="#javascript中的this" class="headerlink" title="javascript中的this"></a>javascript中的this</h3><h3 id="this是javascript语言的一个关键字。下边是几种用法说明。"><a href="#this是javascript语言的一个关键字。下边是几种用法说明。" class="headerlink" title="this是javascript语言的一个关键字。下边是几种用法说明。"></a>this是javascript语言的一个关键字。下边是几种用法说明。</h3><h3 id="1-在全局作用域下调用this，this指向Global-也就是window，（函数声明、匿名函数、函数表达式在全局中调用this指向window"><a href="#1-在全局作用域下调用this，this指向Global-也就是window，（函数声明、匿名函数、函数表达式在全局中调用this指向window" class="headerlink" title="1.在全局作用域下调用this，this指向Global,也就是window，（函数声明、匿名函数、函数表达式在全局中调用this指向window."></a>1.在全局作用域下调用this，this指向Global,也就是window，（函数声明、匿名函数、函数表达式在全局中调用this指向window.</h3><pre><code>（function(){
-    console.log(this)
-    }();//匿名函数
-var fn= function(){
-    console.log(this)
-}
-fn();//函数表达式
-function fn(){
-    console.log(this)
-}
-fn();//函数声明
-</code></pre><p>在上边的例子里边this指向的都是window</p>
-<h3 id="2-用new关键字构造的对象，this指向创建该对象的对象。"><a href="#2-用new关键字构造的对象，this指向创建该对象的对象。" class="headerlink" title="2.用new关键字构造的对象，this指向创建该对象的对象。"></a>2.用new关键字构造的对象，this指向创建该对象的对象。</h3><pre><code>function fn(){
-    console.log(this)
-}
-var fn2 = new fn();
-</code></pre><p>在上边例子中fn2是用new关键字声明的对象，fn()就是创建该对象给你的对象，所以这里this指向的是fn()</p>
-<h3 id="3-this当前的函数为对象属性时，this指向该对象。"><a href="#3-this当前的函数为对象属性时，this指向该对象。" class="headerlink" title="3.this当前的函数为对象属性时，this指向该对象。"></a>3.this当前的函数为对象属性时，this指向该对象。</h3><pre><code>var obj= {
-    fn:function(){
-        console.log(this)
-    }
-}
-obj.fn();
-</code></pre><p>在上边的例子里，this当前的函数为fn，fn是obj对象的一个属性，所以this指向的就是该对象（obj）.</p>
+<h3 id="javascript中的this"><a href="#javascript中的this" class="headerlink" title="javascript中的this"></a>javascript中的this</h3><h3 id="this是javascript语言的一个关键字。下边是几种用法说明。"><a href="#this是javascript语言的一个关键字。下边是几种用法说明。" class="headerlink" title="this是javascript语言的一个关键字。下边是几种用法说明。"></a>this是javascript语言的一个关键字。下边是几种用法说明。</h3><h3 id="1-在全局作用域下调用this，this指向Global-也就是window，（函数声明、匿名函数、函数表达式在全局中调用this指向window"><a href="#1-在全局作用域下调用this，this指向Global-也就是window，（函数声明、匿名函数、函数表达式在全局中调用this指向window" class="headerlink" title="1.在全局作用域下调用this，this指向Global,也就是window，（函数声明、匿名函数、函数表达式在全局中调用this指向window."></a>1.在全局作用域下调用this，this指向Global,也就是window，（函数声明、匿名函数、函数表达式在全局中调用this指向window.</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">（<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>)</div><div class="line">&#125;();<span class="comment">//匿名函数</span></div><div class="line"><span class="keyword">const</span> fn= <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>)</div><div class="line">&#125;</div><div class="line">fn();<span class="comment">//函数表达式</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>)</div><div class="line">&#125;</div><div class="line">fn();<span class="comment">//函数声明</span></div></pre></td></tr></table></figure>
+<p>在上边的例子里边this指向的都是window</p>
+<h3 id="2-用new关键字构造的对象，this指向创建该对象的对象。"><a href="#2-用new关键字构造的对象，this指向创建该对象的对象。" class="headerlink" title="2.用new关键字构造的对象，this指向创建该对象的对象。"></a>2.用new关键字构造的对象，this指向创建该对象的对象。</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>)</div><div class="line">&#125;</div><div class="line"><span class="keyword">const</span> fn2 = <span class="keyword">new</span> fn();</div></pre></td></tr></table></figure>
+<p>在上边例子中fn2是用new关键字声明的对象，fn()就是创建该对象给你的对象，所以这里this指向的是fn()</p>
+<h3 id="3-this当前的函数为对象属性时，this指向该对象。"><a href="#3-this当前的函数为对象属性时，this指向该对象。" class="headerlink" title="3.this当前的函数为对象属性时，this指向该对象。"></a>3.this当前的函数为对象属性时，this指向该对象。</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> obj= &#123;</div><div class="line">  <span class="attr">fn</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>)</div><div class="line">  &#125;,</div><div class="line">&#125;</div><div class="line">obj.fn();</div></pre></td></tr></table></figure>
+<p>在上边的例子里，this当前的函数为fn，fn是obj对象的一个属性，所以this指向的就是该对象（obj）.</p>
 
       
 

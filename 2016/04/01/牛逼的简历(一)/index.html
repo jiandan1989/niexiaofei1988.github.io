@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://niexiaofei1988.github.io/2016/04/01/牛逼的简历(一)/index.html">
 <meta property="og:site_name" content="Niexiaofei">
 <meta property="og:description" content="在网上有很多牛逼的简历，他们的简历到底都是怎么写出来的呢，其实仔细看看都是很简单的东西。有一些是自动打字然后出来效果。怎么写的呢 下面来看看(原生js不使用任何的js库)">
-<meta property="og:updated_time" content="2016-04-01T11:57:29.000Z">
+<meta property="og:updated_time" content="2017-06-20T15:55:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="牛逼的简历(-)">
 <meta name="twitter:description" content="在网上有很多牛逼的简历，他们的简历到底都是怎么写出来的呢，其实仔细看看都是很简单的东西。有一些是自动打字然后出来效果。怎么写的呢 下面来看看(原生js不使用任何的js库)">
@@ -171,55 +171,8 @@
         <p>在网上有很多牛逼的简历，他们的简历到底都是怎么写出来的呢，其实仔细看看都是很简单的东西。有一些是自动打字然后出来效果。怎么写的呢 下面来看看(原生js不使用任何的js库)</p>
 <a id="more"></a>
 <p>index.html代码</p>
-<pre><code>&lt;!doctype html&gt;
-&lt;html&gt;
-    &lt;head&gt;
-        &lt;meta charset=&quot;utf-8&quot;/&gt;
-        &lt;title&gt;测试&lt;/title&gt;
-        &lt;style type=&quot;text/css&quot;&gt;
-            body{
-                margin:0;
-            }
-            p{
-                margin:100px auto;
-                white-space:pre-wrap;
-                font-size:14px;
-                line-height:30px;
-                color:gold;
-                text-shadow:1px 1px 1px gold;
-                border:1px red solid;
-                text-indent:2rem;
-                text-align:left;
-                box-sizing:border-box;
-                padding:5px;
-            }
-        &lt;/style&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-        &lt;p id=&quot;test&quot;&gt;&lt;/p&gt;
-        &lt;script type=&quot;text/javascript&quot;&gt;
-            var str =&quot;p{\n margin:100px auto; \nwidth:200px; \nwhite-space:pre-wrap; \nfont-size:20px; \nline-height:30px; \ncolor:gold; \ntext-shadow:1px 1px 1px gold; \nborder:1px red solid; \ntext-indent:2rem; \ntext-align:center; \nbox-sizing:border-box; \npadding:5px;\n}\n&quot;;
-            var p = document.getElementById(&quot;test&quot;);
-            function automatic(obj,str){ //传入要插入的节点，要插入的文本内容
-                var timer = null;
-                var length = str.length;
-                var index = 0;
-                var req = /\n/;
-                timer = setInterval(function(){
-                    str.replace(req,&quot;&lt;br/&gt;&quot;);
-                    if(index &gt;=length-1){
-                        clearInterval(timer);
-                        timer = null;
-                    }
-                    obj.innerHTML += str[index];
-                    index++;
-                },30);
-            }
-            automatic(p,str)
-        &lt;/script&gt;
-    &lt;/body&gt;
-&lt;/html&gt;
-</code></pre><p>在这里没有引入外部的css，上面的代码有许多不足的地方，希望能够指正。后续还会有相关的。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!doctype html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>测试<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></div><div class="line">      body&#123;</div><div class="line">        margin:0;</div><div class="line">      &#125;</div><div class="line">      p&#123;</div><div class="line">        margin:100px auto;</div><div class="line">        white-space:pre-wrap;</div><div class="line">        font-size:14px;</div><div class="line">        line-height:30px;</div><div class="line">        color:gold;</div><div class="line">        text-shadow:1px 1px 1px gold;</div><div class="line">        border:1px red solid;</div><div class="line">        text-indent:2rem;</div><div class="line">        text-align:left;</div><div class="line">        box-sizing:border-box;</div><div class="line">        padding:5px;</div><div class="line">      &#125;</div><div class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"test"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">      <span class="keyword">const</span> str =<span class="string">"p&#123;\n margin:100px auto; \nwidth:200px; \nwhite-space:pre-wrap; \nfont-size:20px; \nline-height:30px; \ncolor:gold; \ntext-shadow:1px 1px 1px gold; \nborder:1px red solid; \ntext-indent:2rem; \ntext-align:center; \nbox-sizing:border-box; \npadding:5px;\n&#125;\n"</span>;</div><div class="line">      <span class="keyword">var</span> p = <span class="built_in">document</span>.getElementById(<span class="string">"test"</span>);</div><div class="line">      <span class="function"><span class="keyword">function</span> <span class="title">automatic</span>(<span class="params">obj,str</span>)</span>&#123; <span class="comment">//传入要插入的节点，要插入的文本内容</span></div><div class="line">        <span class="keyword">let</span> timer = <span class="literal">null</span>;</div><div class="line">        cosnt length = str.length;</div><div class="line">        <span class="keyword">const</span> index = <span class="number">0</span>;</div><div class="line">        <span class="keyword">const</span> req = <span class="regexp">/\n/</span>;</div><div class="line">        timer = setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">          str.replace(req,<span class="string">"&lt;br/&gt;"</span>);</div><div class="line">          <span class="keyword">if</span>(index &gt;=length<span class="number">-1</span>)&#123;</div><div class="line">            clearInterval(timer);</div><div class="line">            timer = <span class="literal">null</span>;</div><div class="line">          &#125;</div><div class="line">          obj.innerHTML += str[index];</div><div class="line">            index++;</div><div class="line">        &#125;,<span class="number">30</span>);</div><div class="line">    &#125;</div><div class="line">    automatic(p, str);</div><div class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>在这里没有引入外部的css，上面的代码有许多不足的地方，希望能够指正。后续还会有相关的。</p>
 <p>————————下次再见————————————</p>
 
       

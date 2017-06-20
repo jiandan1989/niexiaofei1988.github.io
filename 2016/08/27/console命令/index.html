@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://niexiaofei1988.github.io/2016/08/27/console命令/index.html">
 <meta property="og:site_name" content="Niexiaofei">
 <meta property="og:description" content="一、显示信息的命令在javascript调试中可以使用console的命令来代替alert或者document.write命令，不影响页面显示，也不会阻碍js的执行，内置有5种打印信息的命令，根据不同的信息使用不同的命令:">
-<meta property="og:updated_time" content="2016-12-21T12:55:38.000Z">
+<meta property="og:updated_time" content="2017-06-20T16:10:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="console命令">
 <meta name="twitter:description" content="一、显示信息的命令在javascript调试中可以使用console的命令来代替alert或者document.write命令，不影响页面显示，也不会阻碍js的执行，内置有5种打印信息的命令，根据不同的信息使用不同的命令:">
@@ -170,81 +170,32 @@
       
         <h4 id="一、显示信息的命令"><a href="#一、显示信息的命令" class="headerlink" title="一、显示信息的命令"></a>一、显示信息的命令</h4><p>在javascript调试中可以使用console的命令来代替alert或者document.write命令，不影响页面显示，也不会阻碍js的执行，内置有5种打印信息的命令，根据不同的信息使用不同的命令:</p>
 <a id="more"></a>
-<pre><code>console.log(&quot;这是log&quot;) // 打印普通信息
-console.error(&quot;这是error信息&quot;)  //错误信息
-console.info(&quot;这是info信息&quot;)     // 一般信息
-console.debug(&quot;这是debug信息&quot;) //除错信息
-console.warn(&quot;这是warn信息&quot;)
-</code></pre><h4 id="二、占位符"><a href="#二、占位符" class="headerlink" title="二、占位符"></a>二、占位符</h4><p>console对象的上面5种方法，都可以使用printf风格的占位符。不过，占位符的种类比较少，只支持字符（%s）、整数（%d或%i）、浮点数（%f）和对象（%o）四种。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="string">"这是log"</span>) <span class="comment">// 打印普通信息</span></div><div class="line"><span class="built_in">console</span>.error(<span class="string">"这是error信息"</span>)  <span class="comment">//错误信息</span></div><div class="line"><span class="built_in">console</span>.info(<span class="string">"这是info信息"</span>) 	<span class="comment">// 一般信息</span></div><div class="line"><span class="built_in">console</span>.debug(<span class="string">"这是debug信息"</span>) <span class="comment">//除错信息</span></div><div class="line"><span class="built_in">console</span>.warn(<span class="string">"这是warn信息"</span>)</div></pre></td></tr></table></figure>
+<h4 id="二、占位符"><a href="#二、占位符" class="headerlink" title="二、占位符"></a>二、占位符</h4><p>console对象的上面5种方法，都可以使用printf风格的占位符。不过，占位符的种类比较少，只支持字符（%s）、整数（%d或%i）、浮点数（%f）和对象（%o）四种。</p>
 <p>比如:</p>
-<pre><code>console.log(&quot;%d年%d月%d日&quot;,2011,3,26);     //2011年3月26日
-console.log(&quot;圆周率是%f&quot;,3.1415926);         //3.1415926
-</code></pre><p>%o占位符，可以用来查看一个对象内部情况。比如，有这样一个对象：</p>
-<pre><code>var dog = {} ;
-　　dog.name = &quot;大毛&quot; ;
-　　dog.color = &quot;黄色&quot;;    
-　    console.log(%o,dog) ==&gt;  Object{name:&quot;大毛&quot;,color:&quot;黄色&quot;}
-　    
-</code></pre><h4 id="三、分组显示"><a href="#三、分组显示" class="headerlink" title="三、分组显示"></a>三、分组显示</h4><p>如果信息太多，可以分组显示，用到的方法是console.group()和console.groupEnd()。    　    </p>
-<pre><code>console.group(&quot;第一组信息&quot;);
-　console.log(&quot;第一组第一条&quot;);
-    console.log(&quot;第一组第二条&quot;);
-console.groupEnd();
-console.group(&quot;第二组信息&quot;);
-    console.log(&quot;第二组第一条&quot;);
-    console.log(&quot;第二组第二条&quot;);
-console.groupEnd();
-</code></pre><h4 id="四、console-dir"><a href="#四、console-dir" class="headerlink" title="四、console.dir()"></a>四、console.dir()</h4><p>console.dir()可以显示一个对象所有的属性和方法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(<span class="string">"%d年%d月%d日"</span>,<span class="number">2011</span>,<span class="number">3</span>,<span class="number">26</span>);     <span class="comment">//2011年3月26日</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">"圆周率是%f"</span>,<span class="number">3.1415926</span>); <span class="comment">//3.1415926</span></div></pre></td></tr></table></figure>
+<p>%o占位符，可以用来查看一个对象内部情况。比如，有这样一个对象：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> dog = &#123;&#125; ;</div><div class="line">　　dog.name = <span class="string">"大毛"</span> ;</div><div class="line">　　dog.color = <span class="string">"黄色"</span>;</div><div class="line">　<span class="built_in">console</span>.log(%o,dog) ==&gt;  <span class="built_in">Object</span>&#123;<span class="attr">name</span>:<span class="string">"大毛"</span>,<span class="attr">color</span>:<span class="string">"黄色"</span>&#125;</div></pre></td></tr></table></figure>
+<h4 id="三、分组显示"><a href="#三、分组显示" class="headerlink" title="三、分组显示"></a>三、分组显示</h4><p>如果信息太多，可以分组显示，用到的方法是console.group()和console.groupEnd()。    　</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.group(<span class="string">"第一组信息"</span>);</div><div class="line">　<span class="built_in">console</span>.log(<span class="string">"第一组第一条"</span>);</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"第一组第二条"</span>);</div><div class="line"><span class="built_in">console</span>.groupEnd();</div><div class="line"><span class="built_in">console</span>.group(<span class="string">"第二组信息"</span>);</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"第二组第一条"</span>);</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">"第二组第二条"</span>);</div><div class="line"><span class="built_in">console</span>.groupEnd();</div></pre></td></tr></table></figure>
+<h4 id="四、console-dir"><a href="#四、console-dir" class="headerlink" title="四、console.dir()"></a>四、console.dir()</h4><p><code>console.dir()可以显示一个对象所有的属性和方法</code></p>
 <p>比如，现在为第二节的dog对象，添加一个bark()方法。</p>
-<pre><code>dog.bark = function(){alert(&quot;汪汪汪&quot;);};
-console.dir(dog) == &gt;color :&quot;黄色&quot; name:&quot;大毛&quot; bark : function()
-</code></pre><h4 id="五、console-dirxml"><a href="#五、console-dirxml" class="headerlink" title="五、console.dirxml()"></a>五、console.dirxml()</h4><p>console.dirxml()用来显示网页的某个节点（node）所包含的html/xml代码。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">dog.bark = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;alert(<span class="string">"汪汪汪"</span>);&#125;;</div><div class="line"><span class="built_in">console</span>.dir(dog) == &gt;color :<span class="string">"黄色"</span> name:<span class="string">"大毛"</span> bark : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span></div></pre></td></tr></table></figure>
+<h4 id="五、console-dirxml"><a href="#五、console-dirxml" class="headerlink" title="五、console.dirxml()"></a>五、console.dirxml()</h4><p><code>console.dirxml()用来显示网页的某个节点（node）所包含的html/xml代码。</code></p>
 <p>比如，先获取一个表格节点，</p>
-<pre><code>var table = document.getElementById(&quot;table1&quot;);
-console.dirxml(table)  ==&gt;table节点的html结构以及元素被打印出来
-</code></pre><h4 id="六、console-assert"><a href="#六、console-assert" class="headerlink" title="六、console.assert()"></a>六、console.assert()</h4><p>console.assert()用来判断一个表达式或变量是否为真。如果结果为否，则在控制台输出一条相应信息，并且抛出一个异常。</p>
+<p><code>var table = document.getElementById(&quot;table1&quot;);</code><br><code>console.dirxml(table)  ==&gt;table节点的html结构以及元素被打印出来</code></p>
+<h4 id="六、console-assert"><a href="#六、console-assert" class="headerlink" title="六、console.assert()"></a>六、console.assert()</h4><p><code>console.assert()用来判断一个表达式或变量是否为真。如果结果为否，则在控制台输出一条相应信息，并且抛出一个异常。</code></p>
 <p>比如，下面两个判断的结果都为否。</p>
-<pre><code>　　var result = 0;
-console.assert( result );
-var year = 2000;
-console.assert(year == 2011 );    
-</code></pre><h4 id="七、console-trace"><a href="#七、console-trace" class="headerlink" title="七、console.trace()"></a>七、console.trace()</h4><p>console.trace()用来追踪函数的调用轨迹。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">　　<span class="keyword">var</span> result = <span class="number">0</span>;</div><div class="line"><span class="built_in">console</span>.assert( result );</div><div class="line"><span class="keyword">var</span> year = <span class="number">2000</span>;</div><div class="line"><span class="built_in">console</span>.assert(year == <span class="number">2011</span> );</div></pre></td></tr></table></figure>
+<h4 id="七、console-trace"><a href="#七、console-trace" class="headerlink" title="七、console.trace()"></a>七、console.trace()</h4><p>console.trace()用来追踪函数的调用轨迹。</p>
 <p>比如，有一个加法器函数。</p>
-<pre><code>function add(a,b){
-    return a+b;
-　}    
-</code></pre><p>我想知道这个函数的调用，只要在函数中加入console.trace()方法就可以了</p>
-<pre><code>function add(a,b){
-    console.trace();
-    return a + b ;
-}    
-</code></pre><h4 id="八、计时功能"><a href="#八、计时功能" class="headerlink" title="八、计时功能"></a>八、计时功能</h4><p>console.time()和console.timeEnd()，用来显示代码的运行时间。</p>
-<pre><code>console.time(&quot;计时器一&quot;);
-
-for(var i=0;i&lt;1000;i++){
-    for(var j=0;j&lt;1000;j++){}
-}
-console.timeEnd(&quot;计时器一&quot;);    
-</code></pre><h4 id="九、性能分析"><a href="#九、性能分析" class="headerlink" title="九、性能分析"></a>九、性能分析</h4><p>性能分析（Profiler）就是分析程序各个部分的运行时间，找出瓶颈所在，使用的方法是console.profile()。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> a + b;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//我想知道这个函数的调用，只要在函数中加入console.trace()方法就可以了</span></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a,b</span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.trace();</div><div class="line">  <span class="keyword">return</span> a + b ;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="八、计时功能"><a href="#八、计时功能" class="headerlink" title="八、计时功能"></a>八、计时功能</h4><p>console.time()和console.timeEnd()，用来显示代码的运行时间。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">console</span>.time(<span class="string">"计时器一"</span>);</div><div class="line"></div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">1000</span>;i++)&#123;</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>;j&lt;<span class="number">1000</span>;j++)&#123;&#125;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.timeEnd(<span class="string">"计时器一"</span>);</div></pre></td></tr></table></figure>
+<h4 id="九、性能分析"><a href="#九、性能分析" class="headerlink" title="九、性能分析"></a>九、性能分析</h4><p>性能分析（Profiler）就是分析程序各个部分的运行时间，找出瓶颈所在，使用的方法是console.profile()。</p>
 <p>假定有一个函数Foo()，里面调用了另外两个函数funcA()和funcB()，其中funcA()调用10次，funcB()调用1次。</p>
-<pre><code>function Foo(){
-    for(var i=0;i&lt;10;i++){
-        funcA(1000);
-    }
-　　    　    funcB(10000);
-　　}
-
-　　function funcA(count){
-    for(var i=0;i&lt;count;i++){}
-}
-function funcB(count){
-    for(var i=0;i&lt;count;i++){}
-}    
-
-console.profile(&apos;性能分析器一&apos;);
-Foo();
-console.profileEnd();
-</code></pre><ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</div><div class="line">    funcA(<span class="number">1000</span>);</div><div class="line">  &#125;</div><div class="line">  funcB(<span class="number">10000</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">funcA</span>(<span class="params">count</span>)</span>&#123;</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;count;i++)&#123;&#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">funcB</span>(<span class="params">count</span>)</span>&#123;</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;count;i++)&#123;&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.profile(<span class="string">'性能分析器一'</span>);</div><div class="line">Foo();</div><div class="line"><span class="built_in">console</span>.profileEnd();</div></pre></td></tr></table></figure>
+<ul>
 <li><a href="http://www.ruanyifeng.com/blog/2011/03/firebug_console_tutorial.html" target="_blank" rel="external">摘自阮一峰Firebug控制台详解</a></li>
 </ul>
 

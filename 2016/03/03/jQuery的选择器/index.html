@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://niexiaofei1988.github.io/2016/03/03/jQuery的选择器/index.html">
 <meta property="og:site_name" content="Niexiaofei">
 <meta property="og:description" content="不得不说jQuery的选择器功能确实是很强大,只要是我们能想到的几乎都能找到相应的方法来实现。来看看到底有多么得强大.">
-<meta property="og:updated_time" content="2016-03-03T03:41:38.000Z">
+<meta property="og:updated_time" content="2017-06-20T16:04:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery的基本选择器用法">
 <meta name="twitter:description" content="不得不说jQuery的选择器功能确实是很强大,只要是我们能想到的几乎都能找到相应的方法来实现。来看看到底有多么得强大.">
@@ -171,34 +171,21 @@
         <h3 id="不得不说jQuery的选择器功能确实是很强大-只要是我们能想到的几乎都能找到相应的方法来实现。来看看到底有多么得强大"><a href="#不得不说jQuery的选择器功能确实是很强大-只要是我们能想到的几乎都能找到相应的方法来实现。来看看到底有多么得强大" class="headerlink" title="不得不说jQuery的选择器功能确实是很强大,只要是我们能想到的几乎都能找到相应的方法来实现。来看看到底有多么得强大."></a><span style="font-size:16px; color:red;">不得不说jQuery的选择器功能确实是很强大,只要是我们能想到的几乎都能找到相应的方法来实现。来看看到底有多么得强大.</span></h3><a id="more"></a>
 <h3 id="基本选择器"><a href="#基本选择器" class="headerlink" title="基本选择器:"></a>基本选择器:</h3><p> <span style="color:red;">#id选择器:</span>根据给定的id匹配一个元素。当id名中出现任何的元字符(如:! # $ %)等必须用两个反斜杠转义.</p>
 <p>HTML代码:</p>
-<pre><code>&lt;div id = &quot;first&quot;&gt;我是第一个&lt;/div&gt;
-&lt;div id = &quot;second[two]&quot;&gt;我是第二个&lt;/div&gt;
-</code></pre><p>jQuery 代码:</p>
-<pre><code>$(&quot;#first&quot;)          //查找匹配id名为first的元素
-$(&quot;#second\\[two\\]) //查找匹配id名为second[two]的元素，有特殊符号需要转义
-</code></pre><p> <span style="color:red;">element选择器:</span>根据给定的元素标签名匹配所有元素。</p>
-<p> HTML代码:</p>
-<pre><code>&lt;div class=&quot;first&quot;&gt;
-    &lt;div class=&quot;second&quot;&gt;&lt;span&gt;我是span&lt;/span&gt;&lt;/div&gt;
-&lt;/div&gt;
-</code></pre><p>jQuery 代码:</p>
-<pre><code>$(&quot;div&quot;) //查找到所有的div,对span不会产生影响
-</code></pre><p><span style="color:red;">.class选择器:</span>根据给定的css类名匹配元素。一个元素可以有很多个类名,但是只要有查找给定类名就会被搜索到。</p>
-<p> HTML代码:</p>
-<pre><code>&lt;div class=&quot;first&quot;&gt;我是带有first类名的div&lt;/div&gt;
-&lt;div class=&quot;first one&quot;&gt;我是带有first类名的div&lt;/div&gt;
-&lt;div class=&quot;second&quot;&gt;我是带有second类名的div&lt;/div&gt;
-</code></pre><p> jQuery代码:</p>
-<pre><code>$(&quot;.first&quot;)  //查找到带有first类名的div，不会匹配到带有second类名的div
-</code></pre><p><span style="color:red;">*(通配)选择器:</span>匹配文档中所有的元素。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span> = <span class="string">"first"</span>&gt;</span>我是第一个<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span> = <span class="string">"second[two]"</span>&gt;</span>我是第二个<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>jQuery 代码:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">$(<span class="string">"#first"</span>)          <span class="comment">//查找匹配id名为first的元素</span></div><div class="line">$(<span class="string">"#second\\[two\\]) //查找匹配id名为second[two]的元素，有特殊符号需要转义</span></div></pre></td></tr></table></figure>
+<p><span style="color:red;">element选择器:</span>根据给定的元素标签名匹配所有元素。<br>HTML代码:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"first"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"second"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span>&gt;</span>我是span<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>jQuery 代码:<br><code>$(&quot;div&quot;) //查找到所有的div,对span不会产生影响</code><br><span style="color:red;">.class选择器:</span>根据给定的css类名匹配元素。一个元素可以有很多个类名,但是只要有查找给定类名就会被搜索到。</p>
 <p>HTML代码:</p>
-<pre><code>&lt;div class=&quot;first&quot;&gt;
-    &lt;div class=&quot;second&quot;&gt;我是div&lt;/div&gt;
-    &lt;span&gt;我是span&lt;/span&gt;
-&lt;/div&gt;
-</code></pre><p>jQuery代码:</p>
-<pre><code>$(&quot;*&quot;) //匹配所有的元素，不管你是什么样的标签
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"first"</span>&gt;</span>我是带有first类名的div<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"first one"</span>&gt;</span>我是带有first类名的div<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"second"</span>&gt;</span>我是带有second类名的div<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p> jQuery代码:<br><code>$(&quot;.first&quot;)  //查找到带有first类名的div，不会匹配到带有second类名的div</code></p>
+<p><span style="color:red;">*(通配)选择器:</span>匹配文档中所有的元素。</p>
+<p>HTML代码:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"first"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"second"</span>&gt;</span>我是div<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>我是span<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>jQuery代码:</p>
+<p><code>$(&quot;*&quot;) //匹配所有的元素，不管你是什么样的标签</code></p>
+
       
 
       
