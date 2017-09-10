@@ -145,6 +145,233 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="mongodb-express" class="article article-type-mongodb  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/10/express/">express</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/10/express/" class="archive-article-date">
+  	<time datetime="2017-09-10T03:55:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-10</time>
+</a>
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="下内容来自github开源社区N-blog"><a href="#下内容来自github开源社区N-blog" class="headerlink" title="下内容来自github开源社区N-blog"></a>下内容来自<a href="https://github.com/nswbmw/N-blog" target="_blank" rel="external">github开源社区N-blog</a></h1><p>由于记性比较差点,所以选择按照步骤,文字一个一个敲一遍,由于是开源社区,所以并没有征求所<a href="https://github.com/nswbmw" target="_blank" rel="external">创建者</a>的同意,如有需要,可以删除</p>
+<h2 id="Mongodb-Nodejs-Express-搭建博客"><a href="#Mongodb-Nodejs-Express-搭建博客" class="headerlink" title="Mongodb + Nodejs + Express 搭建博客"></a>Mongodb + Nodejs + Express 搭建博客</h2><h3 id="安装Nodejs"><a href="#安装Nodejs" class="headerlink" title="安装Nodejs"></a>安装Nodejs</h3><blockquote>
+<p>安装Nodejs 有三种方式</p>
+<p>一是通过安装包安装,二是通过源码编译安装,三是在Linux下可以通过<code>yum|apt-get</code>安装,在Mac 下可以通过<a href="https://brew.sh/" target="_blank" rel="external">Homebrew</a>安装,对于Windows和Mac用户,推荐使用安装包安装,Linux用户推荐使用源码编译安装</p>
+</blockquote>
+<h4 id="Windows-和-Mac-安装"><a href="#Windows-和-Mac-安装" class="headerlink" title="Windows 和 Mac 安装"></a>Windows 和 Mac 安装</h4><ul>
+<li>打开<a href="https://nodejs.org/en/" target="_blank" rel="external">Nodejs官网</a>可以看到有两个下载选项,一个LTS版本,是长期支持版本,大多数人使用这个就可以了,右边是最新版本,支持最新的语言特性,(比如ES6的支持更全面),想尝试新特性的开发者可以安装这个版本,我们选择左边的LTS点击下载</li>
+</ul>
+<blockquote>
+<p>提示: 从 <a href="http://node.green" target="_blank" rel="external">http://node.green</a>上可以看到Nodejs各个版本对ES6的支持情况</p>
+</blockquote>
+<ul>
+<li><p>第二步: 安装Nodejs,没有什么好说的,和其他的安装程序一样,一路点击<code>继续</code>即可</p>
+</li>
+<li><p>第三步: 提示安装成功后,打开终端输入一下命令,可以看到<code>node</code>和<code>npm</code>都已经安装好了,在Windows系统下,在安装中如果没有勾选配置环境变量,需要自己手动添加环境变量</p>
+</li>
+<li><p>Linux 安装: 可通过源码编译安装</p>
+</li>
+</ul>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">curl -O http<span class="variable">s:</span>//nodejs.org/dist/v6.<span class="number">9.1</span>/node-v6.<span class="number">9.1</span>.tar.gz</div><div class="line">tar -xzvf node-v6.<span class="number">9.1</span>.tar.gz</div><div class="line"><span class="keyword">cd</span> node-v6.<span class="number">9.1</span></div><div class="line">./configure</div><div class="line"><span class="keyword">make</span></div><div class="line"><span class="keyword">make</span> install</div></pre></td></tr></table></figure>
+<blockquote>
+<p>注意: 如果编译过程报错,可能是缺少某些依赖包,因为报错内容不尽相同,请自行求助搜索引擎或<a href="https://stackoverflow.com/" target="_blank" rel="external">stackoverflow</a></p>
+</blockquote>
+<h4 id="n-和-nvm"><a href="#n-和-nvm" class="headerlink" title="n 和 nvm"></a>n 和 nvm</h4><blockquote>
+<p>当我们需要想尝试某些新的特性时,可能会需要有多个版本的Node存在,多个版本的Node可能会造成混乱,这个时候就需要使用一个版本管理工具来统一管理,<a href="https://github.com/tj/n" target="_blank" rel="external">n</a>和<a href="https://github.com/creationix/nvm" target="_blank" rel="external">nvm</a>,关于n和nvm两者的使用区别,请参考<a href="http://taobaofed.org/blog/2015/11/17/nvm-or-n/" target="_blank" rel="external">这篇文章</a></p>
+</blockquote>
+<h4 id="nrm"><a href="#nrm" class="headerlink" title="nrm"></a>nrm</h4><blockquote>
+<p><a href="">nrm</a>是一个管理npm 源的工具,用过ruby和gem的同学可能会比较熟悉,通常我们会把gem源切到国内的淘宝镜像,这样在安装和更新一些包的时候比较快,nrm同理,用来切换官方npm源和国内的npm源(如<a href="https://cnpmjs.org/" target="_blank" rel="external">cnpm</a>)当然也可以用来切换官方</p>
+</blockquote>
+<p>全局安装nrm:</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">npm i nrm -g</div><div class="line"></div><div class="line"># 查看当前nrm内置的几个npm源的地址</div><div class="line">nrm <span class="keyword">ls</span></div><div class="line"></div><div class="line"># 切换npm 源</div><div class="line"></div><div class="line">nrm use cnpm</div></pre></td></tr></table></figure>
+<h3 id="require"><a href="#require" class="headerlink" title="require"></a>require</h3><blockquote>
+<p>require用来加载一个文件的代码,关于require的机制请仔细阅读<a href="https://nodejs.org/api/modules.html" target="_blank" rel="external">官方文档</a></p>
+</blockquote>
+<p>简单概括一下几点:</p>
+<ul>
+<li><p>require可记载.js,.json和.node后缀的文件</p>
+</li>
+<li><p>require的过程是同步的,所以这样是错误的</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">setTimeou(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">  <span class="built_in">module</span>.exports = &#123; <span class="attr">a</span>: <span class="string">'hello'</span> &#125;;</div><div class="line">&#125;, <span class="number">0</span>)</div></pre></td></tr></table></figure>
+<p>require这个文件得到的是空对象<code>{}</code></p>
+<ul>
+<li><p>require目录的机制是:</p>
+<ul>
+<li><p>如果目录下有package.json并制定了main字段,则用之</p>
+</li>
+<li><p>如果不存在package.json,则一次尝试加载目录下的index.js,和index.node</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>require过的文件会加载到缓存,所以多次require同一个文件(模块)不会重复加载</p>
+<ul>
+<li><p>判断是否是程序的入口文件有两种方式:</p>
+<ul>
+<li><p>require.main === module (推荐)</p>
+</li>
+<li><p>module.parent === null</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="循环引用"><a href="#循环引用" class="headerlink" title="循环引用"></a>循环引用</h4><blockquote>
+<p>循环引用(或循环依赖)简单点来说就是a文件Require了b文件,然后b文件又反过来require了a文件,我们用a -&gt; 代表b require 了a</p>
+</blockquote>
+<h2 id="exports-和-module-exports"><a href="#exports-和-module-exports" class="headerlink" title="exports 和 module.exports"></a>exports 和 module.exports</h2><blockquote>
+<p>require是用来加载代码,而exports 和 module.exports 则用来导出代码</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// test.js</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> a = &#123; <span class="attr">name</span>: <span class="number">1</span> &#125;;</div><div class="line"><span class="keyword">var</span> b = a ;</div><div class="line"><span class="built_in">console</span>.log(a);</div><div class="line"><span class="built_in">console</span>.log(b);</div><div class="line"></div><div class="line">b.name = <span class="number">2</span>;</div><div class="line"><span class="built_in">console</span>.log(a);</div><div class="line"><span class="built_in">console</span>.log(b);</div><div class="line"></div><div class="line"><span class="keyword">var</span> b = &#123; <span class="attr">name</span>: <span class="number">3</span> &#125;;</div><div class="line"><span class="built_in">console</span>.log(a);</div><div class="line"><span class="built_in">console</span>.log(b);</div><div class="line"><span class="comment">/**</span></div><div class="line">解释: a是一个对象,b是对a的引用,即a和b指向同一块内存,所以前两个输出一样,当对b作修改时,即a和b指向同一块内存地址的内容发生了改变,所以a也会体现出来,所以第三四个输出一样,当b被覆盖时,b自新增了一块新的内存,a还是指向原来的内存,所以最后两个输出不一样</div><div class="line">**/</div></pre></td></tr></table></figure>
+<ul>
+<li><p>1.module.exports 初始值为一个空对象{}</p>
+</li>
+<li><ol>
+<li>exports 是指向的module.exports 的引用</li>
+</ol>
+</li>
+<li><ol>
+<li>require()返回的是module.exports 而不是exports</li>
+</ol>
+</li>
+</ul>
+<h3 id="semever"><a href="#semever" class="headerlink" title="semever"></a>semever</h3><blockquote>
+<p>语义化版本(semver)即dependencies, devDependencied和peerDependencies</p>
+</blockquote>
+<p>semever格式: 主版本号.次版本号.修订号</p>
+<ul>
+<li><p>主版本号: 做了不兼容的API修改</p>
+</li>
+<li><p>次版本号: 做了向下兼容的功能性新增</p>
+</li>
+<li><p>修订号:做了向下兼容的bug修正</p>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/10/express/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-javascript高级设计" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>title: javascript高级设计<br>date: 2017-09-09 13:41:12</p>
+<h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><h3 id="操作符"><a href="#操作符" class="headerlink" title="操作符"></a>操作符</h3><ul>
+<li>逻辑与</li>
+</ul>
+<p>逻辑与操作符由两个和号(&amp;&amp;)表示,有两个操作数,如下面的例子所示</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">第一个操作数</th>
+<th style="text-align:left">第二个操作数</th>
+<th style="text-align:left">结果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">true</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">true</td>
+</tr>
+<tr>
+<td style="text-align:left">true</td>
+<td style="text-align:left">false</td>
+<td style="text-align:left">false</td>
+</tr>
+<tr>
+<td style="text-align:left">false</td>
+<td style="text-align:left">true</td>
+<td style="text-align:left">false</td>
+</tr>
+<tr>
+<td style="text-align:left">false</td>
+<td style="text-align:left">false</td>
+<td style="text-align:left">false</td>
+</tr>
+</tbody>
+</table>
+<p>逻辑与操作可以应用于任何类型的操作数,而不仅仅是布尔值,在有一个操作数不是布尔值的情况下,逻辑与操作不一定返回布尔值,此时,它遵循下列规则</p>
+<ul>
+<li><p>如果第一个操作数是对象,则返回第二个操作数</p>
+</li>
+<li><p>如果第二个操作数是对象,则只有在第一个操作数的求值结果是true的情况下才会返回该对象</p>
+</li>
+<li><p>如果两个操作数都是对象,则返回第二个操作数</p>
+</li>
+<li><p>如果第一个操作数是NaN,则返回NaN</p>
+</li>
+<li><p>如果第一个操作数是null,则返回null</p>
+</li>
+<li><p>如果第一个操作数是undefined,这返回undefined</p>
+</li>
+</ul>
+<p>逻辑与操作属于短路操作,即如果第一个操作数能够决定结果,那么就不会再对第二个操作数求值,对于逻辑与操作而言,如果第一个操作数是false,则无论第二个操作数是什么值,结果都不再可能是true</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/09/javascript高级设计/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-TypeScript(基础知识一)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -566,108 +793,9 @@
 
 
   
-    <article id="post-调用相机" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/16/调用相机/">调用相机</a>
-    </h1>
-  
-
-        
-        <a href="/2016/05/16/调用相机/" class="archive-article-date">
-  	<time datetime="2016-05-15T16:50:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-05-16</time>
-</a>
-
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>关于调用相机，我纠结了很久，终于是有点小进步了———<br>在做移动端的时候有很多都要求是调用相机的，在微信开发文档中有关于调用相机的API,在经过查看mozilla开发文档中可以看到有调用相机的开发。先看下边的代码吧</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/05/16/调用相机/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-面向对象-一" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/05/面向对象-一/">面向对象(一)</a>
-    </h1>
-  
-
-        
-        <a href="/2016/04/05/面向对象-一/" class="archive-article-date">
-  	<time datetime="2016-04-05T10:58:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-04-05</time>
-</a>
-
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Javascript是一种基于对象的语言，你遇到的所有东西几乎都是对象，但是，它又不是一种真正的面向对象编程(OOP)语言，因为它的语法中没有class（类）。</p>
-<p>那么，如果我们要把”属性”(property)和”方法”(method)，封装成一个对象，甚至要从原型对象生成一个实例对象，我们应该怎么做呢？</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/04/05/面向对象-一/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 

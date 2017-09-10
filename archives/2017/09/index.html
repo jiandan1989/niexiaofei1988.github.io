@@ -6,18 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://niexiaofei1988.github.io">
-  <title>TypeScript(基础知识一) | Niexiaofei</title>
+  <title>Archives: 2017/9 | Niexiaofei</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="定义 语言特性 安装 测试 基础类型 键入断言 interface接口 类 功能   定义 TypeScript是一种由微软开发的只有和开源的编程语言,它是Javascript的一个超集(超集:等于是类型检查以及Javascript混合,Type + Javascript),扩展Javascript的语法">
-<meta property="og:type" content="article">
-<meta property="og:title" content="TypeScript(基础知识一)">
-<meta property="og:url" content="https://niexiaofei1988.github.io/2017/07/18/TypeScript(基础知识一)/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Niexiaofei">
+<meta property="og:url" content="https://niexiaofei1988.github.io/archives/2017/09/index.html">
 <meta property="og:site_name" content="Niexiaofei">
-<meta property="og:description" content="定义 语言特性 安装 测试 基础类型 键入断言 interface接口 类 功能   定义 TypeScript是一种由微软开发的只有和开源的编程语言,它是Javascript的一个超集(超集:等于是类型检查以及Javascript混合,Type + Javascript),扩展Javascript的语法">
-<meta property="og:updated_time" content="2017-07-20T16:07:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TypeScript(基础知识一)">
-<meta name="twitter:description" content="定义 语言特性 安装 测试 基础类型 键入断言 interface接口 类 功能   定义 TypeScript是一种由微软开发的只有和开源的编程语言,它是Javascript的一个超集(超集:等于是类型检查以及Javascript混合,Type + Javascript),扩展Javascript的语法">
+<meta name="twitter:title" content="Niexiaofei">
   
     <link rel="alternative" href="/atom.xml" title="Niexiaofei" type="application/atom+xml">
   
@@ -147,226 +143,73 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-TypeScript(基础知识一)" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      TypeScript(基础知识一)
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-mongodb">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/09/10/express/" class="archive-article-date">
+  	<time datetime="2017-09-10T03:55:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-10</time>
+</a>
+
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/09/10/express/">express</a>
     </h1>
   
 
-        
-        <a href="/2017/07/18/TypeScript(基础知识一)/" class="archive-article-date">
-  	<time datetime="2017-07-18T15:49:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-18</time>
-</a>
+        <div class="article-info info-on-right">
+          
+          
 
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- TOC -->
-<ul>
-<li><a href="#定义">定义</a></li>
-<li><a href="#语言特性">语言特性</a></li>
-<li><a href="#安装">安装</a></li>
-<li><a href="#测试">测试</a></li>
-<li><a href="#基础类型">基础类型</a></li>
-<li><a href="#键入断言">键入断言</a></li>
-<li><a href="#interface接口">interface接口</a></li>
-<li><a href="#类">类</a></li>
-<li><a href="#功能">功能</a></li>
-</ul>
-<!-- /TOC -->
-<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><blockquote>
-<p>TypeScript是一种由微软开发的只有和开源的编程语言,它是Javascript的一个超集(超集:等于是类型检查以及Javascript混合,Type + Javascript),扩展Javascript的语法</p>
-</blockquote>
-<a id="more"></a>
-<h3 id="语言特性"><a href="#语言特性" class="headerlink" title="语言特性"></a>语言特性</h3><ul>
-<li>类: class</li>
-<li>接口: interface</li>
-<li>模块: modules</li>
-<li>类型注解: Type annotations</li>
-<li>编译时类型检查: Compile time type checking</li>
-<li>Arrow 函数(类似C# 的Lambda表达式)</li>
-</ul>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ul>
-<li>通过Node.js包管理器(NPM)</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm install -g typescript <span class="comment">// 安装完成之后,我们就可以使用Typescript的编译器,名称为tsc,可将编译结果生成Js文件</span></div><div class="line"></div><div class="line">tsc filename.ts <span class="comment">// 编译ts后缀文件</span></div></pre></td></tr></table></figure>
-<ul>
-<li>通过与 Visual Studio 2012 继承的 MSI.(<a href="https://marketplace.visualstudio.com/items?itemName=TypeScriptTeam.TypeScript10ToolsforVisualStudio2012" target="_blank" rel="external">点击下载</a>)</li>
-</ul>
-<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><blockquote>
-<p>创建greeter.ts</p>
-</blockquote>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">greeter</span>(<span class="params">person</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="string">`Hello <span class="subst">$&#123;person&#125;</span>`</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> user = <span class="string">'聂晓飞'</span>;</div><div class="line"><span class="built_in">document</span>.body.innerHTML = greeter(user);</div></pre></td></tr></table></figure>
-<blockquote>
-<p>编译代码</p>
-</blockquote>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tsc greeter.<span class="keyword">ts</span> // 在同目录下生成一个greeter.js文件</div></pre></td></tr></table></figure>
-<h3 id="基础类型"><a href="#基础类型" class="headerlink" title="基础类型"></a>基础类型</h3><ul>
-<li>Boolean: 布尔类型 如<code>let isDone: Boolean = false;</code></li>
-<li>Number: 数值类型 如 <code>let decimal: number = 6;</code></li>
-<li>string: 字符串类型 如 <code>let color: string = &#39;blue&#39;;</code></li>
-<li>数组类型: 如 <code>(第一种方法)let list: number[] = [1, 2, 3];(第二种方法) let list: Array&lt;number&gt; = [1, 2, 3];</code></li>
-<li>元组: 元组类型允许您表达一个数组,其中固定数量的元素的类型是已知的,但不一定相同</li>
-<li>枚举: 对Javascript的标准数据类行的一个有益的补充是<code>enum</code>,枚举是一种给数组值更多的友好名称的方法<code>enum Color { Red, Green, Blue }; let c: Color = Color.Green;</code>, 枚举的一个方便的功能是,你也可以从枚举中的数值到该值的名称,例如,如果我们有价值2单不知道Color上面的枚举映射什么,我们可以查找对应的名称<code>let colorName: string = Color[2];</code></li>
-<li>任意类型: 不确定变量类型时可以用<code>any</code>类型代替,并且当定义一个数组时,不确定数组元素的类型,可以<code>let list: any[] = [1, 2, &#39;4&#39;];</code></li>
-<li>空值(void): 为空类型</li>
-<li>null 和 undefined: 空 和 未定义</li>
-<li>never: 表示没有值的类型 如 <code>function error(message: string) :never { throw new Error(message);}</code></li>
-<li>多种类型可以用<code>|</code>隔开,比如<code>number|string|boolean</code>表示可以是<code>number</code> <code>string</code> 和 <code>boolean</code>类型</li>
-</ul>
-<h3 id="键入断言"><a href="#键入断言" class="headerlink" title="键入断言"></a>键入断言</h3><blockquote>
-<p>有时候当知道某个实体的类型可能比其当前类型更具体时,会发生这种情况,类型断言是一种告诉编译器,我知道正在做什么的一种方式,类性断言就像其他语言中的类型转换,但不执行特殊检查或重组数据,它没有运行时影响,纯粹由编译器使用</p>
-</blockquote>
-<p>类型断言有两种形式,一种是<code>&lt;&gt;</code>语法</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 第一种</span></div><div class="line"><span class="keyword">let</span> someValue: <span class="built_in">any</span> = <span class="string">'this is a string'</span>;</div><div class="line"><span class="keyword">let</span> strLength: <span class="built_in">number</span> = (&lt;<span class="built_in">string</span>&gt;someValue).length;</div><div class="line"></div><div class="line"><span class="comment">// 第二种 as 合成</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> someValue: <span class="built_in">any</span> = <span class="string">'this is a string'</span>;</div><div class="line"><span class="keyword">let</span> strLength: <span class="built_in">number</span> = (someValue as <span class="built_in">string</span>).length;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>两个示例是等效的,使用其中一个主要是偏好的选择,然而当与JSX一起使用Typescript时,只能使用<code>as</code>进行断言</p>
-</blockquote>
-<h3 id="interface接口"><a href="#interface接口" class="headerlink" title="interface接口"></a>interface接口</h3><blockquote>
-<p>TypeScript 的核心原则之一是对值所具有的结构进行类型检查,它有时被称作”鸭式辨型法”或”结构性子类型化”在Typescript里,接口的作用就是为这些类型命名和未你的代码或第三方代码定义契约</p>
-</blockquote>
-<ul>
-<li>接口初探:</li>
-</ul>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">printLabel</span>(<span class="params">labelObj: &#123; label: <span class="built_in">string</span> &#125;</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(labelObj.label);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> myObj = &#123; size: <span class="number">10</span>, label: <span class="string">'Size 10 Object'</span> &#125;;</div><div class="line">printLabel(myObj);</div></pre></td></tr></table></figure>
-<blockquote>
-<p>类型检查器会查看<code>printLabel</code>的调用,<code>printLabel</code>有一个参数,并要求这个对象参数有一个名为<code>label</code>类型为<code>string</code>属性,需要注意的是我们传入的对象参数实际上会包含很多属性,但是编译器只会检查那些必须的属性是否存在,并且其类型是否匹配</p>
-</blockquote>
-<ul>
-<li>重写上面的例子,这次试用接口来描述,必须包含一个<code>label</code>属性且类型为<code>string</code></li>
-</ul>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">interface</span> LabeledValue &#123;</div><div class="line">  label: <span class="built_in">string</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">printLabel</span>(<span class="params">labelObj: LabeledValue</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(labelObj.label);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> myObj = &#123; size: <span class="number">10</span>, label: <span class="string">'Size 10 Object'</span> &#125;;</div><div class="line">printLabel(myObj);</div></pre></td></tr></table></figure>
-<p><code>LabeledValue</code> 接口就好比一个名字,用来描述上面例子的要求,它代表了有一个<code>label</code>属性且类型为<code>string</code>的对象,需要注意的是,我们在这里并不能像在其他语言里一样,说传给<code>printLabel</code>的对象实现了这个接口,我们只会去关注值的外形,只要传入的对象满足上面提到的必要条件,那么它就是被允许的,还有一点值得提的是,类型检查器不会去检查属性的顺序,只要相应的属性存在并且类型也是对的就可以</p>
-<ul>
-<li>可选属性</li>
-</ul>
-<blockquote>
-<p>接口里的属性不却都是必须的,有些事只在某些条件下存在,或者根本不存在,可选属性在应用<code>option bags</code>模式下很常用,即给函数传入的参数中只有部分属性赋值了</p>
-</blockquote>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">interface</span> SquareConfig &#123;</div><div class="line">  color?: <span class="built_in">string</span>;</div><div class="line">  width?: <span class="built_in">number</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createSquare</span>(<span class="params">config: SquareConfig</span>) : </span>&#123;color: <span class="built_in">string</span>; area: <span class="built_in">number</span>&#125; &#123;</div><div class="line">  <span class="keyword">let</span> newSquare = &#123; color: <span class="string">'white'</span>, area: <span class="number">100</span> &#125;;</div><div class="line">  <span class="keyword">if</span>(config.color) &#123;</div><div class="line">    newSquare.color = config.color;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">if</span>(config.width) &#123;</div><div class="line">    newSquare.area = config.width * config.width;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">return</span> newSquare;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> mySquare = createSquare(&#123; color: <span class="string">'black'</span> &#125;);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(mySquare);</div></pre></td></tr></table></figure>
-<ul>
-<li>只读属性</li>
-</ul>
-<blockquote>
-<p>一些对象属性只能在对象刚刚创建的时候修改其值,你可以再属性名前用<code>readonly</code>来指定只读属性</p>
-</blockquote>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">interface</span> Point &#123;</div><div class="line">  readonly x: <span class="built_in">number</span>;</div><div class="line">  readonly y: <span class="built_in">number</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">let</span> p1: Point = &#123; x: <span class="number">10</span>, y: <span class="number">20</span> &#125;;</div><div class="line">p1.x = <span class="number">5</span> <span class="comment">// error</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>Typescript 具有<code>ReadonlyArray&lt;T&gt;</code>类型,它与<code>Array&lt;T&gt;</code>相似,只是把所有的可变方法去掉了,因此可以确保数组创建后再也不能被修改:</p>
-</blockquote>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> a: <span class="built_in">number</span>[] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</div><div class="line"><span class="keyword">let</span> ro: ReadonlyArray&lt;<span class="built_in">number</span>&gt; = a;</div><div class="line">ro[<span class="number">0</span>] = <span class="number">12</span>; <span class="comment">// error</span></div><div class="line">ro.push(<span class="number">1</span>); <span class="comment">// error</span></div><div class="line">ro.length = <span class="number">100</span>; <span class="comment">//error</span></div><div class="line">a = ro; <span class="comment">// error</span></div></pre></td></tr></table></figure>
-<blockquote>
-<p>上面代码的最后一行,可以看到就算把整个<code>ReadonlyArray</code>赋值到一个普通数组也是不可以的,但是你可以用类型断言重写</p>
-</blockquote>
-<p><code>a = ro as number[];</code></p>
-<h3 id="类"><a href="#类" class="headerlink" title="类"></a>类</h3><h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <!--<a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>-->
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://niexiaofei1988.github.io/2017/07/18/TypeScript(基础知识一)/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/09/09/javascript高级设计/" class="archive-article-date">
+  	<time datetime="2017-09-09T05:41:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-09</time>
+</a>
 
-  
-<nav id="article-nav">
-  
-    <a href="/2017/09/09/javascript高级设计/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2016/12/18/Javascript设计模式/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Javascript设计模式</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
+        </div>
+    	 
+        <div class="article-info info-on-right">
+          
+          
 
-
-
-
-
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
   
   
+    </div></section>
   
 
-  
+    
 
-  
 
 
           </div>
@@ -390,8 +233,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
