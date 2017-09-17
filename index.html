@@ -12,6 +12,7 @@
 <meta property="og:title" content="Niexiaofei">
 <meta property="og:url" content="https://niexiaofei1988.github.io/index.html">
 <meta property="og:site_name" content="Niexiaofei">
+<meta property="og:locale" content="zh">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Niexiaofei">
   
@@ -144,6 +145,142 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-encodeURI和encodeURIComponent的区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>title: encodeURI和encodeURIComponent的区别<br>date: 2017-09-17 15:12:37</p>
+<h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><p>两种方法都可以对URI(Uniform Resource Idenifiers) 通用资源标识符进行编码,以便发送给浏览器,有效的URI中不能包含某些字符,例如空格,而这两个URI编码方法就可以对URI进行编码,他们用特殊的UTF-8编码替换所有无效的字符,从而让浏览器能够接受和理解</p>
+<p>其中,encodeURI主要用于整个URI,而encodeURIComponent主要用于对URI中的某一段进行编码,他们的主要区别在于,encodeURI不会对本身属于URI的特殊字符进行编码,例如冒号,正邪杠问好和精只好,而encodeURIComponent这会对它发现的任何非标准字符进行编码</p>
+<p>使用encodeURI编码后的结果是除了空格之外的其他字符都原封不动,只有空格被替换成了<code>%20</code>,而encodeURIComponent方法则会使用对应的编码替换所有费支付数字字符,这也正是可以对整个URI使用encodeURI,而只能对附加在现有URI后面的字符使用encodeURIComponent的原因所在</p>
+<p>对应的解码方法就是encodeURI —&gt; decodeURI,encodeURIComponent —-&gt;decodeURIComponent,只能使用对应的解码方法才能正确的解码</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/17/encodeURI和encodeURIComponent的区别/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="整理git-常用命令" class="article article-type-整理git  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/11/常用命令/">常用命令</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/11/常用命令/" class="archive-article-date">
+  	<time datetime="2017-09-11T15:57:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-11</time>
+</a>
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"># 配置用户名: git config --<span class="keyword">global</span> user.name <span class="string">"xxx"</span></div><div class="line"></div><div class="line"># 配置邮箱: git config --<span class="keyword">global</span> user.email <span class="string">"xxx@xxx.com"</span></div><div class="line"></div><div class="line"># git status 等命令行自动着色 :</div><div class="line"></div><div class="line">git config --<span class="keyword">global</span> color.ui true</div><div class="line"></div><div class="line">git config --<span class="keyword">global</span> color.status auto</div><div class="line"></div><div class="line">git config --<span class="keyword">global</span> color.diff auto</div><div class="line"></div><div class="line">git config --<span class="keyword">global</span> color.branch auto</div><div class="line"></div><div class="line">git config --<span class="keyword">global</span> color.interactive auto</div><div class="line"></div><div class="line"># <span class="built_in">remove</span> proxy configuration <span class="keyword">on</span> gi<span class="variable">t:</span> git config --<span class="keyword">global</span> --unset http.proxy</div><div class="line"></div><div class="line"># 查看配置: git config --<span class="keyword">list</span> (也可以通过 git config <span class="symbol">&lt;key&gt;</span>的方式查看某一项配置)</div></pre></td></tr></table></figure>
+<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">git init ; 初始化一个git仓库</div><div class="line"></div><div class="line">git clone : 从远程下载一个git 项目</div><div class="line"></div><div class="line">git branch : 查看本地分支情况</div><div class="line"></div><div class="line">git status : 查看当前文件状态</div><div class="line"></div><div class="line">git status -s, git status --short: 简短状态查看</div><div class="line"></div><div class="line">git add &lt;filename&gt; || git add .: 跟踪新文件 || 跟踪所有修改过的文件</div><div class="line"></div><div class="line">.gitignore: 在根目录下创建一个.gitignore文件,将不需要跟踪或者提交的文件名写进去,忽略该文件</div><div class="line"></div><div class="line">git diff: 查看已暂存和为暂存的修改,比对文件</div><div class="line"></div><div class="line">git diff --cached, git diff --staged: 查看已暂存的将要添加到下次提交里的内容</div><div class="line"></div><div class="line">git commit -m "提交信息": 提交更新</div><div class="line"></div><div class="line">git mv file_from file_to: 移动文件,直接修改文件名,相当于三条命令 git rm file_from, git add file_to</div><div class="line"></div><div class="line">git log : 查看提交记录,可以添加参数, -p 显示每次提交的内容差异,也可以加上 -2显示最近两次提交</div><div class="line"></div><div class="line">git reset HEAD filename: 取消暂存</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/11/常用命令/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="npm-常见使用命令" class="article article-type-npm  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/11/常见使用命令/">常见使用命令</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/11/常见使用命令/" class="archive-article-date">
+  	<time datetime="2017-09-10T16:05:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-11</time>
+</a>
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight vim"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">update</span> [-g] &lt;package name&gt; # 全局更新</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/11/常见使用命令/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
   
     <article id="mongodb-express" class="article article-type-mongodb  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -622,163 +759,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2016/08/24/前端技能/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-webpack-demo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/24/webpack-demo/">webpack-demo</a>
-    </h1>
-  
-
-        
-        <a href="/2016/08/24/webpack-demo/" class="archive-article-date">
-  	<time datetime="2016-08-23T16:50:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-08-24</time>
-</a>
-
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><code>webpack</code></p>
-<p>本文摘自不知道是谁写的 号称一小时玩转webpack(不好意思，不知道名，所以不能写名字了)</p>
-<p><code>什么是webpack?</code></p>
-<p>前端框架的兴起，随后就是各种加载、打包模块的工具，像grunt/glup这种的工具。每个工具都有比较好的打包命令，在使用webpack之前我们先了解下到底什么是webpack?</p>
-<p>webpack是近期最火的一款模块加载器兼打包工具，它能把各种资源，例如JS（含JSX）、coffee、样式（含less/sass）、图片等都作为模块来使用和处理。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/08/24/webpack-demo/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-nodejs-path对象" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/07/11/nodejs-path对象/">nodejs path对象</a>
-    </h1>
-  
-
-        
-        <a href="/2016/07/11/nodejs-path对象/" class="archive-article-date">
-  	<time datetime="2016-07-11T14:59:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-07-11</time>
-</a>
-
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>NodeJS中的Path对象，用于处理目录的对象，提高开发效率。</p>
-<p>用NodeJS的Path命令，与使用Linux下的shell脚本命令相似。</p>
-<p>引入path对象</p>
-<p><code>const path = require(&#39;path&#39;);</code></p>
-<p>比较实用的方法：</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/07/11/nodejs-path对象/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-  
-    <article id="post-每日小知识一" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/05/每日小知识一/">每日小知识</a>
-    </h1>
-  
-
-        
-        <a href="/2016/06/05/每日小知识一/" class="archive-article-date">
-  	<time datetime="2016-06-05T15:19:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-06-05</time>
-</a>
-
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>title: 每日小知识<br>date: 2016-06-05 23:19:23</p>
-<h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><h3 id="js弹出框、对话框、提示框、弹框总结"><a href="#js弹出框、对话框、提示框、弹框总结" class="headerlink" title="js弹出框、对话框、提示框、弹框总结"></a>js弹出框、对话框、提示框、弹框总结</h3><p>当我们浏览网页时，总是会有弹出框弹出，这些弹出框是怎么实现的呢，接下来我们看看弹出框的实现，本文摘自anhuidelinger的博客</p>
-<h4 id="一、JS的三种最常见的对话框"><a href="#一、JS的三种最常见的对话框" class="headerlink" title="一、JS的三种最常见的对话框"></a>一、JS的三种最常见的对话框</h4>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/06/05/每日小知识一/">展开全文 >></a>
         </p>
       
 

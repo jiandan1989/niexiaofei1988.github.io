@@ -12,6 +12,7 @@
 <meta property="og:title" content="Niexiaofei">
 <meta property="og:url" content="https://niexiaofei1988.github.io/page/4/index.html">
 <meta property="og:site_name" content="Niexiaofei">
+<meta property="og:locale" content="zh">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Niexiaofei">
   
@@ -144,6 +145,158 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-js基础知识二" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/01/js基础知识二/">js基础知识二</a>
+    </h1>
+  
+
+        
+        <a href="/2015/12/01/js基础知识二/" class="archive-article-date">
+  	<time datetime="2015-12-01T13:26:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-12-01</time>
+</a>
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="javascript中的原型："><a href="#javascript中的原型：" class="headerlink" title="javascript中的原型："></a>javascript中的原型：</h2><p>  在javascript中所有的函数都有prototype属性，该属性是一个对象，对象是所有属性的集合，所有的对象都有一个<strong>proto</strong>属性，所有对象的<strong>proto</strong>都指向其构造器的prototype。当函数没有任何属性，prototype对象默认有constructor（指向函数本身）属性。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="string">'10'</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">const</span> fn2 = <span class="keyword">new</span> fn();<span class="comment">//从fn方法里面new出一个对象，生成对象</span></div><div class="line"><span class="built_in">console</span>,log(fn2.__proto__===fn.prototype)为<span class="literal">true</span></div></pre></td></tr></table></figure>
+<p> 所有构造器的<strong>proto</strong>都指向Function.prototype.完全继承了prototype的属性以及方法。</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2015/12/01/js基础知识二/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-两个空的故事" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/29/两个空的故事/">两个空的故事</a>
+    </h1>
+  
+
+        
+        <a href="/2015/11/29/两个空的故事/" class="archive-article-date">
+  	<time datetime="2015-11-29T04:41:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-11-29</time>
+</a>
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>两个空的故事，哪连个空呢，肯定不是孙悟空，在js中我们知道有两个表示空的一个是undefined两一个是null这连个空到底有什么区别呢？？？</p>
+<p>大多数计算机语言，有且仅有一个表示“无”的值，比如，c语言的null，java语言的null，Python语言的None，Ruby语言的nil。但是在js语言中有两个表示“无”的值，undefined和null，这是为什么？</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2015/11/29/两个空的故事/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-javascript的基础知识" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/27/javascript的基础知识/">javascript的基础知识</a>
+    </h1>
+  
+
+        
+        <a href="/2015/11/27/javascript的基础知识/" class="archive-article-date">
+  	<time datetime="2015-11-27T12:41:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-11-27</time>
+</a>
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="javascript的基础知识一"><a href="#javascript的基础知识一" class="headerlink" title="javascript的基础知识一"></a>javascript的基础知识一</h1><p><strong>先说一下浏览器对js解析时做的准备工作</strong></p>
+<p>1.变量和函数表达式的声明提升到当前作用域的最顶端</p>
+<p>2.把函数赋值，可以直接在函数上方调用。</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2015/11/27/javascript的基础知识/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
   
     <article id="post-CSS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
