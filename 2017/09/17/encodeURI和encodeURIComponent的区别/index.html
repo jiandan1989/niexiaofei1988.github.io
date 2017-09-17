@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="https://niexiaofei1988.github.io">
   <title>Niexiaofei</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="title: encodeURI和encodeURIComponent的区别date: 2017-09-17 15:12:37 tags:两种方法都可以对URI(Uniform Resource Idenifiers) 通用资源标识符进行编码,以便发送给浏览器,有效的URI中不能包含某些字符,例如空格,而这两个URI编码方法就可以对URI进行编码,他们用特殊的UTF-8编码替换所有无效的字符,从而">
+  <meta name="description" content="两种方法都可以对URI(Uniform Resource Idenifiers) 通用资源标识符进行编码,以便发送给浏览器,有效的URI中不能包含某些字符,例如空格,而这两个URI编码方法就可以对URI进行编码,他们用特殊的UTF-8编码替换所有无效的字符,从而让浏览器能够接受和理解 其中,encodeURI主要用于整个URI,而encodeURIComponent主要用于对URI中的某一段进行编">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Niexiaofei">
 <meta property="og:url" content="https://niexiaofei1988.github.io/2017/09/17/encodeURI和encodeURIComponent的区别/index.html">
 <meta property="og:site_name" content="Niexiaofei">
-<meta property="og:description" content="title: encodeURI和encodeURIComponent的区别date: 2017-09-17 15:12:37 tags:两种方法都可以对URI(Uniform Resource Idenifiers) 通用资源标识符进行编码,以便发送给浏览器,有效的URI中不能包含某些字符,例如空格,而这两个URI编码方法就可以对URI进行编码,他们用特殊的UTF-8编码替换所有无效的字符,从而">
+<meta property="og:description" content="两种方法都可以对URI(Uniform Resource Idenifiers) 通用资源标识符进行编码,以便发送给浏览器,有效的URI中不能包含某些字符,例如空格,而这两个URI编码方法就可以对URI进行编码,他们用特殊的UTF-8编码替换所有无效的字符,从而让浏览器能够接受和理解 其中,encodeURI主要用于整个URI,而encodeURIComponent主要用于对URI中的某一段进行编">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2017-09-17T07:50:42.000Z">
+<meta property="og:updated_time" content="2017-09-17T07:53:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Niexiaofei">
-<meta name="twitter:description" content="title: encodeURI和encodeURIComponent的区别date: 2017-09-17 15:12:37 tags:两种方法都可以对URI(Uniform Resource Idenifiers) 通用资源标识符进行编码,以便发送给浏览器,有效的URI中不能包含某些字符,例如空格,而这两个URI编码方法就可以对URI进行编码,他们用特殊的UTF-8编码替换所有无效的字符,从而">
+<meta name="twitter:description" content="两种方法都可以对URI(Uniform Resource Idenifiers) 通用资源标识符进行编码,以便发送给浏览器,有效的URI中不能包含某些字符,例如空格,而这两个URI编码方法就可以对URI进行编码,他们用特殊的UTF-8编码替换所有无效的字符,从而让浏览器能够接受和理解 其中,encodeURI主要用于整个URI,而encodeURIComponent主要用于对URI中的某一段进行编">
   
     <link rel="alternative" href="/atom.xml" title="Niexiaofei" type="application/atom+xml">
   
@@ -153,8 +153,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>title: encodeURI和encodeURIComponent的区别<br>date: 2017-09-17 15:12:37</p>
-<h2 id="tags"><a href="#tags" class="headerlink" title="tags:"></a>tags:</h2><p>两种方法都可以对URI(Uniform Resource Idenifiers) 通用资源标识符进行编码,以便发送给浏览器,有效的URI中不能包含某些字符,例如空格,而这两个URI编码方法就可以对URI进行编码,他们用特殊的UTF-8编码替换所有无效的字符,从而让浏览器能够接受和理解</p>
+        <p>两种方法都可以对URI(Uniform Resource Idenifiers) 通用资源标识符进行编码,以便发送给浏览器,有效的URI中不能包含某些字符,例如空格,而这两个URI编码方法就可以对URI进行编码,他们用特殊的UTF-8编码替换所有无效的字符,从而让浏览器能够接受和理解</p>
 <p>其中,encodeURI主要用于整个URI,而encodeURIComponent主要用于对URI中的某一段进行编码,他们的主要区别在于,encodeURI不会对本身属于URI的特殊字符进行编码,例如冒号,正邪杠问好和精只好,而encodeURIComponent这会对它发现的任何非标准字符进行编码</p>
 <p>使用encodeURI编码后的结果是除了空格之外的其他字符都原封不动,只有空格被替换成了<code>%20</code>,而encodeURIComponent方法则会使用对应的编码替换所有费支付数字字符,这也正是可以对整个URI使用encodeURI,而只能对附加在现有URI后面的字符使用encodeURIComponent的原因所在</p>
 <p>对应的解码方法就是encodeURI —&gt; decodeURI,encodeURIComponent —-&gt;decodeURIComponent,只能使用对应的解码方法才能正确的解码</p>
