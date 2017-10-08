@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>CSS 回顾(二) | NHF</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="NHF">
+    <meta name="author" content="niexiaofei">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="NHF" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+	
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+    
+
+    <!-- Custom stylesheet, (add custom styles here, always load last) -->
+    <!-- Load our stylesheet for IE8 -->
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- Google Webfonts (Monserrat 400/700, Open Sans 400/600) -->
+    <link href='//fonts.useso.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.useso.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
+    <!-- Load our fonts individually if IE8+, to avoid faux bold & italic rendering -->
+    <!--[if IE]>
+    <link href='http://fonts.useso.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">NHF</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="niexiaofei.github.io" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/niexiaofei1989" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/jiandanaiyici" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2016-02-26T02:45:35.000Z" itemprop="datePublished">
+          2016-02-26
+      </time>
+    
+</span>
+                <h1>CSS 回顾(二)</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<p><strong>在这里主要回顾说一下盒子模型和选择器</strong></p>
+<a id="more"></a>
+<p><span style="color:red;">盒子模型的构成:</span></p>
+<ul>
+<li><p>盒子中的内容(content)</p>
+</li>
+<li><p>盒子的边框：(border)</p>
+</li>
+<li><p>盒子边框与内容之间的距离：称为填充—padding内边距（内补丁）</p>
+</li>
+<li><p>如果有多个盒子存在，盒子与盒子之间的距离：称为边界—margin，外边距（外补丁）</p>
+</li>
+</ul>
+<p>W3C标准规定了标准盒子模型的宽度和高度的算法：</p>
+<p><strong>整个盒子模型在网页中所占的宽度:左右外边距 + 左右内边距 + 左右边框 + 内容宽度</strong></p>
+<p><strong>整个盒子模型在网页中所占的高度:上下外边距 + 上下内边距 + 上下边框 + 内容高度</strong></p>
+<p><img src="http://7xoo7k.com1.z0.glb.clouddn.com/w3c.jpg" alt="标准" title="标准盒子模型"></p>
+<p><img src="http://7xoo7k.com1.z0.glb.clouddn.com/ie.jpg" alt="IE" title="IE盒子模型"></p>
+<p>从上两图可以看出标准盒子模型和IE盒子模型的不同：</p>
+<p>标准盒子模型中内容(content)的高度和宽度都不包含内边距(padding)和边框(border)，但是在IE盒子模型中内容的高度都把内边距和边框包含在内。</p>
+<p><strong>盒子模型中的padding、margin、以及border在应用中都遵循了TRBL法则(Top、Right、Bottom、Left)。</strong></p>
+<p>说完了盒子模型就要涉及到BFC，请<a href="javascript:;" style="font-size:20px; text-decoration:none; color:#f47d31;" target="_blank" rel="external">点击查看</a></p>
+<div style="border:1px  #999 dashed;"></div>
+
+<p><span style="color:red;">声明样式：</span></p>
+<p>在css中对一个元素或多个元素进行声明样式是一个选择器、一对大括号、属性名和属性值组成</p>
+<pre><code>p {
+    font-size:16px;
+    font-color:red;
+}
+</code></pre><p>对一个元素声明多个样式时，必须由分号(;)隔开。</p>
+<div style="border:1px  #999 dashed;"></div>
+
+<p><span style="color:red;">选择器:</span></p>
+<p>选择分为很多种，按照类型分类的话有基本、组合、伪类、属性等。</p>
+<p><strong>基本的选择器：</strong></p>
+<ul>
+<li><p>通配选择器(*)：匹配所有的元素。</p>
+<pre><code>*{
+  margin:0;
+  padding:0;}
+</code></pre></li>
+<li><p>标签选择器(p): 匹配所有使用p的标签元素。<br>  p{</p>
+<pre><code>font-size:20px;
+</code></pre><p>  }</p>
+</li>
+<li><p>class选择器(.test):匹配所有带有class为test的元素。</p>
+<pre><code>.test{
+font-size:20px;
+}
+p.test{
+font-size:20px;
+}
+</code></pre></li>
+<li>id选择器(#id):匹配指定id名的元素，id选择器是唯一的 <code>#test{background-color:red;}</code></li>
+</ul>
+<div style="border:1px  #999 dashed;"></div>
+
+<p><strong>组合选择器：</strong></p>
+<ul>
+<li><p>群组选择器(h1,h2,h3): 同时匹配多个元素，之间用逗号(,)隔开 <code>h1,h2,h3{margin:0;}</code></p>
+</li>
+<li><p>后代元素选择器(div span):匹配所有属于div的span包括子孙级别的元素，之间用空格隔开 <code>div span{display:block;}</code></p>
+</li>
+<li><p>子元素选择器(ul&gt;li):匹配所有属于ul的子元素li <code>ul&gt;li{width:200px;}</code></p>
+</li>
+<li><p>相邻元素选择器(p+div):匹配p元素后相邻的div元素 <code>p+div{width:200px;}</code></p>
+</li>
+</ul>
+<div style="border:1px  #999 dashed;"></div>
+
+<p><strong>伪元素选择器：</strong></p>
+<ul>
+<li><p><strong>p::first-line:</strong> 匹配p元素的第一行 <code>p::first-line{font-color:red;}</code></p>
+</li>
+<li><p><strong>p::first-letter:</strong> 匹配p元素的第一个字符 <code>p::first-letter{font-weight:bold;}</code></p>
+</li>
+<li><p><strong>p::before:</strong> 在p元素之前插入生成的文本 <code>p::before{content:””;width:100px;height:100px;}</code></p>
+</li>
+<li><p><strong>p::after:</strong> 在p元素之后插入生成的文本 <code>p::after{content:””;width:10px;height:10px;background:red;}</code></p>
+</li>
+</ul>
+<p><span style="color:red; font-size:18px;">注意:在使用before和after伪类时，必须要有content属性。</span></p>
+<div style="border:1px #999 dashed"></div>
+
+<p><strong>伪类选择器 :</strong></p>
+<ul>
+<li><p><strong>div:first-child:</strong> 匹配div的第一个子元素 <code>div:first-child{width:200px;}</code></p>
+</li>
+<li><p><strong>a:link:</strong>匹配所有未被点击的a链接 <code>a:link{background:red;}</code></p>
+</li>
+<li><p><strong>a:visited:</strong>匹配所有已被点击的a链接 <code>a:visited{background:blue;}</code></p>
+</li>
+<li><p><strong>e:hover:</strong> 匹配所有鼠标悬停其上的E元素 <code>e:hover{background:green;}</code></p>
+</li>
+<li><p><strong>e:active:</strong> 匹配所有鼠标点击但还没有释放的E元素 <code>e:active{background:yellow;}</code></p>
+</li>
+</ul>
+<p><span style="color:#f47d31; font-size:16px;">注意：当link,visited,hover,acitve作用于同一个a链接时,是有顺序的如果链接是有效的地址访问过后，link状态不再会被触发</span></p>
+<div style="border:1px #999 solid;margin-top:15px;"></div>
+
+<p>这里讲的为CSS2内的选择器,关于CSS3选择器内容请<a href="http://niexiaofei1988.github.io/2016/02/26/CSS%E5%9B%9E%E9%A1%BE%28%E4%B8%80%29/">点击查看</a> <br><br><span style="font-size:18px;color:#f47d31;">感谢韩大神的技术传授</span></p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2016/03/01/关于this-一直很头疼的词/" style="float: left;">
+        ← 关于this(一直很头疼的词)
+    </a>
+    
+    
+    <a class="pull-right" href="/2016/02/26/CSS回顾(一)/">
+        CSS 回顾(一) →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+<div class="ds-thread" data-thread-key="2016/02/26/CSS 回顾(二)/" data-title="CSS 回顾(二)" data-url="https://niexiaofei1988.github.io/2016/02/26/CSS 回顾(二)/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"duoshuo_name"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+	 || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By niexiaofei. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="niexiaofei.github.io" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/niexiaofei1989" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/jiandanaiyici" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+</body>
+</html>

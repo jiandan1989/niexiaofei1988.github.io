@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>关于PHP的学习笔记 | NHF</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="NHF">
+    <meta name="author" content="niexiaofei">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="NHF" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+	
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+    
+
+    <!-- Custom stylesheet, (add custom styles here, always load last) -->
+    <!-- Load our stylesheet for IE8 -->
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- Google Webfonts (Monserrat 400/700, Open Sans 400/600) -->
+    <link href='//fonts.useso.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.useso.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
+    <!-- Load our fonts individually if IE8+, to avoid faux bold & italic rendering -->
+    <!--[if IE]>
+    <link href='http://fonts.useso.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">NHF</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="niexiaofei.github.io" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/niexiaofei1989" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/jiandanaiyici" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2016-03-07T13:08:52.000Z" itemprop="datePublished">
+          2016-03-07
+      </time>
+    
+</span>
+                <h1>关于PHP的学习笔记</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h4 id="一-、环境搭建"><a href="#一-、环境搭建" class="headerlink" title="一 、环境搭建"></a>一 、环境搭建</h4><ul>
+<li><p>使用支持PHP和MySQL的web主机，只要创建.php文件，然后上传到web目录中即可，服务器会自动对它们进行解析。</p>
+</li>
+<li><p>在您的PC上安装web服务器，然后安装PHP和MySQL，官方的PHP网站(PHP.net)提供了PHP的安装说明:<a href="http://php.net/manual/zh/install.php" target="_blank" rel="external">http://php.net/manual/zh/install.php</a></p>
+</li>
+<li><p>Apache这是最流行的Web服务器软件之一,Apache的官网地址:<a href="http://www.apache.org。" target="_blank" rel="external">http://www.apache.org。</a></p>
+</li>
+<li><p>MySQL是关系型数据库管理系统，拥有体积小，速度快，开方源码等优点，官网地址:<a href="http://www.mysql.com" target="_blank" rel="external">http://www.mysql.com</a></p>
+</li>
+<li><p>XAMPP是一个功能强大的建(Apache+MySQL+PHP+Perl)软件站集成软件包。引入XAMMP的目的:手动安装Apache+MySQL+PHP环境过于复杂，而XAMPP帮我们集成了这个环境，只需点击安装即可。</p>
+</li>
+</ul>
+<a id="more"></a>
+<h4 id="二-、PHP基础语法"><a href="#二-、PHP基础语法" class="headerlink" title="二 、PHP基础语法:"></a>二 、PHP基础语法:</h4><ul>
+<li><p>PHP标记</p>
+<p> 1.&lt;?php echo “hello php”;?&gt;</p>
+</li>
+</ul>
+<p>   2.&lt;? echo “hello php”;?&gt;//短语句</p>
+<p>   3.&lt;script language=”php”&gt;echo “hello php”&lt;/script&gt;</p>
+<p>   4.&lt;% echo “hello php”; %&gt; //asp风格</p>
+<p>   <span style="color:red;">注:1，3可以直接使用，但是2，4需要修改php.ini的配置文件才能使用。</span></p>
+<ul>
+<li><p>PHP注释</p>
+<p>  1.多行注释: /*注释*/</p>
+<p>  2.单行注释: (1) //注释 (2) #注释</p>
+</li>
+</ul>
+<h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><ul>
+<li><p>1.变量的声明:</p>
+<ul>
+<li><p>变量以$开头,后面跟变量名</p>
+</li>
+<li><p>变量由字母，数字，下划线组成，不能以数字开头</p>
+</li>
+<li><p>变量名区分大小写</p>
+</li>
+<li><p>PHP与javascript类似是若类型语言，不需要实现声明变量的数据类型</p>
+</li>
+<li><p>PHP可以不显示的声明变量而直接使用(不过好的编程习惯所有的变量使用前要进行声明)</p>
+</li>
+</ul>
+<p>例:                            </p>
+<pre><code>$age = 28;
+$color = &quot;red&quot;;
+$sum = 15 + &quot;12&quot;; //$sum = 27在PHP中所有的运算符都是单纯的运算
+</code></pre><h4 id="变量的赋值"><a href="#变量的赋值" class="headerlink" title="变量的赋值:"></a>变量的赋值:</h4><ul>
+<li><p>值赋值:即将赋值表达式的值赋予给变量(直接赋值)</p>
+<pre><code>$a = &quot;hello&quot; //直接赋值
+</code></pre></li>
+<li><p>引用赋值 :PHP4中引用了引用赋值，创建一个变量与另一个变量引用的内容相同。</p>
+<p>  $a = 5; $b = &amp;$a; //把变量a的内存地址赋值给b即引用赋值,不论是改变a或者b都两个值都会改变</p>
+</li>
+</ul>
+<h4 id="变量的变量"><a href="#变量的变量" class="headerlink" title="变量的变量:"></a>变量的变量:</h4><pre><code>$a = &quot;hello&quot; ; $$a = &quot;world&quot;;
+echo $a //输出hello
+echo $hello//输出world
+echo ${$a} //输出world
+</code></pre></li>
+</ul>
+<h4 id="超全局变量"><a href="#超全局变量" class="headerlink" title="超全局变量"></a>超全局变量</h4><ul>
+<li>php提供了很多有用预定于的变量，用于提供大量与环境有关的信息，打印/输出超全局变量:parent_r($_SERVER)</li>
+</ul>
+<p>(1)$_SERVER服务器变量，该全局变量包含着服务器和客户端配置以及当前请求环境的有关信息</p>
+<pre><code>$_SERVER[&apos;SERVER_NAME&apos;] //当前运行脚本所在的服务器的主机名
+$_SERVER[&apos;REMOTE_ADDR&apos;] //客户端IP地址
+$_SERVER[&apos;REQUEST_URL&apos;] //URL的路径部分
+$_SERVER[&apos;HTTP_USER_AGENT&apos;] //操作系统和浏览器的有关信息
+</code></pre><p>(2)$_GET 该变量包含使用GET方法传递的参数的有关信息。例:</p>
+<pre><code>url:http://localhost/test.php?id=100&amp;page=2
+$id = $_GET[&apos;id&apos;];
+$page = $_GET[&apos;page&apos;];
+</code></pre><p>(3)$_POST 该变量包含使用POST方法传递的参数的有关信息。例:</p>
+<pre><code>&lt;form name=&quot;reg&quot; action = &quot;test.php&quot; method=&quot;post&quot;&gt;
+    用户名:&lt;input type=&quot;text&quot; name=&quot;username&quot;/&gt;
+    密码: &lt;input type=&quot;password&quot; name=&quot;password&quot;/&gt;
+          &lt;input type=&quot;submit&quot; value=&quot;提交&quot;/&gt;
+&lt;/form&gt;
+
+PHP:
+$username = $_POST[&apos;username&apos;];
+$password = $_POST[&apos;password&apos;];    
+</code></pre><p><span style="color#999">注意:<br>(1)get是默认是提交方式，在地址栏中显示，不安全(数据可见)，数据的类型只能是字符串，数据的大小相对post来说很小，但是传递数据的速度快<br>(2)post:通过http协议传递的数据(比较安全，数据不可见)数据的类型可以是文件，数据的大小默认可以上传2MB，但是相对于get数据的传递速度比较慢</span></p>
+<p>(4)$_REQUERT 该变量记录着通过各种输入方法传递给脚本的变量，如GET POST但不要用这个超级全局变量，因为它不安全而且速度比较慢。</p>
+<p>当然了 还有很多种方法,下次再说.</p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2016/03/09/关于PHP/" style="float: left;">
+        ← 关于PHP
+    </a>
+    
+    
+    <a class="pull-right" href="/2016/03/06/怎么样学好前端/">
+        怎么样学好前端 →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+<div class="ds-thread" data-thread-key="2016/03/07/关于PHP的学习/" data-title="关于PHP的学习笔记" data-url="https://niexiaofei1988.github.io/2016/03/07/关于PHP的学习/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"duoshuo_name"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+	 || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By niexiaofei. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="niexiaofei.github.io" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/niexiaofei1989" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/jiandanaiyici" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+</body>
+</html>

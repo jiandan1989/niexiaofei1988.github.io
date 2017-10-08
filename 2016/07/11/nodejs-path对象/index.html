@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>nodejs path对象 | NHF</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="NHF">
+    <meta name="author" content="niexiaofei">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="NHF" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+	
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+    
+
+    <!-- Custom stylesheet, (add custom styles here, always load last) -->
+    <!-- Load our stylesheet for IE8 -->
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- Google Webfonts (Monserrat 400/700, Open Sans 400/600) -->
+    <link href='//fonts.useso.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.useso.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
+    <!-- Load our fonts individually if IE8+, to avoid faux bold & italic rendering -->
+    <!--[if IE]>
+    <link href='http://fonts.useso.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">NHF</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="niexiaofei.github.io" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/niexiaofei1989" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/jiandanaiyici" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2016-07-11T14:59:43.000Z" itemprop="datePublished">
+          2016-07-11
+      </time>
+    
+</span>
+                <h1>nodejs path对象</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<p>NodeJS中的Path对象，用于处理目录的对象，提高开发效率。</p>
+<p>用NodeJS的Path命令，与使用Linux下的shell脚本命令相似。 </p>
+<p>引入path对象 </p>
+<pre><code>var path = require(&apos;path&apos;);
+</code></pre><p>比较实用的方法： </p>
+<a id="more"></a>
+<p>f;lsknflsknfskjfnksjfndskjn</p>
+<h4 id="格式化路径-path-normalize-p"><a href="#格式化路径-path-normalize-p" class="headerlink" title="格式化路径  path.normalize(p)"></a>格式化路径  path.normalize(p)</h4><p>特点：将不符合规范的路径格式化，简化开发人员中处理各种复杂</p>
+<pre><code>path.normalize(&apos;/foo/bar//baz/asdf/quux/..&apos;);  
+// returns   
+&apos;/foo/bar/baz/asdf&apos; 
+</code></pre><h4 id="路径联合-path-join-path1-path2-…"><a href="#路径联合-path-join-path1-path2-…" class="headerlink" title="路径联合 path.join([path1], [path2], […])"></a>路径联合 path.join([path1], [path2], […])</h4><p>特点：将所有名称用path.seq串联起来，然后用normailze格式化 </p>
+<pre><code>path.join(&apos;///foo&apos;, &apos;bar&apos;, &apos;//baz/asdf&apos;, &apos;quux&apos;, &apos;..&apos;);  
+// returns   
+&apos;/foo/bar/baz/asdf&apos;  
+</code></pre><h4 id="文件夹名称-path-dirname-p"><a href="#文件夹名称-path-dirname-p" class="headerlink" title="文件夹名称 path.dirname(p)"></a>文件夹名称 path.dirname(p)</h4><p>特点：返回路径的所在的文件夹名称 </p>
+<pre><code>path.dirname(&apos;/foo/bar/baz/asdf/quux&apos;)  
+// returns  
+&apos;/foo/bar/baz/asdf&apos;  
+var path = require(&apos;path&apos;);
+
+var url1 = path.dirname(&apos;/foo/bar/baz/asdf/a.txt&apos;);
+var url2 = path.dirname(&apos;/foo/bar/baz/asdf/&apos;);
+var url3 = path.dirname(&apos;C:/vajoy/test/aaa&apos;);
+
+console.log(&apos;url1:&apos;,url1);  // /foo/bar/baz/asdf
+console.log(&apos;url2:&apos;,url2);  // /foo/bar/baz
+console.log(&apos;url3:&apos;,url3);  // C:/vajoy/test
+</code></pre><h4 id="文件名称-path-basename-p-ext"><a href="#文件名称-path-basename-p-ext" class="headerlink" title="文件名称 path.basename(p, [ext])"></a>文件名称 path.basename(p, [ext])</h4><p>特点：返回指定的文件名，返回结果可排除[ext]后缀字符串 返回路径中的最后一部分，类似于Unix 的 basename 命令。 ext 为需要截掉的尾缀内容：</p>
+<pre><code>path.basename(&apos;/foo/bar/baz/asdf/quux.html&apos;)  
+// returns  
+&apos;quux.html&apos;  
+
+path.basename(&apos;/foo/bar/baz/asdf/quux.html&apos;, &apos;.html&apos;)  
+// returns  
+&apos;quux&apos;  
+var path = require(&apos;path&apos;);
+var url1 = path.basename(&apos;/foo/bar/baz/asdf/a.txt&apos;);
+var url2 = path.basename(&apos;/foo/bar/baz/asdf/a.txt&apos;,&apos;.txt&apos;);
+var url3 = path.basename(&apos;/foo/bar/baz/asdf/&apos;);
+var url4 = path.basename(&apos;C:/vajoy/test/aaa&apos;);
+
+console.log(&apos;url1:&apos;,url1);  // a.txt
+console.log(&apos;url2:&apos;,url2);  // a
+console.log(&apos;url3:&apos;,url3);  // asdf
+console.log(&apos;url4:&apos;,url4);  // aaa
+</code></pre><h4 id="扩展名称-path-extname-p"><a href="#扩展名称-path-extname-p" class="headerlink" title="扩展名称 path.extname(p)"></a>扩展名称 path.extname(p)</h4><p> 特点：返回指定文件名的扩展名称 </p>
+<pre><code>path.extname(&apos;index.html&apos;)  
+// returns  
+&apos;.html&apos;  
+
+path.extname(&apos;index.&apos;)  
+// returns  
+&apos;.&apos;  
+
+path.extname(&apos;index&apos;)  
+// returns  
+&apos; &apos;
+var path = require(&apos;path&apos;);
+var url1 = path.extname(&apos;/foo/bar/baz/asdf/a.txt&apos;);
+var url2 = path.extname(&apos;/foo/bar/baz/asdf/a.txt.html&apos;);
+var url3 = path.extname(&apos;/foo/bar/baz/asdf/a.&apos;);
+var url4 = path.extname(&apos;C:/vajoy/test/.&apos;);
+var url5 = path.extname(&apos;C:/vajoy/test/a&apos;);
+
+console.log(&apos;url1:&apos;,url1);  // .txt
+console.log(&apos;url2:&apos;,url2);  // .html
+console.log(&apos;url3:&apos;,url3);  // .
+console.log(&apos;url4:&apos;,url4);  //
+console.log(&apos;url5:&apos;,url5);  //
+</code></pre><h4 id="路径分隔符-path-sep"><a href="#路径分隔符-path-sep" class="headerlink" title="路径分隔符 path.sep"></a>路径分隔符 path.sep</h4><p>特点：获取文件路径的分隔符，主要是与操作系统相关 </p>
+<p>linux:</p>
+<pre><code>&apos;foo/bar/baz&apos;.split(path.sep)  
+// returns  
+[&apos;foo&apos;, &apos;bar&apos;, &apos;baz&apos;]  
+</code></pre><p>window:</p>
+<pre><code>&apos;foo\\bar\\baz&apos;.split(path.sep)  
+// returns  
+[&apos;foo&apos;, &apos;bar&apos;, &apos;baz&apos;]  
+</code></pre><h4 id="path-delimiter"><a href="#path-delimiter" class="headerlink" title="path.delimiter"></a>path.delimiter</h4><p>返回对应平台下的路径分隔符，win下为’;’，*nix下为’:’：</p>
+<pre><code>var path = require(&apos;path&apos;);
+var env = process.env.PATH; //当前系统的环境变量PATH
+var url1 = env.split(path.delimiter);
+
+console.log(path.delimiter); //win下为“;”，*nix下为“:”
+console.log(&apos;env:&apos;,env);  // C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;
+console.log(&apos;url1:&apos;,url1);  // [&apos;C:\ProgramData\Oracle\Java\javapath&apos;,&apos;C:\Program Files (x86)\Intel\iCLS Client\&apos;]
+</code></pre><h4 id="path-isAbsolute-path"><a href="#path-isAbsolute-path" class="headerlink" title="path.isAbsolute(path)"></a>path.isAbsolute(path)</h4><p>判断 path 是否绝对路径。这块可以理解为，path 是否真的是一个绝对路径（比如 ‘E:/abc’），或者是以“/”开头的路径，二者都会返回true：</p>
+<pre><code>var path = require(&apos;path&apos;);
+var url1 = path.isAbsolute(&apos;../testFiles/secLayer&apos;);
+var url2 = path.isAbsolute(&apos;./join.js&apos;);
+var url3 = path.isAbsolute(&apos;temp&apos;);
+var url4 = path.isAbsolute(&apos;/temp/../..&apos;);
+var url5 = path.isAbsolute(&apos;E:/github/nodeAPI/abc/efg&apos;);
+var url6 = path.isAbsolute(&apos;///temp123&apos;);
+
+console.log(&apos;url1:&apos;,url1);  // false
+console.log(&apos;url2:&apos;,url2);  // false
+console.log(&apos;url3:&apos;,url3);  // false
+console.log(&apos;url4:&apos;,url4);  // true
+console.log(&apos;url5:&apos;,url5);  // true
+console.log(&apos;url6:&apos;,url6);  // true
+</code></pre><h4 id="相对路径-path-relative-from-to"><a href="#相对路径-path-relative-from-to" class="headerlink" title="相对路径 path.relative(from, to)"></a>相对路径 path.relative(from, to)</h4><p>特点：返回某个路径下相对于另一个路径的相对位置串，相当于：path.resolve(from, path.relative(from, to)) == path.resolve(to) </p>
+<pre><code>path.relative(&apos;C:\\orandea\\test\\aaa&apos;, &apos;C:\\orandea\\impl\\bbb&apos;)  
+// returns  
+&apos;..\\..\\impl\\bbb&apos;  
+
+path.relative(&apos;/data/orandea/test/aaa&apos;, &apos;/data/orandea/impl/bbb&apos;)  
+// returns  
+&apos;../../impl/bbb&apos;  
+
+var path = require(&apos;path&apos;);
+
+var url1 = path.relative(&apos;C:\\vajoy\\test\\aaa&apos;, &apos;C:\\vajoy\\impl\\bbb&apos;);
+var url2 = path.relative(&apos;C:/vajoy/test/aaa&apos;, &apos;C:/vajoy/bbb&apos;);
+var url3 = path.relative(&apos;C:/vajoy/test/aaa&apos;, &apos;D:/vajoy/bbb&apos;);
+
+console.log(&apos;url1:&apos;,url1);  //..\..\impl\bbb
+console.log(&apos;url2:&apos;,url2);  //url2: ..\..\bbb
+console.log(&apos;url3:&apos;,url3);  //D:\vajoy\bbb
+</code></pre><h4 id="path-resolve-from-…-to"><a href="#path-resolve-from-…-to" class="headerlink" title="path.resolve([from …], to)"></a>path.resolve([from …], to)</h4><p>从源地址 from 到目的地址 to 的绝对路径。</p>
+<p>可以理解为 cd XXX 的形式，如在D盘上执行 path.resolve(‘a’, ‘D:/b’, ‘../c’, ‘v.txt’)，得到的绝对路径“D:/v.txt”，相当于执行如下指令后所处的路径：</p>
+<pre><code>cd a
+D:
+cd b  //同上一行对应 &apos;D:/b&apos;
+cd ../c
+cd v.txt
+var path = require(&apos;path&apos;);
+
+var url1 = path.resolve(&apos;.&apos;, &apos;testFiles/..&apos;, &apos;trdLayer&apos;);
+var url2 = path.resolve(&apos;..&apos;, &apos;testFiles&apos;, &apos;a.txt&apos;);
+var url3 = path.resolve(&apos;D:/vajoy&apos;, &apos;abc&apos;, &apos;D:/a&apos;);
+var url4 = path.resolve(&apos;abc&apos;, &apos;vajoy&apos;, &apos;ok.gif&apos;);
+var url5 = path.resolve(&apos;abc&apos;, &apos;/vajoy&apos;, &apos;..&apos;, &apos;a/../subfile&apos;); //&apos;abc&apos;参数将被忽略，源路径改从&apos;E:/vajoy&apos;开始
+
+console.log(&apos;url1:&apos;,url1);  // E:\github\nodeAPI\path\trdLayer
+console.log(&apos;url2:&apos;,url2);  // E:\github\nodeAPI\testFiles\a.txt
+console.log(&apos;url3:&apos;,url3);  // D:\a
+console.log(&apos;url4:&apos;,url4);  // E:\github\nodeAPI\path\abc\vajoy\ok.gif
+console.log(&apos;url5:&apos;,url5);  // E:\subfile
+</code></pre><p>要注意的是，如果某个 from 或 to 参数是绝对路径（比如 ‘E:/abc’，或是以“/”开头的路径），则将忽略之前的 from 参数。</p>
+<hr>    
+
+<p>摘自网络</p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2016/08/24/webpack-demo/" style="float: left;">
+        ← webpack-demo
+    </a>
+    
+    
+    <a class="pull-right" href="/2016/06/12/前端规范/">
+        前端规范 →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+<div class="ds-thread" data-thread-key="2016/07/11/nodejs-path对象/" data-title="nodejs path对象" data-url="https://niexiaofei1988.github.io/2016/07/11/nodejs-path对象/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"duoshuo_name"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+	 || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By niexiaofei. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="niexiaofei.github.io" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/niexiaofei1989" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/jiandanaiyici" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+</body>
+</html>

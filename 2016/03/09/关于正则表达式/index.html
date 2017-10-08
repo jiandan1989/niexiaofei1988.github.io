@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<!--[if lte IE 8 ]>
+<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!--
+***************  *      *     *
+      8          *    *       *
+      8          *  *         *
+      8          **           *
+      8          *  *         *
+      8          *    *       *
+      8          *      *     *
+      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
+<!--<![endif]-->
+
+<head>
+  <title>关于正则表达式 | NHF</title>
+  <!-- Meta data -->
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content="NHF">
+    <meta name="author" content="niexiaofei">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon, (keep icon in root folder) -->
+    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
+
+    <link rel="alternate" href="/atom.xml" title="NHF" type="application/atom+xml">
+    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
+	
+    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+    
+    
+
+    <!-- Custom stylesheet, (add custom styles here, always load last) -->
+    <!-- Load our stylesheet for IE8 -->
+    <!--[if IE 8]>
+    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
+    <![endif]-->
+
+    <!-- Google Webfonts (Monserrat 400/700, Open Sans 400/600) -->
+    <link href='//fonts.useso.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.useso.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
+    <!-- Load our fonts individually if IE8+, to avoid faux bold & italic rendering -->
+    <!--[if IE]>
+    <link href='http://fonts.useso.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.useso.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+    <![endif]-->
+
+    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
+    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
+
+    <!-- Load these in the <head> for quicker IE8+ load times -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="/js/html5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+  
+  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+</head>
+
+<!--
+<body class="post-template">
+-->
+<body id="index" class="lightnav animsition">
+
+      <!-- ============================ Off-canvas navigation =========================== -->
+
+    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
+        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
+            <img src="/img/close.png" alt="Close"/>
+        </div>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu">
+            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
+            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
+            <!-- Dropdown Menu -->
+			 
+            <li>
+                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
+                    
+                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li>
+                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
+                <ul class="sb-submenu">
+                    
+                    <li><a href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
+                    
+                    <li><a href="http://domain.com/" class="animsition-link">Name</a></li>
+                    
+                </ul>
+            </li>
+            
+        </ul>
+        <!-- Lists in Slidebars -->
+        <ul class="sb-menu secondary">
+            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
+            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
+        </ul>
+    </div>
+    
+    <!-- ============================ END Off-canvas navigation =========================== -->
+
+    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
+
+    <div id="sb-site">
+        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+        <div id="navigation" class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <!-- Nav logo -->
+                    <div class="logo">
+                        <a href="/" title="Logo" class="animsition-link">
+                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
+                        </a>
+                    </div>
+                    <!-- // Nav logo -->
+                    <!-- Info-bar -->
+                    <nav>
+                        <ul class="nav">
+                            <li><a href="/" class="animsition-link">NHF</a></li>
+                            <li class="nolink"><span>Always </span>Creative.</li>
+                            
+                            <li><a href="niexiaofei.github.io" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            
+                            
+                            <li><a href="https://twitter.com/niexiaofei1989" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
+                            
+                            
+                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
+                            
+                            
+                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
+                            
+                            
+                            <li><a href="http://weibo.com/jiandanaiyici" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            
+                            <li class="nolink"><span>Welcome!</span></li>
+                        </ul>
+                    </nav>
+                    <!--// Info-bar -->
+                </div>
+                <!-- // .container -->
+                <div class="learnmore sb-toggle-right">More</div>
+                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar before"></span>
+                <span class="icon-bar main"></span>
+                <span class="icon-bar after"></span>
+                </button>
+            </div>
+            <!-- // .navbar-inner -->
+        </div>
+
+        <!-- ============================ Header & Logo bar =========================== -->
+
+
+      
+<section id="intro">
+    <div class="container">
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2016-03-09T10:51:44.000Z" itemprop="datePublished">
+          2016-03-09
+      </time>
+    
+</span>
+                <h1>关于正则表达式</h1>
+            </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+      		<h4 id="为什么使用正则表达式"><a href="#为什么使用正则表达式" class="headerlink" title="为什么使用正则表达式?"></a>为什么使用正则表达式?</h4><p>典型的搜索和替换操作要求你提供与预期的搜索结果匹配的确切文本，虽然这种技术对于对静态文本执行简单搜索和替换任务可能已经足够了，但它缺乏灵活性，若采用这种方法搜索动态文本，计时不是不可能，至少也会变得很困难，通过使用正则表达式可以:</p>
+<ul>
+<li><p>测试字符串内的模式:例如可以测试输入字符串，以查看字符串内是否出现电话号码模式或信用卡模式，这成为数据验证。</p>
+</li>
+<li><p>替换文本:可以使用正则表达式来识别文档中的特定文本，完全删除该文本或者用其他文本替换它。</p>
+</li>
+<li><p>基于模式匹配从字符串中提取子字符串:可以查找文档内或输入域内特定的文本。</p>
+</li>
+</ul>
+<a id="more"></a>
+<h4 id="发展历史"><a href="#发展历史" class="headerlink" title="发展历史:"></a>发展历史:</h4><p>正则表达式的”祖先”可以一直上溯到对人类神经系统如何工作的早期研究。Warren McCulloch和Walter Pitts这两位神经生理学家研究出一种数学方式来描述这些神经网络。</p>
+<p>1956年，以为叫Stephen Kleene的数学家在McCulloch和Pitts早期工作的基础上，发表了一篇标题为“神经网事件的表示法”的论文，引入了正则表达式的概念，正则表达式就是用来描述他称为”正则集的代数”的表达式。因此采用了”正则表达式”这个术语。</p>
+<p>随后，发现可以将这一工作应用于使用Ken Thompson的计算搜索算法的一些早期研究,Ken Thompson是Unix的主要发明人，正则表达式的第一个实用应用程序就是Unix中的qed编辑器.</p>
+<p>下面就是正则表达式在javascript中的简单应用</p>
+<ul>
+<li><p>书写语法:</p>
+<pre><code>var patt = new RegExp(pattern,modifiers);
+var patt = /pattern/modifiers;
+</code></pre><ul>
+<li><p>模式描述了一个表达式模型</p>
+</li>
+<li><p>修饰符(modifiers)描述了检索是否是全局，区分大小写等。</p>
+</li>
+</ul>
+<p><span style="color:red;">注意:当使用构造函数创造正则对象时，需要常规的字符转义规则(在前面加反斜杠)。比如，以下是等价的。</span></p>
+<pre><code>var re = new RewExp(&quot;\\w+&quot;);
+var re = /\w+/; 
+</code></pre></li>
+<li><p>RegExp修饰符:修饰符用于执行不区分大小写和全文的搜索。</p>
+<ul>
+<li><p>i-修饰符是用来执行不区分大小写的匹配</p>
+</li>
+<li><p>g -修饰符是用于执行全文的搜索(而不是在找到第一个就停止查找，而是找到所有的匹配)。</p>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>var str =&quot;Is this all there is&gt;&quot;;
+var patt = /is/g;
+var patt1 = /is/gi;
+alert(str.match(patt).lenght); //2全局要区分大小写
+alert(str.match(patt1).length); //3全局不区分大小写
+</code></pre><h4 id="方法"><a href="#方法" class="headerlink" title="方法:"></a>方法:</h4><ul>
+<li><p>test():方法搜索字符串指定的值，根据结果并返回真或假</p>
+<pre><code>var str = &quot;this is e&quot;;
+var patt = /e/g; 或者 var patt = new RegExp(&quot;e&quot;);
+alert(patt.test(str));//true在str中能搜索到e
+</code></pre></li>
+<li><p>exec():方法检索字符串中的指定值，返回值是被找到的值，如果没有发现匹配，则返回null;</p>
+<pre><code>var str = &quot;Is this all there is &quot;;
+var patt = /e/;或者 var patt =new RegExp(&quot;e&quot;);
+var pattt1 = /b/g;
+alert(patt.exec(str)); //e在str中能找到e
+alert(patt1.exec(str)); //null 在str中匹配不到b;
+</code></pre></li>
+<li><p>search():检索与正则表达式相匹配的值</p>
+</li>
+<li><p>match():找到一个或多个正则表达式的匹配，基本需要配合g</p>
+</li>
+<li><p>replace():替换与正则表达式匹配的字符串</p>
+</li>
+</ul>
+<h4 id="常用量词"><a href="#常用量词" class="headerlink" title="常用量词:"></a>常用量词:</h4><ul>
+<li><p>n+ :匹配任何包含至少一个 n 的字符串</p>
+</li>
+<li><p>n* :匹配任何包含零个或多个 n 的字符串</p>
+</li>
+<li><p>n? :匹配任何包含零个或一个 n 的字符串</p>
+</li>
+<li><p>n{x} :匹配包含 x个 n 的序列的字符串</p>
+</li>
+<li><p>n{x,y} :匹配包含x 到 y 个n的序列的字符串</p>
+</li>
+</ul>
+<h4 id="元字符"><a href="#元字符" class="headerlink" title="元字符:"></a>元字符:</h4><ul>
+<li><p>. :查找单个字符，除了换行和行结束符</p>
+</li>
+<li><p>\w :查找单词字符(数字、字母、下划线)</p>
+</li>
+<li><p>\d :查找数字</p>
+</li>
+<li><p>\s :查找空白字符</p>
+</li>
+<li><p>\n :查找换行符</p>
+</li>
+<li><p>u :匹配汉字</p>
+</li>
+<li><p>n$ :匹配任何结尾为 n 的字符串</p>
+</li>
+<li><p>^n :匹配任何开头为 n 的字符串 </p>
+</li>
+</ul>
+<p>关于正则表达式的基础语法就先到这里，有很多关于正则的表达式需要慢慢研究或者是在js或者其他语言中能写出相对应的方法。—再见—</p>
+
+            <div class="clearfix"></div>
+            <hr class="nogutter">
+        </div>
+        <nav class="pagination" role="pagination">
+    
+    <a class="pull-left" href="/2016/03/09/关于MySQL数据/" style="float: left;">
+        ← 关于MySQL数据
+    </a>
+    
+    
+    <a class="pull-right" href="/2016/03/09/关于PHP/">
+        关于PHP →
+    </a>
+    
+</nav>
+
+        <div class="duoshuo">
+<div class="ds-thread" data-thread-key="2016/03/09/关于正则表达式/" data-title="关于正则表达式" data-url="https://niexiaofei1988.github.io/2016/03/09/关于正则表达式/"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"duoshuo_name"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+	 || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+</div>
+    </div>
+</section>
+
+
+      
+<!-- ============================ Footer =========================== -->
+
+<footer>
+    <div class="container">
+            <div class="copy">
+                <p>
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By niexiaofei. All Rights Reserved.
+                </p>
+                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
+            </div>
+            <div class="social">
+                <ul>
+                    
+                    <li><a href="niexiaofei.github.io" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://twitter.com/niexiaofei1989" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
+                    
+                    
+                    <li><a href="http://weibo.com/jiandanaiyici" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    
+                </ul>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+</footer>
+
+<!-- ============================ END Footer =========================== -->
+      <!-- Load our scripts -->
+<!-- Resizable 'on-demand' full-height hero -->
+<script type="text/javascript">
+    var resizeHero = function () {
+        var hero = $(".cover,.heightblock"),
+            window1 = $(window);
+        hero.css({
+            "height": window1.height()
+        });
+    };
+
+    resizeHero();
+
+    $(window).resize(function () {
+        resizeHero();
+    });
+</script>
+<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
+<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
+<script src="/js/scripts.js"></script><!-- Theme scripts -->
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$('#intro').find('img').each(function(){
+  var alt = this.alt;
+
+  if (alt){
+    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
+  }
+
+  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
+});
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+<!-- Initiate flexslider plugin -->
+<script type="text/javascript">
+    $(document).ready(function($) {
+      $('.flexslider').flexslider({
+        animation: "fade",
+        prevText: "",
+        nextText: "",
+        directionNav: true
+      });
+    });
+</script>
+
+</body>
+</html>
